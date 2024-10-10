@@ -1,4 +1,4 @@
-import LoginEndpoint from "./endpoints/loginEndpoint";
+import LoginEndpoint from "./endpoints/platforms/loginEndpoint";
 import LoginRequest from "./models/loginRequest";
 
 class EInvoiceClient {
