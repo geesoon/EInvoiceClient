@@ -1,15 +1,15 @@
-import LoginAsTaxPayerEndpoint from "./endpoints/loginAsTaxPayerEndpoint";
-import LoginAsTaxPayerRequest from "./models/loginAsTaxPayerRequest";
+import LoginEndpoint from "./endpoints/loginEndpoint";
+import LoginRequest from "./models/loginRequest";
 
 class EInvoiceClient {
-    private readonly loginAsTaxPayerEndpoint: LoginAsTaxPayerEndpoint;
+    private readonly loginEndpoint: LoginEndpoint;
 
-    constructor(loginAsTaxPayerEndpoint: LoginAsTaxPayerEndpoint) {
-        this.loginAsTaxPayerEndpoint = loginAsTaxPayerEndpoint;
+    constructor(loginEndpoint: LoginEndpoint) {
+        this.loginEndpoint = loginEndpoint;
     }
 
-    async loginAsTaxPayer(request: LoginAsTaxPayerRequest): Promise<any> {
-        const response = await this.loginAsTaxPayerEndpoint.postAsync(request);
+    async loginAsTaxPayer(request: LoginRequest): Promise<any> {
+        const response = await this.loginEndpoint.postAsync(request);
         return response;
     }
 }

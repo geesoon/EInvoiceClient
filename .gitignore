@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# compiled javascript
+dist/
+.DS_Store
+.vscode/launch.json
+src/.DS_Store
