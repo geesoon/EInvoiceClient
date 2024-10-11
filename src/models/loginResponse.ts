@@ -11,3 +11,5 @@ class LoginResponse {
         this.scope = scope;
     }
 }
+
+export default LoginResponse;

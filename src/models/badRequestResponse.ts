@@ -11,3 +11,5 @@ class BadRequestResponse {
         this.errorUri = errorUri;
     }
 }
+
+export default BadRequestResponse;

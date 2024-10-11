@@ -10,3 +10,5 @@ class AxiosHttpClient implements IHttpClient {
         return await axios.post(url, data, config);
     }
 }
+
+export default AxiosHttpClient;
