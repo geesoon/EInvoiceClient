@@ -1,4 +1,5 @@
 import DocumentTypeVersion from "./documentTypeVersion";
+import WorkFlowParameter from "./workflowParameter";
 
 class DocumentTypeResponse {
     id: number;

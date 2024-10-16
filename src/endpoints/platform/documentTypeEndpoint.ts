@@ -1,3 +1,4 @@
+import DocumentTypeResponse from "@/models/documentTypeResponse";
 import IHttpClient from "../../IHttpClient";
 import Endpoint from "../endpoint";
 
@@ -9,15 +10,17 @@ class DocumentTypeEndpoint extends Endpoint {
     }
 
     public async getAsync() {
-        return await this.httpClient.get(this.fullUrl);
+        return await this.httpClient.get<DocumentTypeResponse>(this.fullUrl, DocumentTypeResponse);
     }
 
     public async getByIdAsync(id: number) {
-        return await this.httpClient.get(`${this.fullUrl}${id}`);
+        const url = `${this.fullUrl}${id}`;
+        return await this.httpClient.get<DocumentTypeResponse>(url, DocumentTypeResponse);
     }
 
     public async getDocumentTypeVersion(id: number, versionId: number) {
-        return await this.httpClient.get(`${this.fullUrl}/${id}/versions/${versionId}`);
+        const url = `${this.fullUrl}/${id}/versions/${versionId}`;
+        return await this.httpClient.get<DocumentTypeResponse>(url, DocumentTypeResponse);
     }
 }
 
