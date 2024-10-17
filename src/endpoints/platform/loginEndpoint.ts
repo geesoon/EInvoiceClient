@@ -40,7 +40,8 @@ class LoginEndpoint extends Endpoint {
                 'onbehalfof': request.onBehalfOf,
             }
         }
-        return await this.httpClient.post(this.fullUrl, body, config);
+        const result = await this.httpClient.post(this.fullUrl, body, config);
+        return JsonSerializer.deserialize<LoginResponse>(result, LoginResponse);
     }
 
     private async loginAsTaxPayer(request: LoginRequest): Promise<LoginResponse> {
