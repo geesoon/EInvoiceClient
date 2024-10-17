@@ -1,6 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
 import qs from "qs";
-import { plainToInstance, ClassConstructor, instanceToPlain } from "class-transformer";
 import IHttpClient from "./IHttpClient";
 
 /**
@@ -8,15 +7,18 @@ import IHttpClient from "./IHttpClient";
  * @class
  */
 class AxiosHttpClient implements IHttpClient {
-    async get<TOut>(url: string, dtoClass: ClassConstructor<TOut>, config?: AxiosRequestConfig): Promise<TOut> {
+    async get(url: string, data?: any, config?: AxiosRequestConfig): Promise<any> {
+        if (data) {
+            const query = qs.stringify(data);
+            url = `${url}${query}`;
+        }
         const response = await axios.get(url, config);
-        return plainToInstance(dtoClass, response.data);
+        return response.data;
     }
 
-    async post<TIn, TOut>(url: string, data: TIn, dtoClass: ClassConstructor<TOut>, config?: AxiosRequestConfig): Promise<TOut> {
-        const body = qs.stringify(instanceToPlain<TIn>(data));
-        const response = await axios.post(url, body, config);
-        return plainToInstance(dtoClass, response.data);
+    async post(url: string, data?: any, config?: AxiosRequestConfig): Promise<any> {
+        const response = await axios.post(url, data, config);
+        return response.data;
     }
 }
 

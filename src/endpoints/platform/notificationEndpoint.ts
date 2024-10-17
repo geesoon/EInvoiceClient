@@ -2,6 +2,7 @@ import NotificationRequest from "@/models/notificationRequest";
 import IHttpClient from "../../IHttpClient";
 import Endpoint from "../endpoint";
 import NotificationResponse from "@/models/notificationResponse";
+import JsonSerializer from "@/jsonSerializer";
 
 class NotificationEndpoint extends Endpoint {
     private static readonly relativePath: string = "/api/v1.0/notifications/taxpayer";
@@ -11,7 +12,8 @@ class NotificationEndpoint extends Endpoint {
     }
 
     public async getNotificationAsync(request: NotificationRequest): Promise<NotificationResponse> {
-        return this.httpClient.get<NotificationResponse>(this.fullUrl, request, NotificationResponse);
+        const result = this.httpClient.get(this.fullUrl, request);
+        return JsonSerializer.deserialize<NotificationResponse>(result, NotificationResponse);
     }
 }
 

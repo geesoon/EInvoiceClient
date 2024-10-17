@@ -1,5 +1,4 @@
 import { AxiosRequestConfig } from "axios";
-import { ClassConstructor } from "class-transformer";
 
 /**
  * Represent an interface for HttpClient
@@ -9,19 +8,18 @@ interface IHttpClient {
     /**
      * Get request
      * @param url - The full url to get
-     * @param dtoClass - The dto class
+     * @param data - The query parameter
      * @param config - The request configuration
      */
-    get<TOut>(url: string, data: any, dtoClass: ClassConstructor<TOut>, config?: AxiosRequestConfig): Promise<TOut>;
+    get(url: string, data?: any, config?: AxiosRequestConfig): Promise<any>;
 
     /**
      * Post request
      * @param url - The full url to post
      * @param data - The request body
-     * @param dtoClass - The dto class
      * @param config - The request configuration
      */
-    post<TIn, TOut>(url: string, data: TIn, dtoClass: ClassConstructor<TOut>, config?: AxiosRequestConfig): Promise<TOut>;
+    post(url: string, data?: any, config?: AxiosRequestConfig): Promise<any>;
 }
 
 export default IHttpClient;

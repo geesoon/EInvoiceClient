@@ -3,6 +3,7 @@ import LoginRequest from '../../models/loginRequest';
 import IHttpClient from '../../IHttpClient';
 import Endpoint from '../endpoint';
 import LoginResponse from '@/models/loginResponse';
+import JsonSerializer from '@/jsonSerializer';
 
 /**
  * Represent the endpoint to authenticate user
@@ -33,16 +34,19 @@ class LoginEndpoint extends Endpoint {
     }
 
     private async loginAsIntermediary(request: LoginRequest) {
+        const body = JsonSerializer.serialize<LoginRequest>(request);
         const config: AxiosRequestConfig = {
             headers: {
                 'onbehalfof': request.onBehalfOf,
             }
         }
-        return await this.httpClient.post<LoginRequest, LoginResponse>(this.fullUrl, request, LoginResponse, config);
+        return await this.httpClient.post(this.fullUrl, body, config);
     }
 
-    private async loginAsTaxPayer(request: LoginRequest) {
-        return await this.httpClient.post<LoginRequest, LoginResponse>(this.fullUrl, request, LoginResponse);
+    private async loginAsTaxPayer(request: LoginRequest): Promise<LoginResponse> {
+        const body = JsonSerializer.serialize<LoginRequest>(request);
+        const result = await this.httpClient.post(this.fullUrl, body);
+        return JsonSerializer.deserialize<LoginResponse>(result, LoginResponse);
     }
 }
 
