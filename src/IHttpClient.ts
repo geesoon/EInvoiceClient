@@ -12,7 +12,7 @@ interface IHttpClient {
      * @param dtoClass - The dto class
      * @param config - The request configuration
      */
-    get<TOut>(url: string, dtoClass: ClassConstructor<TOut>, config?: AxiosRequestConfig): Promise<TOut>;
+    get<TOut>(url: string, data: any, dtoClass: ClassConstructor<TOut>, config?: AxiosRequestConfig): Promise<TOut>;
 
     /**
      * Post request

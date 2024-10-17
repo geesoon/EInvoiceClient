@@ -1,17 +1,16 @@
 import { Expose } from "class-transformer";
-import { Url } from "url";
 
 class BadRequestResponse {
-    @Expose()
+    @Expose({ name: 'error' })
     error: string;
 
     @Expose({ name: 'error-description' })
     errorDescription: string;
 
     @Expose({ name: 'error-uri' })
-    errorUri: Url
+    errorUri: URL
 
-    constructor(error: string, errorDescription: string, errorUri: Url) {
+    constructor(error: string, errorDescription: string, errorUri: URL) {
         this.error = error;
         this.errorDescription = errorDescription;
         this.errorUri = errorUri;

@@ -1,17 +1,18 @@
 import DocumentTypeEndpoint from "./endpoints/platform/documentTypeEndpoint";
 import LoginEndpoint from "./endpoints/platform/loginEndpoint";
-// import NotificationStatusEndpoint from "./endpoints/platform/notificationStatusEndpoint";
+import NotificationEndpoint from "./endpoints/platform/notificationEndpoint";
 import IHttpClient from "./IHttpClient";
 import DocumentTypeResponse from "./models/documentTypeResponse";
 import LoginRequest from "./models/loginRequest";
 import LoginResponse from "./models/loginResponse";
-// import NotificationStatusRequest from "./models/notificationStatusRequest";
+import NotificationRequest from "./models/notificationRequest";
+import NotificationResponse from "./models/notificationResponse";
 
 class EInvoiceClient {
     private readonly baseUrl: URL;
     private readonly loginEndpoint: LoginEndpoint;
     private readonly documentTypeEndpoint: DocumentTypeEndpoint;
-    // private readonly notificationStatusEndpoint: NotificationStatusEndpoint;
+    private readonly notificationEndpoint: NotificationEndpoint;
     private readonly httpClient: IHttpClient;
 
     constructor(baseUrl: URL, httpClient: IHttpClient) {
@@ -19,7 +20,7 @@ class EInvoiceClient {
         this.httpClient = httpClient;
         this.loginEndpoint = new LoginEndpoint(this.baseUrl, this.httpClient);
         this.documentTypeEndpoint = new DocumentTypeEndpoint(this.baseUrl, this.httpClient);
-        // this.notificationStatusEndpoint = new NotificationStatusEndpoint(this.baseUrl, this.httpClient);
+        this.notificationEndpoint = new NotificationEndpoint(this.baseUrl, this.httpClient);
     }
 
     async authenticateAsync(request: LoginRequest): Promise<LoginResponse> {
@@ -39,9 +40,9 @@ class EInvoiceClient {
         return await this.documentTypeEndpoint.getDocumentTypeVersion(id, versionId);
     }
 
-    // async getNotificationAsync(request: NotificationStatusRequest) {
-    //     return await this.notificationStatusEndpoint.getNotificationAsync(request);
-    // }
+    async getNotificationAsync(request: NotificationRequest): Promise<NotificationResponse> {
+        return await this.notificationEndpoint.getNotificationAsync(request);
+    }
 }
 
 export default EInvoiceClient;
