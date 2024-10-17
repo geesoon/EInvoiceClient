@@ -1,7 +1,6 @@
 import DocumentTypeEndpoint from "./endpoints/platform/documentTypeEndpoint";
 import LoginEndpoint from "./endpoints/platform/loginEndpoint";
 import NotificationEndpoint from "./endpoints/platform/notificationEndpoint";
-import IHttpClient from "./IHttpClient";
 import DocumentTypeResponse from "./models/documentTypeResponse";
 import LoginRequest from "./models/loginRequest";
 import LoginResponse from "./models/loginResponse";
@@ -9,18 +8,18 @@ import NotificationRequest from "./models/notificationRequest";
 import NotificationResponse from "./models/notificationResponse";
 
 class EInvoiceClient {
-    private readonly baseUrl: URL;
     private readonly loginEndpoint: LoginEndpoint;
     private readonly documentTypeEndpoint: DocumentTypeEndpoint;
     private readonly notificationEndpoint: NotificationEndpoint;
-    private readonly httpClient: IHttpClient;
 
-    constructor(baseUrl: URL, httpClient: IHttpClient) {
-        this.baseUrl = baseUrl;
-        this.httpClient = httpClient;
-        this.loginEndpoint = new LoginEndpoint(this.baseUrl, this.httpClient);
-        this.documentTypeEndpoint = new DocumentTypeEndpoint(this.baseUrl, this.httpClient);
-        this.notificationEndpoint = new NotificationEndpoint(this.baseUrl, this.httpClient);
+    constructor(
+        loginEndpoint: LoginEndpoint,
+        documentTypeEndpoint: DocumentTypeEndpoint,
+        notificationEndpoint: NotificationEndpoint
+    ) {
+        this.loginEndpoint = loginEndpoint;
+        this.documentTypeEndpoint = documentTypeEndpoint;
+        this.notificationEndpoint = notificationEndpoint;
     }
 
     async authenticateAsync(request: LoginRequest): Promise<LoginResponse> {
