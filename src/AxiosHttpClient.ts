@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import qs from "qs";
 import IHttpClient from "./IHttpClient";
 
@@ -7,18 +7,16 @@ import IHttpClient from "./IHttpClient";
  * @class
  */
 class AxiosHttpClient implements IHttpClient {
-    async get(url: string, data?: any, config?: AxiosRequestConfig): Promise<any> {
-        if (data) {
+    async get(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse> {
+        if (data != null && data != undefined) {
             const query = qs.stringify(data);
             url = `${url}${query}`;
         }
-        const response = await axios.get(url, config);
-        return response.data;
+        return await axios.get(url, config);
     }
 
-    async post(url: string, data?: any, config?: AxiosRequestConfig): Promise<any> {
-        const response = await axios.post(url, data, config);
-        return response.data;
+    async post(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse> {
+        return await axios.post(url, data, config);
     }
 }
 

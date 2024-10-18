@@ -1,4 +1,3 @@
-import { AxiosRequestConfig } from 'axios';
 import LoginRequest from '../../models/loginRequest';
 import IHttpClient from '../../IHttpClient';
 import Endpoint from '../endpoint';
@@ -35,19 +34,16 @@ class LoginEndpoint extends Endpoint {
 
     private async loginAsIntermediary(request: LoginRequest) {
         const body = JsonSerializer.serialize<LoginRequest>(request);
-        const config: AxiosRequestConfig = {
-            headers: {
-                'onbehalfof': request.onBehalfOf,
-            }
-        }
-        const result = await this.httpClient.post(this.fullUrl, body, config);
-        return JsonSerializer.deserialize<LoginResponse>(result, LoginResponse);
+        const response = await this.httpClient.post(this.fullUrl, body);
+        return this.handleResponse<LoginResponse>(response, LoginResponse);
     }
 
     private async loginAsTaxPayer(request: LoginRequest): Promise<LoginResponse> {
         const body = JsonSerializer.serialize<LoginRequest>(request);
-        const result = await this.httpClient.post(this.fullUrl, body);
-        return JsonSerializer.deserialize<LoginResponse>(result, LoginResponse);
+        console.log(body);
+        const response = await this.httpClient.post(this.fullUrl, body);
+        console.log(response);
+        return this.handleResponse<LoginResponse>(response, LoginResponse);
     }
 }
 
