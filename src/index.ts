@@ -1,16 +1,21 @@
 import EInvoiceClientFactory from "./eInvoiceClientFactory";
 import LoginRequest from "./models/loginRequest";
+import * as dotenv from 'dotenv';
 
-let baseUrl = new URL("https://preprod-api.myinvois.hasil.gov.my/");
-let eInvoiceClient = EInvoiceClientFactory.createClient(baseUrl);
+dotenv.config();
 
-let clientId = "";
-let clientSecret = "";
-let loginRequest = new LoginRequest(clientId, clientSecret, null);
+async function main() {
+    let baseUrl = new URL(process.env.SANDBOX_URL ?? "");
+    let eInvoiceClient = EInvoiceClientFactory.createClient(baseUrl);
 
-eInvoiceClient.authenticateAsync(loginRequest).then((result) => {
-    console.log(result);
-    eInvoiceClient.getDocumentAsync().then((result) => {
-        console.log(result);
-    });
-});
+    let clientId = process.env.ID ?? "";
+    let clientSecret = process.env.SECRET ?? "";
+    let loginRequest = new LoginRequest(clientId, clientSecret, null);
+
+    const loginResponse = await eInvoiceClient.authenticateAsync(loginRequest);
+    console.log(loginResponse);
+    const documents = await eInvoiceClient.getDocumentAsync();
+    console.log(documents);
+}
+
+main();
