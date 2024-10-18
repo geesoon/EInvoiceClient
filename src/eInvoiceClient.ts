@@ -1,3 +1,4 @@
+import ValidateTinEndpoint from "./endpoints/eInvoice/validateTinEndpoint";
 import DocumentTypeEndpoint from "./endpoints/platform/documentTypeEndpoint";
 import LoginEndpoint from "./endpoints/platform/loginEndpoint";
 import NotificationEndpoint from "./endpoints/platform/notificationEndpoint";
@@ -10,22 +11,26 @@ import LoginResponse from "./models/loginResponse";
 import NotificationRequest from "./models/notificationRequest";
 import NotificationResponse from "./models/notificationResponse";
 import Session from "./models/session";
+import ValidateTinRequest from "./models/validateTinRequest";
 import TokenStore from "./tokenStore";
 
 class EInvoiceClient {
     private readonly loginEndpoint: LoginEndpoint;
     private readonly documentTypeEndpoint: DocumentTypeEndpoint;
     private readonly notificationEndpoint: NotificationEndpoint;
+    private readonly validateTinEndpoint: ValidateTinEndpoint;
     private tokenStore: ITokenStore | null = null;
 
     constructor(
         loginEndpoint: LoginEndpoint,
         documentTypeEndpoint: DocumentTypeEndpoint,
-        notificationEndpoint: NotificationEndpoint
+        notificationEndpoint: NotificationEndpoint,
+        validateTinEndpoint: ValidateTinEndpoint
     ) {
         this.loginEndpoint = loginEndpoint;
         this.documentTypeEndpoint = documentTypeEndpoint;
         this.notificationEndpoint = notificationEndpoint;
+        this.validateTinEndpoint = validateTinEndpoint;
     }
 
     async authenticateAsync(request: LoginRequest): Promise<LoginResponse> {
@@ -52,6 +57,10 @@ class EInvoiceClient {
 
     async getNotificationAsync(request: NotificationRequest): Promise<NotificationResponse> {
         return await this.notificationEndpoint.getNotificationAsync(request, this.getAccessToken());
+    }
+
+    async validateTinAsync(request: ValidateTinRequest): Promise<boolean> {
+        return await this.validateTinEndpoint.validateTinAsync(request, this.getAccessToken());
     }
 
     private getAccessToken(): string {

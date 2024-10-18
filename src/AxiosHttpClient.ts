@@ -10,7 +10,7 @@ class AxiosHttpClient implements IHttpClient {
     async get(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse> {
         if (data != null && data != undefined) {
             const query = qs.stringify(data);
-            url = `${url}${query}`;
+            url = `${url}?${query}`;
         }
         return await axios.get(url, config);
     }
