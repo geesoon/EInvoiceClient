@@ -2,7 +2,9 @@ import DocumentTypeEndpoint from "./endpoints/platform/documentTypeEndpoint";
 import LoginEndpoint from "./endpoints/platform/loginEndpoint";
 import NotificationEndpoint from "./endpoints/platform/notificationEndpoint";
 import ITokenStore from "./ITokenStore";
+import DocumentType from "./models/documentType";
 import DocumentTypeResponse from "./models/documentTypeResponse";
+import DocumentTypeVersion from "./models/documentTypeVersion";
 import LoginRequest from "./models/loginRequest";
 import LoginResponse from "./models/loginResponse";
 import NotificationRequest from "./models/notificationRequest";
@@ -31,22 +33,21 @@ class EInvoiceClient {
         if (this.tokenStore == null) {
             let session = new Session(response);
             this.tokenStore = new TokenStore(session, request, this.loginEndpoint);
-            console.log(this.tokenStore.getAccessToken());
         }
 
         return response;
     }
 
-    async getDocumentAsync(): Promise<DocumentTypeResponse> {
+    async getDocumentTypeAsync(): Promise<DocumentTypeResponse> {
         return await this.documentTypeEndpoint.getAsync(this.getAccessToken());
     }
 
-    async getDocumentById(id: number): Promise<DocumentTypeResponse> {
+    async getDocumentTypeById(id: number): Promise<DocumentType> {
         return await this.documentTypeEndpoint.getByIdAsync(id, this.getAccessToken());
     }
 
-    async getDocumentTypeVersion(id: number, versionId: number): Promise<DocumentTypeResponse> {
-        return await this.documentTypeEndpoint.getDocumentTypeVersion(id, versionId, this.getAccessToken());
+    async getDocumentTypeByVersion(id: number, versionId: number): Promise<DocumentTypeVersion> {
+        return await this.documentTypeEndpoint.getDocumentTypeByVersion(id, versionId, this.getAccessToken());
     }
 
     async getNotificationAsync(request: NotificationRequest): Promise<NotificationResponse> {

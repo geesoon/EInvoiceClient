@@ -1,4 +1,5 @@
 import { Expose } from "class-transformer";
+import DocumentTypeVersionStatus from "./documentTypeVersionStatus";
 
 class DocumentTypeVersion {
     @Expose({ name: 'number' })

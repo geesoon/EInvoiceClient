@@ -12,10 +12,13 @@ async function main() {
     let clientSecret = process.env.SECRET ?? "";
     let loginRequest = new LoginRequest(clientId, clientSecret, null);
 
-    const loginResponse = await eInvoiceClient.authenticateAsync(loginRequest);
-    console.log(loginResponse);
-    const documents = await eInvoiceClient.getDocumentAsync();
+    await eInvoiceClient.authenticateAsync(loginRequest);
+    const documents = await eInvoiceClient.getDocumentTypeAsync();
     console.log(documents);
+    const specificDocumentType = await eInvoiceClient.getDocumentTypeById(1);
+    console.log(specificDocumentType);
+    const specificDocumentTypeVersion = await eInvoiceClient.getDocumentTypeByVersion(1, 1);
+    console.log(specificDocumentTypeVersion);
 }
 
 main();

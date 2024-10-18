@@ -3,3 +3,5 @@ enum DocumentTypeVersionStatus {
     published = 2,
     deactivated = 3,
 }
+
+export default DocumentTypeVersionStatus;

@@ -40,9 +40,7 @@ class LoginEndpoint extends Endpoint {
 
     private async loginAsTaxPayer(request: LoginRequest): Promise<LoginResponse> {
         const body = JsonSerializer.serialize<LoginRequest>(request);
-        console.log(body);
         const response = await this.httpClient.post(this.fullUrl, body);
-        console.log(response);
         return this.handleResponse<LoginResponse>(response, LoginResponse);
     }
 }

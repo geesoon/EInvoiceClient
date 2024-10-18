@@ -16,11 +16,12 @@ class TokenStore implements ITokenStore {
 
     public getAccessToken(): string {
         let tokenExpireDateTime = this.getTokenExpiredDateTime();
-        let expiredThresholdDateTime = this.getExpiredThresholdDateTime();
-        console.log(tokenExpireDateTime);
-        console.log(expiredThresholdDateTime);
+        let refreshTokenDateTime = this.getExpiredThresholdDateTime();
+        console.log(`Token Created: ${this.session.createdDateTime}`);
+        console.log(`Token Expire: ${tokenExpireDateTime}`);
+        console.log(`Renew DateTime: ${refreshTokenDateTime}`);
 
-        if (tokenExpireDateTime < expiredThresholdDateTime) {
+        if (tokenExpireDateTime < refreshTokenDateTime) {
             this.endpoint.loginAsync(this.request).then((result) => {
                 let newSession = new Session(result);
                 this.session = newSession;
@@ -30,11 +31,11 @@ class TokenStore implements ITokenStore {
     }
 
     private getTokenExpiredDateTime(): Date {
-        return new Date(this.session.createdDateTime.getTime() + this.session.expiresIn);
+        return new Date(this.session.createdDateTime.getTime() + (this.session.expiresIn * 1000));
     }
 
     private getExpiredThresholdDateTime(): Date {
-        let offsetInSeconds = 300;
+        let offsetInSeconds = 300 * 1000;
         let now = new Date();
         return new Date(now.getTime() - offsetInSeconds);
     }
