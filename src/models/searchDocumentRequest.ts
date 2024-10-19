@@ -1,4 +1,4 @@
-export class SearchDocumentRequest {
+class SearchDocumentRequest {
     public uuid?: string;
     public submissionDateFrom?: Date;
     public submissionDateTo?: Date;

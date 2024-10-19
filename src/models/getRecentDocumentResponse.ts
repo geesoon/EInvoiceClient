@@ -1,7 +1,7 @@
 import RecentDocumentResult from "./recentDocument";
 import QueryDocumentMetadata from "./queryDocumentMetadata";
 
-export class GetRecentDocumentResponse {
+class GetRecentDocumentResponse {
     public metadata: QueryDocumentMetadata;
     public result: RecentDocumentResult[];
 

@@ -1,4 +1,4 @@
-export class DocumentSummary {
+class DocumentSummary {
     public uuid: string;
     public submissionUid: string;
     public longId: string;

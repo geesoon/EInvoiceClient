@@ -1,4 +1,4 @@
-export class QueryDocumentMetadata {
+class QueryDocumentMetadata {
     public totalPages: number;
     public totalCount: number;
 

@@ -1,4 +1,4 @@
-export class RecentDocumentResult {
+class RecentDocumentResult {
     public uuid: string;
     public submissionUID: string;
     public longId: string;

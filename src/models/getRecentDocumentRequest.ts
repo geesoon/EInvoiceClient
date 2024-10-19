@@ -1,4 +1,4 @@
-export class GetRecentDocumentRequest {
+class GetRecentDocumentRequest {
     public pageNo?: number;
     public pageSize?: number;
     public submissionDateFrom?: Date;

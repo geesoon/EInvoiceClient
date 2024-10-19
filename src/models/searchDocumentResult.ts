@@ -1,4 +1,4 @@
-export class SearchDocumentResult {
+class SearchDocumentResult {
     public uuid: string;
     public submissionUID: string;
     public longId: string;
