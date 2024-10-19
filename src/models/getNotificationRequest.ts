@@ -1,7 +1,7 @@
 import NotificationStatus from "./notificationStatus";
 import NotificationType from "./notificationTypes";
 
-class NotificationRequest {
+class GetNotificationRequest {
     public dateFrom: Date;
     public dateTo: Date;
     public type: NotificationType;
@@ -21,4 +21,4 @@ class NotificationRequest {
     }
 }
 
-export default NotificationRequest;
+export default GetNotificationRequest;

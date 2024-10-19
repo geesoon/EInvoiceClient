@@ -1,5 +1,6 @@
 import { Expose } from "class-transformer";
 import EInvoiceType from "./codeTables/invoiceType";
+import DocumentTypeVersionStatus from "./documentTypeVersionStatus";
 
 class DocumentTypeVersionResponse {
     @Expose({ name: 'invoice_type_code' })

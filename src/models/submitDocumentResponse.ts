@@ -1,7 +1,7 @@
 import AcceptedDocument from "./acceptedDocument";
 import RejectedDocument from "./rejectedDocument";
 
-class DocumentSubmissionResponse {
+class SubmitDocumentResponse {
     public submissionUID: string;
     public acceptedDocuments: AcceptedDocument[];
     public rejectedDocuments: RejectedDocument[];
@@ -17,4 +17,4 @@ class DocumentSubmissionResponse {
     }
 }
 
-export default DocumentSubmissionResponse;
+export default SubmitDocumentResponse;

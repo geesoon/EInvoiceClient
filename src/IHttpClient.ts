@@ -20,6 +20,14 @@ interface IHttpClient {
      * @param config - The request configuration
      */
     post(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse>;
+
+    /**
+     * Put request
+     * @param url - The full url to put
+     * @param data - The request body
+     * @param config - The request configuration
+     */
+    put(url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse>;
 }
 
 export default IHttpClient;

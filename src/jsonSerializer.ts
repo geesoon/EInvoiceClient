@@ -2,7 +2,7 @@ import { ClassConstructor, instanceToPlain, plainToInstance } from "class-transf
 import qs from "qs";
 
 class JsonSerializer {
-    public static serialize<T>(data: T): string {
+    public static serializeIntoQueryString<T>(data: T): string {
         return qs.stringify(instanceToPlain<T>(data));
     }
 

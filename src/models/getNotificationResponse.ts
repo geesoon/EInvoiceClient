@@ -1,6 +1,6 @@
 import Metadata from "./metadata";
 
-class NotificationResponse {
+class GetNotificationResponse {
     public result: Notification[];
     public metadata: Metadata;
 
@@ -10,4 +10,4 @@ class NotificationResponse {
     }
 }
 
-export default NotificationResponse;
+export default GetNotificationResponse;

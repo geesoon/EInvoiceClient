@@ -1,4 +1,4 @@
-class DocumentRequest {
+class Document {
     public format: string;
     public document: string;
     public documentHash: string;
@@ -12,4 +12,4 @@ class DocumentRequest {
     }
 }
 
-export default DocumentRequest;
+export default Document;

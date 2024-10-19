@@ -24,7 +24,7 @@ class DocumentTypeEndpoint extends Endpoint {
         return this.handleResponse<DocumentType>(response, DocumentType);
     }
 
-    public async getDocumentTypeByVersion(id: number, versionId: number, accessToken: string): Promise<DocumentTypeVersion> {
+    public async getByVersionAsync(id: number, versionId: number, accessToken: string): Promise<DocumentTypeVersion> {
         const config = this.getBaseRequestConfig(accessToken);
         const url = `${this.fullUrl}/${id}/versions/${versionId}`;
         const response = await this.httpClient.get(url, undefined, config);

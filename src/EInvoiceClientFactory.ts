@@ -3,8 +3,9 @@ import EInvoiceClient from "./eInvoiceClient";
 import LoginEndpoint from "./endpoints/platform/loginEndpoint";
 import DocumentTypeEndpoint from "./endpoints/platform/documentTypeEndpoint";
 import NotificationEndpoint from "./endpoints/platform/notificationEndpoint";
-import { URL } from "url";
 import ValidateTinEndpoint from "./endpoints/eInvoice/validateTinEndpoint";
+import DocumentEndpoint from "./endpoints/eInvoice/documentEndpoint";
+import DocumentSubmissionEndpoint from "./endpoints/eInvoice/documentSubmissionEndpoint";
 
 class EInvoiceClientFactory {
     static createClient(baseURL: URL): EInvoiceClient {
@@ -13,7 +14,9 @@ class EInvoiceClientFactory {
             new LoginEndpoint(baseURL, httpClient),
             new DocumentTypeEndpoint(baseURL, httpClient),
             new NotificationEndpoint(baseURL, httpClient),
-            new ValidateTinEndpoint(baseURL, httpClient)
+            new ValidateTinEndpoint(baseURL, httpClient),
+            new DocumentEndpoint(baseURL, httpClient),
+            new DocumentSubmissionEndpoint(baseURL, httpClient)
         )
     }
 }

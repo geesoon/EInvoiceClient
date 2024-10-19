@@ -13,7 +13,7 @@ async function main() {
     let clientSecret = getConfig(process.env.SECRET);
     let loginRequest = new LoginRequest(clientId, clientSecret, null);
 
-    await eInvoiceClient.authenticateAsync(loginRequest);
+    await eInvoiceClient.loginAsync(loginRequest);
     // const documents = await eInvoiceClient.getDocumentTypeAsync();
     // console.log(documents);
     // const specificDocumentType = await eInvoiceClient.getDocumentTypeById(1);

@@ -27,19 +27,19 @@ class LoginEndpoint extends Endpoint {
      */
     public async loginAsync(request: LoginRequest): Promise<LoginResponse> {
         if (request.onBehalfOf) {
-            return await this.loginAsIntermediary(request);
+            return await this.loginAsIntermediaryAsync(request);
         }
-        return await this.loginAsTaxPayer(request);
+        return await this.loginAsTaxPayerAsync(request);
     }
 
-    private async loginAsIntermediary(request: LoginRequest) {
-        const body = JsonSerializer.serialize<LoginRequest>(request);
+    private async loginAsIntermediaryAsync(request: LoginRequest) {
+        const body = JsonSerializer.serializeIntoQueryString<LoginRequest>(request);
         const response = await this.httpClient.post(this.fullUrl, body);
         return this.handleResponse<LoginResponse>(response, LoginResponse);
     }
 
-    private async loginAsTaxPayer(request: LoginRequest): Promise<LoginResponse> {
-        const body = JsonSerializer.serialize<LoginRequest>(request);
+    private async loginAsTaxPayerAsync(request: LoginRequest): Promise<LoginResponse> {
+        const body = JsonSerializer.serializeIntoQueryString<LoginRequest>(request);
         const response = await this.httpClient.post(this.fullUrl, body);
         return this.handleResponse<LoginResponse>(response, LoginResponse);
     }

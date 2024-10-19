@@ -11,7 +11,6 @@ class ValidateTinEndpoint extends Endpoint {
     }
 
     public async validateTinAsync(request: ValidateTinRequest, accessToken: string): Promise<boolean> {
-        console.log(request);
         const config = this.getBaseRequestConfig(accessToken);
         const url = `${this.fullUrl}/${request.tin}`;
         const query = {
