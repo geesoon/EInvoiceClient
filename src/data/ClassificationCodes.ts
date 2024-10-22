@@ -1,4 +1,4 @@
-[
+const ClassificationCodes: any[] = [
     {
         "Code": "001",
         "Description": "Breastfeeding equipment "
@@ -179,4 +179,6 @@
         "Code": "045",
         "Description": "Self-billed - Non-monetary payment to agents, dealers or distributors"
     }
-]
+];
+
+export default ClassificationCodes;

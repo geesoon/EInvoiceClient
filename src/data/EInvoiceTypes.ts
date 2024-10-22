@@ -1,4 +1,4 @@
-[
+const EInvoiceTypes: any[] = [
     {
         "Code": "01",
         "Description": "Invoice"
@@ -31,4 +31,6 @@
         "Code": "14",
         "Description": "Self-billed Refund Note"
     }
-]
+];
+
+export default EInvoiceTypes;

@@ -1,4 +1,4 @@
-[
+const UnitTypes: any[] = [
     {
         "Code": "10",
         "Name": "group"
@@ -8643,4 +8643,6 @@
         "Code": "XZZ",
         "Name": "Mutually defined"
     }
-]
+];
+
+export default UnitTypes;

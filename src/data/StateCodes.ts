@@ -1,4 +1,4 @@
-[
+const StateCodes: any[] = [
     {
         "Code": "00",
         "State": "All States"
@@ -71,4 +71,6 @@
         "Code": "17",
         "State": "Not Applicable"
     }
-]
+];
+
+export default StateCodes;

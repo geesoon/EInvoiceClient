@@ -1,4 +1,4 @@
-[
+const TaxTypes: any[] = [
   {
     "Code": "01",
     "Description": "Sales Tax"
@@ -27,4 +27,6 @@
     "Code": "E",
     "Description": "Tax exemption (where applicable)"
   }
-]
+];
+
+export default TaxTypes;

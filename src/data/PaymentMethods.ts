@@ -1,4 +1,4 @@
-[
+const PaymentMethods: any[] = [
     {
         "Code": "01",
         "Payment Method": "Cash"
@@ -31,4 +31,6 @@
         "Code": "08",
         "Payment Method": "Others"
     }
-]
+];
+
+export default PaymentMethods;
