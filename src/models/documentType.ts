@@ -19,7 +19,7 @@ class DocumentType {
     activeTo: Date;
 
     @Expose({ name: 'document_type_versions' })
-    documentTypeVersions: DocumentTypeVersion[];
+    documentTypeVersions?: DocumentTypeVersion[];
 
     @Expose({ name: 'work_flow_parameter' })
     workflowParameter: WorkFlowParameter[];
