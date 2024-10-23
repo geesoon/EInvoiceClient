@@ -33,7 +33,7 @@ import GetDocumentDetailRequest from "./models/getDocumentDetailRequest";
 /**
  * This class is the facade of all eInvoice endpoints available
  */
-class EInvoiceClient {
+class EInvoiceClient implements EInvoiceClient {
     // Platform
     private readonly loginEndpoint: LoginEndpoint;
     private readonly documentTypeEndpoint: DocumentTypeEndpoint;

@@ -30,7 +30,7 @@ async function main() {
 }
 
 function getConfig(value: string | undefined): string {
-    return value || "";
+    return value ?? "";
 }
 
 main();
