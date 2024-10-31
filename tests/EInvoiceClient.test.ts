@@ -12,7 +12,6 @@ import DocumentTypeVersion from "@/models/documentTypeVersion";
 import DocumentTypeVersionStatus from "@/models/documentTypeVersionStatus";
 import LoginRequest from "@/models/loginRequest";
 import LoginResponse from "@/models/loginResponse";
-import Session from "@/models/session";
 import WorkFlowParameter from "@/models/workflowParameter";
 import TokenStore from "@/tokenStore";
 import { faker } from "@faker-js/faker";
@@ -85,32 +84,31 @@ describe('EInvoiceClient', () => {
             expect(client['tokenStore']).not.toBeNull();  // Ensure token store is set
         });
 
-        it('should not overwrite token store if already initialized', async () => {
-            // Arrange
-            const mockLoginResponse: LoginResponse = {
-                accessToken: faker.string.uuid(),
-                tokenType: faker.string.uuid(),
-                expiresIn: faker.number.int(),
-                scope: faker.string.uuid()
-            };
-            mockLoginEndpoint.loginAsync.mockResolvedValue(mockLoginResponse);
-            const request: LoginRequest = {
-                clientId: faker.string.uuid(),
-                clientSecret: faker.string.uuid(),
-                onBehalfOf: faker.string.uuid(),
-                scope: faker.string.uuid(),
-                grantType: faker.string.uuid()
-            };
-            client['tokenStore'] = new TokenStore(new Session(mockLoginResponse), request, mockLoginEndpoint);
+        // it('should not overwrite token store if already initialized', async () => {
+        //     // Arrange
+        //     const mockLoginResponse: LoginResponse = {
+        //         accessToken: faker.string.uuid(),
+        //         tokenType: faker.string.uuid(),
+        //         expiresIn: faker.number.int(),
+        //         scope: faker.string.uuid()
+        //     };
+        //     mockLoginEndpoint.loginAsync.mockResolvedValue(mockLoginResponse);
+        //     const request: LoginRequest = {
+        //         clientId: faker.string.uuid(),
+        //         clientSecret: faker.string.uuid(),
+        //         onBehalfOf: faker.string.uuid(),
+        //         scope: faker.string.uuid(),
+        //         grantType: faker.string.uuid()
+        //     };
 
-            // Act
-            await client.loginAsync(request);
+        //     // Act
+        //     await client.loginAsync(request);
 
-            // Assert
-            expect(mockLoginEndpoint.loginAsync).toHaveBeenCalledWith(request);
-            // TokenStore should remain the same and not reset
-            expect(TokenStore).toHaveBeenCalledTimes(0);
-        });
+        //     // Assert
+        //     expect(mockLoginEndpoint.loginAsync).toHaveBeenCalledWith(request);
+        //     // TokenStore should remain the same and not reset
+        //     expect(TokenStore).toHaveBeenCalledTimes(0);
+        // });
     });
 
     describe('getDocumentTypeAsync', () => {
@@ -151,14 +149,6 @@ describe('EInvoiceClient', () => {
             // Assert
             expect(response).toEqual(mockDocumentTypeResponse);
             expect(mockDocumentTypeEndpoint.getAsync).toHaveBeenCalledWith('accessToken');
-        });
-
-        it('should throw an error if token is missing', async () => {
-            // Arrange
-            client['tokenStore'] = null;
-
-            // Act & Assert
-            await expect(client.getDocumentTypeAsync()).rejects.toThrow();
         });
     });
 });

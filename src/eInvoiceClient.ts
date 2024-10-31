@@ -52,8 +52,10 @@ class EInvoiceClient implements EInvoiceClient {
         notificationEndpoint: NotificationEndpoint,
         validateTinEndpoint: ValidateTinEndpoint,
         documentEndpoint: DocumentEndpoint,
-        documentSubmissionEndpoint: DocumentSubmissionEndpoint
+        documentSubmissionEndpoint: DocumentSubmissionEndpoint,
+        tokenStore: ITokenStore | null = null
     ) {
+        this.tokenStore = tokenStore;
         this.loginEndpoint = loginEndpoint;
         this.documentTypeEndpoint = documentTypeEndpoint;
         this.notificationEndpoint = notificationEndpoint;

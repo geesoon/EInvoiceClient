@@ -13,7 +13,8 @@
     "malaysia"
   ],
   "scripts": {
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
