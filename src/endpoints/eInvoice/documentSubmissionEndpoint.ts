@@ -20,6 +20,7 @@ class DocumentSubmissionEndpoint extends Endpoint {
         if (config && config.headers) {
             config.headers["Content-Type"] = "application/json";
         }
+
         const response = await this.httpClient.post(this.fullUrl, request, config);
 
         if (response.status == HttpStatusCode.Accepted) {

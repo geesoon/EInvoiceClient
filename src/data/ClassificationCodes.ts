@@ -1,183 +1,185 @@
-const ClassificationCodes: any[] = [
+import ClassificationCode from "@/models/codeTables/classificationCode";
+
+const ClassificationCodes: ClassificationCode[] = [
     {
-        "Code": "001",
-        "Description": "Breastfeeding equipment "
+        'code': '001',
+        "description": "Breastfeeding equipment "
     },
     {
-        "Code": "002",
-        "Description": "Child care centres and kindergartens fees"
+        "code": "002",
+        "description": "Child care centres and kindergartens fees"
     },
     {
-        "Code": "003",
-        "Description": "Computer, smartphone or tablet"
+        "code": "003",
+        "description": "Computer, smartphone or tablet"
     },
     {
-        "Code": "004",
-        "Description": "Consolidated e-Invoice "
+        "code": "004",
+        "description": "Consolidated e-Invoice "
     },
     {
-        "Code": "005",
-        "Description": "Construction materials (as specified under Fourth Schedule of the Lembaga Pembangunan Industri Pembinaan Malaysia Act 1994)"
+        "code": "005",
+        "description": "Construction materials (as specified under Fourth Schedule of the Lembaga Pembangunan Industri Pembinaan Malaysia Act 1994)"
     },
     {
-        "Code": "006",
-        "Description": "Disbursement "
+        "code": "006",
+        "description": "Disbursement "
     },
     {
-        "Code": "007",
-        "Description": "Donation"
+        "code": "007",
+        "description": "Donation"
     },
     {
-        "Code": "008",
-        "Description": "e-Commerce - e-Invoice to buyer / purchaser"
+        "code": "008",
+        "description": "e-Commerce - e-Invoice to buyer / purchaser"
     },
     {
-        "Code": "009",
-        "Description": "e-Commerce - Self-billed e-Invoice to seller, logistics, etc. "
+        "code": "009",
+        "description": "e-Commerce - Self-billed e-Invoice to seller, logistics, etc. "
     },
     {
-        "Code": "010",
-        "Description": "Education fees"
+        "code": "010",
+        "description": "Education fees"
     },
     {
-        "Code": "011",
-        "Description": "Goods on consignment (Consignor)"
+        "code": "011",
+        "description": "Goods on consignment (Consignor)"
     },
     {
-        "Code": "012",
-        "Description": "Goods on consignment (Consignee)"
+        "code": "012",
+        "description": "Goods on consignment (Consignee)"
     },
     {
-        "Code": "013",
-        "Description": "Gym membership"
+        "code": "013",
+        "description": "Gym membership"
     },
     {
-        "Code": "014",
-        "Description": "Insurance - Education and medical benefits"
+        "code": "014",
+        "description": "Insurance - Education and medical benefits"
     },
     {
-        "Code": "015",
-        "Description": "Insurance - Takaful or life insurance"
+        "code": "015",
+        "description": "Insurance - Takaful or life insurance"
     },
     {
-        "Code": "016",
-        "Description": "Interest and financing expenses"
+        "code": "016",
+        "description": "Interest and financing expenses"
     },
     {
-        "Code": "017",
-        "Description": "Internet subscription "
+        "code": "017",
+        "description": "Internet subscription "
     },
     {
-        "Code": "018",
-        "Description": "Land and building"
+        "code": "018",
+        "description": "Land and building"
     },
     {
-        "Code": "019",
-        "Description": "Medical examination for learning disabilities and early intervention or rehabilitation treatments of learning disabilities"
+        "code": "019",
+        "description": "Medical examination for learning disabilities and early intervention or rehabilitation treatments of learning disabilities"
     },
     {
-        "Code": "020",
-        "Description": "Medical examination or vaccination expenses"
+        "code": "020",
+        "description": "Medical examination or vaccination expenses"
     },
     {
-        "Code": "021",
-        "Description": "Medical expenses for serious diseases"
+        "code": "021",
+        "description": "Medical expenses for serious diseases"
     },
     {
-        "Code": "022",
-        "Description": "Others"
+        "code": "022",
+        "description": "Others"
     },
     {
-        "Code": "023",
-        "Description": "Petroleum operations (as defined in Petroleum (Income Tax) Act 1967)"
+        "code": "023",
+        "description": "Petroleum operations (as defined in Petroleum (Income Tax) Act 1967)"
     },
     {
-        "Code": "024",
-        "Description": "Private retirement scheme or deferred annuity scheme "
+        "code": "024",
+        "description": "Private retirement scheme or deferred annuity scheme "
     },
     {
-        "Code": "025",
-        "Description": "Motor vehicle"
+        "code": "025",
+        "description": "Motor vehicle"
     },
     {
-        "Code": "026",
-        "Description": "Subscription of books / journals / magazines / newspapers / other similar publications"
+        "code": "026",
+        "description": "Subscription of books / journals / magazines / newspapers / other similar publications"
     },
     {
-        "Code": "027",
-        "Description": "Reimbursement "
+        "code": "027",
+        "description": "Reimbursement "
     },
     {
-        "Code": "028",
-        "Description": "Rental of motor vehicle"
+        "code": "028",
+        "description": "Rental of motor vehicle"
     },
     {
-        "Code": "029",
-        "Description": "EV charging facilities (Installation, rental, sale / purchase or subscription fees) "
+        "code": "029",
+        "description": "EV charging facilities (Installation, rental, sale / purchase or subscription fees) "
     },
     {
-        "Code": "030",
-        "Description": "Repair and maintenance"
+        "code": "030",
+        "description": "Repair and maintenance"
     },
     {
-        "Code": "031",
-        "Description": "Research and development "
+        "code": "031",
+        "description": "Research and development "
     },
     {
-        "Code": "032",
-        "Description": "Foreign income "
+        "code": "032",
+        "description": "Foreign income "
     },
     {
-        "Code": "033",
-        "Description": "Self-billed - Betting and gaming "
+        "code": "033",
+        "description": "Self-billed - Betting and gaming "
     },
     {
-        "Code": "034",
-        "Description": "Self-billed - Importation of goods "
+        "code": "034",
+        "description": "Self-billed - Importation of goods "
     },
     {
-        "Code": "035",
-        "Description": "Self-billed - Importation of services"
+        "code": "035",
+        "description": "Self-billed - Importation of services"
     },
     {
-        "Code": "036",
-        "Description": "Self-billed - Others"
+        "code": "036",
+        "description": "Self-billed - Others"
     },
     {
-        "Code": "037",
-        "Description": "Self-billed - Monetary payment to agents, dealers or distributors "
+        "code": "037",
+        "description": "Self-billed - Monetary payment to agents, dealers or distributors "
     },
     {
-        "Code": "038",
-        "Description": "Sports equipment, rental / entry fees for sports facilities, registration in sports competition or sports training fees imposed by associations / sports clubs / companies registered with the Sports Commissioner or Companies Commission of Malaysia and carrying out sports activities as listed under the Sports Development Act 1997"
+        "code": "038",
+        "description": "Sports equipment, rental / entry fees for sports facilities, registration in sports competition or sports training fees imposed by associations / sports clubs / companies registered with the Sports Commissioner or Companies Commission of Malaysia and carrying out sports activities as listed under the Sports Development Act 1997"
     },
     {
-        "Code": "039",
-        "Description": "Supporting equipment for disabled person"
+        "code": "039",
+        "description": "Supporting equipment for disabled person"
     },
     {
-        "Code": "040",
-        "Description": "Voluntary contribution to approved provident fund "
+        "code": "040",
+        "description": "Voluntary contribution to approved provident fund "
     },
     {
-        "Code": "041",
-        "Description": "Dental examination or treatment"
+        "code": "041",
+        "description": "Dental examination or treatment"
     },
     {
-        "Code": "042",
-        "Description": "Fertility treatment"
+        "code": "042",
+        "description": "Fertility treatment"
     },
     {
-        "Code": "043",
-        "Description": "Treatment and home care nursing, daycare centres and residential care centers"
+        "code": "043",
+        "description": "Treatment and home care nursing, daycare centres and residential care centers"
     },
     {
-        "Code": "044",
-        "Description": "Vouchers, gift cards, loyalty points, etc"
+        "code": "044",
+        "description": "Vouchers, gift cards, loyalty points, etc"
     },
     {
-        "Code": "045",
-        "Description": "Self-billed - Non-monetary payment to agents, dealers or distributors"
+        "code": "045",
+        "description": "Self-billed - Non-monetary payment to agents, dealers or distributors"
     }
 ];
 

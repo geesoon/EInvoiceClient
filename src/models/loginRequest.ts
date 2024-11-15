@@ -15,7 +15,7 @@ class LoginRequest {
 
     public onBehalfOf: string | null;
 
-    constructor(clientId: string, clientSecret: string, onBehalfOf: string | null) {
+    constructor(clientId: string, clientSecret: string, onBehalfOf: string | null = null) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.onBehalfOf = onBehalfOf;

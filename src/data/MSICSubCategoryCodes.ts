@@ -1,5833 +1,5835 @@
-const MISCSubCategoryCodes: any[] = [
+import MSICSubCategoryCode from "@/models/codeTables/msicSubCategoryCode";
+
+const MISCSubCategoryCodes: MSICSubCategoryCode[] = [
   {
-    "Code": "00000",
-    "Description": "NOT APPLICABLE",
-    "MSICCategoryReference": ""
+    "code": "00000",
+    "description": "NOT APPLICABLE",
+    "categoryReference": ""
   },
   {
-    "Code": "01111",
-    "Description": "Growing of maize",
-    "MSICCategoryReference": "A"
+    "code": "01111",
+    "description": "Growing of maize",
+    "categoryReference": "A"
   },
   {
-    "Code": "01112",
-    "Description": "Growing of leguminous crops",
-    "MSICCategoryReference": "A"
+    "code": "01112",
+    "description": "Growing of leguminous crops",
+    "categoryReference": "A"
   },
   {
-    "Code": "01113",
-    "Description": "Growing of oil seeds",
-    "MSICCategoryReference": "A"
+    "code": "01113",
+    "description": "Growing of oil seeds",
+    "categoryReference": "A"
   },
   {
-    "Code": "01119",
-    "Description": "Growing of other cereals n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01119",
+    "description": "Growing of other cereals n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01120",
-    "Description": "Growing of paddy",
-    "MSICCategoryReference": "A"
+    "code": "01120",
+    "description": "Growing of paddy",
+    "categoryReference": "A"
   },
   {
-    "Code": "01131",
-    "Description": "Growing of leafy or stem vegetables",
-    "MSICCategoryReference": "A"
+    "code": "01131",
+    "description": "Growing of leafy or stem vegetables",
+    "categoryReference": "A"
   },
   {
-    "Code": "01132",
-    "Description": "Growing of fruits bearing vegetables",
-    "MSICCategoryReference": "A"
+    "code": "01132",
+    "description": "Growing of fruits bearing vegetables",
+    "categoryReference": "A"
   },
   {
-    "Code": "01133",
-    "Description": "Growing of melons",
-    "MSICCategoryReference": "A"
+    "code": "01133",
+    "description": "Growing of melons",
+    "categoryReference": "A"
   },
   {
-    "Code": "01134",
-    "Description": "Growing of mushrooms and truffles",
-    "MSICCategoryReference": "A"
+    "code": "01134",
+    "description": "Growing of mushrooms and truffles",
+    "categoryReference": "A"
   },
   {
-    "Code": "01135",
-    "Description": "Growing of vegetables seeds, except beet seeds",
-    "MSICCategoryReference": "A"
+    "code": "01135",
+    "description": "Growing of vegetables seeds, except beet seeds",
+    "categoryReference": "A"
   },
   {
-    "Code": "01136",
-    "Description": "Growing of other vegetables",
-    "MSICCategoryReference": "A"
+    "code": "01136",
+    "description": "Growing of other vegetables",
+    "categoryReference": "A"
   },
   {
-    "Code": "01137",
-    "Description": "Growing of sugar beet",
-    "MSICCategoryReference": "A"
+    "code": "01137",
+    "description": "Growing of sugar beet",
+    "categoryReference": "A"
   },
   {
-    "Code": "01138",
-    "Description": "Growing of roots, tubers, bulb or tuberous vegetables",
-    "MSICCategoryReference": "A"
+    "code": "01138",
+    "description": "Growing of roots, tubers, bulb or tuberous vegetables",
+    "categoryReference": "A"
   },
   {
-    "Code": "01140",
-    "Description": "Growing of sugar cane",
-    "MSICCategoryReference": "A"
+    "code": "01140",
+    "description": "Growing of sugar cane",
+    "categoryReference": "A"
   },
   {
-    "Code": "01150",
-    "Description": "Growing of tobacco",
-    "MSICCategoryReference": "A"
+    "code": "01150",
+    "description": "Growing of tobacco",
+    "categoryReference": "A"
   },
   {
-    "Code": "01160",
-    "Description": "Growing of fibre crops",
-    "MSICCategoryReference": "A"
+    "code": "01160",
+    "description": "Growing of fibre crops",
+    "categoryReference": "A"
   },
   {
-    "Code": "01191",
-    "Description": "Growing of flowers",
-    "MSICCategoryReference": "A"
+    "code": "01191",
+    "description": "Growing of flowers",
+    "categoryReference": "A"
   },
   {
-    "Code": "01192",
-    "Description": "Growing of flower seeds",
-    "MSICCategoryReference": "A"
+    "code": "01192",
+    "description": "Growing of flower seeds",
+    "categoryReference": "A"
   },
   {
-    "Code": "01193",
-    "Description": "Growing of sago (rumbia)",
-    "MSICCategoryReference": "A"
+    "code": "01193",
+    "description": "Growing of sago (rumbia)",
+    "categoryReference": "A"
   },
   {
-    "Code": "01199",
-    "Description": "Growing of other non-perennial crops n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01199",
+    "description": "Growing of other non-perennial crops n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01210",
-    "Description": "Growing of grapes",
-    "MSICCategoryReference": "A"
+    "code": "01210",
+    "description": "Growing of grapes",
+    "categoryReference": "A"
   },
   {
-    "Code": "01221",
-    "Description": "Growing of banana",
-    "MSICCategoryReference": "A"
+    "code": "01221",
+    "description": "Growing of banana",
+    "categoryReference": "A"
   },
   {
-    "Code": "01222",
-    "Description": "Growing of mango",
-    "MSICCategoryReference": "A"
+    "code": "01222",
+    "description": "Growing of mango",
+    "categoryReference": "A"
   },
   {
-    "Code": "01223",
-    "Description": "Growing of durian",
-    "MSICCategoryReference": "A"
+    "code": "01223",
+    "description": "Growing of durian",
+    "categoryReference": "A"
   },
   {
-    "Code": "01224",
-    "Description": "Growing of rambutan",
-    "MSICCategoryReference": "A"
+    "code": "01224",
+    "description": "Growing of rambutan",
+    "categoryReference": "A"
   },
   {
-    "Code": "01225",
-    "Description": "Growing of star fruit",
-    "MSICCategoryReference": "A"
+    "code": "01225",
+    "description": "Growing of star fruit",
+    "categoryReference": "A"
   },
   {
-    "Code": "01226",
-    "Description": "Growing of papaya",
-    "MSICCategoryReference": "A"
+    "code": "01226",
+    "description": "Growing of papaya",
+    "categoryReference": "A"
   },
   {
-    "Code": "01227",
-    "Description": "Growing of pineapple",
-    "MSICCategoryReference": "A"
+    "code": "01227",
+    "description": "Growing of pineapple",
+    "categoryReference": "A"
   },
   {
-    "Code": "01228",
-    "Description": "Growing of pitaya (dragon fruit)",
-    "MSICCategoryReference": "A"
+    "code": "01228",
+    "description": "Growing of pitaya (dragon fruit)",
+    "categoryReference": "A"
   },
   {
-    "Code": "01229",
-    "Description": "Growing of other tropical and subtropical fruits n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01229",
+    "description": "Growing of other tropical and subtropical fruits n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01231",
-    "Description": "Growing of pomelo",
-    "MSICCategoryReference": "A"
+    "code": "01231",
+    "description": "Growing of pomelo",
+    "categoryReference": "A"
   },
   {
-    "Code": "01232",
-    "Description": "Growing of lemon and limes",
-    "MSICCategoryReference": "A"
+    "code": "01232",
+    "description": "Growing of lemon and limes",
+    "categoryReference": "A"
   },
   {
-    "Code": "01233",
-    "Description": "Growing of tangerines and mandarin",
-    "MSICCategoryReference": "A"
+    "code": "01233",
+    "description": "Growing of tangerines and mandarin",
+    "categoryReference": "A"
   },
   {
-    "Code": "01239",
-    "Description": "Growing of other citrus fruits n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01239",
+    "description": "Growing of other citrus fruits n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01241",
-    "Description": "Growing of guava",
-    "MSICCategoryReference": "A"
+    "code": "01241",
+    "description": "Growing of guava",
+    "categoryReference": "A"
   },
   {
-    "Code": "01249",
-    "Description": "Growing of other pome fruits and stones fruits n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01249",
+    "description": "Growing of other pome fruits and stones fruits n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01251",
-    "Description": "Growing of berries",
-    "MSICCategoryReference": "A"
+    "code": "01251",
+    "description": "Growing of berries",
+    "categoryReference": "A"
   },
   {
-    "Code": "01252",
-    "Description": "Growing of fruit seeds",
-    "MSICCategoryReference": "A"
+    "code": "01252",
+    "description": "Growing of fruit seeds",
+    "categoryReference": "A"
   },
   {
-    "Code": "01253",
-    "Description": "Growing of edible nuts",
-    "MSICCategoryReference": "A"
+    "code": "01253",
+    "description": "Growing of edible nuts",
+    "categoryReference": "A"
   },
   {
-    "Code": "01259",
-    "Description": "Growing of other tree and bush fruits",
-    "MSICCategoryReference": "A"
+    "code": "01259",
+    "description": "Growing of other tree and bush fruits",
+    "categoryReference": "A"
   },
   {
-    "Code": "01261",
-    "Description": "Growing of oil palm (estate)",
-    "MSICCategoryReference": "A"
+    "code": "01261",
+    "description": "Growing of oil palm (estate)",
+    "categoryReference": "A"
   },
   {
-    "Code": "01262",
-    "Description": "Growing of oil palm (smallholdings)",
-    "MSICCategoryReference": "A"
+    "code": "01262",
+    "description": "Growing of oil palm (smallholdings)",
+    "categoryReference": "A"
   },
   {
-    "Code": "01263",
-    "Description": "Growing of coconut (estate and smallholdings)",
-    "MSICCategoryReference": "A"
+    "code": "01263",
+    "description": "Growing of coconut (estate and smallholdings)",
+    "categoryReference": "A"
   },
   {
-    "Code": "01269",
-    "Description": "Growing of other oleaginous fruits n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01269",
+    "description": "Growing of other oleaginous fruits n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01271",
-    "Description": "Growing of coffee",
-    "MSICCategoryReference": "A"
+    "code": "01271",
+    "description": "Growing of coffee",
+    "categoryReference": "A"
   },
   {
-    "Code": "01272",
-    "Description": "Growing of tea",
-    "MSICCategoryReference": "A"
+    "code": "01272",
+    "description": "Growing of tea",
+    "categoryReference": "A"
   },
   {
-    "Code": "01273",
-    "Description": "Growing of cocoa",
-    "MSICCategoryReference": "A"
+    "code": "01273",
+    "description": "Growing of cocoa",
+    "categoryReference": "A"
   },
   {
-    "Code": "01279",
-    "Description": "Growing of other beverage crops n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01279",
+    "description": "Growing of other beverage crops n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01281",
-    "Description": "Growing of pepper (piper nigrum)",
-    "MSICCategoryReference": "A"
+    "code": "01281",
+    "description": "Growing of pepper (piper nigrum)",
+    "categoryReference": "A"
   },
   {
-    "Code": "01282",
-    "Description": "Growing of chilies and pepper (capsicum spp.)",
-    "MSICCategoryReference": "A"
+    "code": "01282",
+    "description": "Growing of chilies and pepper (capsicum spp.)",
+    "categoryReference": "A"
   },
   {
-    "Code": "01283",
-    "Description": "Growing of nutmeg",
-    "MSICCategoryReference": "A"
+    "code": "01283",
+    "description": "Growing of nutmeg",
+    "categoryReference": "A"
   },
   {
-    "Code": "01284",
-    "Description": "Growing of ginger",
-    "MSICCategoryReference": "A"
+    "code": "01284",
+    "description": "Growing of ginger",
+    "categoryReference": "A"
   },
   {
-    "Code": "01285",
-    "Description": "Growing of plants used primarily in perfumery, in pharmacy or for insecticidal, fungicidal or similar purposes",
-    "MSICCategoryReference": "A"
+    "code": "01285",
+    "description": "Growing of plants used primarily in perfumery, in pharmacy or for insecticidal, fungicidal or similar purposes",
+    "categoryReference": "A"
   },
   {
-    "Code": "01289",
-    "Description": "Growing of other spices and aromatic crops n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01289",
+    "description": "Growing of other spices and aromatic crops n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01291",
-    "Description": "Growing  of rubber trees (estate)",
-    "MSICCategoryReference": "A"
+    "code": "01291",
+    "description": "Growing  of rubber trees (estate)",
+    "categoryReference": "A"
   },
   {
-    "Code": "01292",
-    "Description": "Growing of rubber trees (smallholdings)",
-    "MSICCategoryReference": "A"
+    "code": "01292",
+    "description": "Growing of rubber trees (smallholdings)",
+    "categoryReference": "A"
   },
   {
-    "Code": "01293",
-    "Description": "Growing of trees for extraction of sap",
-    "MSICCategoryReference": "A"
+    "code": "01293",
+    "description": "Growing of trees for extraction of sap",
+    "categoryReference": "A"
   },
   {
-    "Code": "01294",
-    "Description": "Growing of nipa palm",
-    "MSICCategoryReference": "A"
+    "code": "01294",
+    "description": "Growing of nipa palm",
+    "categoryReference": "A"
   },
   {
-    "Code": "01295",
-    "Description": "Growing of areca",
-    "MSICCategoryReference": "A"
+    "code": "01295",
+    "description": "Growing of areca",
+    "categoryReference": "A"
   },
   {
-    "Code": "01296",
-    "Description": "Growing of roselle",
-    "MSICCategoryReference": "A"
+    "code": "01296",
+    "description": "Growing of roselle",
+    "categoryReference": "A"
   },
   {
-    "Code": "01299",
-    "Description": "Growing of other perennial crops n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01299",
+    "description": "Growing of other perennial crops n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01301",
-    "Description": "Growing of plants for planting",
-    "MSICCategoryReference": "A"
+    "code": "01301",
+    "description": "Growing of plants for planting",
+    "categoryReference": "A"
   },
   {
-    "Code": "01302",
-    "Description": "Growing of plants for ornamental purposes",
-    "MSICCategoryReference": "A"
+    "code": "01302",
+    "description": "Growing of plants for ornamental purposes",
+    "categoryReference": "A"
   },
   {
-    "Code": "01303",
-    "Description": "Growing of live plants for bulbs, tubers and roots; cuttings and slips; mushroom spawn",
-    "MSICCategoryReference": "A"
+    "code": "01303",
+    "description": "Growing of live plants for bulbs, tubers and roots; cuttings and slips; mushroom spawn",
+    "categoryReference": "A"
   },
   {
-    "Code": "01304",
-    "Description": "Operation of tree nurseries",
-    "MSICCategoryReference": "A"
+    "code": "01304",
+    "description": "Operation of tree nurseries",
+    "categoryReference": "A"
   },
   {
-    "Code": "01411",
-    "Description": "Raising, breeding and production of cattle or buffaloes",
-    "MSICCategoryReference": "A"
+    "code": "01411",
+    "description": "Raising, breeding and production of cattle or buffaloes",
+    "categoryReference": "A"
   },
   {
-    "Code": "01412",
-    "Description": "Production of raw milk from cows or buffaloes",
-    "MSICCategoryReference": "A"
+    "code": "01412",
+    "description": "Production of raw milk from cows or buffaloes",
+    "categoryReference": "A"
   },
   {
-    "Code": "01413",
-    "Description": "Production of bovine semen",
-    "MSICCategoryReference": "A"
+    "code": "01413",
+    "description": "Production of bovine semen",
+    "categoryReference": "A"
   },
   {
-    "Code": "01420",
-    "Description": "Raising and breeding of horses, asses, mules or hinnes",
-    "MSICCategoryReference": "A"
+    "code": "01420",
+    "description": "Raising and breeding of horses, asses, mules or hinnes",
+    "categoryReference": "A"
   },
   {
-    "Code": "01430",
-    "Description": "Raising and breeding of camels (dromedary) and camelids",
-    "MSICCategoryReference": "A"
+    "code": "01430",
+    "description": "Raising and breeding of camels (dromedary) and camelids",
+    "categoryReference": "A"
   },
   {
-    "Code": "01441",
-    "Description": "Raising, breeding and production of sheep and goats",
-    "MSICCategoryReference": "A"
+    "code": "01441",
+    "description": "Raising, breeding and production of sheep and goats",
+    "categoryReference": "A"
   },
   {
-    "Code": "01442",
-    "Description": "Production of raw sheep or goat’s milk",
-    "MSICCategoryReference": "A"
+    "code": "01442",
+    "description": "Production of raw sheep or goat’s milk",
+    "categoryReference": "A"
   },
   {
-    "Code": "01443",
-    "Description": "Production of raw wool",
-    "MSICCategoryReference": "A"
+    "code": "01443",
+    "description": "Production of raw wool",
+    "categoryReference": "A"
   },
   {
-    "Code": "01450",
-    "Description": "Raising, breeding and production of swine/pigs",
-    "MSICCategoryReference": "A"
+    "code": "01450",
+    "description": "Raising, breeding and production of swine/pigs",
+    "categoryReference": "A"
   },
   {
-    "Code": "01461",
-    "Description": "Raising, breeding and production of chicken, broiler",
-    "MSICCategoryReference": "A"
+    "code": "01461",
+    "description": "Raising, breeding and production of chicken, broiler",
+    "categoryReference": "A"
   },
   {
-    "Code": "01462",
-    "Description": "Raising, breeding and production of ducks",
-    "MSICCategoryReference": "A"
+    "code": "01462",
+    "description": "Raising, breeding and production of ducks",
+    "categoryReference": "A"
   },
   {
-    "Code": "01463",
-    "Description": "Raising, breeding and production of geese",
-    "MSICCategoryReference": "A"
+    "code": "01463",
+    "description": "Raising, breeding and production of geese",
+    "categoryReference": "A"
   },
   {
-    "Code": "01464",
-    "Description": "Raising, breeding and production of quails",
-    "MSICCategoryReference": "A"
+    "code": "01464",
+    "description": "Raising, breeding and production of quails",
+    "categoryReference": "A"
   },
   {
-    "Code": "01465",
-    "Description": "Raising and breeding of other poultry n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01465",
+    "description": "Raising and breeding of other poultry n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01466",
-    "Description": "Production of chicken eggs",
-    "MSICCategoryReference": "A"
+    "code": "01466",
+    "description": "Production of chicken eggs",
+    "categoryReference": "A"
   },
   {
-    "Code": "01467",
-    "Description": "Production of duck eggs",
-    "MSICCategoryReference": "A"
+    "code": "01467",
+    "description": "Production of duck eggs",
+    "categoryReference": "A"
   },
   {
-    "Code": "01468",
-    "Description": "Production of other poultry eggs n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01468",
+    "description": "Production of other poultry eggs n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01469",
-    "Description": "Operation of poultry hatcheries",
-    "MSICCategoryReference": "A"
+    "code": "01469",
+    "description": "Operation of poultry hatcheries",
+    "categoryReference": "A"
   },
   {
-    "Code": "01491",
-    "Description": "Raising, breeding and production of semi-domesticated",
-    "MSICCategoryReference": "A"
+    "code": "01491",
+    "description": "Raising, breeding and production of semi-domesticated",
+    "categoryReference": "A"
   },
   {
-    "Code": "01492",
-    "Description": "Production of fur skins, reptile or bird’s skin from ranching operation",
-    "MSICCategoryReference": "A"
+    "code": "01492",
+    "description": "Production of fur skins, reptile or bird’s skin from ranching operation",
+    "categoryReference": "A"
   },
   {
-    "Code": "01493",
-    "Description": "Operation of worm farms, land mollusc farms, snail farms",
-    "MSICCategoryReference": "A"
+    "code": "01493",
+    "description": "Operation of worm farms, land mollusc farms, snail farms",
+    "categoryReference": "A"
   },
   {
-    "Code": "01494",
-    "Description": "Raising of silk worms and production of silk worm cocoons",
-    "MSICCategoryReference": "A"
+    "code": "01494",
+    "description": "Raising of silk worms and production of silk worm cocoons",
+    "categoryReference": "A"
   },
   {
-    "Code": "01495",
-    "Description": "Bee keeping and production of honey and beeswax",
-    "MSICCategoryReference": "A"
+    "code": "01495",
+    "description": "Bee keeping and production of honey and beeswax",
+    "categoryReference": "A"
   },
   {
-    "Code": "01496",
-    "Description": "Raising and breeding of pet animals",
-    "MSICCategoryReference": "A"
+    "code": "01496",
+    "description": "Raising and breeding of pet animals",
+    "categoryReference": "A"
   },
   {
-    "Code": "01497",
-    "Description": "Raising and breeding of swiflet",
-    "MSICCategoryReference": "A"
+    "code": "01497",
+    "description": "Raising and breeding of swiflet",
+    "categoryReference": "A"
   },
   {
-    "Code": "01499",
-    "Description": "Raising of diverse/other animals n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "01499",
+    "description": "Raising of diverse/other animals n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "01500",
-    "Description": "Mixed Farming",
-    "MSICCategoryReference": "A"
+    "code": "01500",
+    "description": "Mixed Farming",
+    "categoryReference": "A"
   },
   {
-    "Code": "01610",
-    "Description": "Agricultural activities for crops production on a fee or contract basis",
-    "MSICCategoryReference": "A"
+    "code": "01610",
+    "description": "Agricultural activities for crops production on a fee or contract basis",
+    "categoryReference": "A"
   },
   {
-    "Code": "01620",
-    "Description": "Agricultural activities for animal production on a fee or contract basis",
-    "MSICCategoryReference": "A"
+    "code": "01620",
+    "description": "Agricultural activities for animal production on a fee or contract basis",
+    "categoryReference": "A"
   },
   {
-    "Code": "01631",
-    "Description": "Preparation of crops for primary markets",
-    "MSICCategoryReference": "A"
+    "code": "01631",
+    "description": "Preparation of crops for primary markets",
+    "categoryReference": "A"
   },
   {
-    "Code": "01632",
-    "Description": "Preparation of tobacco leaves",
-    "MSICCategoryReference": "A"
+    "code": "01632",
+    "description": "Preparation of tobacco leaves",
+    "categoryReference": "A"
   },
   {
-    "Code": "01633",
-    "Description": "Preparation of cocoa beans",
-    "MSICCategoryReference": "A"
+    "code": "01633",
+    "description": "Preparation of cocoa beans",
+    "categoryReference": "A"
   },
   {
-    "Code": "01634",
-    "Description": "Sun-drying of fruits and vegetables",
-    "MSICCategoryReference": "A"
+    "code": "01634",
+    "description": "Sun-drying of fruits and vegetables",
+    "categoryReference": "A"
   },
   {
-    "Code": "01640",
-    "Description": "Seed processing for propagation",
-    "MSICCategoryReference": "A"
+    "code": "01640",
+    "description": "Seed processing for propagation",
+    "categoryReference": "A"
   },
   {
-    "Code": "01701",
-    "Description": "Hunting and trapping on a commercial basis",
-    "MSICCategoryReference": "A"
+    "code": "01701",
+    "description": "Hunting and trapping on a commercial basis",
+    "categoryReference": "A"
   },
   {
-    "Code": "01702",
-    "Description": "Taking of animals (dead or alive)",
-    "MSICCategoryReference": "A"
+    "code": "01702",
+    "description": "Taking of animals (dead or alive)",
+    "categoryReference": "A"
   },
   {
-    "Code": "02101",
-    "Description": "Planting, replanting, transplanting, thinning and conserving of forests and timber tracts",
-    "MSICCategoryReference": "A"
+    "code": "02101",
+    "description": "Planting, replanting, transplanting, thinning and conserving of forests and timber tracts",
+    "categoryReference": "A"
   },
   {
-    "Code": "02102",
-    "Description": "Growing of coppice, pulpwood and fire wood",
-    "MSICCategoryReference": "A"
+    "code": "02102",
+    "description": "Growing of coppice, pulpwood and fire wood",
+    "categoryReference": "A"
   },
   {
-    "Code": "02103",
-    "Description": "Operation of forest tree nurseries",
-    "MSICCategoryReference": "A"
+    "code": "02103",
+    "description": "Operation of forest tree nurseries",
+    "categoryReference": "A"
   },
   {
-    "Code": "02104",
-    "Description": "Collection and raising of wildings (peat swamp forest tree species)",
-    "MSICCategoryReference": "A"
+    "code": "02104",
+    "description": "Collection and raising of wildings (peat swamp forest tree species)",
+    "categoryReference": "A"
   },
   {
-    "Code": "02105",
-    "Description": "Forest plantation",
-    "MSICCategoryReference": "A"
+    "code": "02105",
+    "description": "Forest plantation",
+    "categoryReference": "A"
   },
   {
-    "Code": "02201",
-    "Description": "Production of round wood for forest-based manufacturing industries",
-    "MSICCategoryReference": "A"
+    "code": "02201",
+    "description": "Production of round wood for forest-based manufacturing industries",
+    "categoryReference": "A"
   },
   {
-    "Code": "02202",
-    "Description": "Production of round wood used in an unprocessed form",
-    "MSICCategoryReference": "A"
+    "code": "02202",
+    "description": "Production of round wood used in an unprocessed form",
+    "categoryReference": "A"
   },
   {
-    "Code": "02203",
-    "Description": "Production of charcoal in the forest (using traditional methods)",
-    "MSICCategoryReference": "A"
+    "code": "02203",
+    "description": "Production of charcoal in the forest (using traditional methods)",
+    "categoryReference": "A"
   },
   {
-    "Code": "02204",
-    "Description": "Rubber wood logging",
-    "MSICCategoryReference": "A"
+    "code": "02204",
+    "description": "Rubber wood logging",
+    "categoryReference": "A"
   },
   {
-    "Code": "02301",
-    "Description": "Collection of rattan, bamboo",
-    "MSICCategoryReference": "A"
+    "code": "02301",
+    "description": "Collection of rattan, bamboo",
+    "categoryReference": "A"
   },
   {
-    "Code": "02302",
-    "Description": "Bird’s nest collection",
-    "MSICCategoryReference": "A"
+    "code": "02302",
+    "description": "Bird’s nest collection",
+    "categoryReference": "A"
   },
   {
-    "Code": "02303",
-    "Description": "Wild sago palm collection",
-    "MSICCategoryReference": "A"
+    "code": "02303",
+    "description": "Wild sago palm collection",
+    "categoryReference": "A"
   },
   {
-    "Code": "02309",
-    "Description": "Gathering of non-wood forest products n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "02309",
+    "description": "Gathering of non-wood forest products n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "02401",
-    "Description": "Carrying out part of the forestry and forest plantation operation on a fee or contract basis for forestry service activities",
-    "MSICCategoryReference": "A"
+    "code": "02401",
+    "description": "Carrying out part of the forestry and forest plantation operation on a fee or contract basis for forestry service activities",
+    "categoryReference": "A"
   },
   {
-    "Code": "02402",
-    "Description": "Carrying out part of the forestry operation on a fee or contract basis for logging service activities",
-    "MSICCategoryReference": "A"
+    "code": "02402",
+    "description": "Carrying out part of the forestry operation on a fee or contract basis for logging service activities",
+    "categoryReference": "A"
   },
   {
-    "Code": "03111",
-    "Description": "Fishing on a commercial basis in ocean and coastal waters",
-    "MSICCategoryReference": "A"
+    "code": "03111",
+    "description": "Fishing on a commercial basis in ocean and coastal waters",
+    "categoryReference": "A"
   },
   {
-    "Code": "03112",
-    "Description": "Collection of marine crustaceans and molluscs",
-    "MSICCategoryReference": "A"
+    "code": "03112",
+    "description": "Collection of marine crustaceans and molluscs",
+    "categoryReference": "A"
   },
   {
-    "Code": "03113",
-    "Description": "Taking of aquatic animals: sea squirts, tunicates, sea urchins",
-    "MSICCategoryReference": "A"
+    "code": "03113",
+    "description": "Taking of aquatic animals: sea squirts, tunicates, sea urchins",
+    "categoryReference": "A"
   },
   {
-    "Code": "03114",
-    "Description": "Activities of vessels engaged both in fishing and in processing and preserving of fish",
-    "MSICCategoryReference": "A"
+    "code": "03114",
+    "description": "Activities of vessels engaged both in fishing and in processing and preserving of fish",
+    "categoryReference": "A"
   },
   {
-    "Code": "03115",
-    "Description": "Gathering of other marine organisms and materials (natural pearls, sponges, coral and algae)",
-    "MSICCategoryReference": "A"
+    "code": "03115",
+    "description": "Gathering of other marine organisms and materials (natural pearls, sponges, coral and algae)",
+    "categoryReference": "A"
   },
   {
-    "Code": "03119",
-    "Description": "Marine fishing n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "03119",
+    "description": "Marine fishing n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "03121",
-    "Description": "Fishing on a commercial basis in inland waters",
-    "MSICCategoryReference": "A"
+    "code": "03121",
+    "description": "Fishing on a commercial basis in inland waters",
+    "categoryReference": "A"
   },
   {
-    "Code": "03122",
-    "Description": "Taking of freshwater crustaceans and molluscs",
-    "MSICCategoryReference": "A"
+    "code": "03122",
+    "description": "Taking of freshwater crustaceans and molluscs",
+    "categoryReference": "A"
   },
   {
-    "Code": "03123",
-    "Description": "Taking of freshwater aquatic animals",
-    "MSICCategoryReference": "A"
+    "code": "03123",
+    "description": "Taking of freshwater aquatic animals",
+    "categoryReference": "A"
   },
   {
-    "Code": "03124",
-    "Description": "Gathering of freshwater flora and fauna",
-    "MSICCategoryReference": "A"
+    "code": "03124",
+    "description": "Gathering of freshwater flora and fauna",
+    "categoryReference": "A"
   },
   {
-    "Code": "03129",
-    "Description": "Freshwater fishing n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "03129",
+    "description": "Freshwater fishing n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "03211",
-    "Description": "Fish farming in sea water",
-    "MSICCategoryReference": "A"
+    "code": "03211",
+    "description": "Fish farming in sea water",
+    "categoryReference": "A"
   },
   {
-    "Code": "03212",
-    "Description": "Production of bivalve spat (oyster, mussel), lobster lings, shrimp post-larvae, fish fry and fingerlings",
-    "MSICCategoryReference": "A"
+    "code": "03212",
+    "description": "Production of bivalve spat (oyster, mussel), lobster lings, shrimp post-larvae, fish fry and fingerlings",
+    "categoryReference": "A"
   },
   {
-    "Code": "03213",
-    "Description": "Growing of laver and other edible seaweeds",
-    "MSICCategoryReference": "A"
+    "code": "03213",
+    "description": "Growing of laver and other edible seaweeds",
+    "categoryReference": "A"
   },
   {
-    "Code": "03214",
-    "Description": "Culture of crustaceans, bivalves, other molluscs and other aquatic animals in sea water",
-    "MSICCategoryReference": "A"
+    "code": "03214",
+    "description": "Culture of crustaceans, bivalves, other molluscs and other aquatic animals in sea water",
+    "categoryReference": "A"
   },
   {
-    "Code": "03215",
-    "Description": "Aquaculture activities in brackish water",
-    "MSICCategoryReference": "A"
+    "code": "03215",
+    "description": "Aquaculture activities in brackish water",
+    "categoryReference": "A"
   },
   {
-    "Code": "03216",
-    "Description": "Aquaculture activities in salt water filled tanks or reservoirs",
-    "MSICCategoryReference": "A"
+    "code": "03216",
+    "description": "Aquaculture activities in salt water filled tanks or reservoirs",
+    "categoryReference": "A"
   },
   {
-    "Code": "03217",
-    "Description": "Operation of  hatcheries (marine)",
-    "MSICCategoryReference": "A"
+    "code": "03217",
+    "description": "Operation of  hatcheries (marine)",
+    "categoryReference": "A"
   },
   {
-    "Code": "03218",
-    "Description": "Operation of marine worm farms for fish feed",
-    "MSICCategoryReference": "A"
+    "code": "03218",
+    "description": "Operation of marine worm farms for fish feed",
+    "categoryReference": "A"
   },
   {
-    "Code": "03219",
-    "Description": "Marine aquaculture n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "03219",
+    "description": "Marine aquaculture n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "03221",
-    "Description": "Fish farming in freshwater",
-    "MSICCategoryReference": "A"
+    "code": "03221",
+    "description": "Fish farming in freshwater",
+    "categoryReference": "A"
   },
   {
-    "Code": "03222",
-    "Description": "Shrimp farming in freshwater",
-    "MSICCategoryReference": "A"
+    "code": "03222",
+    "description": "Shrimp farming in freshwater",
+    "categoryReference": "A"
   },
   {
-    "Code": "03223",
-    "Description": "Culture of freshwater crustaceans, bivalves, other molluscs and other aquatic animals",
-    "MSICCategoryReference": "A"
+    "code": "03223",
+    "description": "Culture of freshwater crustaceans, bivalves, other molluscs and other aquatic animals",
+    "categoryReference": "A"
   },
   {
-    "Code": "03224",
-    "Description": "Operation of hatcheries (freshwater)",
-    "MSICCategoryReference": "A"
+    "code": "03224",
+    "description": "Operation of hatcheries (freshwater)",
+    "categoryReference": "A"
   },
   {
-    "Code": "03225",
-    "Description": "Farming of frogs",
-    "MSICCategoryReference": "A"
+    "code": "03225",
+    "description": "Farming of frogs",
+    "categoryReference": "A"
   },
   {
-    "Code": "03229",
-    "Description": "Freshwater aquaculture n.e.c.",
-    "MSICCategoryReference": "A"
+    "code": "03229",
+    "description": "Freshwater aquaculture n.e.c.",
+    "categoryReference": "A"
   },
   {
-    "Code": "05100",
-    "Description": "Mining of hard coal",
-    "MSICCategoryReference": "B"
+    "code": "05100",
+    "description": "Mining of hard coal",
+    "categoryReference": "B"
   },
   {
-    "Code": "05200",
-    "Description": "Mining of lignite (brown coal)",
-    "MSICCategoryReference": "B"
+    "code": "05200",
+    "description": "Mining of lignite (brown coal)",
+    "categoryReference": "B"
   },
   {
-    "Code": "06101",
-    "Description": "Extraction of crude petroleum oils",
-    "MSICCategoryReference": "B"
+    "code": "06101",
+    "description": "Extraction of crude petroleum oils",
+    "categoryReference": "B"
   },
   {
-    "Code": "06102",
-    "Description": "Extraction of bituminous or oil shale and tar sand",
-    "MSICCategoryReference": "B"
+    "code": "06102",
+    "description": "Extraction of bituminous or oil shale and tar sand",
+    "categoryReference": "B"
   },
   {
-    "Code": "06103",
-    "Description": "Production of crude petroleum from bituminous shale and sand",
-    "MSICCategoryReference": "B"
+    "code": "06103",
+    "description": "Production of crude petroleum from bituminous shale and sand",
+    "categoryReference": "B"
   },
   {
-    "Code": "06104",
-    "Description": "Processes to obtain crude oils",
-    "MSICCategoryReference": "B"
+    "code": "06104",
+    "description": "Processes to obtain crude oils",
+    "categoryReference": "B"
   },
   {
-    "Code": "06201",
-    "Description": "Production of crude gaseous hydrocarbon (natural gas)",
-    "MSICCategoryReference": "B"
+    "code": "06201",
+    "description": "Production of crude gaseous hydrocarbon (natural gas)",
+    "categoryReference": "B"
   },
   {
-    "Code": "06202",
-    "Description": "Extraction of condensates",
-    "MSICCategoryReference": "B"
+    "code": "06202",
+    "description": "Extraction of condensates",
+    "categoryReference": "B"
   },
   {
-    "Code": "06203",
-    "Description": "Draining and separation of liquid hydrocarbon fractions",
-    "MSICCategoryReference": "B"
+    "code": "06203",
+    "description": "Draining and separation of liquid hydrocarbon fractions",
+    "categoryReference": "B"
   },
   {
-    "Code": "06204",
-    "Description": "Gas desulphurization",
-    "MSICCategoryReference": "B"
+    "code": "06204",
+    "description": "Gas desulphurization",
+    "categoryReference": "B"
   },
   {
-    "Code": "06205",
-    "Description": "Mining of hydrocarbon liquids, obtain through liquefaction or pyrolysis",
-    "MSICCategoryReference": "B"
+    "code": "06205",
+    "description": "Mining of hydrocarbon liquids, obtain through liquefaction or pyrolysis",
+    "categoryReference": "B"
   },
   {
-    "Code": "07101",
-    "Description": "Mining of ores valued chiefly for iron content",
-    "MSICCategoryReference": "B"
+    "code": "07101",
+    "description": "Mining of ores valued chiefly for iron content",
+    "categoryReference": "B"
   },
   {
-    "Code": "07102",
-    "Description": "Beneficiation and agglomeration of iron ores",
-    "MSICCategoryReference": "B"
+    "code": "07102",
+    "description": "Beneficiation and agglomeration of iron ores",
+    "categoryReference": "B"
   },
   {
-    "Code": "07210",
-    "Description": "Mining of uranium and thorium ores",
-    "MSICCategoryReference": "B"
+    "code": "07210",
+    "description": "Mining of uranium and thorium ores",
+    "categoryReference": "B"
   },
   {
-    "Code": "07291",
-    "Description": "Mining of tin ores",
-    "MSICCategoryReference": "B"
+    "code": "07291",
+    "description": "Mining of tin ores",
+    "categoryReference": "B"
   },
   {
-    "Code": "07292",
-    "Description": "Mining of copper",
-    "MSICCategoryReference": "B"
+    "code": "07292",
+    "description": "Mining of copper",
+    "categoryReference": "B"
   },
   {
-    "Code": "07293",
-    "Description": "Mining of bauxite (aluminium)",
-    "MSICCategoryReference": "B"
+    "code": "07293",
+    "description": "Mining of bauxite (aluminium)",
+    "categoryReference": "B"
   },
   {
-    "Code": "07294",
-    "Description": "Mining of ilmenite",
-    "MSICCategoryReference": "B"
+    "code": "07294",
+    "description": "Mining of ilmenite",
+    "categoryReference": "B"
   },
   {
-    "Code": "07295",
-    "Description": "Mining of gold",
-    "MSICCategoryReference": "B"
+    "code": "07295",
+    "description": "Mining of gold",
+    "categoryReference": "B"
   },
   {
-    "Code": "07296",
-    "Description": "Mining of silver",
-    "MSICCategoryReference": "B"
+    "code": "07296",
+    "description": "Mining of silver",
+    "categoryReference": "B"
   },
   {
-    "Code": "07297",
-    "Description": "Mining of platinum",
-    "MSICCategoryReference": "B"
+    "code": "07297",
+    "description": "Mining of platinum",
+    "categoryReference": "B"
   },
   {
-    "Code": "07298",
-    "Description": "Amang retreatment",
-    "MSICCategoryReference": "B"
+    "code": "07298",
+    "description": "Amang retreatment",
+    "categoryReference": "B"
   },
   {
-    "Code": "07299",
-    "Description": "Mining of other non-ferrous metal ores n.e.c.",
-    "MSICCategoryReference": "B"
+    "code": "07299",
+    "description": "Mining of other non-ferrous metal ores n.e.c.",
+    "categoryReference": "B"
   },
   {
-    "Code": "08101",
-    "Description": "Quarrying, rough trimming and sawing of monumental and building stone such as marble, granite (dimension stone), sandstone",
-    "MSICCategoryReference": "B"
+    "code": "08101",
+    "description": "Quarrying, rough trimming and sawing of monumental and building stone such as marble, granite (dimension stone), sandstone",
+    "categoryReference": "B"
   },
   {
-    "Code": "08102",
-    "Description": "Quarrying, crushing and breaking of limestone",
-    "MSICCategoryReference": "B"
+    "code": "08102",
+    "description": "Quarrying, crushing and breaking of limestone",
+    "categoryReference": "B"
   },
   {
-    "Code": "08103",
-    "Description": "Mining of gypsum and anhydrite",
-    "MSICCategoryReference": "B"
+    "code": "08103",
+    "description": "Mining of gypsum and anhydrite",
+    "categoryReference": "B"
   },
   {
-    "Code": "08104",
-    "Description": "Mining of chalk and uncalcined dolomite",
-    "MSICCategoryReference": "B"
+    "code": "08104",
+    "description": "Mining of chalk and uncalcined dolomite",
+    "categoryReference": "B"
   },
   {
-    "Code": "08105",
-    "Description": "Extraction and dredging of industrial sand, sand for construction and gravel",
-    "MSICCategoryReference": "B"
+    "code": "08105",
+    "description": "Extraction and dredging of industrial sand, sand for construction and gravel",
+    "categoryReference": "B"
   },
   {
-    "Code": "08106",
-    "Description": "Breaking and crushing of stone and gravel",
-    "MSICCategoryReference": "B"
+    "code": "08106",
+    "description": "Breaking and crushing of stone and gravel",
+    "categoryReference": "B"
   },
   {
-    "Code": "08107",
-    "Description": "Quarrying of sand",
-    "MSICCategoryReference": "B"
+    "code": "08107",
+    "description": "Quarrying of sand",
+    "categoryReference": "B"
   },
   {
-    "Code": "08108",
-    "Description": "Mining of clays, refractory clays and kaolin",
-    "MSICCategoryReference": "B"
+    "code": "08108",
+    "description": "Mining of clays, refractory clays and kaolin",
+    "categoryReference": "B"
   },
   {
-    "Code": "08109",
-    "Description": "Quarrying, crushing and breaking of granite",
-    "MSICCategoryReference": "B"
+    "code": "08109",
+    "description": "Quarrying, crushing and breaking of granite",
+    "categoryReference": "B"
   },
   {
-    "Code": "08911",
-    "Description": "Mining of natural phosphates",
-    "MSICCategoryReference": "B"
+    "code": "08911",
+    "description": "Mining of natural phosphates",
+    "categoryReference": "B"
   },
   {
-    "Code": "08912",
-    "Description": "Mining of natural potassium salts",
-    "MSICCategoryReference": "B"
+    "code": "08912",
+    "description": "Mining of natural potassium salts",
+    "categoryReference": "B"
   },
   {
-    "Code": "08913",
-    "Description": "Mining of native sulphur",
-    "MSICCategoryReference": "B"
+    "code": "08913",
+    "description": "Mining of native sulphur",
+    "categoryReference": "B"
   },
   {
-    "Code": "08914",
-    "Description": "Extraction and preparation of pyrites and pyrrhotite, except roasting",
-    "MSICCategoryReference": "B"
+    "code": "08914",
+    "description": "Extraction and preparation of pyrites and pyrrhotite, except roasting",
+    "categoryReference": "B"
   },
   {
-    "Code": "08915",
-    "Description": "Mining of natural barium sulphate and carbonate (barytes and witherite)",
-    "MSICCategoryReference": "B"
+    "code": "08915",
+    "description": "Mining of natural barium sulphate and carbonate (barytes and witherite)",
+    "categoryReference": "B"
   },
   {
-    "Code": "08916",
-    "Description": "Mining of natural borates, natural magnesium sulphates (kieserite)",
-    "MSICCategoryReference": "B"
+    "code": "08916",
+    "description": "Mining of natural borates, natural magnesium sulphates (kieserite)",
+    "categoryReference": "B"
   },
   {
-    "Code": "08917",
-    "Description": "Mining of earth colours, fluorspar and other minerals valued chiefly as a source of chemicals",
-    "MSICCategoryReference": "B"
+    "code": "08917",
+    "description": "Mining of earth colours, fluorspar and other minerals valued chiefly as a source of chemicals",
+    "categoryReference": "B"
   },
   {
-    "Code": "08918",
-    "Description": "Guano mining",
-    "MSICCategoryReference": "B"
+    "code": "08918",
+    "description": "Guano mining",
+    "categoryReference": "B"
   },
   {
-    "Code": "08921",
-    "Description": "Peat digging",
-    "MSICCategoryReference": "B"
+    "code": "08921",
+    "description": "Peat digging",
+    "categoryReference": "B"
   },
   {
-    "Code": "08922",
-    "Description": "Peat agglomeration",
-    "MSICCategoryReference": "B"
+    "code": "08922",
+    "description": "Peat agglomeration",
+    "categoryReference": "B"
   },
   {
-    "Code": "08923",
-    "Description": "Preparation of peat to improve quality or facilitate transport or storage",
-    "MSICCategoryReference": "B"
+    "code": "08923",
+    "description": "Preparation of peat to improve quality or facilitate transport or storage",
+    "categoryReference": "B"
   },
   {
-    "Code": "08931",
-    "Description": "Extraction of salt from underground",
-    "MSICCategoryReference": "B"
+    "code": "08931",
+    "description": "Extraction of salt from underground",
+    "categoryReference": "B"
   },
   {
-    "Code": "08932",
-    "Description": "Salt production by evaporation of sea water or other saline waters",
-    "MSICCategoryReference": "B"
+    "code": "08932",
+    "description": "Salt production by evaporation of sea water or other saline waters",
+    "categoryReference": "B"
   },
   {
-    "Code": "08933",
-    "Description": "Crushing, purification and refining of salt by the producer",
-    "MSICCategoryReference": "B"
+    "code": "08933",
+    "description": "Crushing, purification and refining of salt by the producer",
+    "categoryReference": "B"
   },
   {
-    "Code": "08991",
-    "Description": "Mining and quarrying of abrasive materials",
-    "MSICCategoryReference": "B"
+    "code": "08991",
+    "description": "Mining and quarrying of abrasive materials",
+    "categoryReference": "B"
   },
   {
-    "Code": "08992",
-    "Description": "Mining and quarrying of asbestos",
-    "MSICCategoryReference": "B"
+    "code": "08992",
+    "description": "Mining and quarrying of asbestos",
+    "categoryReference": "B"
   },
   {
-    "Code": "08993",
-    "Description": "Mining and quarrying of siliceous fossil meals",
-    "MSICCategoryReference": "B"
+    "code": "08993",
+    "description": "Mining and quarrying of siliceous fossil meals",
+    "categoryReference": "B"
   },
   {
-    "Code": "08994",
-    "Description": "Mining and quarrying of natural graphite",
-    "MSICCategoryReference": "B"
+    "code": "08994",
+    "description": "Mining and quarrying of natural graphite",
+    "categoryReference": "B"
   },
   {
-    "Code": "08995",
-    "Description": "Mining and quarrying of steatite (talc)",
-    "MSICCategoryReference": "B"
+    "code": "08995",
+    "description": "Mining and quarrying of steatite (talc)",
+    "categoryReference": "B"
   },
   {
-    "Code": "08996",
-    "Description": "Mining and quarrying of gemstones",
-    "MSICCategoryReference": "B"
+    "code": "08996",
+    "description": "Mining and quarrying of gemstones",
+    "categoryReference": "B"
   },
   {
-    "Code": "08999",
-    "Description": "Other mining and quarrying n.e.c.",
-    "MSICCategoryReference": "B"
+    "code": "08999",
+    "description": "Other mining and quarrying n.e.c.",
+    "categoryReference": "B"
   },
   {
-    "Code": "09101",
-    "Description": "Oil and gas extraction service activities provided on a fee or contract basis",
-    "MSICCategoryReference": "B"
+    "code": "09101",
+    "description": "Oil and gas extraction service activities provided on a fee or contract basis",
+    "categoryReference": "B"
   },
   {
-    "Code": "09102",
-    "Description": "Oil and gas field fire fighting services",
-    "MSICCategoryReference": "B"
+    "code": "09102",
+    "description": "Oil and gas field fire fighting services",
+    "categoryReference": "B"
   },
   {
-    "Code": "09900",
-    "Description": "Support activities for other mining and quarrying",
-    "MSICCategoryReference": "B"
+    "code": "09900",
+    "description": "Support activities for other mining and quarrying",
+    "categoryReference": "B"
   },
   {
-    "Code": "10101",
-    "Description": "Processing and preserving of meat and production of meat products",
-    "MSICCategoryReference": "C"
+    "code": "10101",
+    "description": "Processing and preserving of meat and production of meat products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10102",
-    "Description": "Processing and preserving of poultry and poultry products",
-    "MSICCategoryReference": "C"
+    "code": "10102",
+    "description": "Processing and preserving of poultry and poultry products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10103",
-    "Description": "Production of hides and skins originating from slaughterhouses",
-    "MSICCategoryReference": "C"
+    "code": "10103",
+    "description": "Production of hides and skins originating from slaughterhouses",
+    "categoryReference": "C"
   },
   {
-    "Code": "10104",
-    "Description": "Operation of slaughterhouses engaged in killing, houses dressing or packing meat",
-    "MSICCategoryReference": "C"
+    "code": "10104",
+    "description": "Operation of slaughterhouses engaged in killing, houses dressing or packing meat",
+    "categoryReference": "C"
   },
   {
-    "Code": "10109",
-    "Description": "Processing and preserving of meat n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "10109",
+    "description": "Processing and preserving of meat n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "10201",
-    "Description": "Canning of fish, crustaceans and mollusks",
-    "MSICCategoryReference": "C"
+    "code": "10201",
+    "description": "Canning of fish, crustaceans and mollusks",
+    "categoryReference": "C"
   },
   {
-    "Code": "10202",
-    "Description": "Processing, curing and preserving of fish, crustacean and molluscs",
-    "MSICCategoryReference": "C"
+    "code": "10202",
+    "description": "Processing, curing and preserving of fish, crustacean and molluscs",
+    "categoryReference": "C"
   },
   {
-    "Code": "10203",
-    "Description": "Production of fish meals for human consumption or animal feed",
-    "MSICCategoryReference": "C"
+    "code": "10203",
+    "description": "Production of fish meals for human consumption or animal feed",
+    "categoryReference": "C"
   },
   {
-    "Code": "10204",
-    "Description": "Production of keropok including keropok lekor",
-    "MSICCategoryReference": "C"
+    "code": "10204",
+    "description": "Production of keropok including keropok lekor",
+    "categoryReference": "C"
   },
   {
-    "Code": "10205",
-    "Description": "Processing of seaweed",
-    "MSICCategoryReference": "C"
+    "code": "10205",
+    "description": "Processing of seaweed",
+    "categoryReference": "C"
   },
   {
-    "Code": "10301",
-    "Description": "Manufacture of fruits and vegetable food products",
-    "MSICCategoryReference": "C"
+    "code": "10301",
+    "description": "Manufacture of fruits and vegetable food products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10302",
-    "Description": "Manufacture of fruit and vegetable juices",
-    "MSICCategoryReference": "C"
+    "code": "10302",
+    "description": "Manufacture of fruit and vegetable juices",
+    "categoryReference": "C"
   },
   {
-    "Code": "10303",
-    "Description": "Pineapple canning",
-    "MSICCategoryReference": "C"
+    "code": "10303",
+    "description": "Pineapple canning",
+    "categoryReference": "C"
   },
   {
-    "Code": "10304",
-    "Description": "Manufacture of jams, marmalades and table jellies",
-    "MSICCategoryReference": "C"
+    "code": "10304",
+    "description": "Manufacture of jams, marmalades and table jellies",
+    "categoryReference": "C"
   },
   {
-    "Code": "10305",
-    "Description": "Manufacture of nuts and nut products",
-    "MSICCategoryReference": "C"
+    "code": "10305",
+    "description": "Manufacture of nuts and nut products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10306",
-    "Description": "Manufacture of bean curd products",
-    "MSICCategoryReference": "C"
+    "code": "10306",
+    "description": "Manufacture of bean curd products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10401",
-    "Description": "Manufacture of crude palm oil",
-    "MSICCategoryReference": "C"
+    "code": "10401",
+    "description": "Manufacture of crude palm oil",
+    "categoryReference": "C"
   },
   {
-    "Code": "10402",
-    "Description": "Manufacture of refined palm oil",
-    "MSICCategoryReference": "C"
+    "code": "10402",
+    "description": "Manufacture of refined palm oil",
+    "categoryReference": "C"
   },
   {
-    "Code": "10403",
-    "Description": "Manufacture of palm kernel oil",
-    "MSICCategoryReference": "C"
+    "code": "10403",
+    "description": "Manufacture of palm kernel oil",
+    "categoryReference": "C"
   },
   {
-    "Code": "10404",
-    "Description": "Manufacture of crude and refined vegetable oil",
-    "MSICCategoryReference": "C"
+    "code": "10404",
+    "description": "Manufacture of crude and refined vegetable oil",
+    "categoryReference": "C"
   },
   {
-    "Code": "10405",
-    "Description": "Manufacture of coconut oil",
-    "MSICCategoryReference": "C"
+    "code": "10405",
+    "description": "Manufacture of coconut oil",
+    "categoryReference": "C"
   },
   {
-    "Code": "10406",
-    "Description": "Manufacture of compound cooking fats",
-    "MSICCategoryReference": "C"
+    "code": "10406",
+    "description": "Manufacture of compound cooking fats",
+    "categoryReference": "C"
   },
   {
-    "Code": "10407",
-    "Description": "Manufacture of animal oils and fats",
-    "MSICCategoryReference": "C"
+    "code": "10407",
+    "description": "Manufacture of animal oils and fats",
+    "categoryReference": "C"
   },
   {
-    "Code": "10501",
-    "Description": "Manufacture of ice cream and other edible ice such as sorbet",
-    "MSICCategoryReference": "C"
+    "code": "10501",
+    "description": "Manufacture of ice cream and other edible ice such as sorbet",
+    "categoryReference": "C"
   },
   {
-    "Code": "10502",
-    "Description": "Manufacture of condensed, powdered and evaporated milk",
-    "MSICCategoryReference": "C"
+    "code": "10502",
+    "description": "Manufacture of condensed, powdered and evaporated milk",
+    "categoryReference": "C"
   },
   {
-    "Code": "10509",
-    "Description": "Manufacture of other dairy products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "10509",
+    "description": "Manufacture of other dairy products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "10611",
-    "Description": "Rice milling",
-    "MSICCategoryReference": "C"
+    "code": "10611",
+    "description": "Rice milling",
+    "categoryReference": "C"
   },
   {
-    "Code": "10612",
-    "Description": "Provision of milling services",
-    "MSICCategoryReference": "C"
+    "code": "10612",
+    "description": "Provision of milling services",
+    "categoryReference": "C"
   },
   {
-    "Code": "10613",
-    "Description": "Flour milling",
-    "MSICCategoryReference": "C"
+    "code": "10613",
+    "description": "Flour milling",
+    "categoryReference": "C"
   },
   {
-    "Code": "10619",
-    "Description": "Manufacture of grain mill products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "10619",
+    "description": "Manufacture of grain mill products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "10621",
-    "Description": "Manufacture of starches and starch products",
-    "MSICCategoryReference": "C"
+    "code": "10621",
+    "description": "Manufacture of starches and starch products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10622",
-    "Description": "Manufacture of glucose, glucose syrup, maltose, inulin",
-    "MSICCategoryReference": "C"
+    "code": "10622",
+    "description": "Manufacture of glucose, glucose syrup, maltose, inulin",
+    "categoryReference": "C"
   },
   {
-    "Code": "10623",
-    "Description": "Manufacture of sago and tapioca flour/products",
-    "MSICCategoryReference": "C"
+    "code": "10623",
+    "description": "Manufacture of sago and tapioca flour/products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10711",
-    "Description": "Manufacture of biscuits and cookies",
-    "MSICCategoryReference": "C"
+    "code": "10711",
+    "description": "Manufacture of biscuits and cookies",
+    "categoryReference": "C"
   },
   {
-    "Code": "10712",
-    "Description": "Manufacture of bread, cakes and other bakery products",
-    "MSICCategoryReference": "C"
+    "code": "10712",
+    "description": "Manufacture of bread, cakes and other bakery products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10713",
-    "Description": "Manufacture of snack products",
-    "MSICCategoryReference": "C"
+    "code": "10713",
+    "description": "Manufacture of snack products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10714",
-    "Description": "Manufacture of frozen bakery products",
-    "MSICCategoryReference": "C"
+    "code": "10714",
+    "description": "Manufacture of frozen bakery products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10721",
-    "Description": "Manufacture of sugar",
-    "MSICCategoryReference": "C"
+    "code": "10721",
+    "description": "Manufacture of sugar",
+    "categoryReference": "C"
   },
   {
-    "Code": "10722",
-    "Description": "Manufacture of sugar products",
-    "MSICCategoryReference": "C"
+    "code": "10722",
+    "description": "Manufacture of sugar products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10731",
-    "Description": "Manufacture of cocoa products",
-    "MSICCategoryReference": "C"
+    "code": "10731",
+    "description": "Manufacture of cocoa products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10732",
-    "Description": "Manufacture of chocolate and chocolate products",
-    "MSICCategoryReference": "C"
+    "code": "10732",
+    "description": "Manufacture of chocolate and chocolate products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10733",
-    "Description": "Manufacture of sugar confectionery",
-    "MSICCategoryReference": "C"
+    "code": "10733",
+    "description": "Manufacture of sugar confectionery",
+    "categoryReference": "C"
   },
   {
-    "Code": "10741",
-    "Description": "Manufacture of meehoon, noodles and other related products",
-    "MSICCategoryReference": "C"
+    "code": "10741",
+    "description": "Manufacture of meehoon, noodles and other related products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10742",
-    "Description": "Manufacture of pastas",
-    "MSICCategoryReference": "C"
+    "code": "10742",
+    "description": "Manufacture of pastas",
+    "categoryReference": "C"
   },
   {
-    "Code": "10750",
-    "Description": "Manufacture of prepared meals and dishes",
-    "MSICCategoryReference": "C"
+    "code": "10750",
+    "description": "Manufacture of prepared meals and dishes",
+    "categoryReference": "C"
   },
   {
-    "Code": "10791",
-    "Description": "Manufacture of coffee",
-    "MSICCategoryReference": "C"
+    "code": "10791",
+    "description": "Manufacture of coffee",
+    "categoryReference": "C"
   },
   {
-    "Code": "10792",
-    "Description": "Manufacture of tea",
-    "MSICCategoryReference": "C"
+    "code": "10792",
+    "description": "Manufacture of tea",
+    "categoryReference": "C"
   },
   {
-    "Code": "10793",
-    "Description": "Manufacture of sauces and condiments",
-    "MSICCategoryReference": "C"
+    "code": "10793",
+    "description": "Manufacture of sauces and condiments",
+    "categoryReference": "C"
   },
   {
-    "Code": "10794",
-    "Description": "Manufacture of spices and curry powder",
-    "MSICCategoryReference": "C"
+    "code": "10794",
+    "description": "Manufacture of spices and curry powder",
+    "categoryReference": "C"
   },
   {
-    "Code": "10795",
-    "Description": "Manufacture of egg products",
-    "MSICCategoryReference": "C"
+    "code": "10795",
+    "description": "Manufacture of egg products",
+    "categoryReference": "C"
   },
   {
-    "Code": "10799",
-    "Description": "Manufacture of other food products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "10799",
+    "description": "Manufacture of other food products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "10800",
-    "Description": "Manufacture of prepared animal feeds",
-    "MSICCategoryReference": "C"
+    "code": "10800",
+    "description": "Manufacture of prepared animal feeds",
+    "categoryReference": "C"
   },
   {
-    "Code": "11010",
-    "Description": "Distilling, rectifying and blending of spirits",
-    "MSICCategoryReference": "C"
+    "code": "11010",
+    "description": "Distilling, rectifying and blending of spirits",
+    "categoryReference": "C"
   },
   {
-    "Code": "11020",
-    "Description": "Manufacture of wines",
-    "MSICCategoryReference": "C"
+    "code": "11020",
+    "description": "Manufacture of wines",
+    "categoryReference": "C"
   },
   {
-    "Code": "11030",
-    "Description": "Manufacture of malt liquors and malt",
-    "MSICCategoryReference": "C"
+    "code": "11030",
+    "description": "Manufacture of malt liquors and malt",
+    "categoryReference": "C"
   },
   {
-    "Code": "11041",
-    "Description": "Manufacture of soft drinks",
-    "MSICCategoryReference": "C"
+    "code": "11041",
+    "description": "Manufacture of soft drinks",
+    "categoryReference": "C"
   },
   {
-    "Code": "11042",
-    "Description": "Production of natural mineral water and other bottled water",
-    "MSICCategoryReference": "C"
+    "code": "11042",
+    "description": "Production of natural mineral water and other bottled water",
+    "categoryReference": "C"
   },
   {
-    "Code": "12000",
-    "Description": "MANUFACTURE OF TOBACCO PRODUCTS",
-    "MSICCategoryReference": "C"
+    "code": "12000",
+    "description": "MANUFACTURE OF TOBACCO PRODUCTS",
+    "categoryReference": "C"
   },
   {
-    "Code": "13110",
-    "Description": "Preparation and spinning of textile fibres",
-    "MSICCategoryReference": "C"
+    "code": "13110",
+    "description": "Preparation and spinning of textile fibres",
+    "categoryReference": "C"
   },
   {
-    "Code": "13120",
-    "Description": "Weaving of textiles",
-    "MSICCategoryReference": "C"
+    "code": "13120",
+    "description": "Weaving of textiles",
+    "categoryReference": "C"
   },
   {
-    "Code": "13131",
-    "Description": "Batik making",
-    "MSICCategoryReference": "C"
+    "code": "13131",
+    "description": "Batik making",
+    "categoryReference": "C"
   },
   {
-    "Code": "13132",
-    "Description": "Dyeing, bleaching, printing and finishing of yarns and fabrics",
-    "MSICCategoryReference": "C"
+    "code": "13132",
+    "description": "Dyeing, bleaching, printing and finishing of yarns and fabrics",
+    "categoryReference": "C"
   },
   {
-    "Code": "13139",
-    "Description": "Other finishing textiles",
-    "MSICCategoryReference": "C"
+    "code": "13139",
+    "description": "Other finishing textiles",
+    "categoryReference": "C"
   },
   {
-    "Code": "13910",
-    "Description": "Manufacture of knitted and crocheted fabrics",
-    "MSICCategoryReference": "C"
+    "code": "13910",
+    "description": "Manufacture of knitted and crocheted fabrics",
+    "categoryReference": "C"
   },
   {
-    "Code": "13921",
-    "Description": "Manufacture of made-up articles of any textile materials, including of knitted or crocheted fabrics",
-    "MSICCategoryReference": "C"
+    "code": "13921",
+    "description": "Manufacture of made-up articles of any textile materials, including of knitted or crocheted fabrics",
+    "categoryReference": "C"
   },
   {
-    "Code": "13922",
-    "Description": "Manufacture of made-up furnishing articles",
-    "MSICCategoryReference": "C"
+    "code": "13922",
+    "description": "Manufacture of made-up furnishing articles",
+    "categoryReference": "C"
   },
   {
-    "Code": "13930",
-    "Description": "Manufacture of carpets and rugs",
-    "MSICCategoryReference": "C"
+    "code": "13930",
+    "description": "Manufacture of carpets and rugs",
+    "categoryReference": "C"
   },
   {
-    "Code": "13940",
-    "Description": "Manufacture of cordage, rope, twine and netting",
-    "MSICCategoryReference": "C"
+    "code": "13940",
+    "description": "Manufacture of cordage, rope, twine and netting",
+    "categoryReference": "C"
   },
   {
-    "Code": "13990",
-    "Description": "Manufacture of other textiles n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "13990",
+    "description": "Manufacture of other textiles n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "14101",
-    "Description": "Manufacture of specific wearing apparel",
-    "MSICCategoryReference": "C"
+    "code": "14101",
+    "description": "Manufacture of specific wearing apparel",
+    "categoryReference": "C"
   },
   {
-    "Code": "14102",
-    "Description": "Manufacture of clothings",
-    "MSICCategoryReference": "C"
+    "code": "14102",
+    "description": "Manufacture of clothings",
+    "categoryReference": "C"
   },
   {
-    "Code": "14103",
-    "Description": "Custom tailoring",
-    "MSICCategoryReference": "C"
+    "code": "14103",
+    "description": "Custom tailoring",
+    "categoryReference": "C"
   },
   {
-    "Code": "14109",
-    "Description": "Manufacture of other clothing accessories",
-    "MSICCategoryReference": "C"
+    "code": "14109",
+    "description": "Manufacture of other clothing accessories",
+    "categoryReference": "C"
   },
   {
-    "Code": "14200",
-    "Description": "Manufacture of articles made of fur skins",
-    "MSICCategoryReference": "C"
+    "code": "14200",
+    "description": "Manufacture of articles made of fur skins",
+    "categoryReference": "C"
   },
   {
-    "Code": "14300",
-    "Description": "Manufacture of knitted and crocheted apparel",
-    "MSICCategoryReference": "C"
+    "code": "14300",
+    "description": "Manufacture of knitted and crocheted apparel",
+    "categoryReference": "C"
   },
   {
-    "Code": "15110",
-    "Description": "Tanning and dressing of leather; dressing and dyeing of fur",
-    "MSICCategoryReference": "C"
+    "code": "15110",
+    "description": "Tanning and dressing of leather; dressing and dyeing of fur",
+    "categoryReference": "C"
   },
   {
-    "Code": "15120",
-    "Description": "Manufacture of luggage, handbags and the like, saddlery and harness",
-    "MSICCategoryReference": "C"
+    "code": "15120",
+    "description": "Manufacture of luggage, handbags and the like, saddlery and harness",
+    "categoryReference": "C"
   },
   {
-    "Code": "15201",
-    "Description": "Manufacture of leather footwear",
-    "MSICCategoryReference": "C"
+    "code": "15201",
+    "description": "Manufacture of leather footwear",
+    "categoryReference": "C"
   },
   {
-    "Code": "15202",
-    "Description": "Manufacture of plastic footwear",
-    "MSICCategoryReference": "C"
+    "code": "15202",
+    "description": "Manufacture of plastic footwear",
+    "categoryReference": "C"
   },
   {
-    "Code": "15203",
-    "Description": "Manufacture of rubber footwear",
-    "MSICCategoryReference": "C"
+    "code": "15203",
+    "description": "Manufacture of rubber footwear",
+    "categoryReference": "C"
   },
   {
-    "Code": "15209",
-    "Description": "Manufacture of other footwear n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "15209",
+    "description": "Manufacture of other footwear n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "16211",
-    "Description": "Manufacture of veneer sheets and plywood",
-    "MSICCategoryReference": "C"
+    "code": "16211",
+    "description": "Manufacture of veneer sheets and plywood",
+    "categoryReference": "C"
   },
   {
-    "Code": "16221",
-    "Description": "Manufacture of builders' carpentry",
-    "MSICCategoryReference": "C"
+    "code": "16221",
+    "description": "Manufacture of builders' carpentry",
+    "categoryReference": "C"
   },
   {
-    "Code": "16222",
-    "Description": "Manufacture of joinery wood products",
-    "MSICCategoryReference": "C"
+    "code": "16222",
+    "description": "Manufacture of joinery wood products",
+    "categoryReference": "C"
   },
   {
-    "Code": "16230",
-    "Description": "Manufacture of wooden containers",
-    "MSICCategoryReference": "C"
+    "code": "16230",
+    "description": "Manufacture of wooden containers",
+    "categoryReference": "C"
   },
   {
-    "Code": "16291",
-    "Description": "Manufacture of wood charcoal",
-    "MSICCategoryReference": "C"
+    "code": "16291",
+    "description": "Manufacture of wood charcoal",
+    "categoryReference": "C"
   },
   {
-    "Code": "16292",
-    "Description": "Manufacture of other products of wood, cane, articles of cork, straw and plaiting materials",
-    "MSICCategoryReference": "C"
+    "code": "16292",
+    "description": "Manufacture of other products of wood, cane, articles of cork, straw and plaiting materials",
+    "categoryReference": "C"
   },
   {
-    "Code": "17010",
-    "Description": "Manufacture of pulp, paper and paperboard",
-    "MSICCategoryReference": "C"
+    "code": "17010",
+    "description": "Manufacture of pulp, paper and paperboard",
+    "categoryReference": "C"
   },
   {
-    "Code": "17020",
-    "Description": "Manufacture of corrugated paper and paperboard and of containers of paper and paperboard",
-    "MSICCategoryReference": "C"
+    "code": "17020",
+    "description": "Manufacture of corrugated paper and paperboard and of containers of paper and paperboard",
+    "categoryReference": "C"
   },
   {
-    "Code": "17091",
-    "Description": "Manufacture of envelopes and letter-card",
-    "MSICCategoryReference": "C"
+    "code": "17091",
+    "description": "Manufacture of envelopes and letter-card",
+    "categoryReference": "C"
   },
   {
-    "Code": "17092",
-    "Description": "Manufacture of household and personal hygiene paper",
-    "MSICCategoryReference": "C"
+    "code": "17092",
+    "description": "Manufacture of household and personal hygiene paper",
+    "categoryReference": "C"
   },
   {
-    "Code": "17093",
-    "Description": "Manufacture of gummed or adhesive paper in strips or rolls and labels and wall paper",
-    "MSICCategoryReference": "C"
+    "code": "17093",
+    "description": "Manufacture of gummed or adhesive paper in strips or rolls and labels and wall paper",
+    "categoryReference": "C"
   },
   {
-    "Code": "17094",
-    "Description": "Manufacture of effigies, funeral paper goods, joss paper",
-    "MSICCategoryReference": "C"
+    "code": "17094",
+    "description": "Manufacture of effigies, funeral paper goods, joss paper",
+    "categoryReference": "C"
   },
   {
-    "Code": "17099",
-    "Description": "Manufacture of other articles of paper and paperboard n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "17099",
+    "description": "Manufacture of other articles of paper and paperboard n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "18110",
-    "Description": "Printing",
-    "MSICCategoryReference": "C"
+    "code": "18110",
+    "description": "Printing",
+    "categoryReference": "C"
   },
   {
-    "Code": "18120",
-    "Description": "Service activities related to printing",
-    "MSICCategoryReference": "C"
+    "code": "18120",
+    "description": "Service activities related to printing",
+    "categoryReference": "C"
   },
   {
-    "Code": "18200",
-    "Description": "Reproduction of recorded media",
-    "MSICCategoryReference": "C"
+    "code": "18200",
+    "description": "Reproduction of recorded media",
+    "categoryReference": "C"
   },
   {
-    "Code": "19100",
-    "Description": "Manufacture of coke oven products",
-    "MSICCategoryReference": "C"
+    "code": "19100",
+    "description": "Manufacture of coke oven products",
+    "categoryReference": "C"
   },
   {
-    "Code": "19201",
-    "Description": "Manufacture of refined petroleum products",
-    "MSICCategoryReference": "C"
+    "code": "19201",
+    "description": "Manufacture of refined petroleum products",
+    "categoryReference": "C"
   },
   {
-    "Code": "19202",
-    "Description": "Manufacture of bio-diesel products",
-    "MSICCategoryReference": "C"
+    "code": "19202",
+    "description": "Manufacture of bio-diesel products",
+    "categoryReference": "C"
   },
   {
-    "Code": "20111",
-    "Description": "Manufacture of liquefied or compressed inorganic industrial or medical gases",
-    "MSICCategoryReference": "C"
+    "code": "20111",
+    "description": "Manufacture of liquefied or compressed inorganic industrial or medical gases",
+    "categoryReference": "C"
   },
   {
-    "Code": "20112",
-    "Description": "Manufacture of basic organic chemicals",
-    "MSICCategoryReference": "C"
+    "code": "20112",
+    "description": "Manufacture of basic organic chemicals",
+    "categoryReference": "C"
   },
   {
-    "Code": "20113",
-    "Description": "Manufacture of inorganic compounds",
-    "MSICCategoryReference": "C"
+    "code": "20113",
+    "description": "Manufacture of inorganic compounds",
+    "categoryReference": "C"
   },
   {
-    "Code": "20119",
-    "Description": "Manufacture of other basic chemicals n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "20119",
+    "description": "Manufacture of other basic chemicals n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "20121",
-    "Description": "Manufacture of fertilizers",
-    "MSICCategoryReference": "C"
+    "code": "20121",
+    "description": "Manufacture of fertilizers",
+    "categoryReference": "C"
   },
   {
-    "Code": "20129",
-    "Description": "Manufacture of associated nitrogen products",
-    "MSICCategoryReference": "C"
+    "code": "20129",
+    "description": "Manufacture of associated nitrogen products",
+    "categoryReference": "C"
   },
   {
-    "Code": "20131",
-    "Description": "Manufacture of plastic in primary forms",
-    "MSICCategoryReference": "C"
+    "code": "20131",
+    "description": "Manufacture of plastic in primary forms",
+    "categoryReference": "C"
   },
   {
-    "Code": "20132",
-    "Description": "Manufacture of synthetic rubber in primary forms: synthetic rubber, factice",
-    "MSICCategoryReference": "C"
+    "code": "20132",
+    "description": "Manufacture of synthetic rubber in primary forms: synthetic rubber, factice",
+    "categoryReference": "C"
   },
   {
-    "Code": "20133",
-    "Description": "Manufacture of mixtures of synthetic rubber and natural rubber or rubber - like gums",
-    "MSICCategoryReference": "C"
+    "code": "20133",
+    "description": "Manufacture of mixtures of synthetic rubber and natural rubber or rubber - like gums",
+    "categoryReference": "C"
   },
   {
-    "Code": "20210",
-    "Description": "Manufacture of pesticides and other agrochemical products",
-    "MSICCategoryReference": "C"
+    "code": "20210",
+    "description": "Manufacture of pesticides and other agrochemical products",
+    "categoryReference": "C"
   },
   {
-    "Code": "20221",
-    "Description": "Manufacture of paints, varnishes and similar coatings ink and mastics",
-    "MSICCategoryReference": "C"
+    "code": "20221",
+    "description": "Manufacture of paints, varnishes and similar coatings ink and mastics",
+    "categoryReference": "C"
   },
   {
-    "Code": "20222",
-    "Description": "Manufacture of printing ink",
-    "MSICCategoryReference": "C"
+    "code": "20222",
+    "description": "Manufacture of printing ink",
+    "categoryReference": "C"
   },
   {
-    "Code": "20231",
-    "Description": "Manufacture of soap and detergents, cleaning and polishing preparations",
-    "MSICCategoryReference": "C"
+    "code": "20231",
+    "description": "Manufacture of soap and detergents, cleaning and polishing preparations",
+    "categoryReference": "C"
   },
   {
-    "Code": "20232",
-    "Description": "Manufacture of perfumes and toilet preparations",
-    "MSICCategoryReference": "C"
+    "code": "20232",
+    "description": "Manufacture of perfumes and toilet preparations",
+    "categoryReference": "C"
   },
   {
-    "Code": "20291",
-    "Description": "Manufacture of photographic plates, films, sensitized paper and other sensitized unexposed materials",
-    "MSICCategoryReference": "C"
+    "code": "20291",
+    "description": "Manufacture of photographic plates, films, sensitized paper and other sensitized unexposed materials",
+    "categoryReference": "C"
   },
   {
-    "Code": "20292",
-    "Description": "Manufacture of writing and drawing ink",
-    "MSICCategoryReference": "C"
+    "code": "20292",
+    "description": "Manufacture of writing and drawing ink",
+    "categoryReference": "C"
   },
   {
-    "Code": "20299",
-    "Description": "Manufacture of other chemical products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "20299",
+    "description": "Manufacture of other chemical products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "20300",
-    "Description": "Manufacture of man-made fibres",
-    "MSICCategoryReference": "C"
+    "code": "20300",
+    "description": "Manufacture of man-made fibres",
+    "categoryReference": "C"
   },
   {
-    "Code": "21001",
-    "Description": "Manufacture of medicinal active substances to be used for their pharmacological properties in the manufacture of medicaments",
-    "MSICCategoryReference": "C"
+    "code": "21001",
+    "description": "Manufacture of medicinal active substances to be used for their pharmacological properties in the manufacture of medicaments",
+    "categoryReference": "C"
   },
   {
-    "Code": "21002",
-    "Description": "Processing of blood",
-    "MSICCategoryReference": "C"
+    "code": "21002",
+    "description": "Processing of blood",
+    "categoryReference": "C"
   },
   {
-    "Code": "21003",
-    "Description": "Manufacture of medicaments",
-    "MSICCategoryReference": "C"
+    "code": "21003",
+    "description": "Manufacture of medicaments",
+    "categoryReference": "C"
   },
   {
-    "Code": "21004",
-    "Description": "Manufacture of chemical contraceptive products",
-    "MSICCategoryReference": "C"
+    "code": "21004",
+    "description": "Manufacture of chemical contraceptive products",
+    "categoryReference": "C"
   },
   {
-    "Code": "21005",
-    "Description": "Manufacture of medical diagnostic preparation",
-    "MSICCategoryReference": "C"
+    "code": "21005",
+    "description": "Manufacture of medical diagnostic preparation",
+    "categoryReference": "C"
   },
   {
-    "Code": "21006",
-    "Description": "Manufacture of radioactive in-vivo diagnostic substances",
-    "MSICCategoryReference": "C"
+    "code": "21006",
+    "description": "Manufacture of radioactive in-vivo diagnostic substances",
+    "categoryReference": "C"
   },
   {
-    "Code": "21007",
-    "Description": "Manufacture of biotech pharmaceuticals",
-    "MSICCategoryReference": "C"
+    "code": "21007",
+    "description": "Manufacture of biotech pharmaceuticals",
+    "categoryReference": "C"
   },
   {
-    "Code": "21009",
-    "Description": "Manufacture of other pharmaceuticals, medicinal chemical and botanical products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "21009",
+    "description": "Manufacture of other pharmaceuticals, medicinal chemical and botanical products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "22111",
-    "Description": "Manufacture of rubber tyres for vehicles",
-    "MSICCategoryReference": "C"
+    "code": "22111",
+    "description": "Manufacture of rubber tyres for vehicles",
+    "categoryReference": "C"
   },
   {
-    "Code": "22112",
-    "Description": "Manufacture of interchangeable tyre treads and retreading rubber tyres",
-    "MSICCategoryReference": "C"
+    "code": "22112",
+    "description": "Manufacture of interchangeable tyre treads and retreading rubber tyres",
+    "categoryReference": "C"
   },
   {
-    "Code": "22191",
-    "Description": "Manufacture of other products of natural or synthetic rubber, unvulcanized, vulcanized or hardened",
-    "MSICCategoryReference": "C"
+    "code": "22191",
+    "description": "Manufacture of other products of natural or synthetic rubber, unvulcanized, vulcanized or hardened",
+    "categoryReference": "C"
   },
   {
-    "Code": "22192",
-    "Description": "Manufacture of rubber gloves",
-    "MSICCategoryReference": "C"
+    "code": "22192",
+    "description": "Manufacture of rubber gloves",
+    "categoryReference": "C"
   },
   {
-    "Code": "22193",
-    "Description": "Rubber remilling and latex processing",
-    "MSICCategoryReference": "C"
+    "code": "22193",
+    "description": "Rubber remilling and latex processing",
+    "categoryReference": "C"
   },
   {
-    "Code": "22199",
-    "Description": "Manufacture of other rubber products n.e.c",
-    "MSICCategoryReference": "C"
+    "code": "22199",
+    "description": "Manufacture of other rubber products n.e.c",
+    "categoryReference": "C"
   },
   {
-    "Code": "22201",
-    "Description": "Manufacture of semi-manufactures of plastic products",
-    "MSICCategoryReference": "C"
+    "code": "22201",
+    "description": "Manufacture of semi-manufactures of plastic products",
+    "categoryReference": "C"
   },
   {
-    "Code": "22202",
-    "Description": "Manufacture of finished plastic products",
-    "MSICCategoryReference": "C"
+    "code": "22202",
+    "description": "Manufacture of finished plastic products",
+    "categoryReference": "C"
   },
   {
-    "Code": "22203",
-    "Description": "Manufacture of plastic articles for the packing of goods",
-    "MSICCategoryReference": "C"
+    "code": "22203",
+    "description": "Manufacture of plastic articles for the packing of goods",
+    "categoryReference": "C"
   },
   {
-    "Code": "22204",
-    "Description": "Manufacture of builders' plastics ware",
-    "MSICCategoryReference": "C"
+    "code": "22204",
+    "description": "Manufacture of builders' plastics ware",
+    "categoryReference": "C"
   },
   {
-    "Code": "22205",
-    "Description": "Manufacture of plastic tableware, kitchenware and toilet articles",
-    "MSICCategoryReference": "C"
+    "code": "22205",
+    "description": "Manufacture of plastic tableware, kitchenware and toilet articles",
+    "categoryReference": "C"
   },
   {
-    "Code": "22209",
-    "Description": "Manufacture of diverse plastic products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "22209",
+    "description": "Manufacture of diverse plastic products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "23101",
-    "Description": "Manufacture of flat glass, including wired, coloured or tinted flat glass",
-    "MSICCategoryReference": "C"
+    "code": "23101",
+    "description": "Manufacture of flat glass, including wired, coloured or tinted flat glass",
+    "categoryReference": "C"
   },
   {
-    "Code": "23102",
-    "Description": "Manufacture of laboratory, hygienic or pharmaceutical glassware",
-    "MSICCategoryReference": "C"
+    "code": "23102",
+    "description": "Manufacture of laboratory, hygienic or pharmaceutical glassware",
+    "categoryReference": "C"
   },
   {
-    "Code": "23109",
-    "Description": "Manufacture of other glass products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "23109",
+    "description": "Manufacture of other glass products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "23911",
-    "Description": "Manufacture of refractory mortars and concretes",
-    "MSICCategoryReference": "C"
+    "code": "23911",
+    "description": "Manufacture of refractory mortars and concretes",
+    "categoryReference": "C"
   },
   {
-    "Code": "23912",
-    "Description": "Manufacture of refractory ceramic goods",
-    "MSICCategoryReference": "C"
+    "code": "23912",
+    "description": "Manufacture of refractory ceramic goods",
+    "categoryReference": "C"
   },
   {
-    "Code": "23921",
-    "Description": "Manufacture of non-refractory ceramic",
-    "MSICCategoryReference": "C"
+    "code": "23921",
+    "description": "Manufacture of non-refractory ceramic",
+    "categoryReference": "C"
   },
   {
-    "Code": "23929",
-    "Description": "Manufacture of other clay building materials",
-    "MSICCategoryReference": "C"
+    "code": "23929",
+    "description": "Manufacture of other clay building materials",
+    "categoryReference": "C"
   },
   {
-    "Code": "23930",
-    "Description": "Manufacture of other porcelain and ceramic products",
-    "MSICCategoryReference": "C"
+    "code": "23930",
+    "description": "Manufacture of other porcelain and ceramic products",
+    "categoryReference": "C"
   },
   {
-    "Code": "23941",
-    "Description": "Manufacture of hydraulic cement",
-    "MSICCategoryReference": "C"
+    "code": "23941",
+    "description": "Manufacture of hydraulic cement",
+    "categoryReference": "C"
   },
   {
-    "Code": "23942",
-    "Description": "Manufacture of lime and plaster",
-    "MSICCategoryReference": "C"
+    "code": "23942",
+    "description": "Manufacture of lime and plaster",
+    "categoryReference": "C"
   },
   {
-    "Code": "23951",
-    "Description": "Manufacture of ready-mix and dry-mix concrete and mortars",
-    "MSICCategoryReference": "C"
+    "code": "23951",
+    "description": "Manufacture of ready-mix and dry-mix concrete and mortars",
+    "categoryReference": "C"
   },
   {
-    "Code": "23952",
-    "Description": "Manufacture of precast concrete, cement or artificial stone articles for use in construction",
-    "MSICCategoryReference": "C"
+    "code": "23952",
+    "description": "Manufacture of precast concrete, cement or artificial stone articles for use in construction",
+    "categoryReference": "C"
   },
   {
-    "Code": "23953",
-    "Description": "Manufacture of prefabricated structural components for building or civil engineering of cement, concrete or artificial stone",
-    "MSICCategoryReference": "C"
+    "code": "23953",
+    "description": "Manufacture of prefabricated structural components for building or civil engineering of cement, concrete or artificial stone",
+    "categoryReference": "C"
   },
   {
-    "Code": "23959",
-    "Description": "Manufacture of other articles of concrete, cement and plaster n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "23959",
+    "description": "Manufacture of other articles of concrete, cement and plaster n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "23960",
-    "Description": "Cutting, shaping and finishing of stone",
-    "MSICCategoryReference": "C"
+    "code": "23960",
+    "description": "Cutting, shaping and finishing of stone",
+    "categoryReference": "C"
   },
   {
-    "Code": "23990",
-    "Description": "Manufacture of other non-metallic mineral products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "23990",
+    "description": "Manufacture of other non-metallic mineral products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "24101",
-    "Description": "Production of pig iron and spiegeleisen in pigs, blocks or other primary forms",
-    "MSICCategoryReference": "C"
+    "code": "24101",
+    "description": "Production of pig iron and spiegeleisen in pigs, blocks or other primary forms",
+    "categoryReference": "C"
   },
   {
-    "Code": "24102",
-    "Description": "Production of bars and rods of stainless steel or other alloy steel",
-    "MSICCategoryReference": "C"
+    "code": "24102",
+    "description": "Production of bars and rods of stainless steel or other alloy steel",
+    "categoryReference": "C"
   },
   {
-    "Code": "24103",
-    "Description": "Manufacture of seamless tubes, by hot rolling, hot extrusion or hot drawing, or by cold drawing or cold rolling",
-    "MSICCategoryReference": "C"
+    "code": "24103",
+    "description": "Manufacture of seamless tubes, by hot rolling, hot extrusion or hot drawing, or by cold drawing or cold rolling",
+    "categoryReference": "C"
   },
   {
-    "Code": "24104",
-    "Description": "Manufacture of steel tube fittings",
-    "MSICCategoryReference": "C"
+    "code": "24104",
+    "description": "Manufacture of steel tube fittings",
+    "categoryReference": "C"
   },
   {
-    "Code": "24109",
-    "Description": "Manufacture of other basic iron and steel products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "24109",
+    "description": "Manufacture of other basic iron and steel products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "24201",
-    "Description": "Tin smelting",
-    "MSICCategoryReference": "C"
+    "code": "24201",
+    "description": "Tin smelting",
+    "categoryReference": "C"
   },
   {
-    "Code": "24202",
-    "Description": "Production of aluminium from alumina",
-    "MSICCategoryReference": "C"
+    "code": "24202",
+    "description": "Production of aluminium from alumina",
+    "categoryReference": "C"
   },
   {
-    "Code": "24209",
-    "Description": "Manufacture of other basic precious and other non-ferrous metals n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "24209",
+    "description": "Manufacture of other basic precious and other non-ferrous metals n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "24311",
-    "Description": "Casting of iron",
-    "MSICCategoryReference": "C"
+    "code": "24311",
+    "description": "Casting of iron",
+    "categoryReference": "C"
   },
   {
-    "Code": "24312",
-    "Description": "Casting of steel",
-    "MSICCategoryReference": "C"
+    "code": "24312",
+    "description": "Casting of steel",
+    "categoryReference": "C"
   },
   {
-    "Code": "24320",
-    "Description": "Casting of non-ferrous metals",
-    "MSICCategoryReference": "C"
+    "code": "24320",
+    "description": "Casting of non-ferrous metals",
+    "categoryReference": "C"
   },
   {
-    "Code": "25111",
-    "Description": "Manufacture of industrial frameworks in metal",
-    "MSICCategoryReference": "C"
+    "code": "25111",
+    "description": "Manufacture of industrial frameworks in metal",
+    "categoryReference": "C"
   },
   {
-    "Code": "25112",
-    "Description": "Manufacture of prefabricated buildings mainly of metal",
-    "MSICCategoryReference": "C"
+    "code": "25112",
+    "description": "Manufacture of prefabricated buildings mainly of metal",
+    "categoryReference": "C"
   },
   {
-    "Code": "25113",
-    "Description": "Manufacture of metal doors, windows and their frames, shutters and gates",
-    "MSICCategoryReference": "C"
+    "code": "25113",
+    "description": "Manufacture of metal doors, windows and their frames, shutters and gates",
+    "categoryReference": "C"
   },
   {
-    "Code": "25119",
-    "Description": "Manufacture of other structural metal products",
-    "MSICCategoryReference": "C"
+    "code": "25119",
+    "description": "Manufacture of other structural metal products",
+    "categoryReference": "C"
   },
   {
-    "Code": "25120",
-    "Description": "Manufacture of tanks, reservoirs and containers of metal",
-    "MSICCategoryReference": "C"
+    "code": "25120",
+    "description": "Manufacture of tanks, reservoirs and containers of metal",
+    "categoryReference": "C"
   },
   {
-    "Code": "25130",
-    "Description": "Manufacture of steam generators, except central heating hot water boilers",
-    "MSICCategoryReference": "C"
+    "code": "25130",
+    "description": "Manufacture of steam generators, except central heating hot water boilers",
+    "categoryReference": "C"
   },
   {
-    "Code": "25200",
-    "Description": "Manufacture of weapons and ammunition",
-    "MSICCategoryReference": "C"
+    "code": "25200",
+    "description": "Manufacture of weapons and ammunition",
+    "categoryReference": "C"
   },
   {
-    "Code": "25910",
-    "Description": "Forging, pressing, stamping and roll-forming of metal; powder metallurgy",
-    "MSICCategoryReference": "C"
+    "code": "25910",
+    "description": "Forging, pressing, stamping and roll-forming of metal; powder metallurgy",
+    "categoryReference": "C"
   },
   {
-    "Code": "25920",
-    "Description": "Treatment and coating of metals; machining",
-    "MSICCategoryReference": "C"
+    "code": "25920",
+    "description": "Treatment and coating of metals; machining",
+    "categoryReference": "C"
   },
   {
-    "Code": "25930",
-    "Description": "Manufacture of cutlery, hand tools and general hardware",
-    "MSICCategoryReference": "C"
+    "code": "25930",
+    "description": "Manufacture of cutlery, hand tools and general hardware",
+    "categoryReference": "C"
   },
   {
-    "Code": "25991",
-    "Description": "Manufacture of tins and cans for food products, collapsible tubes and boxes",
-    "MSICCategoryReference": "C"
+    "code": "25991",
+    "description": "Manufacture of tins and cans for food products, collapsible tubes and boxes",
+    "categoryReference": "C"
   },
   {
-    "Code": "25992",
-    "Description": "Manufacture of metal cable, plaited bands and similar articles",
-    "MSICCategoryReference": "C"
+    "code": "25992",
+    "description": "Manufacture of metal cable, plaited bands and similar articles",
+    "categoryReference": "C"
   },
   {
-    "Code": "25993",
-    "Description": "Manufacture of bolts, screws, nuts and similar threaded products",
-    "MSICCategoryReference": "C"
+    "code": "25993",
+    "description": "Manufacture of bolts, screws, nuts and similar threaded products",
+    "categoryReference": "C"
   },
   {
-    "Code": "25994",
-    "Description": "Manufacture of metal household articles",
-    "MSICCategoryReference": "C"
+    "code": "25994",
+    "description": "Manufacture of metal household articles",
+    "categoryReference": "C"
   },
   {
-    "Code": "25999",
-    "Description": "Manufacture of any other fabricated metal products n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "25999",
+    "description": "Manufacture of any other fabricated metal products n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "26101",
-    "Description": "Manufacture of diodes, transistors and similar semiconductor devices",
-    "MSICCategoryReference": "C"
+    "code": "26101",
+    "description": "Manufacture of diodes, transistors and similar semiconductor devices",
+    "categoryReference": "C"
   },
   {
-    "Code": "26102",
-    "Description": "Manufacture electronic integrated circuits micro assemblies",
-    "MSICCategoryReference": "C"
+    "code": "26102",
+    "description": "Manufacture electronic integrated circuits micro assemblies",
+    "categoryReference": "C"
   },
   {
-    "Code": "26103",
-    "Description": "Manufacture of electrical capacitors and resistors",
-    "MSICCategoryReference": "C"
+    "code": "26103",
+    "description": "Manufacture of electrical capacitors and resistors",
+    "categoryReference": "C"
   },
   {
-    "Code": "26104",
-    "Description": "Manufacture of printed circuit boards",
-    "MSICCategoryReference": "C"
+    "code": "26104",
+    "description": "Manufacture of printed circuit boards",
+    "categoryReference": "C"
   },
   {
-    "Code": "26105",
-    "Description": "Manufacture of display components",
-    "MSICCategoryReference": "C"
+    "code": "26105",
+    "description": "Manufacture of display components",
+    "categoryReference": "C"
   },
   {
-    "Code": "26109",
-    "Description": "Manufacture of other components for electronic applications",
-    "MSICCategoryReference": "C"
+    "code": "26109",
+    "description": "Manufacture of other components for electronic applications",
+    "categoryReference": "C"
   },
   {
-    "Code": "26201",
-    "Description": "Manufacture of computers",
-    "MSICCategoryReference": "C"
+    "code": "26201",
+    "description": "Manufacture of computers",
+    "categoryReference": "C"
   },
   {
-    "Code": "26202",
-    "Description": "Manufacture of peripheral equipment",
-    "MSICCategoryReference": "C"
+    "code": "26202",
+    "description": "Manufacture of peripheral equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "26300",
-    "Description": "Manufacture of communication equipment",
-    "MSICCategoryReference": "C"
+    "code": "26300",
+    "description": "Manufacture of communication equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "26400",
-    "Description": "Manufacture of consumer electronics",
-    "MSICCategoryReference": "C"
+    "code": "26400",
+    "description": "Manufacture of consumer electronics",
+    "categoryReference": "C"
   },
   {
-    "Code": "26511",
-    "Description": "Manufacture of measuring, testing, navigating and control equipment",
-    "MSICCategoryReference": "C"
+    "code": "26511",
+    "description": "Manufacture of measuring, testing, navigating and control equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "26512",
-    "Description": "Manufacture of industrial process control equipment",
-    "MSICCategoryReference": "C"
+    "code": "26512",
+    "description": "Manufacture of industrial process control equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "26520",
-    "Description": "Manufacture of watches and clocks and parts",
-    "MSICCategoryReference": "C"
+    "code": "26520",
+    "description": "Manufacture of watches and clocks and parts",
+    "categoryReference": "C"
   },
   {
-    "Code": "26600",
-    "Description": "Manufacture of irradiation, electro medical and electrotherapeutic equipment",
-    "MSICCategoryReference": "C"
+    "code": "26600",
+    "description": "Manufacture of irradiation, electro medical and electrotherapeutic equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "26701",
-    "Description": "Manufacture of optical instruments and equipment",
-    "MSICCategoryReference": "C"
+    "code": "26701",
+    "description": "Manufacture of optical instruments and equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "26702",
-    "Description": "Manufacture of photographic equipment",
-    "MSICCategoryReference": "C"
+    "code": "26702",
+    "description": "Manufacture of photographic equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "26800",
-    "Description": "Manufacture of magnetic and optical recording media",
-    "MSICCategoryReference": "C"
+    "code": "26800",
+    "description": "Manufacture of magnetic and optical recording media",
+    "categoryReference": "C"
   },
   {
-    "Code": "27101",
-    "Description": "Manufacture of electric motors, generators and transformers",
-    "MSICCategoryReference": "C"
+    "code": "27101",
+    "description": "Manufacture of electric motors, generators and transformers",
+    "categoryReference": "C"
   },
   {
-    "Code": "27102",
-    "Description": "Manufacture of electricity distribution and control apparatus",
-    "MSICCategoryReference": "C"
+    "code": "27102",
+    "description": "Manufacture of electricity distribution and control apparatus",
+    "categoryReference": "C"
   },
   {
-    "Code": "27200",
-    "Description": "Manufacture of batteries and accumulators",
-    "MSICCategoryReference": "C"
+    "code": "27200",
+    "description": "Manufacture of batteries and accumulators",
+    "categoryReference": "C"
   },
   {
-    "Code": "27310",
-    "Description": "Manufacture of fibre optic cables",
-    "MSICCategoryReference": "C"
+    "code": "27310",
+    "description": "Manufacture of fibre optic cables",
+    "categoryReference": "C"
   },
   {
-    "Code": "27320",
-    "Description": "Manufacture of other electronic and electric wires and cables",
-    "MSICCategoryReference": "C"
+    "code": "27320",
+    "description": "Manufacture of other electronic and electric wires and cables",
+    "categoryReference": "C"
   },
   {
-    "Code": "27330",
-    "Description": "Manufacture of current-carrying and non current-carrying wiring devices for electrical circuits regardless of material",
-    "MSICCategoryReference": "C"
+    "code": "27330",
+    "description": "Manufacture of current-carrying and non current-carrying wiring devices for electrical circuits regardless of material",
+    "categoryReference": "C"
   },
   {
-    "Code": "27400",
-    "Description": "Manufacture of electric lighting equipment",
-    "MSICCategoryReference": "C"
+    "code": "27400",
+    "description": "Manufacture of electric lighting equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "27500",
-    "Description": "Manufacture of domestic appliances",
-    "MSICCategoryReference": "C"
+    "code": "27500",
+    "description": "Manufacture of domestic appliances",
+    "categoryReference": "C"
   },
   {
-    "Code": "27900",
-    "Description": "Manufacture of miscellaneous electrical equipment other than motors, generators and transformers, batteries and accumulators, wires and wiring devices, lighting equipment or domestic appliances",
-    "MSICCategoryReference": "C"
+    "code": "27900",
+    "description": "Manufacture of miscellaneous electrical equipment other than motors, generators and transformers, batteries and accumulators, wires and wiring devices, lighting equipment or domestic appliances",
+    "categoryReference": "C"
   },
   {
-    "Code": "28110",
-    "Description": "Manufacture of engines and turbines, except aircraft, vehicle and cycle engines",
-    "MSICCategoryReference": "C"
+    "code": "28110",
+    "description": "Manufacture of engines and turbines, except aircraft, vehicle and cycle engines",
+    "categoryReference": "C"
   },
   {
-    "Code": "28120",
-    "Description": "Manufacture of fluid power equipment",
-    "MSICCategoryReference": "C"
+    "code": "28120",
+    "description": "Manufacture of fluid power equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "28130",
-    "Description": "Manufacture of other pumps, compressors, taps and valves",
-    "MSICCategoryReference": "C"
+    "code": "28130",
+    "description": "Manufacture of other pumps, compressors, taps and valves",
+    "categoryReference": "C"
   },
   {
-    "Code": "28140",
-    "Description": "Manufacture of bearings, gears, gearing and driving elements",
-    "MSICCategoryReference": "C"
+    "code": "28140",
+    "description": "Manufacture of bearings, gears, gearing and driving elements",
+    "categoryReference": "C"
   },
   {
-    "Code": "28150",
-    "Description": "Manufacture of ovens, furnaces and furnace burners",
-    "MSICCategoryReference": "C"
+    "code": "28150",
+    "description": "Manufacture of ovens, furnaces and furnace burners",
+    "categoryReference": "C"
   },
   {
-    "Code": "28160",
-    "Description": "Manufacture of lifting and handling equipment",
-    "MSICCategoryReference": "C"
+    "code": "28160",
+    "description": "Manufacture of lifting and handling equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "28170",
-    "Description": "Manufacture of office machinery and equipment (except computers and peripheral equipment)",
-    "MSICCategoryReference": "C"
+    "code": "28170",
+    "description": "Manufacture of office machinery and equipment (except computers and peripheral equipment)",
+    "categoryReference": "C"
   },
   {
-    "Code": "28180",
-    "Description": "Manufacture of power-driven hand tools with self-contained electric or non-electric motor or pneumatic drives",
-    "MSICCategoryReference": "C"
+    "code": "28180",
+    "description": "Manufacture of power-driven hand tools with self-contained electric or non-electric motor or pneumatic drives",
+    "categoryReference": "C"
   },
   {
-    "Code": "28191",
-    "Description": "Manufacture of refrigerating or freezing industrial equipment",
-    "MSICCategoryReference": "C"
+    "code": "28191",
+    "description": "Manufacture of refrigerating or freezing industrial equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "28192",
-    "Description": "Manufacture of air-conditioning machines, including for motor vehicles",
-    "MSICCategoryReference": "C"
+    "code": "28192",
+    "description": "Manufacture of air-conditioning machines, including for motor vehicles",
+    "categoryReference": "C"
   },
   {
-    "Code": "28199",
-    "Description": "Manufacture of other general-purpose machinery n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "28199",
+    "description": "Manufacture of other general-purpose machinery n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "28210",
-    "Description": "Manufacture of agricultural and forestry machinery",
-    "MSICCategoryReference": "C"
+    "code": "28210",
+    "description": "Manufacture of agricultural and forestry machinery",
+    "categoryReference": "C"
   },
   {
-    "Code": "28220",
-    "Description": "Manufacture of metal-forming machinery and machine tools",
-    "MSICCategoryReference": "C"
+    "code": "28220",
+    "description": "Manufacture of metal-forming machinery and machine tools",
+    "categoryReference": "C"
   },
   {
-    "Code": "28230",
-    "Description": "Manufacture of machinery for metallurgy",
-    "MSICCategoryReference": "C"
+    "code": "28230",
+    "description": "Manufacture of machinery for metallurgy",
+    "categoryReference": "C"
   },
   {
-    "Code": "28240",
-    "Description": "Manufacture of machinery for mining, quarrying and construction",
-    "MSICCategoryReference": "C"
+    "code": "28240",
+    "description": "Manufacture of machinery for mining, quarrying and construction",
+    "categoryReference": "C"
   },
   {
-    "Code": "28250",
-    "Description": "Manufacture of machinery for food, beverage and tobacco processing",
-    "MSICCategoryReference": "C"
+    "code": "28250",
+    "description": "Manufacture of machinery for food, beverage and tobacco processing",
+    "categoryReference": "C"
   },
   {
-    "Code": "28260",
-    "Description": "Manufacture of machinery for textile, apparel and leather production",
-    "MSICCategoryReference": "C"
+    "code": "28260",
+    "description": "Manufacture of machinery for textile, apparel and leather production",
+    "categoryReference": "C"
   },
   {
-    "Code": "28290",
-    "Description": "Manufacture of other special-purpose machinery n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "28290",
+    "description": "Manufacture of other special-purpose machinery n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "29101",
-    "Description": "Manufacture of passenger cars",
-    "MSICCategoryReference": "C"
+    "code": "29101",
+    "description": "Manufacture of passenger cars",
+    "categoryReference": "C"
   },
   {
-    "Code": "29102",
-    "Description": "Manufacture of commercial vehicles",
-    "MSICCategoryReference": "C"
+    "code": "29102",
+    "description": "Manufacture of commercial vehicles",
+    "categoryReference": "C"
   },
   {
-    "Code": "29200",
-    "Description": "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi- trailers",
-    "MSICCategoryReference": "C"
+    "code": "29200",
+    "description": "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi- trailers",
+    "categoryReference": "C"
   },
   {
-    "Code": "29300",
-    "Description": "Manufacture of parts and accessories for motor vehicles",
-    "MSICCategoryReference": "C"
+    "code": "29300",
+    "description": "Manufacture of parts and accessories for motor vehicles",
+    "categoryReference": "C"
   },
   {
-    "Code": "30110",
-    "Description": "Building of ships and floating structures",
-    "MSICCategoryReference": "C"
+    "code": "30110",
+    "description": "Building of ships and floating structures",
+    "categoryReference": "C"
   },
   {
-    "Code": "30120",
-    "Description": "Building of pleasure and sporting boats",
-    "MSICCategoryReference": "C"
+    "code": "30120",
+    "description": "Building of pleasure and sporting boats",
+    "categoryReference": "C"
   },
   {
-    "Code": "30200",
-    "Description": "Manufacture of railway locomotives and rolling stock",
-    "MSICCategoryReference": "C"
+    "code": "30200",
+    "description": "Manufacture of railway locomotives and rolling stock",
+    "categoryReference": "C"
   },
   {
-    "Code": "30300",
-    "Description": "Manufacture of air and spacecraft and related machinery",
-    "MSICCategoryReference": "C"
+    "code": "30300",
+    "description": "Manufacture of air and spacecraft and related machinery",
+    "categoryReference": "C"
   },
   {
-    "Code": "30400",
-    "Description": "Manufacture of military fighting vehicles",
-    "MSICCategoryReference": "C"
+    "code": "30400",
+    "description": "Manufacture of military fighting vehicles",
+    "categoryReference": "C"
   },
   {
-    "Code": "30910",
-    "Description": "Manufacture of motorcycles",
-    "MSICCategoryReference": "C"
+    "code": "30910",
+    "description": "Manufacture of motorcycles",
+    "categoryReference": "C"
   },
   {
-    "Code": "30920",
-    "Description": "Manufacture of bicycles and invalid carriages",
-    "MSICCategoryReference": "C"
+    "code": "30920",
+    "description": "Manufacture of bicycles and invalid carriages",
+    "categoryReference": "C"
   },
   {
-    "Code": "30990",
-    "Description": "Manufacture of other transport equipments n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "30990",
+    "description": "Manufacture of other transport equipments n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "31001",
-    "Description": "Manufacture of wooden and cane furniture",
-    "MSICCategoryReference": "C"
+    "code": "31001",
+    "description": "Manufacture of wooden and cane furniture",
+    "categoryReference": "C"
   },
   {
-    "Code": "31002",
-    "Description": "Manufacture of metal furniture",
-    "MSICCategoryReference": "C"
+    "code": "31002",
+    "description": "Manufacture of metal furniture",
+    "categoryReference": "C"
   },
   {
-    "Code": "31003",
-    "Description": "Manufacture of mattress",
-    "MSICCategoryReference": "C"
+    "code": "31003",
+    "description": "Manufacture of mattress",
+    "categoryReference": "C"
   },
   {
-    "Code": "31009",
-    "Description": "Manufacture of other furniture, except of stone, concrete or ceramic",
-    "MSICCategoryReference": "C"
+    "code": "31009",
+    "description": "Manufacture of other furniture, except of stone, concrete or ceramic",
+    "categoryReference": "C"
   },
   {
-    "Code": "32110",
-    "Description": "Manufacture of jewellery and related articles",
-    "MSICCategoryReference": "C"
+    "code": "32110",
+    "description": "Manufacture of jewellery and related articles",
+    "categoryReference": "C"
   },
   {
-    "Code": "32120",
-    "Description": "Manufacture of imitation jewellery and related articles",
-    "MSICCategoryReference": "C"
+    "code": "32120",
+    "description": "Manufacture of imitation jewellery and related articles",
+    "categoryReference": "C"
   },
   {
-    "Code": "32200",
-    "Description": "Manufacture of musical instruments",
-    "MSICCategoryReference": "C"
+    "code": "32200",
+    "description": "Manufacture of musical instruments",
+    "categoryReference": "C"
   },
   {
-    "Code": "32300",
-    "Description": "Manufacture of sports goods",
-    "MSICCategoryReference": "C"
+    "code": "32300",
+    "description": "Manufacture of sports goods",
+    "categoryReference": "C"
   },
   {
-    "Code": "32400",
-    "Description": "Manufacture of games and toys",
-    "MSICCategoryReference": "C"
+    "code": "32400",
+    "description": "Manufacture of games and toys",
+    "categoryReference": "C"
   },
   {
-    "Code": "32500",
-    "Description": "Manufacture of medical and dental instrument and supplies",
-    "MSICCategoryReference": "C"
+    "code": "32500",
+    "description": "Manufacture of medical and dental instrument and supplies",
+    "categoryReference": "C"
   },
   {
-    "Code": "32901",
-    "Description": "Manufacture of stationery",
-    "MSICCategoryReference": "C"
+    "code": "32901",
+    "description": "Manufacture of stationery",
+    "categoryReference": "C"
   },
   {
-    "Code": "32909",
-    "Description": "Other manufacturing n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "32909",
+    "description": "Other manufacturing n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "33110",
-    "Description": "Repair of fabricated metal products",
-    "MSICCategoryReference": "C"
+    "code": "33110",
+    "description": "Repair of fabricated metal products",
+    "categoryReference": "C"
   },
   {
-    "Code": "33120",
-    "Description": "Repair and maintenance of industrial machinery and equipment",
-    "MSICCategoryReference": "C"
+    "code": "33120",
+    "description": "Repair and maintenance of industrial machinery and equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "33131",
-    "Description": "Repair and maintenance of the measuring, testing, navigating and control equipment",
-    "MSICCategoryReference": "C"
+    "code": "33131",
+    "description": "Repair and maintenance of the measuring, testing, navigating and control equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "33132",
-    "Description": "Repair and maintenance of irradiation, electro medical and electrotherapeutic equipment",
-    "MSICCategoryReference": "C"
+    "code": "33132",
+    "description": "Repair and maintenance of irradiation, electro medical and electrotherapeutic equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "33133",
-    "Description": "Repair of optical instruments and photographic equipment",
-    "MSICCategoryReference": "C"
+    "code": "33133",
+    "description": "Repair of optical instruments and photographic equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "33140",
-    "Description": "Repair and maintenance of electrical equipment except domestic appliances",
-    "MSICCategoryReference": "C"
+    "code": "33140",
+    "description": "Repair and maintenance of electrical equipment except domestic appliances",
+    "categoryReference": "C"
   },
   {
-    "Code": "33150",
-    "Description": "Repair and maintenance of transport equipment except motorcycles and bicycles",
-    "MSICCategoryReference": "C"
+    "code": "33150",
+    "description": "Repair and maintenance of transport equipment except motorcycles and bicycles",
+    "categoryReference": "C"
   },
   {
-    "Code": "33190",
-    "Description": "Repair and maintenance of other equipment n.e.c.",
-    "MSICCategoryReference": "C"
+    "code": "33190",
+    "description": "Repair and maintenance of other equipment n.e.c.",
+    "categoryReference": "C"
   },
   {
-    "Code": "33200",
-    "Description": "Installation of industrial machinery and equipment",
-    "MSICCategoryReference": "C"
+    "code": "33200",
+    "description": "Installation of industrial machinery and equipment",
+    "categoryReference": "C"
   },
   {
-    "Code": "35101",
-    "Description": "Operation of generation facilities that produce electric energy",
-    "MSICCategoryReference": "D"
+    "code": "35101",
+    "description": "Operation of generation facilities that produce electric energy",
+    "categoryReference": "D"
   },
   {
-    "Code": "35102",
-    "Description": "Operation of transmission, distribution and sales of electricity",
-    "MSICCategoryReference": "D"
+    "code": "35102",
+    "description": "Operation of transmission, distribution and sales of electricity",
+    "categoryReference": "D"
   },
   {
-    "Code": "35201",
-    "Description": "Manufacture of gaseous fuels with a specified calorific value, by purification, blending and other processes from gases of various types including natural gas",
-    "MSICCategoryReference": "D"
+    "code": "35201",
+    "description": "Manufacture of gaseous fuels with a specified calorific value, by purification, blending and other processes from gases of various types including natural gas",
+    "categoryReference": "D"
   },
   {
-    "Code": "35202",
-    "Description": "Transportation, distribution and supply of gaseous fuels of all kinds through a system of mains",
-    "MSICCategoryReference": "D"
+    "code": "35202",
+    "description": "Transportation, distribution and supply of gaseous fuels of all kinds through a system of mains",
+    "categoryReference": "D"
   },
   {
-    "Code": "35203",
-    "Description": "Sale of gas to the user through mains",
-    "MSICCategoryReference": "D"
+    "code": "35203",
+    "description": "Sale of gas to the user through mains",
+    "categoryReference": "D"
   },
   {
-    "Code": "35301",
-    "Description": "Production, collection and distribution of steam and hot water for heating, power and other purposes",
-    "MSICCategoryReference": "D"
+    "code": "35301",
+    "description": "Production, collection and distribution of steam and hot water for heating, power and other purposes",
+    "categoryReference": "D"
   },
   {
-    "Code": "35302",
-    "Description": "Production and distribution of cooled air, chilled water for cooling purposes",
-    "MSICCategoryReference": "D"
+    "code": "35302",
+    "description": "Production and distribution of cooled air, chilled water for cooling purposes",
+    "categoryReference": "D"
   },
   {
-    "Code": "35303",
-    "Description": "Production of ice, including ice for food and non-food (e.g. cooling) purposes",
-    "MSICCategoryReference": "D"
+    "code": "35303",
+    "description": "Production of ice, including ice for food and non-food (e.g. cooling) purposes",
+    "categoryReference": "D"
   },
   {
-    "Code": "36001",
-    "Description": "Purification and distribution of water for water supply purposes",
-    "MSICCategoryReference": "E"
+    "code": "36001",
+    "description": "Purification and distribution of water for water supply purposes",
+    "categoryReference": "E"
   },
   {
-    "Code": "36002",
-    "Description": "Desalting of sea or ground water to produce water as the principal product of interest",
-    "MSICCategoryReference": "E"
+    "code": "36002",
+    "description": "Desalting of sea or ground water to produce water as the principal product of interest",
+    "categoryReference": "E"
   },
   {
-    "Code": "37000",
-    "Description": "Sewerage and similar activities",
-    "MSICCategoryReference": "E"
+    "code": "37000",
+    "description": "Sewerage and similar activities",
+    "categoryReference": "E"
   },
   {
-    "Code": "38111",
-    "Description": "Collection of non-hazardous solid waste (i.e. garbage) within a local area",
-    "MSICCategoryReference": "E"
+    "code": "38111",
+    "description": "Collection of non-hazardous solid waste (i.e. garbage) within a local area",
+    "categoryReference": "E"
   },
   {
-    "Code": "38112",
-    "Description": "Collection of recyclable materials",
-    "MSICCategoryReference": "E"
+    "code": "38112",
+    "description": "Collection of recyclable materials",
+    "categoryReference": "E"
   },
   {
-    "Code": "38113",
-    "Description": "Collection of refuse in litter-bins in public places",
-    "MSICCategoryReference": "E"
+    "code": "38113",
+    "description": "Collection of refuse in litter-bins in public places",
+    "categoryReference": "E"
   },
   {
-    "Code": "38114",
-    "Description": "Collection of construction and demolition waste",
-    "MSICCategoryReference": "E"
+    "code": "38114",
+    "description": "Collection of construction and demolition waste",
+    "categoryReference": "E"
   },
   {
-    "Code": "38115",
-    "Description": "Operation of waste transfer stations for non-hazardous waste",
-    "MSICCategoryReference": "E"
+    "code": "38115",
+    "description": "Operation of waste transfer stations for non-hazardous waste",
+    "categoryReference": "E"
   },
   {
-    "Code": "38121",
-    "Description": "Collection of hazardous waste",
-    "MSICCategoryReference": "E"
+    "code": "38121",
+    "description": "Collection of hazardous waste",
+    "categoryReference": "E"
   },
   {
-    "Code": "38122",
-    "Description": "Operation of waste transfer stations for hazardous waste",
-    "MSICCategoryReference": "E"
+    "code": "38122",
+    "description": "Operation of waste transfer stations for hazardous waste",
+    "categoryReference": "E"
   },
   {
-    "Code": "38210",
-    "Description": "Treatment and disposal of non-hazardous waste",
-    "MSICCategoryReference": "E"
+    "code": "38210",
+    "description": "Treatment and disposal of non-hazardous waste",
+    "categoryReference": "E"
   },
   {
-    "Code": "38220",
-    "Description": "Treatment and disposal of hazardous waste",
-    "MSICCategoryReference": "E"
+    "code": "38220",
+    "description": "Treatment and disposal of hazardous waste",
+    "categoryReference": "E"
   },
   {
-    "Code": "38301",
-    "Description": "Mechanical crushing of metal waste",
-    "MSICCategoryReference": "E"
+    "code": "38301",
+    "description": "Mechanical crushing of metal waste",
+    "categoryReference": "E"
   },
   {
-    "Code": "38302",
-    "Description": "Dismantling of automobiles, computers, televisions and other equipment for material recover",
-    "MSICCategoryReference": "E"
+    "code": "38302",
+    "description": "Dismantling of automobiles, computers, televisions and other equipment for material recover",
+    "categoryReference": "E"
   },
   {
-    "Code": "38303",
-    "Description": "Reclaiming of rubber such as used tires to produce secondary raw material",
-    "MSICCategoryReference": "E"
+    "code": "38303",
+    "description": "Reclaiming of rubber such as used tires to produce secondary raw material",
+    "categoryReference": "E"
   },
   {
-    "Code": "38304",
-    "Description": "Reuse of rubber products",
-    "MSICCategoryReference": "E"
+    "code": "38304",
+    "description": "Reuse of rubber products",
+    "categoryReference": "E"
   },
   {
-    "Code": "38309",
-    "Description": "Materials recovery n.e.c.",
-    "MSICCategoryReference": "E"
+    "code": "38309",
+    "description": "Materials recovery n.e.c.",
+    "categoryReference": "E"
   },
   {
-    "Code": "39000",
-    "Description": "Remediation activities and other waste management services",
-    "MSICCategoryReference": "E"
+    "code": "39000",
+    "description": "Remediation activities and other waste management services",
+    "categoryReference": "E"
   },
   {
-    "Code": "41001",
-    "Description": "Residential buildings",
-    "MSICCategoryReference": "F"
+    "code": "41001",
+    "description": "Residential buildings",
+    "categoryReference": "F"
   },
   {
-    "Code": "41002",
-    "Description": "Non-residential buildings",
-    "MSICCategoryReference": "F"
+    "code": "41002",
+    "description": "Non-residential buildings",
+    "categoryReference": "F"
   },
   {
-    "Code": "41003",
-    "Description": "Assembly and erection of prefabricated constructions on the site",
-    "MSICCategoryReference": "F"
+    "code": "41003",
+    "description": "Assembly and erection of prefabricated constructions on the site",
+    "categoryReference": "F"
   },
   {
-    "Code": "41009",
-    "Description": "Construction of buildings n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "41009",
+    "description": "Construction of buildings n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "42101",
-    "Description": "Construction of motorways, streets, roads, other vehicular and pedestrian ways",
-    "MSICCategoryReference": "F"
+    "code": "42101",
+    "description": "Construction of motorways, streets, roads, other vehicular and pedestrian ways",
+    "categoryReference": "F"
   },
   {
-    "Code": "42102",
-    "Description": "Surface work on streets, roads, highways, bridges or tunnels",
-    "MSICCategoryReference": "F"
+    "code": "42102",
+    "description": "Surface work on streets, roads, highways, bridges or tunnels",
+    "categoryReference": "F"
   },
   {
-    "Code": "42103",
-    "Description": "Construction of bridges, including those for elevated highways",
-    "MSICCategoryReference": "F"
+    "code": "42103",
+    "description": "Construction of bridges, including those for elevated highways",
+    "categoryReference": "F"
   },
   {
-    "Code": "42104",
-    "Description": "Construction of tunnels",
-    "MSICCategoryReference": "F"
+    "code": "42104",
+    "description": "Construction of tunnels",
+    "categoryReference": "F"
   },
   {
-    "Code": "42105",
-    "Description": "Construction of railways and subways",
-    "MSICCategoryReference": "F"
+    "code": "42105",
+    "description": "Construction of railways and subways",
+    "categoryReference": "F"
   },
   {
-    "Code": "42106",
-    "Description": "Construction of airfield/airports runways",
-    "MSICCategoryReference": "F"
+    "code": "42106",
+    "description": "Construction of airfield/airports runways",
+    "categoryReference": "F"
   },
   {
-    "Code": "42109",
-    "Description": "Construction of roads and railways n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "42109",
+    "description": "Construction of roads and railways n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "42201",
-    "Description": "Long-distance pipelines, communication and power lines",
-    "MSICCategoryReference": "F"
+    "code": "42201",
+    "description": "Long-distance pipelines, communication and power lines",
+    "categoryReference": "F"
   },
   {
-    "Code": "42202",
-    "Description": "Urban pipelines, urban communication and power lines; ancillary urban works",
-    "MSICCategoryReference": "F"
+    "code": "42202",
+    "description": "Urban pipelines, urban communication and power lines; ancillary urban works",
+    "categoryReference": "F"
   },
   {
-    "Code": "42203",
-    "Description": "Water main and line construction",
-    "MSICCategoryReference": "F"
+    "code": "42203",
+    "description": "Water main and line construction",
+    "categoryReference": "F"
   },
   {
-    "Code": "42204",
-    "Description": "Reservoirs",
-    "MSICCategoryReference": "F"
+    "code": "42204",
+    "description": "Reservoirs",
+    "categoryReference": "F"
   },
   {
-    "Code": "42205",
-    "Description": "Construction of irrigation systems (canals)",
-    "MSICCategoryReference": "F"
+    "code": "42205",
+    "description": "Construction of irrigation systems (canals)",
+    "categoryReference": "F"
   },
   {
-    "Code": "42206",
-    "Description": "Construction of sewer systems (including repair) and sewage disposal plants",
-    "MSICCategoryReference": "F"
+    "code": "42206",
+    "description": "Construction of sewer systems (including repair) and sewage disposal plants",
+    "categoryReference": "F"
   },
   {
-    "Code": "42207",
-    "Description": "Construction of power plants",
-    "MSICCategoryReference": "F"
+    "code": "42207",
+    "description": "Construction of power plants",
+    "categoryReference": "F"
   },
   {
-    "Code": "42209",
-    "Description": "Construction of utility projects n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "42209",
+    "description": "Construction of utility projects n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "42901",
-    "Description": "Construction of refineries",
-    "MSICCategoryReference": "F"
+    "code": "42901",
+    "description": "Construction of refineries",
+    "categoryReference": "F"
   },
   {
-    "Code": "42902",
-    "Description": "Construction of waterways, harbour and river works, pleasure ports (marinas), locks",
-    "MSICCategoryReference": "F"
+    "code": "42902",
+    "description": "Construction of waterways, harbour and river works, pleasure ports (marinas), locks",
+    "categoryReference": "F"
   },
   {
-    "Code": "42903",
-    "Description": "Construction of dams and dykes",
-    "MSICCategoryReference": "F"
+    "code": "42903",
+    "description": "Construction of dams and dykes",
+    "categoryReference": "F"
   },
   {
-    "Code": "42904",
-    "Description": "Dredging of waterways",
-    "MSICCategoryReference": "F"
+    "code": "42904",
+    "description": "Dredging of waterways",
+    "categoryReference": "F"
   },
   {
-    "Code": "42905",
-    "Description": "Outdoor sports facilities",
-    "MSICCategoryReference": "F"
+    "code": "42905",
+    "description": "Outdoor sports facilities",
+    "categoryReference": "F"
   },
   {
-    "Code": "42906",
-    "Description": "Land subdivision with land improvement",
-    "MSICCategoryReference": "F"
+    "code": "42906",
+    "description": "Land subdivision with land improvement",
+    "categoryReference": "F"
   },
   {
-    "Code": "42909",
-    "Description": "Construction of other engineering projects n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "42909",
+    "description": "Construction of other engineering projects n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "43110",
-    "Description": "Demolition or wrecking of buildings and other structures",
-    "MSICCategoryReference": "F"
+    "code": "43110",
+    "description": "Demolition or wrecking of buildings and other structures",
+    "categoryReference": "F"
   },
   {
-    "Code": "43121",
-    "Description": "Clearing of building sites",
-    "MSICCategoryReference": "F"
+    "code": "43121",
+    "description": "Clearing of building sites",
+    "categoryReference": "F"
   },
   {
-    "Code": "43122",
-    "Description": "Earth moving",
-    "MSICCategoryReference": "F"
+    "code": "43122",
+    "description": "Earth moving",
+    "categoryReference": "F"
   },
   {
-    "Code": "43123",
-    "Description": "Drilling, boring and core sampling for construction, geophysical, geological or similar purposes",
-    "MSICCategoryReference": "F"
+    "code": "43123",
+    "description": "Drilling, boring and core sampling for construction, geophysical, geological or similar purposes",
+    "categoryReference": "F"
   },
   {
-    "Code": "43124",
-    "Description": "Site preparation for mining",
-    "MSICCategoryReference": "F"
+    "code": "43124",
+    "description": "Site preparation for mining",
+    "categoryReference": "F"
   },
   {
-    "Code": "43125",
-    "Description": "Drainage of agricultural or forestry land",
-    "MSICCategoryReference": "F"
+    "code": "43125",
+    "description": "Drainage of agricultural or forestry land",
+    "categoryReference": "F"
   },
   {
-    "Code": "43126",
-    "Description": "Land reclamation work",
-    "MSICCategoryReference": "F"
+    "code": "43126",
+    "description": "Land reclamation work",
+    "categoryReference": "F"
   },
   {
-    "Code": "43129",
-    "Description": "Other site preparation activities n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "43129",
+    "description": "Other site preparation activities n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "43211",
-    "Description": "Electrical wiring and fittings",
-    "MSICCategoryReference": "F"
+    "code": "43211",
+    "description": "Electrical wiring and fittings",
+    "categoryReference": "F"
   },
   {
-    "Code": "43212",
-    "Description": "Telecommunications wiring",
-    "MSICCategoryReference": "F"
+    "code": "43212",
+    "description": "Telecommunications wiring",
+    "categoryReference": "F"
   },
   {
-    "Code": "43213",
-    "Description": "Computer network and cable television wiring",
-    "MSICCategoryReference": "F"
+    "code": "43213",
+    "description": "Computer network and cable television wiring",
+    "categoryReference": "F"
   },
   {
-    "Code": "43214",
-    "Description": "Satellite dishes",
-    "MSICCategoryReference": "F"
+    "code": "43214",
+    "description": "Satellite dishes",
+    "categoryReference": "F"
   },
   {
-    "Code": "43215",
-    "Description": "Lighting systems",
-    "MSICCategoryReference": "F"
+    "code": "43215",
+    "description": "Lighting systems",
+    "categoryReference": "F"
   },
   {
-    "Code": "43216",
-    "Description": "Security systems",
-    "MSICCategoryReference": "F"
+    "code": "43216",
+    "description": "Security systems",
+    "categoryReference": "F"
   },
   {
-    "Code": "43219",
-    "Description": "Electrical installation n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "43219",
+    "description": "Electrical installation n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "43221",
-    "Description": "Installation of heating systems (electric, gas and oil)",
-    "MSICCategoryReference": "F"
+    "code": "43221",
+    "description": "Installation of heating systems (electric, gas and oil)",
+    "categoryReference": "F"
   },
   {
-    "Code": "43222",
-    "Description": "Installation of furnaces, cooling towers",
-    "MSICCategoryReference": "F"
+    "code": "43222",
+    "description": "Installation of furnaces, cooling towers",
+    "categoryReference": "F"
   },
   {
-    "Code": "43223",
-    "Description": "Installation of non-electric solar energy collectors",
-    "MSICCategoryReference": "F"
+    "code": "43223",
+    "description": "Installation of non-electric solar energy collectors",
+    "categoryReference": "F"
   },
   {
-    "Code": "43224",
-    "Description": "Installation of plumbing and sanitary equipment",
-    "MSICCategoryReference": "F"
+    "code": "43224",
+    "description": "Installation of plumbing and sanitary equipment",
+    "categoryReference": "F"
   },
   {
-    "Code": "43225",
-    "Description": "Installation of ventilation, refrigeration or air-conditioning equipment and ducts",
-    "MSICCategoryReference": "F"
+    "code": "43225",
+    "description": "Installation of ventilation, refrigeration or air-conditioning equipment and ducts",
+    "categoryReference": "F"
   },
   {
-    "Code": "43226",
-    "Description": "Installation of gas fittings",
-    "MSICCategoryReference": "F"
+    "code": "43226",
+    "description": "Installation of gas fittings",
+    "categoryReference": "F"
   },
   {
-    "Code": "43227",
-    "Description": "Installation of fire and lawn sprinkler systems",
-    "MSICCategoryReference": "F"
+    "code": "43227",
+    "description": "Installation of fire and lawn sprinkler systems",
+    "categoryReference": "F"
   },
   {
-    "Code": "43228",
-    "Description": "Steam piping",
-    "MSICCategoryReference": "F"
+    "code": "43228",
+    "description": "Steam piping",
+    "categoryReference": "F"
   },
   {
-    "Code": "43229",
-    "Description": "Plumbing, heat and air-conditioning installation n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "43229",
+    "description": "Plumbing, heat and air-conditioning installation n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "43291",
-    "Description": "Installation of elevators, escalators in buildings or other construction projects",
-    "MSICCategoryReference": "F"
+    "code": "43291",
+    "description": "Installation of elevators, escalators in buildings or other construction projects",
+    "categoryReference": "F"
   },
   {
-    "Code": "43292",
-    "Description": "Installation of automated and revolving doors in buildings or other construction projects",
-    "MSICCategoryReference": "F"
+    "code": "43292",
+    "description": "Installation of automated and revolving doors in buildings or other construction projects",
+    "categoryReference": "F"
   },
   {
-    "Code": "43293",
-    "Description": "Installation of lighting conductors in buildings or other construction projects",
-    "MSICCategoryReference": "F"
+    "code": "43293",
+    "description": "Installation of lighting conductors in buildings or other construction projects",
+    "categoryReference": "F"
   },
   {
-    "Code": "43294",
-    "Description": "Installation vacuum cleaning systems in buildings or other construction projects",
-    "MSICCategoryReference": "F"
+    "code": "43294",
+    "description": "Installation vacuum cleaning systems in buildings or other construction projects",
+    "categoryReference": "F"
   },
   {
-    "Code": "43295",
-    "Description": "Installation thermal, sound or vibration insulation in buildings or other construction projects",
-    "MSICCategoryReference": "F"
+    "code": "43295",
+    "description": "Installation thermal, sound or vibration insulation in buildings or other construction projects",
+    "categoryReference": "F"
   },
   {
-    "Code": "43299",
-    "Description": "Other construction installation n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "43299",
+    "description": "Other construction installation n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "43301",
-    "Description": "Installation of doors, windows, door and window frames of wood or other materials, fitted kitchens, staircases, shop fittings and furniture",
-    "MSICCategoryReference": "F"
+    "code": "43301",
+    "description": "Installation of doors, windows, door and window frames of wood or other materials, fitted kitchens, staircases, shop fittings and furniture",
+    "categoryReference": "F"
   },
   {
-    "Code": "43302",
-    "Description": "Laying, tiling, hanging or fitting in buildings or other construction projects of various types of materials",
-    "MSICCategoryReference": "F"
+    "code": "43302",
+    "description": "Laying, tiling, hanging or fitting in buildings or other construction projects of various types of materials",
+    "categoryReference": "F"
   },
   {
-    "Code": "43303",
-    "Description": "Interior and exterior painting of buildings",
-    "MSICCategoryReference": "F"
+    "code": "43303",
+    "description": "Interior and exterior painting of buildings",
+    "categoryReference": "F"
   },
   {
-    "Code": "43304",
-    "Description": "Painting of civil engineering structures",
-    "MSICCategoryReference": "F"
+    "code": "43304",
+    "description": "Painting of civil engineering structures",
+    "categoryReference": "F"
   },
   {
-    "Code": "43305",
-    "Description": "Installation of glass, mirrors",
-    "MSICCategoryReference": "F"
+    "code": "43305",
+    "description": "Installation of glass, mirrors",
+    "categoryReference": "F"
   },
   {
-    "Code": "43306",
-    "Description": "Interior completion",
-    "MSICCategoryReference": "F"
+    "code": "43306",
+    "description": "Interior completion",
+    "categoryReference": "F"
   },
   {
-    "Code": "43307",
-    "Description": "Cleaning of new buildings after construction",
-    "MSICCategoryReference": "F"
+    "code": "43307",
+    "description": "Cleaning of new buildings after construction",
+    "categoryReference": "F"
   },
   {
-    "Code": "43309",
-    "Description": "Other building completion and finishing work n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "43309",
+    "description": "Other building completion and finishing work n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "43901",
-    "Description": "Construction of foundations, including pile driving",
-    "MSICCategoryReference": "F"
+    "code": "43901",
+    "description": "Construction of foundations, including pile driving",
+    "categoryReference": "F"
   },
   {
-    "Code": "43902",
-    "Description": "Erection of non-self-manufactured steel elements",
-    "MSICCategoryReference": "F"
+    "code": "43902",
+    "description": "Erection of non-self-manufactured steel elements",
+    "categoryReference": "F"
   },
   {
-    "Code": "43903",
-    "Description": "Scaffolds and work platform erecting and dismantling",
-    "MSICCategoryReference": "F"
+    "code": "43903",
+    "description": "Scaffolds and work platform erecting and dismantling",
+    "categoryReference": "F"
   },
   {
-    "Code": "43904",
-    "Description": "Bricklaying and stone setting",
-    "MSICCategoryReference": "F"
+    "code": "43904",
+    "description": "Bricklaying and stone setting",
+    "categoryReference": "F"
   },
   {
-    "Code": "43905",
-    "Description": "Construction of outdoor swimming pools",
-    "MSICCategoryReference": "F"
+    "code": "43905",
+    "description": "Construction of outdoor swimming pools",
+    "categoryReference": "F"
   },
   {
-    "Code": "43906",
-    "Description": "Steam cleaning, sand blasting and similar activities for building exteriors",
-    "MSICCategoryReference": "F"
+    "code": "43906",
+    "description": "Steam cleaning, sand blasting and similar activities for building exteriors",
+    "categoryReference": "F"
   },
   {
-    "Code": "43907",
-    "Description": "Renting of construction machinery and equipment with operator (e.g. cranes)",
-    "MSICCategoryReference": "F"
+    "code": "43907",
+    "description": "Renting of construction machinery and equipment with operator (e.g. cranes)",
+    "categoryReference": "F"
   },
   {
-    "Code": "43909",
-    "Description": "Other specialized construction activities, n.e.c.",
-    "MSICCategoryReference": "F"
+    "code": "43909",
+    "description": "Other specialized construction activities, n.e.c.",
+    "categoryReference": "F"
   },
   {
-    "Code": "45101",
-    "Description": "Wholesale and retail of new motor vehicles",
-    "MSICCategoryReference": "G"
+    "code": "45101",
+    "description": "Wholesale and retail of new motor vehicles",
+    "categoryReference": "G"
   },
   {
-    "Code": "45102",
-    "Description": "Wholesale and retail of used motor vehicles",
-    "MSICCategoryReference": "G"
+    "code": "45102",
+    "description": "Wholesale and retail of used motor vehicles",
+    "categoryReference": "G"
   },
   {
-    "Code": "45103",
-    "Description": "Sale of industrial, commercial and agriculture vehicles – new",
-    "MSICCategoryReference": "G"
+    "code": "45103",
+    "description": "Sale of industrial, commercial and agriculture vehicles – new",
+    "categoryReference": "G"
   },
   {
-    "Code": "45104",
-    "Description": "Sale of industrial, commercial and agriculture vehicles – used",
-    "MSICCategoryReference": "G"
+    "code": "45104",
+    "description": "Sale of industrial, commercial and agriculture vehicles – used",
+    "categoryReference": "G"
   },
   {
-    "Code": "45105",
-    "Description": "Sale by commission agents",
-    "MSICCategoryReference": "G"
+    "code": "45105",
+    "description": "Sale by commission agents",
+    "categoryReference": "G"
   },
   {
-    "Code": "45106",
-    "Description": "Car auctions",
-    "MSICCategoryReference": "G"
+    "code": "45106",
+    "description": "Car auctions",
+    "categoryReference": "G"
   },
   {
-    "Code": "45109",
-    "Description": "Sale of other motor vehicles n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "45109",
+    "description": "Sale of other motor vehicles n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "45201",
-    "Description": "Maintenance and repair of motor vehicles",
-    "MSICCategoryReference": "G"
+    "code": "45201",
+    "description": "Maintenance and repair of motor vehicles",
+    "categoryReference": "G"
   },
   {
-    "Code": "45202",
-    "Description": "Spraying and painting",
-    "MSICCategoryReference": "G"
+    "code": "45202",
+    "description": "Spraying and painting",
+    "categoryReference": "G"
   },
   {
-    "Code": "45203",
-    "Description": "Washing and polishing (car wash)",
-    "MSICCategoryReference": "G"
+    "code": "45203",
+    "description": "Washing and polishing (car wash)",
+    "categoryReference": "G"
   },
   {
-    "Code": "45204",
-    "Description": "Repair of motor vehicle seats",
-    "MSICCategoryReference": "G"
+    "code": "45204",
+    "description": "Repair of motor vehicle seats",
+    "categoryReference": "G"
   },
   {
-    "Code": "45205",
-    "Description": "Installation of parts and accessories not as part of the manufacturing process",
-    "MSICCategoryReference": "G"
+    "code": "45205",
+    "description": "Installation of parts and accessories not as part of the manufacturing process",
+    "categoryReference": "G"
   },
   {
-    "Code": "45300",
-    "Description": "Wholesale and retail sale of all kinds of parts, components, supplies, tools and accessories for motor vehicles",
-    "MSICCategoryReference": "G"
+    "code": "45300",
+    "description": "Wholesale and retail sale of all kinds of parts, components, supplies, tools and accessories for motor vehicles",
+    "categoryReference": "G"
   },
   {
-    "Code": "45401",
-    "Description": "Wholesale and retail sale of motorcycles",
-    "MSICCategoryReference": "G"
+    "code": "45401",
+    "description": "Wholesale and retail sale of motorcycles",
+    "categoryReference": "G"
   },
   {
-    "Code": "45402",
-    "Description": "Wholesale and retail sale of parts and accessories for motorcycles",
-    "MSICCategoryReference": "G"
+    "code": "45402",
+    "description": "Wholesale and retail sale of parts and accessories for motorcycles",
+    "categoryReference": "G"
   },
   {
-    "Code": "45403",
-    "Description": "Repair and maintenance of motorcycles",
-    "MSICCategoryReference": "G"
+    "code": "45403",
+    "description": "Repair and maintenance of motorcycles",
+    "categoryReference": "G"
   },
   {
-    "Code": "46100",
-    "Description": "Wholesale on a fee or contract basis",
-    "MSICCategoryReference": "G"
+    "code": "46100",
+    "description": "Wholesale on a fee or contract basis",
+    "categoryReference": "G"
   },
   {
-    "Code": "46201",
-    "Description": "Wholesale of rubber",
-    "MSICCategoryReference": "G"
+    "code": "46201",
+    "description": "Wholesale of rubber",
+    "categoryReference": "G"
   },
   {
-    "Code": "46202",
-    "Description": "Wholesale of palm oil",
-    "MSICCategoryReference": "G"
+    "code": "46202",
+    "description": "Wholesale of palm oil",
+    "categoryReference": "G"
   },
   {
-    "Code": "46203",
-    "Description": "Wholesale of lumber and timber",
-    "MSICCategoryReference": "G"
+    "code": "46203",
+    "description": "Wholesale of lumber and timber",
+    "categoryReference": "G"
   },
   {
-    "Code": "46204",
-    "Description": "Wholesale of flowers and plants",
-    "MSICCategoryReference": "G"
+    "code": "46204",
+    "description": "Wholesale of flowers and plants",
+    "categoryReference": "G"
   },
   {
-    "Code": "46205",
-    "Description": "Wholesale of livestock",
-    "MSICCategoryReference": "G"
+    "code": "46205",
+    "description": "Wholesale of livestock",
+    "categoryReference": "G"
   },
   {
-    "Code": "46209",
-    "Description": "Wholesale of agricultural raw material and live animal n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "46209",
+    "description": "Wholesale of agricultural raw material and live animal n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "46311",
-    "Description": "Wholesale of meat, poultry and eggs",
-    "MSICCategoryReference": "G"
+    "code": "46311",
+    "description": "Wholesale of meat, poultry and eggs",
+    "categoryReference": "G"
   },
   {
-    "Code": "46312",
-    "Description": "Wholesale of fish and other seafood",
-    "MSICCategoryReference": "G"
+    "code": "46312",
+    "description": "Wholesale of fish and other seafood",
+    "categoryReference": "G"
   },
   {
-    "Code": "46313",
-    "Description": "Wholesale of fruits",
-    "MSICCategoryReference": "G"
+    "code": "46313",
+    "description": "Wholesale of fruits",
+    "categoryReference": "G"
   },
   {
-    "Code": "46314",
-    "Description": "Wholesale of vegetables",
-    "MSICCategoryReference": "G"
+    "code": "46314",
+    "description": "Wholesale of vegetables",
+    "categoryReference": "G"
   },
   {
-    "Code": "46319",
-    "Description": "Wholesale of meat, fish, fruits and vegetables n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "46319",
+    "description": "Wholesale of meat, fish, fruits and vegetables n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "46321",
-    "Description": "Wholesale of rice, other grains, flour and sugars",
-    "MSICCategoryReference": "G"
+    "code": "46321",
+    "description": "Wholesale of rice, other grains, flour and sugars",
+    "categoryReference": "G"
   },
   {
-    "Code": "46322",
-    "Description": "Wholesale of dairy products",
-    "MSICCategoryReference": "G"
+    "code": "46322",
+    "description": "Wholesale of dairy products",
+    "categoryReference": "G"
   },
   {
-    "Code": "46323",
-    "Description": "Wholesale of confectionary",
-    "MSICCategoryReference": "G"
+    "code": "46323",
+    "description": "Wholesale of confectionary",
+    "categoryReference": "G"
   },
   {
-    "Code": "46324",
-    "Description": "Wholesale of  biscuits, cakes, breads and other bakery products",
-    "MSICCategoryReference": "G"
+    "code": "46324",
+    "description": "Wholesale of  biscuits, cakes, breads and other bakery products",
+    "categoryReference": "G"
   },
   {
-    "Code": "46325",
-    "Description": "Wholesale of coffee, tea, cocoa and other beverages",
-    "MSICCategoryReference": "G"
+    "code": "46325",
+    "description": "Wholesale of coffee, tea, cocoa and other beverages",
+    "categoryReference": "G"
   },
   {
-    "Code": "46326",
-    "Description": "Wholesale of beer, wine and spirits",
-    "MSICCategoryReference": "G"
+    "code": "46326",
+    "description": "Wholesale of beer, wine and spirits",
+    "categoryReference": "G"
   },
   {
-    "Code": "46327",
-    "Description": "Wholesale of tobacco, cigar, cigarettes",
-    "MSICCategoryReference": "G"
+    "code": "46327",
+    "description": "Wholesale of tobacco, cigar, cigarettes",
+    "categoryReference": "G"
   },
   {
-    "Code": "46329",
-    "Description": "Wholesale of other foodstuffs",
-    "MSICCategoryReference": "G"
+    "code": "46329",
+    "description": "Wholesale of other foodstuffs",
+    "categoryReference": "G"
   },
   {
-    "Code": "46411",
-    "Description": "Wholesale of yarn and fabrics",
-    "MSICCategoryReference": "G"
+    "code": "46411",
+    "description": "Wholesale of yarn and fabrics",
+    "categoryReference": "G"
   },
   {
-    "Code": "46412",
-    "Description": "Wholesale of household linen, towels, blankets",
-    "MSICCategoryReference": "G"
+    "code": "46412",
+    "description": "Wholesale of household linen, towels, blankets",
+    "categoryReference": "G"
   },
   {
-    "Code": "46413",
-    "Description": "Wholesale of clothing",
-    "MSICCategoryReference": "G"
+    "code": "46413",
+    "description": "Wholesale of clothing",
+    "categoryReference": "G"
   },
   {
-    "Code": "46414",
-    "Description": "Wholesale of clothing accessories",
-    "MSICCategoryReference": "G"
+    "code": "46414",
+    "description": "Wholesale of clothing accessories",
+    "categoryReference": "G"
   },
   {
-    "Code": "46415",
-    "Description": "Wholesale of fur articles",
-    "MSICCategoryReference": "G"
+    "code": "46415",
+    "description": "Wholesale of fur articles",
+    "categoryReference": "G"
   },
   {
-    "Code": "46416",
-    "Description": "Wholesale of footwear",
-    "MSICCategoryReference": "G"
+    "code": "46416",
+    "description": "Wholesale of footwear",
+    "categoryReference": "G"
   },
   {
-    "Code": "46417",
-    "Description": "Wholesale of haberdashery",
-    "MSICCategoryReference": "G"
+    "code": "46417",
+    "description": "Wholesale of haberdashery",
+    "categoryReference": "G"
   },
   {
-    "Code": "46419",
-    "Description": "Wholesale of textiles, clothing n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "46419",
+    "description": "Wholesale of textiles, clothing n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "46421",
-    "Description": "Wholesale of pharmaceutical and medical goods",
-    "MSICCategoryReference": "G"
+    "code": "46421",
+    "description": "Wholesale of pharmaceutical and medical goods",
+    "categoryReference": "G"
   },
   {
-    "Code": "46422",
-    "Description": "Wholesale of perfumeries, cosmetics, soap and toiletries",
-    "MSICCategoryReference": "G"
+    "code": "46422",
+    "description": "Wholesale of perfumeries, cosmetics, soap and toiletries",
+    "categoryReference": "G"
   },
   {
-    "Code": "46431",
-    "Description": "Wholesale of bicycles and their parts and accessories",
-    "MSICCategoryReference": "G"
+    "code": "46431",
+    "description": "Wholesale of bicycles and their parts and accessories",
+    "categoryReference": "G"
   },
   {
-    "Code": "46432",
-    "Description": "Wholesale of photographic and optical goods",
-    "MSICCategoryReference": "G"
+    "code": "46432",
+    "description": "Wholesale of photographic and optical goods",
+    "categoryReference": "G"
   },
   {
-    "Code": "46433",
-    "Description": "Wholesale of leather goods and travel accessories",
-    "MSICCategoryReference": "G"
+    "code": "46433",
+    "description": "Wholesale of leather goods and travel accessories",
+    "categoryReference": "G"
   },
   {
-    "Code": "46434",
-    "Description": "Wholesale of musical instruments, games and toys, sports goods",
-    "MSICCategoryReference": "G"
+    "code": "46434",
+    "description": "Wholesale of musical instruments, games and toys, sports goods",
+    "categoryReference": "G"
   },
   {
-    "Code": "46441",
-    "Description": "Wholesale of handicrafts and artificial flowers",
-    "MSICCategoryReference": "G"
+    "code": "46441",
+    "description": "Wholesale of handicrafts and artificial flowers",
+    "categoryReference": "G"
   },
   {
-    "Code": "46442",
-    "Description": "Wholesale of cut flowers and plants",
-    "MSICCategoryReference": "G"
+    "code": "46442",
+    "description": "Wholesale of cut flowers and plants",
+    "categoryReference": "G"
   },
   {
-    "Code": "46443",
-    "Description": "Wholesale of watches and clocks",
-    "MSICCategoryReference": "G"
+    "code": "46443",
+    "description": "Wholesale of watches and clocks",
+    "categoryReference": "G"
   },
   {
-    "Code": "46444",
-    "Description": "Wholesale of jewellery",
-    "MSICCategoryReference": "G"
+    "code": "46444",
+    "description": "Wholesale of jewellery",
+    "categoryReference": "G"
   },
   {
-    "Code": "46491",
-    "Description": "Wholesale of household furniture",
-    "MSICCategoryReference": "G"
+    "code": "46491",
+    "description": "Wholesale of household furniture",
+    "categoryReference": "G"
   },
   {
-    "Code": "46492",
-    "Description": "Wholesale of household appliances",
-    "MSICCategoryReference": "G"
+    "code": "46492",
+    "description": "Wholesale of household appliances",
+    "categoryReference": "G"
   },
   {
-    "Code": "46493",
-    "Description": "Wholesale of lighting equipment",
-    "MSICCategoryReference": "G"
+    "code": "46493",
+    "description": "Wholesale of lighting equipment",
+    "categoryReference": "G"
   },
   {
-    "Code": "46494",
-    "Description": "Wholesale of household utensils and cutlery, crockery, glassware, chinaware and pottery",
-    "MSICCategoryReference": "G"
+    "code": "46494",
+    "description": "Wholesale of household utensils and cutlery, crockery, glassware, chinaware and pottery",
+    "categoryReference": "G"
   },
   {
-    "Code": "46495",
-    "Description": "Wholesale of woodenware, wickerwork and corkware",
-    "MSICCategoryReference": "G"
+    "code": "46495",
+    "description": "Wholesale of woodenware, wickerwork and corkware",
+    "categoryReference": "G"
   },
   {
-    "Code": "46496",
-    "Description": "Wholesale of electrical and electronic goods",
-    "MSICCategoryReference": "G"
+    "code": "46496",
+    "description": "Wholesale of electrical and electronic goods",
+    "categoryReference": "G"
   },
   {
-    "Code": "46497",
-    "Description": "Wholesale of stationery, books, magazines and newspapers",
-    "MSICCategoryReference": "G"
+    "code": "46497",
+    "description": "Wholesale of stationery, books, magazines and newspapers",
+    "categoryReference": "G"
   },
   {
-    "Code": "46499",
-    "Description": "Wholesale of other household goods n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "46499",
+    "description": "Wholesale of other household goods n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "46510",
-    "Description": "Wholesale of computer hardware, software and peripherals",
-    "MSICCategoryReference": "G"
+    "code": "46510",
+    "description": "Wholesale of computer hardware, software and peripherals",
+    "categoryReference": "G"
   },
   {
-    "Code": "46521",
-    "Description": "Wholesale of telephone and telecommunications equipment, cell phones, pagers",
-    "MSICCategoryReference": "G"
+    "code": "46521",
+    "description": "Wholesale of telephone and telecommunications equipment, cell phones, pagers",
+    "categoryReference": "G"
   },
   {
-    "Code": "46522",
-    "Description": "Wholesale of electronic components and wiring accessories",
-    "MSICCategoryReference": "G"
+    "code": "46522",
+    "description": "Wholesale of electronic components and wiring accessories",
+    "categoryReference": "G"
   },
   {
-    "Code": "46531",
-    "Description": "Wholesale of agricultural machinery, equipment and supplies",
-    "MSICCategoryReference": "G"
+    "code": "46531",
+    "description": "Wholesale of agricultural machinery, equipment and supplies",
+    "categoryReference": "G"
   },
   {
-    "Code": "46532",
-    "Description": "Wholesale of lawn mowers however operated",
-    "MSICCategoryReference": "G"
+    "code": "46532",
+    "description": "Wholesale of lawn mowers however operated",
+    "categoryReference": "G"
   },
   {
-    "Code": "46591",
-    "Description": "Wholesale of office machinery and business equipment, except computers and computer peripheral equipment",
-    "MSICCategoryReference": "G"
+    "code": "46591",
+    "description": "Wholesale of office machinery and business equipment, except computers and computer peripheral equipment",
+    "categoryReference": "G"
   },
   {
-    "Code": "46592",
-    "Description": "Wholesale of office furniture",
-    "MSICCategoryReference": "G"
+    "code": "46592",
+    "description": "Wholesale of office furniture",
+    "categoryReference": "G"
   },
   {
-    "Code": "46593",
-    "Description": "Wholesale of computer-controlled machines tools",
-    "MSICCategoryReference": "G"
+    "code": "46593",
+    "description": "Wholesale of computer-controlled machines tools",
+    "categoryReference": "G"
   },
   {
-    "Code": "46594",
-    "Description": "Wholesale of industrial machinery, equipment and supplies",
-    "MSICCategoryReference": "G"
+    "code": "46594",
+    "description": "Wholesale of industrial machinery, equipment and supplies",
+    "categoryReference": "G"
   },
   {
-    "Code": "46595",
-    "Description": "Wholesale of construction and civil engineering machinery and equipment",
-    "MSICCategoryReference": "G"
+    "code": "46595",
+    "description": "Wholesale of construction and civil engineering machinery and equipment",
+    "categoryReference": "G"
   },
   {
-    "Code": "46596",
-    "Description": "Wholesale of lift escalators, air-conditioning, security and fire fighting equipment",
-    "MSICCategoryReference": "G"
+    "code": "46596",
+    "description": "Wholesale of lift escalators, air-conditioning, security and fire fighting equipment",
+    "categoryReference": "G"
   },
   {
-    "Code": "46599",
-    "Description": "Wholesale of other machinery for use in industry, trade and navigation and other services n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "46599",
+    "description": "Wholesale of other machinery for use in industry, trade and navigation and other services n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "46611",
-    "Description": "Wholesale of petrol, diesel, lubricants",
-    "MSICCategoryReference": "G"
+    "code": "46611",
+    "description": "Wholesale of petrol, diesel, lubricants",
+    "categoryReference": "G"
   },
   {
-    "Code": "46612",
-    "Description": "Wholesale of liquefied petroleum gas",
-    "MSICCategoryReference": "G"
+    "code": "46612",
+    "description": "Wholesale of liquefied petroleum gas",
+    "categoryReference": "G"
   },
   {
-    "Code": "46619",
-    "Description": "Wholesale of other solid, liquid and gaseous fuels and related products n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "46619",
+    "description": "Wholesale of other solid, liquid and gaseous fuels and related products n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "46621",
-    "Description": "Wholesale of ferrous and non-ferrous metal ores and metals",
-    "MSICCategoryReference": "G"
+    "code": "46621",
+    "description": "Wholesale of ferrous and non-ferrous metal ores and metals",
+    "categoryReference": "G"
   },
   {
-    "Code": "46622",
-    "Description": "Wholesale of ferrous and non-ferrous semi-finished metal ores and products n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "46622",
+    "description": "Wholesale of ferrous and non-ferrous semi-finished metal ores and products n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "46631",
-    "Description": "Wholesale of logs, sawn timber, plywood, veneer and related products",
-    "MSICCategoryReference": "G"
+    "code": "46631",
+    "description": "Wholesale of logs, sawn timber, plywood, veneer and related products",
+    "categoryReference": "G"
   },
   {
-    "Code": "46632",
-    "Description": "Wholesale of paints and varnish",
-    "MSICCategoryReference": "G"
+    "code": "46632",
+    "description": "Wholesale of paints and varnish",
+    "categoryReference": "G"
   },
   {
-    "Code": "46633",
-    "Description": "Wholesale of construction materials",
-    "MSICCategoryReference": "G"
+    "code": "46633",
+    "description": "Wholesale of construction materials",
+    "categoryReference": "G"
   },
   {
-    "Code": "46634",
-    "Description": "Wholesale of fittings and fixtures",
-    "MSICCategoryReference": "G"
+    "code": "46634",
+    "description": "Wholesale of fittings and fixtures",
+    "categoryReference": "G"
   },
   {
-    "Code": "46635",
-    "Description": "Wholesale of hot water heaters",
-    "MSICCategoryReference": "G"
+    "code": "46635",
+    "description": "Wholesale of hot water heaters",
+    "categoryReference": "G"
   },
   {
-    "Code": "46636",
-    "Description": "Wholesale of sanitary installation and equipment",
-    "MSICCategoryReference": "G"
+    "code": "46636",
+    "description": "Wholesale of sanitary installation and equipment",
+    "categoryReference": "G"
   },
   {
-    "Code": "46637",
-    "Description": "Wholesale of tools",
-    "MSICCategoryReference": "G"
+    "code": "46637",
+    "description": "Wholesale of tools",
+    "categoryReference": "G"
   },
   {
-    "Code": "46639",
-    "Description": "Wholesale of other construction materials, hardware, plumbing and heating equipment and supplies n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "46639",
+    "description": "Wholesale of other construction materials, hardware, plumbing and heating equipment and supplies n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "46691",
-    "Description": "Wholesale of industrial chemicals",
-    "MSICCategoryReference": "G"
+    "code": "46691",
+    "description": "Wholesale of industrial chemicals",
+    "categoryReference": "G"
   },
   {
-    "Code": "46692",
-    "Description": "Wholesale of fertilizers and agrochemical products",
-    "MSICCategoryReference": "G"
+    "code": "46692",
+    "description": "Wholesale of fertilizers and agrochemical products",
+    "categoryReference": "G"
   },
   {
-    "Code": "46693",
-    "Description": "Wholesale of plastic materials in primary forms",
-    "MSICCategoryReference": "G"
+    "code": "46693",
+    "description": "Wholesale of plastic materials in primary forms",
+    "categoryReference": "G"
   },
   {
-    "Code": "46694",
-    "Description": "Wholesale of rubber scrap",
-    "MSICCategoryReference": "G"
+    "code": "46694",
+    "description": "Wholesale of rubber scrap",
+    "categoryReference": "G"
   },
   {
-    "Code": "46695",
-    "Description": "Wholesale of textile fibres",
-    "MSICCategoryReference": "G"
+    "code": "46695",
+    "description": "Wholesale of textile fibres",
+    "categoryReference": "G"
   },
   {
-    "Code": "46696",
-    "Description": "Wholesale of paper in bulk, packaging materials",
-    "MSICCategoryReference": "G"
+    "code": "46696",
+    "description": "Wholesale of paper in bulk, packaging materials",
+    "categoryReference": "G"
   },
   {
-    "Code": "46697",
-    "Description": "Wholesale of precious stones",
-    "MSICCategoryReference": "G"
+    "code": "46697",
+    "description": "Wholesale of precious stones",
+    "categoryReference": "G"
   },
   {
-    "Code": "46698",
-    "Description": "Wholesale of metal and non-metal waste and scrap and materials for recycling",
-    "MSICCategoryReference": "G"
+    "code": "46698",
+    "description": "Wholesale of metal and non-metal waste and scrap and materials for recycling",
+    "categoryReference": "G"
   },
   {
-    "Code": "46699",
-    "Description": "Dismantling of automobiles, computer, televisions and other equipment to obtain and re-sell usable parts",
-    "MSICCategoryReference": "G"
+    "code": "46699",
+    "description": "Dismantling of automobiles, computer, televisions and other equipment to obtain and re-sell usable parts",
+    "categoryReference": "G"
   },
   {
-    "Code": "46901",
-    "Description": "Wholesale of aquarium fishes, pet birds and animals",
-    "MSICCategoryReference": "G"
+    "code": "46901",
+    "description": "Wholesale of aquarium fishes, pet birds and animals",
+    "categoryReference": "G"
   },
   {
-    "Code": "46902",
-    "Description": "Wholesale of animal/pet food",
-    "MSICCategoryReference": "G"
+    "code": "46902",
+    "description": "Wholesale of animal/pet food",
+    "categoryReference": "G"
   },
   {
-    "Code": "46909",
-    "Description": "Wholesale of a variety of goods without any particular specialization n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "46909",
+    "description": "Wholesale of a variety of goods without any particular specialization n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "47111",
-    "Description": "Provision stores",
-    "MSICCategoryReference": "G"
+    "code": "47111",
+    "description": "Provision stores",
+    "categoryReference": "G"
   },
   {
-    "Code": "47112",
-    "Description": "Supermarket",
-    "MSICCategoryReference": "G"
+    "code": "47112",
+    "description": "Supermarket",
+    "categoryReference": "G"
   },
   {
-    "Code": "47113",
-    "Description": "Mini market",
-    "MSICCategoryReference": "G"
+    "code": "47113",
+    "description": "Mini market",
+    "categoryReference": "G"
   },
   {
-    "Code": "47114",
-    "Description": "Convenience stores",
-    "MSICCategoryReference": "G"
+    "code": "47114",
+    "description": "Convenience stores",
+    "categoryReference": "G"
   },
   {
-    "Code": "47191",
-    "Description": "Department stores",
-    "MSICCategoryReference": "G"
+    "code": "47191",
+    "description": "Department stores",
+    "categoryReference": "G"
   },
   {
-    "Code": "47192",
-    "Description": "Department stores and supermarket",
-    "MSICCategoryReference": "G"
+    "code": "47192",
+    "description": "Department stores and supermarket",
+    "categoryReference": "G"
   },
   {
-    "Code": "47193",
-    "Description": "Hypermarket",
-    "MSICCategoryReference": "G"
+    "code": "47193",
+    "description": "Hypermarket",
+    "categoryReference": "G"
   },
   {
-    "Code": "47194",
-    "Description": "News agent and miscellaneous goods store",
-    "MSICCategoryReference": "G"
+    "code": "47194",
+    "description": "News agent and miscellaneous goods store",
+    "categoryReference": "G"
   },
   {
-    "Code": "47199",
-    "Description": "Other retail sale in non-specialized stores n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "47199",
+    "description": "Other retail sale in non-specialized stores n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "47211",
-    "Description": "Retail sale of rice, flour, other grains and sugars",
-    "MSICCategoryReference": "G"
+    "code": "47211",
+    "description": "Retail sale of rice, flour, other grains and sugars",
+    "categoryReference": "G"
   },
   {
-    "Code": "47212",
-    "Description": "Retail sale of fresh or preserved vegetables and fruits",
-    "MSICCategoryReference": "G"
+    "code": "47212",
+    "description": "Retail sale of fresh or preserved vegetables and fruits",
+    "categoryReference": "G"
   },
   {
-    "Code": "47213",
-    "Description": "Retail sale of dairy products and eggs",
-    "MSICCategoryReference": "G"
+    "code": "47213",
+    "description": "Retail sale of dairy products and eggs",
+    "categoryReference": "G"
   },
   {
-    "Code": "47214",
-    "Description": "Retail sale of meat and meat products (including poultry)",
-    "MSICCategoryReference": "G"
+    "code": "47214",
+    "description": "Retail sale of meat and meat products (including poultry)",
+    "categoryReference": "G"
   },
   {
-    "Code": "47215",
-    "Description": "Retail sale of fish, other seafood and products thereof",
-    "MSICCategoryReference": "G"
+    "code": "47215",
+    "description": "Retail sale of fish, other seafood and products thereof",
+    "categoryReference": "G"
   },
   {
-    "Code": "47216",
-    "Description": "Retail sale of bakery products and sugar confectionery",
-    "MSICCategoryReference": "G"
+    "code": "47216",
+    "description": "Retail sale of bakery products and sugar confectionery",
+    "categoryReference": "G"
   },
   {
-    "Code": "47217",
-    "Description": "Retail sale of mee, kuey teow, mee hoon, wantan skins and other food products made from flour or soya",
-    "MSICCategoryReference": "G"
+    "code": "47217",
+    "description": "Retail sale of mee, kuey teow, mee hoon, wantan skins and other food products made from flour or soya",
+    "categoryReference": "G"
   },
   {
-    "Code": "47219",
-    "Description": "Retail sale of other food products n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "47219",
+    "description": "Retail sale of other food products n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "47221",
-    "Description": "Retail sale of beer, wine and spirits",
-    "MSICCategoryReference": "G"
+    "code": "47221",
+    "description": "Retail sale of beer, wine and spirits",
+    "categoryReference": "G"
   },
   {
-    "Code": "47222",
-    "Description": "Retail sale of tea, coffee, soft drinks, mineral water and other beverages",
-    "MSICCategoryReference": "G"
+    "code": "47222",
+    "description": "Retail sale of tea, coffee, soft drinks, mineral water and other beverages",
+    "categoryReference": "G"
   },
   {
-    "Code": "47230",
-    "Description": "Retail sale of tobacco products in specialized store",
-    "MSICCategoryReference": "G"
+    "code": "47230",
+    "description": "Retail sale of tobacco products in specialized store",
+    "categoryReference": "G"
   },
   {
-    "Code": "47300",
-    "Description": "Retail sale of automotive fuel in specialized stores",
-    "MSICCategoryReference": "G"
+    "code": "47300",
+    "description": "Retail sale of automotive fuel in specialized stores",
+    "categoryReference": "G"
   },
   {
-    "Code": "47412",
-    "Description": "Retail sale of video game consoles and non-customized software",
-    "MSICCategoryReference": "G"
+    "code": "47412",
+    "description": "Retail sale of video game consoles and non-customized software",
+    "categoryReference": "G"
   },
   {
-    "Code": "47413",
-    "Description": "Retail sale of telecommunication equipment",
-    "MSICCategoryReference": "G"
+    "code": "47413",
+    "description": "Retail sale of telecommunication equipment",
+    "categoryReference": "G"
   },
   {
-    "Code": "47420",
-    "Description": "Retail sale of audio and video equipment in specialized store",
-    "MSICCategoryReference": "G"
+    "code": "47420",
+    "description": "Retail sale of audio and video equipment in specialized store",
+    "categoryReference": "G"
   },
   {
-    "Code": "47510",
-    "Description": "Retail sale of textiles in specialized stores",
-    "MSICCategoryReference": "G"
+    "code": "47510",
+    "description": "Retail sale of textiles in specialized stores",
+    "categoryReference": "G"
   },
   {
-    "Code": "47531",
-    "Description": "Retail sale of carpets and rugs",
-    "MSICCategoryReference": "G"
+    "code": "47531",
+    "description": "Retail sale of carpets and rugs",
+    "categoryReference": "G"
   },
   {
-    "Code": "47532",
-    "Description": "Retail sale of curtains and net curtains",
-    "MSICCategoryReference": "G"
+    "code": "47532",
+    "description": "Retail sale of curtains and net curtains",
+    "categoryReference": "G"
   },
   {
-    "Code": "47533",
-    "Description": "Retail sale of wallpaper and floor coverings",
-    "MSICCategoryReference": "G"
+    "code": "47533",
+    "description": "Retail sale of wallpaper and floor coverings",
+    "categoryReference": "G"
   },
   {
-    "Code": "47591",
-    "Description": "Retail sale of household furniture",
-    "MSICCategoryReference": "G"
+    "code": "47591",
+    "description": "Retail sale of household furniture",
+    "categoryReference": "G"
   },
   {
-    "Code": "47592",
-    "Description": "Retail sale of articles for lighting",
-    "MSICCategoryReference": "G"
+    "code": "47592",
+    "description": "Retail sale of articles for lighting",
+    "categoryReference": "G"
   },
   {
-    "Code": "47593",
-    "Description": "Retail sale of household utensils and cutlery, crockery, glassware, chinaware and pottery",
-    "MSICCategoryReference": "G"
+    "code": "47593",
+    "description": "Retail sale of household utensils and cutlery, crockery, glassware, chinaware and pottery",
+    "categoryReference": "G"
   },
   {
-    "Code": "47594",
-    "Description": "Retail sale of wood, cork goods and wickerwork goods",
-    "MSICCategoryReference": "G"
+    "code": "47594",
+    "description": "Retail sale of wood, cork goods and wickerwork goods",
+    "categoryReference": "G"
   },
   {
-    "Code": "47595",
-    "Description": "Retail sale of household appliances",
-    "MSICCategoryReference": "G"
+    "code": "47595",
+    "description": "Retail sale of household appliances",
+    "categoryReference": "G"
   },
   {
-    "Code": "47596",
-    "Description": "Retail sale of musical instruments and scores",
-    "MSICCategoryReference": "G"
+    "code": "47596",
+    "description": "Retail sale of musical instruments and scores",
+    "categoryReference": "G"
   },
   {
-    "Code": "47597",
-    "Description": "Retail sale of security systems",
-    "MSICCategoryReference": "G"
+    "code": "47597",
+    "description": "Retail sale of security systems",
+    "categoryReference": "G"
   },
   {
-    "Code": "47598",
-    "Description": "Retail sale of household articles and equipment n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "47598",
+    "description": "Retail sale of household articles and equipment n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "47611",
-    "Description": "Retail sale of office supplies and equipment",
-    "MSICCategoryReference": "G"
+    "code": "47611",
+    "description": "Retail sale of office supplies and equipment",
+    "categoryReference": "G"
   },
   {
-    "Code": "47612",
-    "Description": "Retail sale of books, newspapers and stationary",
-    "MSICCategoryReference": "G"
+    "code": "47612",
+    "description": "Retail sale of books, newspapers and stationary",
+    "categoryReference": "G"
   },
   {
-    "Code": "47631",
-    "Description": "Retail sale of sports goods and equipments",
-    "MSICCategoryReference": "G"
+    "code": "47631",
+    "description": "Retail sale of sports goods and equipments",
+    "categoryReference": "G"
   },
   {
-    "Code": "47632",
-    "Description": "Retail sale of fishing equipment",
-    "MSICCategoryReference": "G"
+    "code": "47632",
+    "description": "Retail sale of fishing equipment",
+    "categoryReference": "G"
   },
   {
-    "Code": "47633",
-    "Description": "Retail sale of camping goods",
-    "MSICCategoryReference": "G"
+    "code": "47633",
+    "description": "Retail sale of camping goods",
+    "categoryReference": "G"
   },
   {
-    "Code": "47634",
-    "Description": "Retail sale of boats and equipments",
-    "MSICCategoryReference": "G"
+    "code": "47634",
+    "description": "Retail sale of boats and equipments",
+    "categoryReference": "G"
   },
   {
-    "Code": "47635",
-    "Description": "Retail sale of bicycles and related parts and accessories",
-    "MSICCategoryReference": "G"
+    "code": "47635",
+    "description": "Retail sale of bicycles and related parts and accessories",
+    "categoryReference": "G"
   },
   {
-    "Code": "47640",
-    "Description": "Retail sale of games and toys, made of all materials",
-    "MSICCategoryReference": "G"
+    "code": "47640",
+    "description": "Retail sale of games and toys, made of all materials",
+    "categoryReference": "G"
   },
   {
-    "Code": "47711",
-    "Description": "Retail sale of articles of clothing, articles of fur and clothing accessories",
-    "MSICCategoryReference": "G"
+    "code": "47711",
+    "description": "Retail sale of articles of clothing, articles of fur and clothing accessories",
+    "categoryReference": "G"
   },
   {
-    "Code": "47712",
-    "Description": "Retail sale of footwear",
-    "MSICCategoryReference": "G"
+    "code": "47712",
+    "description": "Retail sale of footwear",
+    "categoryReference": "G"
   },
   {
-    "Code": "47713",
-    "Description": "Retail sale of leather goods, accessories of leather and leather substitutes",
-    "MSICCategoryReference": "G"
+    "code": "47713",
+    "description": "Retail sale of leather goods, accessories of leather and leather substitutes",
+    "categoryReference": "G"
   },
   {
-    "Code": "47721",
-    "Description": "Stores specialized in retail sale of pharmaceuticals, medical and orthopaedic goods",
-    "MSICCategoryReference": "G"
+    "code": "47721",
+    "description": "Stores specialized in retail sale of pharmaceuticals, medical and orthopaedic goods",
+    "categoryReference": "G"
   },
   {
-    "Code": "47722",
-    "Description": "Stores specialized in retail sale of perfumery, cosmetic and toilet articles",
-    "MSICCategoryReference": "G"
+    "code": "47722",
+    "description": "Stores specialized in retail sale of perfumery, cosmetic and toilet articles",
+    "categoryReference": "G"
   },
   {
-    "Code": "47731",
-    "Description": "Retail sale of photographic and precision equipment",
-    "MSICCategoryReference": "G"
+    "code": "47731",
+    "description": "Retail sale of photographic and precision equipment",
+    "categoryReference": "G"
   },
   {
-    "Code": "47732",
-    "Description": "Retail sale of watches and clocks",
-    "MSICCategoryReference": "G"
+    "code": "47732",
+    "description": "Retail sale of watches and clocks",
+    "categoryReference": "G"
   },
   {
-    "Code": "47733",
-    "Description": "Retail sale of jewellery",
-    "MSICCategoryReference": "G"
+    "code": "47733",
+    "description": "Retail sale of jewellery",
+    "categoryReference": "G"
   },
   {
-    "Code": "47734",
-    "Description": "Retail sale of flowers, plants, seeds, fertilizers",
-    "MSICCategoryReference": "G"
+    "code": "47734",
+    "description": "Retail sale of flowers, plants, seeds, fertilizers",
+    "categoryReference": "G"
   },
   {
-    "Code": "47735",
-    "Description": "Retail sale of souvenirs, craftwork and religious articles",
-    "MSICCategoryReference": "G"
+    "code": "47735",
+    "description": "Retail sale of souvenirs, craftwork and religious articles",
+    "categoryReference": "G"
   },
   {
-    "Code": "47736",
-    "Description": "Retail sale of household fuel oil, cooking gas, coal and fuel wood",
-    "MSICCategoryReference": "G"
+    "code": "47736",
+    "description": "Retail sale of household fuel oil, cooking gas, coal and fuel wood",
+    "categoryReference": "G"
   },
   {
-    "Code": "47737",
-    "Description": "Retail sale of spectacles and other optical goods",
-    "MSICCategoryReference": "G"
+    "code": "47737",
+    "description": "Retail sale of spectacles and other optical goods",
+    "categoryReference": "G"
   },
   {
-    "Code": "47738",
-    "Description": "Retail sale of aquarium fishes, pet animals and pet food",
-    "MSICCategoryReference": "G"
+    "code": "47738",
+    "description": "Retail sale of aquarium fishes, pet animals and pet food",
+    "categoryReference": "G"
   },
   {
-    "Code": "47739",
-    "Description": "Other retail sale of new goods in specialized stores n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "47739",
+    "description": "Other retail sale of new goods in specialized stores n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "47741",
-    "Description": "Retail sale of second-hand books",
-    "MSICCategoryReference": "G"
+    "code": "47741",
+    "description": "Retail sale of second-hand books",
+    "categoryReference": "G"
   },
   {
-    "Code": "47742",
-    "Description": "Retail sale of second-hand electrical and electronic goods",
-    "MSICCategoryReference": "G"
+    "code": "47742",
+    "description": "Retail sale of second-hand electrical and electronic goods",
+    "categoryReference": "G"
   },
   {
-    "Code": "47743",
-    "Description": "Retail sale of antiques",
-    "MSICCategoryReference": "G"
+    "code": "47743",
+    "description": "Retail sale of antiques",
+    "categoryReference": "G"
   },
   {
-    "Code": "47744",
-    "Description": "Activities of auctioning houses (retail)",
-    "MSICCategoryReference": "G"
+    "code": "47744",
+    "description": "Activities of auctioning houses (retail)",
+    "categoryReference": "G"
   },
   {
-    "Code": "47749",
-    "Description": "Retail sale of second-hand goods n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "47749",
+    "description": "Retail sale of second-hand goods n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "47810",
-    "Description": "Retail sale of food, beverages and tobacco products via stalls or markets",
-    "MSICCategoryReference": "G"
+    "code": "47810",
+    "description": "Retail sale of food, beverages and tobacco products via stalls or markets",
+    "categoryReference": "G"
   },
   {
-    "Code": "47820",
-    "Description": "Retail sale of textiles, clothing and footwear via stalls or markets",
-    "MSICCategoryReference": "G"
+    "code": "47820",
+    "description": "Retail sale of textiles, clothing and footwear via stalls or markets",
+    "categoryReference": "G"
   },
   {
-    "Code": "47891",
-    "Description": "Retail sale of carpets and rugs via stalls or markets",
-    "MSICCategoryReference": "G"
+    "code": "47891",
+    "description": "Retail sale of carpets and rugs via stalls or markets",
+    "categoryReference": "G"
   },
   {
-    "Code": "47893",
-    "Description": "Retail sale of games and toys via stalls or markets",
-    "MSICCategoryReference": "G"
+    "code": "47893",
+    "description": "Retail sale of games and toys via stalls or markets",
+    "categoryReference": "G"
   },
   {
-    "Code": "47894",
-    "Description": "Retail sale of household appliances and consumer electronics via stall or markets",
-    "MSICCategoryReference": "G"
+    "code": "47894",
+    "description": "Retail sale of household appliances and consumer electronics via stall or markets",
+    "categoryReference": "G"
   },
   {
-    "Code": "47895",
-    "Description": "Retail sale of music and video recordings via stall or markets",
-    "MSICCategoryReference": "G"
+    "code": "47895",
+    "description": "Retail sale of music and video recordings via stall or markets",
+    "categoryReference": "G"
   },
   {
-    "Code": "47911",
-    "Description": "Retail sale of any kind of product by mail order",
-    "MSICCategoryReference": "G"
+    "code": "47911",
+    "description": "Retail sale of any kind of product by mail order",
+    "categoryReference": "G"
   },
   {
-    "Code": "47912",
-    "Description": "Retail sale of any kind of product over the Internet",
-    "MSICCategoryReference": "G"
+    "code": "47912",
+    "description": "Retail sale of any kind of product over the Internet",
+    "categoryReference": "G"
   },
   {
-    "Code": "47913",
-    "Description": "Direct sale via television, radio and telephone",
-    "MSICCategoryReference": "G"
+    "code": "47913",
+    "description": "Direct sale via television, radio and telephone",
+    "categoryReference": "G"
   },
   {
-    "Code": "47914",
-    "Description": "Internet retail auctions",
-    "MSICCategoryReference": "G"
+    "code": "47914",
+    "description": "Internet retail auctions",
+    "categoryReference": "G"
   },
   {
-    "Code": "47992",
-    "Description": "Retail sale of any kind of product through vending machines",
-    "MSICCategoryReference": "G"
+    "code": "47992",
+    "description": "Retail sale of any kind of product through vending machines",
+    "categoryReference": "G"
   },
   {
-    "Code": "47999",
-    "Description": "Other retail sale not in stores, stalls or markets n.e.c.",
-    "MSICCategoryReference": "G"
+    "code": "47999",
+    "description": "Other retail sale not in stores, stalls or markets n.e.c.",
+    "categoryReference": "G"
   },
   {
-    "Code": "49110",
-    "Description": "Passenger transport by inter-urban railways",
-    "MSICCategoryReference": "H"
+    "code": "49110",
+    "description": "Passenger transport by inter-urban railways",
+    "categoryReference": "H"
   },
   {
-    "Code": "49120",
-    "Description": "Freight transport by inter-urban, suburban and urban railways",
-    "MSICCategoryReference": "H"
+    "code": "49120",
+    "description": "Freight transport by inter-urban, suburban and urban railways",
+    "categoryReference": "H"
   },
   {
-    "Code": "49211",
-    "Description": "City bus services",
-    "MSICCategoryReference": "H"
+    "code": "49211",
+    "description": "City bus services",
+    "categoryReference": "H"
   },
   {
-    "Code": "49212",
-    "Description": "Urban and suburban railway passenger transport service",
-    "MSICCategoryReference": "H"
+    "code": "49212",
+    "description": "Urban and suburban railway passenger transport service",
+    "categoryReference": "H"
   },
   {
-    "Code": "49221",
-    "Description": "Express bus services",
-    "MSICCategoryReference": "H"
+    "code": "49221",
+    "description": "Express bus services",
+    "categoryReference": "H"
   },
   {
-    "Code": "49222",
-    "Description": "Employees bus services",
-    "MSICCategoryReference": "H"
+    "code": "49222",
+    "description": "Employees bus services",
+    "categoryReference": "H"
   },
   {
-    "Code": "49223",
-    "Description": "School bus services",
-    "MSICCategoryReference": "H"
+    "code": "49223",
+    "description": "School bus services",
+    "categoryReference": "H"
   },
   {
-    "Code": "49224",
-    "Description": "Taxi operation and limousine services",
-    "MSICCategoryReference": "H"
+    "code": "49224",
+    "description": "Taxi operation and limousine services",
+    "categoryReference": "H"
   },
   {
-    "Code": "49225",
-    "Description": "Rental of cars with driver",
-    "MSICCategoryReference": "H"
+    "code": "49225",
+    "description": "Rental of cars with driver",
+    "categoryReference": "H"
   },
   {
-    "Code": "49229",
-    "Description": "Other passenger land transport n.e.c.",
-    "MSICCategoryReference": "H"
+    "code": "49229",
+    "description": "Other passenger land transport n.e.c.",
+    "categoryReference": "H"
   },
   {
-    "Code": "49230",
-    "Description": "Freight transport by road",
-    "MSICCategoryReference": "H"
+    "code": "49230",
+    "description": "Freight transport by road",
+    "categoryReference": "H"
   },
   {
-    "Code": "49300",
-    "Description": "Transport via pipeline",
-    "MSICCategoryReference": "H"
+    "code": "49300",
+    "description": "Transport via pipeline",
+    "categoryReference": "H"
   },
   {
-    "Code": "50111",
-    "Description": "Operation of excursion, cruise or sightseeing boats",
-    "MSICCategoryReference": "H"
+    "code": "50111",
+    "description": "Operation of excursion, cruise or sightseeing boats",
+    "categoryReference": "H"
   },
   {
-    "Code": "50112",
-    "Description": "Operation of ferries, water taxis",
-    "MSICCategoryReference": "H"
+    "code": "50112",
+    "description": "Operation of ferries, water taxis",
+    "categoryReference": "H"
   },
   {
-    "Code": "50113",
-    "Description": "Rental of pleasure boats with crew for sea and coastal water transport",
-    "MSICCategoryReference": "H"
+    "code": "50113",
+    "description": "Rental of pleasure boats with crew for sea and coastal water transport",
+    "categoryReference": "H"
   },
   {
-    "Code": "50121",
-    "Description": "Transport of freight overseas and coastal waters, whether scheduled or not",
-    "MSICCategoryReference": "H"
+    "code": "50121",
+    "description": "Transport of freight overseas and coastal waters, whether scheduled or not",
+    "categoryReference": "H"
   },
   {
-    "Code": "50122",
-    "Description": "Transport by towing or pushing of barges, oil rigs",
-    "MSICCategoryReference": "H"
+    "code": "50122",
+    "description": "Transport by towing or pushing of barges, oil rigs",
+    "categoryReference": "H"
   },
   {
-    "Code": "50211",
-    "Description": "Transport of passenger via rivers, canals, lakes and other inland waterways",
-    "MSICCategoryReference": "H"
+    "code": "50211",
+    "description": "Transport of passenger via rivers, canals, lakes and other inland waterways",
+    "categoryReference": "H"
   },
   {
-    "Code": "50212",
-    "Description": "Rental of pleasure boats with crew for inland water transport",
-    "MSICCategoryReference": "H"
+    "code": "50212",
+    "description": "Rental of pleasure boats with crew for inland water transport",
+    "categoryReference": "H"
   },
   {
-    "Code": "50220",
-    "Description": "Transport of freight via rivers, canals, lakes and other inland waterways",
-    "MSICCategoryReference": "H"
+    "code": "50220",
+    "description": "Transport of freight via rivers, canals, lakes and other inland waterways",
+    "categoryReference": "H"
   },
   {
-    "Code": "51101",
-    "Description": "Transport of passengers by air over regular routes and on regular schedules",
-    "MSICCategoryReference": "H"
+    "code": "51101",
+    "description": "Transport of passengers by air over regular routes and on regular schedules",
+    "categoryReference": "H"
   },
   {
-    "Code": "51102",
-    "Description": "Non-scheduled transport of passenger by air",
-    "MSICCategoryReference": "H"
+    "code": "51102",
+    "description": "Non-scheduled transport of passenger by air",
+    "categoryReference": "H"
   },
   {
-    "Code": "51103",
-    "Description": "Renting of air-transport equipment with operator for the purpose of passenger transportation",
-    "MSICCategoryReference": "H"
+    "code": "51103",
+    "description": "Renting of air-transport equipment with operator for the purpose of passenger transportation",
+    "categoryReference": "H"
   },
   {
-    "Code": "51201",
-    "Description": "Transport freight by air over regular routes and on regular schedules",
-    "MSICCategoryReference": "H"
+    "code": "51201",
+    "description": "Transport freight by air over regular routes and on regular schedules",
+    "categoryReference": "H"
   },
   {
-    "Code": "51202",
-    "Description": "Non-scheduled transport of freight by air",
-    "MSICCategoryReference": "H"
+    "code": "51202",
+    "description": "Non-scheduled transport of freight by air",
+    "categoryReference": "H"
   },
   {
-    "Code": "51203",
-    "Description": "Renting of air-transport equipment with operator for the purpose of freight transportation",
-    "MSICCategoryReference": "H"
+    "code": "51203",
+    "description": "Renting of air-transport equipment with operator for the purpose of freight transportation",
+    "categoryReference": "H"
   },
   {
-    "Code": "52100",
-    "Description": "Warehousing and storage services",
-    "MSICCategoryReference": "H"
+    "code": "52100",
+    "description": "Warehousing and storage services",
+    "categoryReference": "H"
   },
   {
-    "Code": "52211",
-    "Description": "Operation of terminal facilities",
-    "MSICCategoryReference": "H"
+    "code": "52211",
+    "description": "Operation of terminal facilities",
+    "categoryReference": "H"
   },
   {
-    "Code": "52212",
-    "Description": "Towing and road side assistance",
-    "MSICCategoryReference": "H"
+    "code": "52212",
+    "description": "Towing and road side assistance",
+    "categoryReference": "H"
   },
   {
-    "Code": "52213",
-    "Description": "Operation of parking facilities for motor vehicles (parking lots)",
-    "MSICCategoryReference": "H"
+    "code": "52213",
+    "description": "Operation of parking facilities for motor vehicles (parking lots)",
+    "categoryReference": "H"
   },
   {
-    "Code": "52214",
-    "Description": "Highway, bridge and tunnel operation services",
-    "MSICCategoryReference": "H"
+    "code": "52214",
+    "description": "Highway, bridge and tunnel operation services",
+    "categoryReference": "H"
   },
   {
-    "Code": "52219",
-    "Description": "Other service activities incidental to land transportation n.e.c.",
-    "MSICCategoryReference": "H"
+    "code": "52219",
+    "description": "Other service activities incidental to land transportation n.e.c.",
+    "categoryReference": "H"
   },
   {
-    "Code": "52221",
-    "Description": "Port, harbours and piers operation services",
-    "MSICCategoryReference": "H"
+    "code": "52221",
+    "description": "Port, harbours and piers operation services",
+    "categoryReference": "H"
   },
   {
-    "Code": "52222",
-    "Description": "Vessel salvage and refloating services",
-    "MSICCategoryReference": "H"
+    "code": "52222",
+    "description": "Vessel salvage and refloating services",
+    "categoryReference": "H"
   },
   {
-    "Code": "52229",
-    "Description": "Other service activities incidental to water transportation n.e.c.",
-    "MSICCategoryReference": "H"
+    "code": "52229",
+    "description": "Other service activities incidental to water transportation n.e.c.",
+    "categoryReference": "H"
   },
   {
-    "Code": "52231",
-    "Description": "Operation of terminal facilities",
-    "MSICCategoryReference": "H"
+    "code": "52231",
+    "description": "Operation of terminal facilities",
+    "categoryReference": "H"
   },
   {
-    "Code": "52232",
-    "Description": "Airport and air-traffic-control activities",
-    "MSICCategoryReference": "H"
+    "code": "52232",
+    "description": "Airport and air-traffic-control activities",
+    "categoryReference": "H"
   },
   {
-    "Code": "52233",
-    "Description": "Ground service activities on airfields",
-    "MSICCategoryReference": "H"
+    "code": "52233",
+    "description": "Ground service activities on airfields",
+    "categoryReference": "H"
   },
   {
-    "Code": "52234",
-    "Description": "Fire fighting and fire-prevention services at airports",
-    "MSICCategoryReference": "H"
+    "code": "52234",
+    "description": "Fire fighting and fire-prevention services at airports",
+    "categoryReference": "H"
   },
   {
-    "Code": "52239",
-    "Description": "Other service activities incidental to air transportation n.e.c.",
-    "MSICCategoryReference": "H"
+    "code": "52239",
+    "description": "Other service activities incidental to air transportation n.e.c.",
+    "categoryReference": "H"
   },
   {
-    "Code": "52241",
-    "Description": "Stevedoring services",
-    "MSICCategoryReference": "H"
+    "code": "52241",
+    "description": "Stevedoring services",
+    "categoryReference": "H"
   },
   {
-    "Code": "52249",
-    "Description": "Other cargo handling activities n.e.c.",
-    "MSICCategoryReference": "H"
+    "code": "52249",
+    "description": "Other cargo handling activities n.e.c.",
+    "categoryReference": "H"
   },
   {
-    "Code": "52291",
-    "Description": "Forwarding of freight",
-    "MSICCategoryReference": "H"
+    "code": "52291",
+    "description": "Forwarding of freight",
+    "categoryReference": "H"
   },
   {
-    "Code": "52292",
-    "Description": "Brokerage for ship and aircraft space",
-    "MSICCategoryReference": "H"
+    "code": "52292",
+    "description": "Brokerage for ship and aircraft space",
+    "categoryReference": "H"
   },
   {
-    "Code": "52299",
-    "Description": "Other transportation support activities n.e.c.",
-    "MSICCategoryReference": "H"
+    "code": "52299",
+    "description": "Other transportation support activities n.e.c.",
+    "categoryReference": "H"
   },
   {
-    "Code": "53100",
-    "Description": "National postal services",
-    "MSICCategoryReference": "H"
+    "code": "53100",
+    "description": "National postal services",
+    "categoryReference": "H"
   },
   {
-    "Code": "53200",
-    "Description": "Courier activities other than national post activities",
-    "MSICCategoryReference": "H"
+    "code": "53200",
+    "description": "Courier activities other than national post activities",
+    "categoryReference": "H"
   },
   {
-    "Code": "55101",
-    "Description": "Hotels and resort hotels",
-    "MSICCategoryReference": "I"
+    "code": "55101",
+    "description": "Hotels and resort hotels",
+    "categoryReference": "I"
   },
   {
-    "Code": "55102",
-    "Description": "Motels",
-    "MSICCategoryReference": "I"
+    "code": "55102",
+    "description": "Motels",
+    "categoryReference": "I"
   },
   {
-    "Code": "55103",
-    "Description": "Apartment hotels",
-    "MSICCategoryReference": "I"
+    "code": "55103",
+    "description": "Apartment hotels",
+    "categoryReference": "I"
   },
   {
-    "Code": "55104",
-    "Description": "Chalets",
-    "MSICCategoryReference": "I"
+    "code": "55104",
+    "description": "Chalets",
+    "categoryReference": "I"
   },
   {
-    "Code": "55105",
-    "Description": "Rest house/guest house",
-    "MSICCategoryReference": "I"
+    "code": "55105",
+    "description": "Rest house/guest house",
+    "categoryReference": "I"
   },
   {
-    "Code": "55106",
-    "Description": "Bed and breakfast units",
-    "MSICCategoryReference": "I"
+    "code": "55106",
+    "description": "Bed and breakfast units",
+    "categoryReference": "I"
   },
   {
-    "Code": "55107",
-    "Description": "Hostels",
-    "MSICCategoryReference": "I"
+    "code": "55107",
+    "description": "Hostels",
+    "categoryReference": "I"
   },
   {
-    "Code": "55108",
-    "Description": "Home stay",
-    "MSICCategoryReference": "I"
+    "code": "55108",
+    "description": "Home stay",
+    "categoryReference": "I"
   },
   {
-    "Code": "55109",
-    "Description": "Other short term accommodation activities n.e.c.",
-    "MSICCategoryReference": "I"
+    "code": "55109",
+    "description": "Other short term accommodation activities n.e.c.",
+    "categoryReference": "I"
   },
   {
-    "Code": "55200",
-    "Description": "Camping grounds, recreational vehicle parks and trailer parks",
-    "MSICCategoryReference": "I"
+    "code": "55200",
+    "description": "Camping grounds, recreational vehicle parks and trailer parks",
+    "categoryReference": "I"
   },
   {
-    "Code": "55900",
-    "Description": "Other accommodation",
-    "MSICCategoryReference": "I"
+    "code": "55900",
+    "description": "Other accommodation",
+    "categoryReference": "I"
   },
   {
-    "Code": "56103",
-    "Description": "Fast-food restaurants",
-    "MSICCategoryReference": "I"
+    "code": "56103",
+    "description": "Fast-food restaurants",
+    "categoryReference": "I"
   },
   {
-    "Code": "56104",
-    "Description": "Ice cream truck vendors and parlours",
-    "MSICCategoryReference": "I"
+    "code": "56104",
+    "description": "Ice cream truck vendors and parlours",
+    "categoryReference": "I"
   },
   {
-    "Code": "56105",
-    "Description": "Mobile food carts",
-    "MSICCategoryReference": "I"
+    "code": "56105",
+    "description": "Mobile food carts",
+    "categoryReference": "I"
   },
   {
-    "Code": "56106",
-    "Description": "Food stalls/hawkers",
-    "MSICCategoryReference": "I"
+    "code": "56106",
+    "description": "Food stalls/hawkers",
+    "categoryReference": "I"
   },
   {
-    "Code": "56107",
-    "Description": "Food or beverage, food and beverage preparation in market stalls/hawkers",
-    "MSICCategoryReference": "I"
+    "code": "56107",
+    "description": "Food or beverage, food and beverage preparation in market stalls/hawkers",
+    "categoryReference": "I"
   },
   {
-    "Code": "56210",
-    "Description": "Event/food caterers",
-    "MSICCategoryReference": "I"
+    "code": "56210",
+    "description": "Event/food caterers",
+    "categoryReference": "I"
   },
   {
-    "Code": "56290",
-    "Description": "Other food service activities",
-    "MSICCategoryReference": "I"
+    "code": "56290",
+    "description": "Other food service activities",
+    "categoryReference": "I"
   },
   {
-    "Code": "56301",
-    "Description": "Pubs, bars, discotheques, coffee houses, cocktail lounges and karaoke",
-    "MSICCategoryReference": "I"
+    "code": "56301",
+    "description": "Pubs, bars, discotheques, coffee houses, cocktail lounges and karaoke",
+    "categoryReference": "I"
   },
   {
-    "Code": "56302",
-    "Description": "Coffee shops",
-    "MSICCategoryReference": "I"
+    "code": "56302",
+    "description": "Coffee shops",
+    "categoryReference": "I"
   },
   {
-    "Code": "56303",
-    "Description": "Drink stalls/hawkers",
-    "MSICCategoryReference": "I"
+    "code": "56303",
+    "description": "Drink stalls/hawkers",
+    "categoryReference": "I"
   },
   {
-    "Code": "56304",
-    "Description": "Mobile beverage",
-    "MSICCategoryReference": "I"
+    "code": "56304",
+    "description": "Mobile beverage",
+    "categoryReference": "I"
   },
   {
-    "Code": "56309",
-    "Description": "Others drinking places n.e.c.",
-    "MSICCategoryReference": "I"
+    "code": "56309",
+    "description": "Others drinking places n.e.c.",
+    "categoryReference": "I"
   },
   {
-    "Code": "58110",
-    "Description": "Publishing of books, brochures and other publications",
-    "MSICCategoryReference": "J"
+    "code": "58110",
+    "description": "Publishing of books, brochures and other publications",
+    "categoryReference": "J"
   },
   {
-    "Code": "58120",
-    "Description": "Publishing of mailing lists, telephone book, other directories",
-    "MSICCategoryReference": "J"
+    "code": "58120",
+    "description": "Publishing of mailing lists, telephone book, other directories",
+    "categoryReference": "J"
   },
   {
-    "Code": "58130",
-    "Description": "Publishing of newspapers, journals, magazines and periodicals in print or electronic form",
-    "MSICCategoryReference": "J"
+    "code": "58130",
+    "description": "Publishing of newspapers, journals, magazines and periodicals in print or electronic form",
+    "categoryReference": "J"
   },
   {
-    "Code": "58190",
-    "Description": "Publishing of catalogues, photos, engraving and postcards, greeting cards, forms, posters, reproduction of works of art, advertising material and other printed matter n.e.c.",
-    "MSICCategoryReference": "J"
+    "code": "58190",
+    "description": "Publishing of catalogues, photos, engraving and postcards, greeting cards, forms, posters, reproduction of works of art, advertising material and other printed matter n.e.c.",
+    "categoryReference": "J"
   },
   {
-    "Code": "58201",
-    "Description": "Business and other applications",
-    "MSICCategoryReference": "J"
+    "code": "58201",
+    "description": "Business and other applications",
+    "categoryReference": "J"
   },
   {
-    "Code": "58202",
-    "Description": "Computer games for all platforms",
-    "MSICCategoryReference": "J"
+    "code": "58202",
+    "description": "Computer games for all platforms",
+    "categoryReference": "J"
   },
   {
-    "Code": "58203",
-    "Description": "Operating systems",
-    "MSICCategoryReference": "J"
+    "code": "58203",
+    "description": "Operating systems",
+    "categoryReference": "J"
   },
   {
-    "Code": "59110",
-    "Description": "Motion picture, video and television programme production activities",
-    "MSICCategoryReference": "J"
+    "code": "59110",
+    "description": "Motion picture, video and television programme production activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "59120",
-    "Description": "Motion picture, video and television programme post-production activities",
-    "MSICCategoryReference": "J"
+    "code": "59120",
+    "description": "Motion picture, video and television programme post-production activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "59130",
-    "Description": "Motion picture, video and television programme distribution activities",
-    "MSICCategoryReference": "J"
+    "code": "59130",
+    "description": "Motion picture, video and television programme distribution activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "59140",
-    "Description": "Motion picture projection activities",
-    "MSICCategoryReference": "J"
+    "code": "59140",
+    "description": "Motion picture projection activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "59200",
-    "Description": "Sound recording and music publishing activities",
-    "MSICCategoryReference": "J"
+    "code": "59200",
+    "description": "Sound recording and music publishing activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "60100",
-    "Description": "Radio broadcasting",
-    "MSICCategoryReference": "J"
+    "code": "60100",
+    "description": "Radio broadcasting",
+    "categoryReference": "J"
   },
   {
-    "Code": "60200",
-    "Description": "Television programming and broadcasting activities",
-    "MSICCategoryReference": "J"
+    "code": "60200",
+    "description": "Television programming and broadcasting activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "61101",
-    "Description": "Wired telecommunications services",
-    "MSICCategoryReference": "J"
+    "code": "61101",
+    "description": "Wired telecommunications services",
+    "categoryReference": "J"
   },
   {
-    "Code": "61102",
-    "Description": "Internet access providers by the operator of the wired infrastructure",
-    "MSICCategoryReference": "J"
+    "code": "61102",
+    "description": "Internet access providers by the operator of the wired infrastructure",
+    "categoryReference": "J"
   },
   {
-    "Code": "61201",
-    "Description": "Wireless telecommunications services",
-    "MSICCategoryReference": "J"
+    "code": "61201",
+    "description": "Wireless telecommunications services",
+    "categoryReference": "J"
   },
   {
-    "Code": "61202",
-    "Description": "Internet access providers by the operator of the wireless infrastructure",
-    "MSICCategoryReference": "J"
+    "code": "61202",
+    "description": "Internet access providers by the operator of the wireless infrastructure",
+    "categoryReference": "J"
   },
   {
-    "Code": "61300",
-    "Description": "Satellite telecommunications services",
-    "MSICCategoryReference": "J"
+    "code": "61300",
+    "description": "Satellite telecommunications services",
+    "categoryReference": "J"
   },
   {
-    "Code": "61901",
-    "Description": "Provision of Internet access over networks between the client and the ISP not owned or controlled by the ISP",
-    "MSICCategoryReference": "J"
+    "code": "61901",
+    "description": "Provision of Internet access over networks between the client and the ISP not owned or controlled by the ISP",
+    "categoryReference": "J"
   },
   {
-    "Code": "61902",
-    "Description": "Provision of telecommunications services over existing telecom connection",
-    "MSICCategoryReference": "J"
+    "code": "61902",
+    "description": "Provision of telecommunications services over existing telecom connection",
+    "categoryReference": "J"
   },
   {
-    "Code": "61903",
-    "Description": "Telecommunications resellers",
-    "MSICCategoryReference": "J"
+    "code": "61903",
+    "description": "Telecommunications resellers",
+    "categoryReference": "J"
   },
   {
-    "Code": "61904",
-    "Description": "Provision of telecommunications services over existing telecom connections VOIP (Voice Over Internet Protocol) provision",
-    "MSICCategoryReference": "J"
+    "code": "61904",
+    "description": "Provision of telecommunications services over existing telecom connections VOIP (Voice Over Internet Protocol) provision",
+    "categoryReference": "J"
   },
   {
-    "Code": "61905",
-    "Description": "Provision of specialized telecommunications applications",
-    "MSICCategoryReference": "J"
+    "code": "61905",
+    "description": "Provision of specialized telecommunications applications",
+    "categoryReference": "J"
   },
   {
-    "Code": "61909",
-    "Description": "Other telecommunications activities n.e.c.",
-    "MSICCategoryReference": "J"
+    "code": "61909",
+    "description": "Other telecommunications activities n.e.c.",
+    "categoryReference": "J"
   },
   {
-    "Code": "62010",
-    "Description": "Computer programming activities",
-    "MSICCategoryReference": "J"
+    "code": "62010",
+    "description": "Computer programming activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "62021",
-    "Description": "Computer consultancy",
-    "MSICCategoryReference": "J"
+    "code": "62021",
+    "description": "Computer consultancy",
+    "categoryReference": "J"
   },
   {
-    "Code": "62022",
-    "Description": "Computer facilities management activities",
-    "MSICCategoryReference": "J"
+    "code": "62022",
+    "description": "Computer facilities management activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "62091",
-    "Description": "Information Communication Technology (ICT) system security",
-    "MSICCategoryReference": "J"
+    "code": "62091",
+    "description": "Information Communication Technology (ICT) system security",
+    "categoryReference": "J"
   },
   {
-    "Code": "62099",
-    "Description": "Other information technology service activities n.e.c.",
-    "MSICCategoryReference": "J"
+    "code": "62099",
+    "description": "Other information technology service activities n.e.c.",
+    "categoryReference": "J"
   },
   {
-    "Code": "63111",
-    "Description": "Activities of providing infrastructure for hosting, data processing services and related activities",
-    "MSICCategoryReference": "J"
+    "code": "63111",
+    "description": "Activities of providing infrastructure for hosting, data processing services and related activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "63112",
-    "Description": "Data processing activities",
-    "MSICCategoryReference": "J"
+    "code": "63112",
+    "description": "Data processing activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "63120",
-    "Description": "Web portals",
-    "MSICCategoryReference": "J"
+    "code": "63120",
+    "description": "Web portals",
+    "categoryReference": "J"
   },
   {
-    "Code": "63910",
-    "Description": "News syndicate and news agency activities",
-    "MSICCategoryReference": "J"
+    "code": "63910",
+    "description": "News syndicate and news agency activities",
+    "categoryReference": "J"
   },
   {
-    "Code": "63990",
-    "Description": "Other information service activities n.e.c.",
-    "MSICCategoryReference": "J"
+    "code": "63990",
+    "description": "Other information service activities n.e.c.",
+    "categoryReference": "J"
   },
   {
-    "Code": "64110",
-    "Description": "Central banking",
-    "MSICCategoryReference": "K"
+    "code": "64110",
+    "description": "Central banking",
+    "categoryReference": "K"
   },
   {
-    "Code": "64191",
-    "Description": "Commercial Banks",
-    "MSICCategoryReference": "K"
+    "code": "64191",
+    "description": "Commercial Banks",
+    "categoryReference": "K"
   },
   {
-    "Code": "64192",
-    "Description": "Islamic Banks",
-    "MSICCategoryReference": "K"
+    "code": "64192",
+    "description": "Islamic Banks",
+    "categoryReference": "K"
   },
   {
-    "Code": "64193",
-    "Description": "Offshore Banks",
-    "MSICCategoryReference": "K"
+    "code": "64193",
+    "description": "Offshore Banks",
+    "categoryReference": "K"
   },
   {
-    "Code": "64194",
-    "Description": "Investment Banks",
-    "MSICCategoryReference": "K"
+    "code": "64194",
+    "description": "Investment Banks",
+    "categoryReference": "K"
   },
   {
-    "Code": "64195",
-    "Description": "Development financial institutions (with deposit taking functions)",
-    "MSICCategoryReference": "K"
+    "code": "64195",
+    "description": "Development financial institutions (with deposit taking functions)",
+    "categoryReference": "K"
   },
   {
-    "Code": "64199",
-    "Description": "Other monetary intermediation (with deposit taking functions) n.e.c.",
-    "MSICCategoryReference": "K"
+    "code": "64199",
+    "description": "Other monetary intermediation (with deposit taking functions) n.e.c.",
+    "categoryReference": "K"
   },
   {
-    "Code": "64200",
-    "Description": "Activities of holding companies",
-    "MSICCategoryReference": "K"
+    "code": "64200",
+    "description": "Activities of holding companies",
+    "categoryReference": "K"
   },
   {
-    "Code": "64301",
-    "Description": "Venture capital companies",
-    "MSICCategoryReference": "K"
+    "code": "64301",
+    "description": "Venture capital companies",
+    "categoryReference": "K"
   },
   {
-    "Code": "64302",
-    "Description": "Unit trust fund excludes REITs",
-    "MSICCategoryReference": "K"
+    "code": "64302",
+    "description": "Unit trust fund excludes REITs",
+    "categoryReference": "K"
   },
   {
-    "Code": "64303",
-    "Description": "Property unit trust (REITs)",
-    "MSICCategoryReference": "K"
+    "code": "64303",
+    "description": "Property unit trust (REITs)",
+    "categoryReference": "K"
   },
   {
-    "Code": "64304",
-    "Description": "Other administration of trusts accounts",
-    "MSICCategoryReference": "K"
+    "code": "64304",
+    "description": "Other administration of trusts accounts",
+    "categoryReference": "K"
   },
   {
-    "Code": "64309",
-    "Description": "Trusts, funds and similar financial entities n.e.c.",
-    "MSICCategoryReference": "K"
+    "code": "64309",
+    "description": "Trusts, funds and similar financial entities n.e.c.",
+    "categoryReference": "K"
   },
   {
-    "Code": "64910",
-    "Description": "Financial leasing activities",
-    "MSICCategoryReference": "K"
+    "code": "64910",
+    "description": "Financial leasing activities",
+    "categoryReference": "K"
   },
   {
-    "Code": "64921",
-    "Description": "Development financial institutions (without deposit taking functions)",
-    "MSICCategoryReference": "K"
+    "code": "64921",
+    "description": "Development financial institutions (without deposit taking functions)",
+    "categoryReference": "K"
   },
   {
-    "Code": "64922",
-    "Description": "Credit card services",
-    "MSICCategoryReference": "K"
+    "code": "64922",
+    "description": "Credit card services",
+    "categoryReference": "K"
   },
   {
-    "Code": "64923",
-    "Description": "Licensed money lending activities",
-    "MSICCategoryReference": "K"
+    "code": "64923",
+    "description": "Licensed money lending activities",
+    "categoryReference": "K"
   },
   {
-    "Code": "64924",
-    "Description": "Pawnshops and pawnbrokers includes Ar-Rahnu",
-    "MSICCategoryReference": "K"
+    "code": "64924",
+    "description": "Pawnshops and pawnbrokers includes Ar-Rahnu",
+    "categoryReference": "K"
   },
   {
-    "Code": "64925",
-    "Description": "Co-operative with credits functions",
-    "MSICCategoryReference": "K"
+    "code": "64925",
+    "description": "Co-operative with credits functions",
+    "categoryReference": "K"
   },
   {
-    "Code": "64929",
-    "Description": "Other credit granting n.e.c.",
-    "MSICCategoryReference": "K"
+    "code": "64929",
+    "description": "Other credit granting n.e.c.",
+    "categoryReference": "K"
   },
   {
-    "Code": "64991",
-    "Description": "Factoring companies",
-    "MSICCategoryReference": "K"
+    "code": "64991",
+    "description": "Factoring companies",
+    "categoryReference": "K"
   },
   {
-    "Code": "64992",
-    "Description": "Representative office of foreign banks",
-    "MSICCategoryReference": "K"
+    "code": "64992",
+    "description": "Representative office of foreign banks",
+    "categoryReference": "K"
   },
   {
-    "Code": "64993",
-    "Description": "Nominee companies",
-    "MSICCategoryReference": "K"
+    "code": "64993",
+    "description": "Nominee companies",
+    "categoryReference": "K"
   },
   {
-    "Code": "64999",
-    "Description": "Other financial service activities, except insurance/takaful and pension funding n.e.c.",
-    "MSICCategoryReference": "K"
+    "code": "64999",
+    "description": "Other financial service activities, except insurance/takaful and pension funding n.e.c.",
+    "categoryReference": "K"
   },
   {
-    "Code": "65111",
-    "Description": "Life insurance",
-    "MSICCategoryReference": "K"
+    "code": "65111",
+    "description": "Life insurance",
+    "categoryReference": "K"
   },
   {
-    "Code": "65112",
-    "Description": "Family takaful",
-    "MSICCategoryReference": "K"
+    "code": "65112",
+    "description": "Family takaful",
+    "categoryReference": "K"
   },
   {
-    "Code": "65121",
-    "Description": "General insurance",
-    "MSICCategoryReference": "K"
+    "code": "65121",
+    "description": "General insurance",
+    "categoryReference": "K"
   },
   {
-    "Code": "65122",
-    "Description": "General takaful",
-    "MSICCategoryReference": "K"
+    "code": "65122",
+    "description": "General takaful",
+    "categoryReference": "K"
   },
   {
-    "Code": "65123",
-    "Description": "Composite insurance",
-    "MSICCategoryReference": "K"
+    "code": "65123",
+    "description": "Composite insurance",
+    "categoryReference": "K"
   },
   {
-    "Code": "65124",
-    "Description": "Offshore insurance",
-    "MSICCategoryReference": "K"
+    "code": "65124",
+    "description": "Offshore insurance",
+    "categoryReference": "K"
   },
   {
-    "Code": "65125",
-    "Description": "Offshore takaful",
-    "MSICCategoryReference": "K"
+    "code": "65125",
+    "description": "Offshore takaful",
+    "categoryReference": "K"
   },
   {
-    "Code": "65201",
-    "Description": "Life reinsurance",
-    "MSICCategoryReference": "K"
+    "code": "65201",
+    "description": "Life reinsurance",
+    "categoryReference": "K"
   },
   {
-    "Code": "65202",
-    "Description": "Family retakaful",
-    "MSICCategoryReference": "K"
+    "code": "65202",
+    "description": "Family retakaful",
+    "categoryReference": "K"
   },
   {
-    "Code": "65203",
-    "Description": "General reinsurance",
-    "MSICCategoryReference": "K"
+    "code": "65203",
+    "description": "General reinsurance",
+    "categoryReference": "K"
   },
   {
-    "Code": "65204",
-    "Description": "General retakaful",
-    "MSICCategoryReference": "K"
+    "code": "65204",
+    "description": "General retakaful",
+    "categoryReference": "K"
   },
   {
-    "Code": "65205",
-    "Description": "Composite retakaful",
-    "MSICCategoryReference": "K"
+    "code": "65205",
+    "description": "Composite retakaful",
+    "categoryReference": "K"
   },
   {
-    "Code": "65206",
-    "Description": "Offshore reinsurance",
-    "MSICCategoryReference": "K"
+    "code": "65206",
+    "description": "Offshore reinsurance",
+    "categoryReference": "K"
   },
   {
-    "Code": "65207",
-    "Description": "Offshore retakaful",
-    "MSICCategoryReference": "K"
+    "code": "65207",
+    "description": "Offshore retakaful",
+    "categoryReference": "K"
   },
   {
-    "Code": "65301",
-    "Description": "Pension funding",
-    "MSICCategoryReference": "K"
+    "code": "65301",
+    "description": "Pension funding",
+    "categoryReference": "K"
   },
   {
-    "Code": "65302",
-    "Description": "Provident funding",
-    "MSICCategoryReference": "K"
+    "code": "65302",
+    "description": "Provident funding",
+    "categoryReference": "K"
   },
   {
-    "Code": "66111",
-    "Description": "Stock exchanges",
-    "MSICCategoryReference": "K"
+    "code": "66111",
+    "description": "Stock exchanges",
+    "categoryReference": "K"
   },
   {
-    "Code": "66112",
-    "Description": "Exchanges for commodity contracts",
-    "MSICCategoryReference": "K"
+    "code": "66112",
+    "description": "Exchanges for commodity contracts",
+    "categoryReference": "K"
   },
   {
-    "Code": "66113",
-    "Description": "Securities exchange",
-    "MSICCategoryReference": "K"
+    "code": "66113",
+    "description": "Securities exchange",
+    "categoryReference": "K"
   },
   {
-    "Code": "66114",
-    "Description": "Exchanges for commodity futures contracts",
-    "MSICCategoryReference": "K"
+    "code": "66114",
+    "description": "Exchanges for commodity futures contracts",
+    "categoryReference": "K"
   },
   {
-    "Code": "66119",
-    "Description": "Administration of financial markets n.e.c.",
-    "MSICCategoryReference": "K"
+    "code": "66119",
+    "description": "Administration of financial markets n.e.c.",
+    "categoryReference": "K"
   },
   {
-    "Code": "66121",
-    "Description": "Stock, share and bond brokers",
-    "MSICCategoryReference": "K"
+    "code": "66121",
+    "description": "Stock, share and bond brokers",
+    "categoryReference": "K"
   },
   {
-    "Code": "66122",
-    "Description": "Commodity brokers and dealers",
-    "MSICCategoryReference": "K"
+    "code": "66122",
+    "description": "Commodity brokers and dealers",
+    "categoryReference": "K"
   },
   {
-    "Code": "66123",
-    "Description": "Gold bullion dealers",
-    "MSICCategoryReference": "K"
+    "code": "66123",
+    "description": "Gold bullion dealers",
+    "categoryReference": "K"
   },
   {
-    "Code": "66124",
-    "Description": "Foreign exchange broker and dealers (Bureaux de change)",
-    "MSICCategoryReference": "K"
+    "code": "66124",
+    "description": "Foreign exchange broker and dealers (Bureaux de change)",
+    "categoryReference": "K"
   },
   {
-    "Code": "66125",
-    "Description": "Money-changing services",
-    "MSICCategoryReference": "K"
+    "code": "66125",
+    "description": "Money-changing services",
+    "categoryReference": "K"
   },
   {
-    "Code": "66129",
-    "Description": "Other financial and commodity futures brokers and dealers",
-    "MSICCategoryReference": "K"
+    "code": "66129",
+    "description": "Other financial and commodity futures brokers and dealers",
+    "categoryReference": "K"
   },
   {
-    "Code": "66191",
-    "Description": "Investment advisory services",
-    "MSICCategoryReference": "K"
+    "code": "66191",
+    "description": "Investment advisory services",
+    "categoryReference": "K"
   },
   {
-    "Code": "66192",
-    "Description": "Financial consultancy services",
-    "MSICCategoryReference": "K"
+    "code": "66192",
+    "description": "Financial consultancy services",
+    "categoryReference": "K"
   },
   {
-    "Code": "66199",
-    "Description": "Activities auxiliary to finance n.e.c.",
-    "MSICCategoryReference": "K"
+    "code": "66199",
+    "description": "Activities auxiliary to finance n.e.c.",
+    "categoryReference": "K"
   },
   {
-    "Code": "66211",
-    "Description": "Insurance adjusting service",
-    "MSICCategoryReference": "K"
+    "code": "66211",
+    "description": "Insurance adjusting service",
+    "categoryReference": "K"
   },
   {
-    "Code": "66212",
-    "Description": "Takaful adjusting service",
-    "MSICCategoryReference": "K"
+    "code": "66212",
+    "description": "Takaful adjusting service",
+    "categoryReference": "K"
   },
   {
-    "Code": "66221",
-    "Description": "Insurance agents",
-    "MSICCategoryReference": "K"
+    "code": "66221",
+    "description": "Insurance agents",
+    "categoryReference": "K"
   },
   {
-    "Code": "66222",
-    "Description": "Takaful agents",
-    "MSICCategoryReference": "K"
+    "code": "66222",
+    "description": "Takaful agents",
+    "categoryReference": "K"
   },
   {
-    "Code": "66223",
-    "Description": "Insurance brokers",
-    "MSICCategoryReference": "K"
+    "code": "66223",
+    "description": "Insurance brokers",
+    "categoryReference": "K"
   },
   {
-    "Code": "66224",
-    "Description": "Takaful brokers",
-    "MSICCategoryReference": "K"
+    "code": "66224",
+    "description": "Takaful brokers",
+    "categoryReference": "K"
   },
   {
-    "Code": "66290",
-    "Description": "Other activities auxiliary to insurance, takaful and pension funding",
-    "MSICCategoryReference": "K"
+    "code": "66290",
+    "description": "Other activities auxiliary to insurance, takaful and pension funding",
+    "categoryReference": "K"
   },
   {
-    "Code": "66301",
-    "Description": "Management of pension funds",
-    "MSICCategoryReference": "K"
+    "code": "66301",
+    "description": "Management of pension funds",
+    "categoryReference": "K"
   },
   {
-    "Code": "66302",
-    "Description": "Assets/portfolio management",
-    "MSICCategoryReference": "K"
+    "code": "66302",
+    "description": "Assets/portfolio management",
+    "categoryReference": "K"
   },
   {
-    "Code": "66303",
-    "Description": "Unit trust management companies",
-    "MSICCategoryReference": "K"
+    "code": "66303",
+    "description": "Unit trust management companies",
+    "categoryReference": "K"
   },
   {
-    "Code": "68101",
-    "Description": "Buying, selling, renting and operating of self-owned or leased real estate – residential buildings",
-    "MSICCategoryReference": "L"
+    "code": "68101",
+    "description": "Buying, selling, renting and operating of self-owned or leased real estate – residential buildings",
+    "categoryReference": "L"
   },
   {
-    "Code": "68102",
-    "Description": "Buying, selling, renting and operating of self-owned or leased real estate – non-residential buildings",
-    "MSICCategoryReference": "L"
+    "code": "68102",
+    "description": "Buying, selling, renting and operating of self-owned or leased real estate – non-residential buildings",
+    "categoryReference": "L"
   },
   {
-    "Code": "68103",
-    "Description": "Buying, selling, renting and operating of self-owned or leased real estate – land",
-    "MSICCategoryReference": "L"
+    "code": "68103",
+    "description": "Buying, selling, renting and operating of self-owned or leased real estate – land",
+    "categoryReference": "L"
   },
   {
-    "Code": "68104",
-    "Description": "Development of building projects for own operation, i.e. for renting of space in these buildings",
-    "MSICCategoryReference": "L"
+    "code": "68104",
+    "description": "Development of building projects for own operation, i.e. for renting of space in these buildings",
+    "categoryReference": "L"
   },
   {
-    "Code": "68109",
-    "Description": "Real estate activities with own or leased property n.e.c.",
-    "MSICCategoryReference": "L"
+    "code": "68109",
+    "description": "Real estate activities with own or leased property n.e.c.",
+    "categoryReference": "L"
   },
   {
-    "Code": "68201",
-    "Description": "Activities of real estate agents and brokers for buying, selling and renting of real estate",
-    "MSICCategoryReference": "L"
+    "code": "68201",
+    "description": "Activities of real estate agents and brokers for buying, selling and renting of real estate",
+    "categoryReference": "L"
   },
   {
-    "Code": "68202",
-    "Description": "Management of real estate on a fee or contract basis",
-    "MSICCategoryReference": "L"
+    "code": "68202",
+    "description": "Management of real estate on a fee or contract basis",
+    "categoryReference": "L"
   },
   {
-    "Code": "68203",
-    "Description": "Appraisal services for real estate",
-    "MSICCategoryReference": "L"
+    "code": "68203",
+    "description": "Appraisal services for real estate",
+    "categoryReference": "L"
   },
   {
-    "Code": "68209",
-    "Description": "Real estate activities on a fee or contract basis n.e.c.",
-    "MSICCategoryReference": "L"
+    "code": "68209",
+    "description": "Real estate activities on a fee or contract basis n.e.c.",
+    "categoryReference": "L"
   },
   {
-    "Code": "69100",
-    "Description": "Legal activities",
-    "MSICCategoryReference": "M"
+    "code": "69100",
+    "description": "Legal activities",
+    "categoryReference": "M"
   },
   {
-    "Code": "69200",
-    "Description": "Accounting, bookkeeping and auditing activities; tax consultancy",
-    "MSICCategoryReference": "M"
+    "code": "69200",
+    "description": "Accounting, bookkeeping and auditing activities; tax consultancy",
+    "categoryReference": "M"
   },
   {
-    "Code": "70100",
-    "Description": "Activities of head offices",
-    "MSICCategoryReference": "M"
+    "code": "70100",
+    "description": "Activities of head offices",
+    "categoryReference": "M"
   },
   {
-    "Code": "70201",
-    "Description": "Business management consultancy services",
-    "MSICCategoryReference": "M"
+    "code": "70201",
+    "description": "Business management consultancy services",
+    "categoryReference": "M"
   },
   {
-    "Code": "70202",
-    "Description": "Human resource consultancy services",
-    "MSICCategoryReference": "M"
+    "code": "70202",
+    "description": "Human resource consultancy services",
+    "categoryReference": "M"
   },
   {
-    "Code": "70203",
-    "Description": "Consultancy services in public relation and communications",
-    "MSICCategoryReference": "M"
+    "code": "70203",
+    "description": "Consultancy services in public relation and communications",
+    "categoryReference": "M"
   },
   {
-    "Code": "70209",
-    "Description": "Other management consultancy activities n.e.c",
-    "MSICCategoryReference": "M"
+    "code": "70209",
+    "description": "Other management consultancy activities n.e.c",
+    "categoryReference": "M"
   },
   {
-    "Code": "71101",
-    "Description": "Architectural services",
-    "MSICCategoryReference": "M"
+    "code": "71101",
+    "description": "Architectural services",
+    "categoryReference": "M"
   },
   {
-    "Code": "71102",
-    "Description": "Engineering services",
-    "MSICCategoryReference": "M"
+    "code": "71102",
+    "description": "Engineering services",
+    "categoryReference": "M"
   },
   {
-    "Code": "71103",
-    "Description": "Land surveying services",
-    "MSICCategoryReference": "M"
+    "code": "71103",
+    "description": "Land surveying services",
+    "categoryReference": "M"
   },
   {
-    "Code": "71109",
-    "Description": "Other architectural and engineering activities and related technical consultancy n.e.c.",
-    "MSICCategoryReference": "M"
+    "code": "71109",
+    "description": "Other architectural and engineering activities and related technical consultancy n.e.c.",
+    "categoryReference": "M"
   },
   {
-    "Code": "71200",
-    "Description": "Technical testing and analysis",
-    "MSICCategoryReference": "M"
+    "code": "71200",
+    "description": "Technical testing and analysis",
+    "categoryReference": "M"
   },
   {
-    "Code": "72101",
-    "Description": "Research and development on natural sciences",
-    "MSICCategoryReference": "M"
+    "code": "72101",
+    "description": "Research and development on natural sciences",
+    "categoryReference": "M"
   },
   {
-    "Code": "72102",
-    "Description": "Research and development on engineering and technology",
-    "MSICCategoryReference": "M"
+    "code": "72102",
+    "description": "Research and development on engineering and technology",
+    "categoryReference": "M"
   },
   {
-    "Code": "72103",
-    "Description": "Research and development on medical sciences",
-    "MSICCategoryReference": "M"
+    "code": "72103",
+    "description": "Research and development on medical sciences",
+    "categoryReference": "M"
   },
   {
-    "Code": "72104",
-    "Description": "Research and development on biotechnology",
-    "MSICCategoryReference": "M"
+    "code": "72104",
+    "description": "Research and development on biotechnology",
+    "categoryReference": "M"
   },
   {
-    "Code": "72105",
-    "Description": "Research and development on agricultural sciences",
-    "MSICCategoryReference": "M"
+    "code": "72105",
+    "description": "Research and development on agricultural sciences",
+    "categoryReference": "M"
   },
   {
-    "Code": "72106",
-    "Description": "Research and development on Information Communication Technology (ICT)",
-    "MSICCategoryReference": "M"
+    "code": "72106",
+    "description": "Research and development on Information Communication Technology (ICT)",
+    "categoryReference": "M"
   },
   {
-    "Code": "72109",
-    "Description": "Research and development on other natural science and engineering n.e.c.",
-    "MSICCategoryReference": "M"
+    "code": "72109",
+    "description": "Research and development on other natural science and engineering n.e.c.",
+    "categoryReference": "M"
   },
   {
-    "Code": "72201",
-    "Description": "Research and development on social sciences",
-    "MSICCategoryReference": "M"
+    "code": "72201",
+    "description": "Research and development on social sciences",
+    "categoryReference": "M"
   },
   {
-    "Code": "72202",
-    "Description": "Research and development on humanities",
-    "MSICCategoryReference": "M"
+    "code": "72202",
+    "description": "Research and development on humanities",
+    "categoryReference": "M"
   },
   {
-    "Code": "72209",
-    "Description": "Research and development of other social sciences and humanities n.e.c.",
-    "MSICCategoryReference": "M"
+    "code": "72209",
+    "description": "Research and development of other social sciences and humanities n.e.c.",
+    "categoryReference": "M"
   },
   {
-    "Code": "73100",
-    "Description": "Advertising",
-    "MSICCategoryReference": "M"
+    "code": "73100",
+    "description": "Advertising",
+    "categoryReference": "M"
   },
   {
-    "Code": "73200",
-    "Description": "Market research and public opinion polling",
-    "MSICCategoryReference": "M"
+    "code": "73200",
+    "description": "Market research and public opinion polling",
+    "categoryReference": "M"
   },
   {
-    "Code": "74101",
-    "Description": "Activities of interior decorators",
-    "MSICCategoryReference": "M"
+    "code": "74101",
+    "description": "Activities of interior decorators",
+    "categoryReference": "M"
   },
   {
-    "Code": "74102",
-    "Description": "Services of graphic designers",
-    "MSICCategoryReference": "M"
+    "code": "74102",
+    "description": "Services of graphic designers",
+    "categoryReference": "M"
   },
   {
-    "Code": "74103",
-    "Description": "Fashion design services",
-    "MSICCategoryReference": "M"
+    "code": "74103",
+    "description": "Fashion design services",
+    "categoryReference": "M"
   },
   {
-    "Code": "74109",
-    "Description": "Specialized design activities n.e.c.",
-    "MSICCategoryReference": "M"
+    "code": "74109",
+    "description": "Specialized design activities n.e.c.",
+    "categoryReference": "M"
   },
   {
-    "Code": "74200",
-    "Description": "Photographic activities",
-    "MSICCategoryReference": "M"
+    "code": "74200",
+    "description": "Photographic activities",
+    "categoryReference": "M"
   },
   {
-    "Code": "74901",
-    "Description": "Translation and interpretation activities",
-    "MSICCategoryReference": "M"
+    "code": "74901",
+    "description": "Translation and interpretation activities",
+    "categoryReference": "M"
   },
   {
-    "Code": "74902",
-    "Description": "Business brokerage activities",
-    "MSICCategoryReference": "M"
+    "code": "74902",
+    "description": "Business brokerage activities",
+    "categoryReference": "M"
   },
   {
-    "Code": "74903",
-    "Description": "Security consulting",
-    "MSICCategoryReference": "M"
+    "code": "74903",
+    "description": "Security consulting",
+    "categoryReference": "M"
   },
   {
-    "Code": "74904",
-    "Description": "Activities of quantity surveyors",
-    "MSICCategoryReference": "M"
+    "code": "74904",
+    "description": "Activities of quantity surveyors",
+    "categoryReference": "M"
   },
   {
-    "Code": "74905",
-    "Description": "Activities of consultants other than architecture, engineering and management consultants",
-    "MSICCategoryReference": "M"
+    "code": "74905",
+    "description": "Activities of consultants other than architecture, engineering and management consultants",
+    "categoryReference": "M"
   },
   {
-    "Code": "74909",
-    "Description": "Any other professional, scientific and technical activities n.e.c.",
-    "MSICCategoryReference": "M"
+    "code": "74909",
+    "description": "Any other professional, scientific and technical activities n.e.c.",
+    "categoryReference": "M"
   },
   {
-    "Code": "75000",
-    "Description": "VETERINARY ACTIVITIES",
-    "MSICCategoryReference": "M"
+    "code": "75000",
+    "description": "VETERINARY ACTIVITIES",
+    "categoryReference": "M"
   },
   {
-    "Code": "77101",
-    "Description": "Renting and operational leasing of passenger cars (without driver)",
-    "MSICCategoryReference": "N"
+    "code": "77101",
+    "description": "Renting and operational leasing of passenger cars (without driver)",
+    "categoryReference": "N"
   },
   {
-    "Code": "77102",
-    "Description": "Renting and operational leasing of trucks, utility trailers and recreational vehicles",
-    "MSICCategoryReference": "N"
+    "code": "77102",
+    "description": "Renting and operational leasing of trucks, utility trailers and recreational vehicles",
+    "categoryReference": "N"
   },
   {
-    "Code": "77211",
-    "Description": "Renting and leasing of pleasure boats, canoes, sailboats",
-    "MSICCategoryReference": "N"
+    "code": "77211",
+    "description": "Renting and leasing of pleasure boats, canoes, sailboats",
+    "categoryReference": "N"
   },
   {
-    "Code": "77212",
-    "Description": "Renting and leasing of bicycles",
-    "MSICCategoryReference": "N"
+    "code": "77212",
+    "description": "Renting and leasing of bicycles",
+    "categoryReference": "N"
   },
   {
-    "Code": "77213",
-    "Description": "Renting and leasing of beach chairs and umbrellas",
-    "MSICCategoryReference": "N"
+    "code": "77213",
+    "description": "Renting and leasing of beach chairs and umbrellas",
+    "categoryReference": "N"
   },
   {
-    "Code": "77219",
-    "Description": "Renting and leasing of other sports equipment n.e.c.",
-    "MSICCategoryReference": "N"
+    "code": "77219",
+    "description": "Renting and leasing of other sports equipment n.e.c.",
+    "categoryReference": "N"
   },
   {
-    "Code": "77220",
-    "Description": "Renting of video tapes, records, CDs, DVDs",
-    "MSICCategoryReference": "N"
+    "code": "77220",
+    "description": "Renting of video tapes, records, CDs, DVDs",
+    "categoryReference": "N"
   },
   {
-    "Code": "77291",
-    "Description": "Renting and leasing of textiles, wearing apparel and footwear",
-    "MSICCategoryReference": "N"
+    "code": "77291",
+    "description": "Renting and leasing of textiles, wearing apparel and footwear",
+    "categoryReference": "N"
   },
   {
-    "Code": "77292",
-    "Description": "Renting and leasing of furniture, pottery and glass, kitchen and tableware, electrical appliances and house wares",
-    "MSICCategoryReference": "N"
+    "code": "77292",
+    "description": "Renting and leasing of furniture, pottery and glass, kitchen and tableware, electrical appliances and house wares",
+    "categoryReference": "N"
   },
   {
-    "Code": "77293",
-    "Description": "Renting and leasing of jewellery, musical instruments, scenery and costumes",
-    "MSICCategoryReference": "N"
+    "code": "77293",
+    "description": "Renting and leasing of jewellery, musical instruments, scenery and costumes",
+    "categoryReference": "N"
   },
   {
-    "Code": "77294",
-    "Description": "Renting and leasing of books, journals and magazines",
-    "MSICCategoryReference": "N"
+    "code": "77294",
+    "description": "Renting and leasing of books, journals and magazines",
+    "categoryReference": "N"
   },
   {
-    "Code": "77295",
-    "Description": "Renting and leasing of machinery and equipment used by amateurs or as a hobby",
-    "MSICCategoryReference": "N"
+    "code": "77295",
+    "description": "Renting and leasing of machinery and equipment used by amateurs or as a hobby",
+    "categoryReference": "N"
   },
   {
-    "Code": "77296",
-    "Description": "Renting of flowers and plants",
-    "MSICCategoryReference": "N"
+    "code": "77296",
+    "description": "Renting of flowers and plants",
+    "categoryReference": "N"
   },
   {
-    "Code": "77297",
-    "Description": "Renting and leasing of electronic equipment for household use",
-    "MSICCategoryReference": "N"
+    "code": "77297",
+    "description": "Renting and leasing of electronic equipment for household use",
+    "categoryReference": "N"
   },
   {
-    "Code": "77299",
-    "Description": "Renting and leasing of other personal and household goods n.e.c.",
-    "MSICCategoryReference": "N"
+    "code": "77299",
+    "description": "Renting and leasing of other personal and household goods n.e.c.",
+    "categoryReference": "N"
   },
   {
-    "Code": "77301",
-    "Description": "Renting and operational leasing, without operator, of other machinery and equipment that are generally used as capital goods by industries",
-    "MSICCategoryReference": "N"
+    "code": "77301",
+    "description": "Renting and operational leasing, without operator, of other machinery and equipment that are generally used as capital goods by industries",
+    "categoryReference": "N"
   },
   {
-    "Code": "77302",
-    "Description": "Renting and operational leasing of land-transport equipment (other than motor vehicles) without drivers",
-    "MSICCategoryReference": "N"
+    "code": "77302",
+    "description": "Renting and operational leasing of land-transport equipment (other than motor vehicles) without drivers",
+    "categoryReference": "N"
   },
   {
-    "Code": "77303",
-    "Description": "Renting and operational leasing of water-transport equipment without operator",
-    "MSICCategoryReference": "N"
+    "code": "77303",
+    "description": "Renting and operational leasing of water-transport equipment without operator",
+    "categoryReference": "N"
   },
   {
-    "Code": "77304",
-    "Description": "Renting and operational leasing of air transport equipment without operator",
-    "MSICCategoryReference": "N"
+    "code": "77304",
+    "description": "Renting and operational leasing of air transport equipment without operator",
+    "categoryReference": "N"
   },
   {
-    "Code": "77305",
-    "Description": "Renting and operational leasing of agricultural and forestry machinery and equipment without operator",
-    "MSICCategoryReference": "N"
+    "code": "77305",
+    "description": "Renting and operational leasing of agricultural and forestry machinery and equipment without operator",
+    "categoryReference": "N"
   },
   {
-    "Code": "77306",
-    "Description": "Renting and operational leasing of construction and civil-engineering machinery and equipment without operator",
-    "MSICCategoryReference": "N"
+    "code": "77306",
+    "description": "Renting and operational leasing of construction and civil-engineering machinery and equipment without operator",
+    "categoryReference": "N"
   },
   {
-    "Code": "77307",
-    "Description": "Rental and operational leasing of office machinery and equipment without operator",
-    "MSICCategoryReference": "N"
+    "code": "77307",
+    "description": "Rental and operational leasing of office machinery and equipment without operator",
+    "categoryReference": "N"
   },
   {
-    "Code": "77309",
-    "Description": "Renting and leasing of other machinery, equipment and tangible goods n.e.c.",
-    "MSICCategoryReference": "N"
+    "code": "77309",
+    "description": "Renting and leasing of other machinery, equipment and tangible goods n.e.c.",
+    "categoryReference": "N"
   },
   {
-    "Code": "77400",
-    "Description": "Leasing of intellectual property and similar products, except copyrighted works",
-    "MSICCategoryReference": "N"
+    "code": "77400",
+    "description": "Leasing of intellectual property and similar products, except copyrighted works",
+    "categoryReference": "N"
   },
   {
-    "Code": "78100",
-    "Description": "Activities of employment placement agencies",
-    "MSICCategoryReference": "N"
+    "code": "78100",
+    "description": "Activities of employment placement agencies",
+    "categoryReference": "N"
   },
   {
-    "Code": "78200",
-    "Description": "Temporary employment agency activities",
-    "MSICCategoryReference": "N"
+    "code": "78200",
+    "description": "Temporary employment agency activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "78300",
-    "Description": "Provision of human resources for client businesses",
-    "MSICCategoryReference": "N"
+    "code": "78300",
+    "description": "Provision of human resources for client businesses",
+    "categoryReference": "N"
   },
   {
-    "Code": "79110",
-    "Description": "Travel agency activities",
-    "MSICCategoryReference": "N"
+    "code": "79110",
+    "description": "Travel agency activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "79120",
-    "Description": "Tour operator activities",
-    "MSICCategoryReference": "N"
+    "code": "79120",
+    "description": "Tour operator activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "79900",
-    "Description": "Other reservation service and related activities",
-    "MSICCategoryReference": "N"
+    "code": "79900",
+    "description": "Other reservation service and related activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "80100",
-    "Description": "Private security activities",
-    "MSICCategoryReference": "N"
+    "code": "80100",
+    "description": "Private security activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "80200",
-    "Description": "Security systems service activities",
-    "MSICCategoryReference": "N"
+    "code": "80200",
+    "description": "Security systems service activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "80300",
-    "Description": "Investigation and detective activities",
-    "MSICCategoryReference": "N"
+    "code": "80300",
+    "description": "Investigation and detective activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "81100",
-    "Description": "Combined facilities support activities",
-    "MSICCategoryReference": "N"
+    "code": "81100",
+    "description": "Combined facilities support activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "81210",
-    "Description": "General cleaning of buildings",
-    "MSICCategoryReference": "N"
+    "code": "81210",
+    "description": "General cleaning of buildings",
+    "categoryReference": "N"
   },
   {
-    "Code": "81291",
-    "Description": "Cleaning of buildings of all types",
-    "MSICCategoryReference": "N"
+    "code": "81291",
+    "description": "Cleaning of buildings of all types",
+    "categoryReference": "N"
   },
   {
-    "Code": "81292",
-    "Description": "Swimming pool cleaning and maintenance services",
-    "MSICCategoryReference": "N"
+    "code": "81292",
+    "description": "Swimming pool cleaning and maintenance services",
+    "categoryReference": "N"
   },
   {
-    "Code": "81293",
-    "Description": "Cleaning of industrial machinery",
-    "MSICCategoryReference": "N"
+    "code": "81293",
+    "description": "Cleaning of industrial machinery",
+    "categoryReference": "N"
   },
   {
-    "Code": "81294",
-    "Description": "Cleaning of trains, buses, planes",
-    "MSICCategoryReference": "N"
+    "code": "81294",
+    "description": "Cleaning of trains, buses, planes",
+    "categoryReference": "N"
   },
   {
-    "Code": "81295",
-    "Description": "Cleaning of pest control services not in connection with agriculture",
-    "MSICCategoryReference": "N"
+    "code": "81295",
+    "description": "Cleaning of pest control services not in connection with agriculture",
+    "categoryReference": "N"
   },
   {
-    "Code": "81296",
-    "Description": "Disinfecting and exterminating activities",
-    "MSICCategoryReference": "N"
+    "code": "81296",
+    "description": "Disinfecting and exterminating activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "81297",
-    "Description": "Cleaning of sea tankers",
-    "MSICCategoryReference": "N"
+    "code": "81297",
+    "description": "Cleaning of sea tankers",
+    "categoryReference": "N"
   },
   {
-    "Code": "81299",
-    "Description": "Other building and industrial cleaning activities, n.e.c.",
-    "MSICCategoryReference": "N"
+    "code": "81299",
+    "description": "Other building and industrial cleaning activities, n.e.c.",
+    "categoryReference": "N"
   },
   {
-    "Code": "81300",
-    "Description": "Landscape care and maintenance service activities",
-    "MSICCategoryReference": "N"
+    "code": "81300",
+    "description": "Landscape care and maintenance service activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "82110",
-    "Description": "Combined office administrative service activities",
-    "MSICCategoryReference": "N"
+    "code": "82110",
+    "description": "Combined office administrative service activities",
+    "categoryReference": "N"
   },
   {
-    "Code": "82191",
-    "Description": "Document preparation, editing and/or proofreading",
-    "MSICCategoryReference": "N"
+    "code": "82191",
+    "description": "Document preparation, editing and/or proofreading",
+    "categoryReference": "N"
   },
   {
-    "Code": "82192",
-    "Description": "Typing, word processing or desktop publishing",
-    "MSICCategoryReference": "N"
+    "code": "82192",
+    "description": "Typing, word processing or desktop publishing",
+    "categoryReference": "N"
   },
   {
-    "Code": "82193",
-    "Description": "Secretarial support services",
-    "MSICCategoryReference": "N"
+    "code": "82193",
+    "description": "Secretarial support services",
+    "categoryReference": "N"
   },
   {
-    "Code": "82194",
-    "Description": "Transcription of documents and other secretarial services",
-    "MSICCategoryReference": "N"
+    "code": "82194",
+    "description": "Transcription of documents and other secretarial services",
+    "categoryReference": "N"
   },
   {
-    "Code": "82195",
-    "Description": "Provision of mailbox rental and other postal and mailing services",
-    "MSICCategoryReference": "N"
+    "code": "82195",
+    "description": "Provision of mailbox rental and other postal and mailing services",
+    "categoryReference": "N"
   },
   {
-    "Code": "82196",
-    "Description": "Photocopying, duplicating, blueprinting",
-    "MSICCategoryReference": "N"
+    "code": "82196",
+    "description": "Photocopying, duplicating, blueprinting",
+    "categoryReference": "N"
   },
   {
-    "Code": "82199",
-    "Description": "Photocopying, document preparation and other specialized office support activities n.e.c.",
-    "MSICCategoryReference": "N"
+    "code": "82199",
+    "description": "Photocopying, document preparation and other specialized office support activities n.e.c.",
+    "categoryReference": "N"
   },
   {
-    "Code": "82200",
-    "Description": "Activities of call centres",
-    "MSICCategoryReference": "N"
+    "code": "82200",
+    "description": "Activities of call centres",
+    "categoryReference": "N"
   },
   {
-    "Code": "82301",
-    "Description": "Organization, promotions and/or management of event",
-    "MSICCategoryReference": "N"
+    "code": "82301",
+    "description": "Organization, promotions and/or management of event",
+    "categoryReference": "N"
   },
   {
-    "Code": "82302",
-    "Description": "Meeting, incentive, convention, exhibition (MICE)",
-    "MSICCategoryReference": "N"
+    "code": "82302",
+    "description": "Meeting, incentive, convention, exhibition (MICE)",
+    "categoryReference": "N"
   },
   {
-    "Code": "82910",
-    "Description": "Activities of collection agencies and credit bureaus",
-    "MSICCategoryReference": "N"
+    "code": "82910",
+    "description": "Activities of collection agencies and credit bureaus",
+    "categoryReference": "N"
   },
   {
-    "Code": "82920",
-    "Description": "Packaging activities on a fee or contract basis, whether or not these involve an automated process",
-    "MSICCategoryReference": "N"
+    "code": "82920",
+    "description": "Packaging activities on a fee or contract basis, whether or not these involve an automated process",
+    "categoryReference": "N"
   },
   {
-    "Code": "82990",
-    "Description": "Other business support service activities n.e.c.",
-    "MSICCategoryReference": "N"
+    "code": "82990",
+    "description": "Other business support service activities n.e.c.",
+    "categoryReference": "N"
   },
   {
-    "Code": "84111",
-    "Description": "General (overall) public administration activities",
-    "MSICCategoryReference": "O"
+    "code": "84111",
+    "description": "General (overall) public administration activities",
+    "categoryReference": "O"
   },
   {
-    "Code": "84112",
-    "Description": "Ancillary service activities for the government as a whole",
-    "MSICCategoryReference": "O"
+    "code": "84112",
+    "description": "Ancillary service activities for the government as a whole",
+    "categoryReference": "O"
   },
   {
-    "Code": "84121",
-    "Description": "Administrative educational services",
-    "MSICCategoryReference": "O"
+    "code": "84121",
+    "description": "Administrative educational services",
+    "categoryReference": "O"
   },
   {
-    "Code": "84122",
-    "Description": "Administrative health care services",
-    "MSICCategoryReference": "O"
+    "code": "84122",
+    "description": "Administrative health care services",
+    "categoryReference": "O"
   },
   {
-    "Code": "84123",
-    "Description": "Administrative housing and local government services",
-    "MSICCategoryReference": "O"
+    "code": "84123",
+    "description": "Administrative housing and local government services",
+    "categoryReference": "O"
   },
   {
-    "Code": "84124",
-    "Description": "Administrative recreational, cultural, arts and sports services",
-    "MSICCategoryReference": "O"
+    "code": "84124",
+    "description": "Administrative recreational, cultural, arts and sports services",
+    "categoryReference": "O"
   },
   {
-    "Code": "84125",
-    "Description": "Administrative religious affairs services",
-    "MSICCategoryReference": "O"
+    "code": "84125",
+    "description": "Administrative religious affairs services",
+    "categoryReference": "O"
   },
   {
-    "Code": "84126",
-    "Description": "Administrative welfare services",
-    "MSICCategoryReference": "O"
+    "code": "84126",
+    "description": "Administrative welfare services",
+    "categoryReference": "O"
   },
   {
-    "Code": "84129",
-    "Description": "Other community and social affairs services",
-    "MSICCategoryReference": "O"
+    "code": "84129",
+    "description": "Other community and social affairs services",
+    "categoryReference": "O"
   },
   {
-    "Code": "84131",
-    "Description": "Domestic and international trade affairs",
-    "MSICCategoryReference": "O"
+    "code": "84131",
+    "description": "Domestic and international trade affairs",
+    "categoryReference": "O"
   },
   {
-    "Code": "84132",
-    "Description": "Agriculture and rural development affairs",
-    "MSICCategoryReference": "O"
+    "code": "84132",
+    "description": "Agriculture and rural development affairs",
+    "categoryReference": "O"
   },
   {
-    "Code": "84133",
-    "Description": "Primary industries affairs",
-    "MSICCategoryReference": "O"
+    "code": "84133",
+    "description": "Primary industries affairs",
+    "categoryReference": "O"
   },
   {
-    "Code": "84134",
-    "Description": "Public works affairs",
-    "MSICCategoryReference": "O"
+    "code": "84134",
+    "description": "Public works affairs",
+    "categoryReference": "O"
   },
   {
-    "Code": "84135",
-    "Description": "Transport affairs",
-    "MSICCategoryReference": "O"
+    "code": "84135",
+    "description": "Transport affairs",
+    "categoryReference": "O"
   },
   {
-    "Code": "84136",
-    "Description": "Energy, telecommunication and postal affairs",
-    "MSICCategoryReference": "O"
+    "code": "84136",
+    "description": "Energy, telecommunication and postal affairs",
+    "categoryReference": "O"
   },
   {
-    "Code": "84137",
-    "Description": "Tourism affairs",
-    "MSICCategoryReference": "O"
+    "code": "84137",
+    "description": "Tourism affairs",
+    "categoryReference": "O"
   },
   {
-    "Code": "84138",
-    "Description": "Human resource affairs",
-    "MSICCategoryReference": "O"
+    "code": "84138",
+    "description": "Human resource affairs",
+    "categoryReference": "O"
   },
   {
-    "Code": "84139",
-    "Description": "Other regulation of and contribution to more efficient operation of businesses n.e.c.",
-    "MSICCategoryReference": "O"
+    "code": "84139",
+    "description": "Other regulation of and contribution to more efficient operation of businesses n.e.c.",
+    "categoryReference": "O"
   },
   {
-    "Code": "84210",
-    "Description": "Foreign affairs",
-    "MSICCategoryReference": "O"
+    "code": "84210",
+    "description": "Foreign affairs",
+    "categoryReference": "O"
   },
   {
-    "Code": "84220",
-    "Description": "Military and civil defence services",
-    "MSICCategoryReference": "O"
+    "code": "84220",
+    "description": "Military and civil defence services",
+    "categoryReference": "O"
   },
   {
-    "Code": "84231",
-    "Description": "Police service",
-    "MSICCategoryReference": "O"
+    "code": "84231",
+    "description": "Police service",
+    "categoryReference": "O"
   },
   {
-    "Code": "84232",
-    "Description": "Prison service",
-    "MSICCategoryReference": "O"
+    "code": "84232",
+    "description": "Prison service",
+    "categoryReference": "O"
   },
   {
-    "Code": "84233",
-    "Description": "Immigration service",
-    "MSICCategoryReference": "O"
+    "code": "84233",
+    "description": "Immigration service",
+    "categoryReference": "O"
   },
   {
-    "Code": "84234",
-    "Description": "National registration service",
-    "MSICCategoryReference": "O"
+    "code": "84234",
+    "description": "National registration service",
+    "categoryReference": "O"
   },
   {
-    "Code": "84235",
-    "Description": "Judiciary and legal service",
-    "MSICCategoryReference": "O"
+    "code": "84235",
+    "description": "Judiciary and legal service",
+    "categoryReference": "O"
   },
   {
-    "Code": "84236",
-    "Description": "Firefighting and fire prevention",
-    "MSICCategoryReference": "O"
+    "code": "84236",
+    "description": "Firefighting and fire prevention",
+    "categoryReference": "O"
   },
   {
-    "Code": "84239",
-    "Description": "Other public order and safety affairs related services",
-    "MSICCategoryReference": "O"
+    "code": "84239",
+    "description": "Other public order and safety affairs related services",
+    "categoryReference": "O"
   },
   {
-    "Code": "84300",
-    "Description": "Compulsory social security activities e.g. SOCSO",
-    "MSICCategoryReference": "O"
+    "code": "84300",
+    "description": "Compulsory social security activities e.g. SOCSO",
+    "categoryReference": "O"
   },
   {
-    "Code": "85101",
-    "Description": "Pre-primary education (Public)",
-    "MSICCategoryReference": "P"
+    "code": "85101",
+    "description": "Pre-primary education (Public)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85102",
-    "Description": "Pre-primary education (Private)",
-    "MSICCategoryReference": "P"
+    "code": "85102",
+    "description": "Pre-primary education (Private)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85103",
-    "Description": "Primary education (Public)",
-    "MSICCategoryReference": "P"
+    "code": "85103",
+    "description": "Primary education (Public)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85104",
-    "Description": "Primary education (Private)",
-    "MSICCategoryReference": "P"
+    "code": "85104",
+    "description": "Primary education (Private)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85211",
-    "Description": "General school secondary education (Public)",
-    "MSICCategoryReference": "P"
+    "code": "85211",
+    "description": "General school secondary education (Public)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85212",
-    "Description": "General school secondary education (Private)",
-    "MSICCategoryReference": "P"
+    "code": "85212",
+    "description": "General school secondary education (Private)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85221",
-    "Description": "Technical and vocational education below the level of higher education (Public)",
-    "MSICCategoryReference": "P"
+    "code": "85221",
+    "description": "Technical and vocational education below the level of higher education (Public)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85222",
-    "Description": "Technical and vocational education below the level of higher education (Private)",
-    "MSICCategoryReference": "P"
+    "code": "85222",
+    "description": "Technical and vocational education below the level of higher education (Private)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85301",
-    "Description": "College and university education (Public)",
-    "MSICCategoryReference": "P"
+    "code": "85301",
+    "description": "College and university education (Public)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85302",
-    "Description": "College and university education (Private)",
-    "MSICCategoryReference": "P"
+    "code": "85302",
+    "description": "College and university education (Private)",
+    "categoryReference": "P"
   },
   {
-    "Code": "85411",
-    "Description": "Sports instruction",
-    "MSICCategoryReference": "P"
+    "code": "85411",
+    "description": "Sports instruction",
+    "categoryReference": "P"
   },
   {
-    "Code": "85412",
-    "Description": "Martial arts instruction",
-    "MSICCategoryReference": "P"
+    "code": "85412",
+    "description": "Martial arts instruction",
+    "categoryReference": "P"
   },
   {
-    "Code": "85419",
-    "Description": "Any other sports and recreation education n.e.c",
-    "MSICCategoryReference": "P"
+    "code": "85419",
+    "description": "Any other sports and recreation education n.e.c",
+    "categoryReference": "P"
   },
   {
-    "Code": "85421",
-    "Description": "Music and dancing school",
-    "MSICCategoryReference": "P"
+    "code": "85421",
+    "description": "Music and dancing school",
+    "categoryReference": "P"
   },
   {
-    "Code": "85429",
-    "Description": "Any other cultural education n.e.c.",
-    "MSICCategoryReference": "P"
+    "code": "85429",
+    "description": "Any other cultural education n.e.c.",
+    "categoryReference": "P"
   },
   {
-    "Code": "85491",
-    "Description": "Tuition centre",
-    "MSICCategoryReference": "P"
+    "code": "85491",
+    "description": "Tuition centre",
+    "categoryReference": "P"
   },
   {
-    "Code": "85492",
-    "Description": "Driving school",
-    "MSICCategoryReference": "P"
+    "code": "85492",
+    "description": "Driving school",
+    "categoryReference": "P"
   },
   {
-    "Code": "85493",
-    "Description": "Religious instruction",
-    "MSICCategoryReference": "P"
+    "code": "85493",
+    "description": "Religious instruction",
+    "categoryReference": "P"
   },
   {
-    "Code": "85494",
-    "Description": "Computer training",
-    "MSICCategoryReference": "P"
+    "code": "85494",
+    "description": "Computer training",
+    "categoryReference": "P"
   },
   {
-    "Code": "85499",
-    "Description": "Others education n.e.c",
-    "MSICCategoryReference": "P"
+    "code": "85499",
+    "description": "Others education n.e.c",
+    "categoryReference": "P"
   },
   {
-    "Code": "85500",
-    "Description": "Educational support services for provision of non-instructional services",
-    "MSICCategoryReference": "P"
+    "code": "85500",
+    "description": "Educational support services for provision of non-instructional services",
+    "categoryReference": "P"
   },
   {
-    "Code": "86101",
-    "Description": "Hospital activities",
-    "MSICCategoryReference": "Q"
+    "code": "86101",
+    "description": "Hospital activities",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86102",
-    "Description": "Maternity home services (outside hospital)",
-    "MSICCategoryReference": "Q"
+    "code": "86102",
+    "description": "Maternity home services (outside hospital)",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86201",
-    "Description": "General medical services",
-    "MSICCategoryReference": "Q"
+    "code": "86201",
+    "description": "General medical services",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86202",
-    "Description": "Specialized medical services",
-    "MSICCategoryReference": "Q"
+    "code": "86202",
+    "description": "Specialized medical services",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86203",
-    "Description": "Dental services",
-    "MSICCategoryReference": "Q"
+    "code": "86203",
+    "description": "Dental services",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86901",
-    "Description": "Dialysis Centres",
-    "MSICCategoryReference": "Q"
+    "code": "86901",
+    "description": "Dialysis Centres",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86902",
-    "Description": "Medical laboratories",
-    "MSICCategoryReference": "Q"
+    "code": "86902",
+    "description": "Medical laboratories",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86903",
-    "Description": "Physiotherapy and occupational therapy service",
-    "MSICCategoryReference": "Q"
+    "code": "86903",
+    "description": "Physiotherapy and occupational therapy service",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86904",
-    "Description": "Acupuncture services",
-    "MSICCategoryReference": "Q"
+    "code": "86904",
+    "description": "Acupuncture services",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86905",
-    "Description": "Herbalist and homeopathy services",
-    "MSICCategoryReference": "Q"
+    "code": "86905",
+    "description": "Herbalist and homeopathy services",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86906",
-    "Description": "Ambulance services",
-    "MSICCategoryReference": "Q"
+    "code": "86906",
+    "description": "Ambulance services",
+    "categoryReference": "Q"
   },
   {
-    "Code": "86909",
-    "Description": "Other human health services n.e.c.",
-    "MSICCategoryReference": "Q"
+    "code": "86909",
+    "description": "Other human health services n.e.c.",
+    "categoryReference": "Q"
   },
   {
-    "Code": "87101",
-    "Description": "Homes for the elderly with nursing care",
-    "MSICCategoryReference": "Q"
+    "code": "87101",
+    "description": "Homes for the elderly with nursing care",
+    "categoryReference": "Q"
   },
   {
-    "Code": "87102",
-    "Description": "Nursing homes",
-    "MSICCategoryReference": "Q"
+    "code": "87102",
+    "description": "Nursing homes",
+    "categoryReference": "Q"
   },
   {
-    "Code": "87103",
-    "Description": "Palliative or hospices",
-    "MSICCategoryReference": "Q"
+    "code": "87103",
+    "description": "Palliative or hospices",
+    "categoryReference": "Q"
   },
   {
-    "Code": "87201",
-    "Description": "Drug rehabilitation centres",
-    "MSICCategoryReference": "Q"
+    "code": "87201",
+    "description": "Drug rehabilitation centres",
+    "categoryReference": "Q"
   },
   {
-    "Code": "87209",
-    "Description": "Other residential care activities for mental retardation n.e.c.",
-    "MSICCategoryReference": "Q"
+    "code": "87209",
+    "description": "Other residential care activities for mental retardation n.e.c.",
+    "categoryReference": "Q"
   },
   {
-    "Code": "87300",
-    "Description": "Residential care activities for the elderly and disabled",
-    "MSICCategoryReference": "Q"
+    "code": "87300",
+    "description": "Residential care activities for the elderly and disabled",
+    "categoryReference": "Q"
   },
   {
-    "Code": "87901",
-    "Description": "Orphanages",
-    "MSICCategoryReference": "Q"
+    "code": "87901",
+    "description": "Orphanages",
+    "categoryReference": "Q"
   },
   {
-    "Code": "87902",
-    "Description": "Welfare homes services",
-    "MSICCategoryReference": "Q"
+    "code": "87902",
+    "description": "Welfare homes services",
+    "categoryReference": "Q"
   },
   {
-    "Code": "87909",
-    "Description": "Other residential care activities n.e.c.",
-    "MSICCategoryReference": "Q"
+    "code": "87909",
+    "description": "Other residential care activities n.e.c.",
+    "categoryReference": "Q"
   },
   {
-    "Code": "88101",
-    "Description": "Day-care activities for the elderly or for handicapped adults",
-    "MSICCategoryReference": "Q"
+    "code": "88101",
+    "description": "Day-care activities for the elderly or for handicapped adults",
+    "categoryReference": "Q"
   },
   {
-    "Code": "88109",
-    "Description": "Others social work activities without accommodation for the elderly and disabled",
-    "MSICCategoryReference": "Q"
+    "code": "88109",
+    "description": "Others social work activities without accommodation for the elderly and disabled",
+    "categoryReference": "Q"
   },
   {
-    "Code": "88901",
-    "Description": "Counselling service",
-    "MSICCategoryReference": "Q"
+    "code": "88901",
+    "description": "Counselling service",
+    "categoryReference": "Q"
   },
   {
-    "Code": "88902",
-    "Description": "Child day-care activities",
-    "MSICCategoryReference": "Q"
+    "code": "88902",
+    "description": "Child day-care activities",
+    "categoryReference": "Q"
   },
   {
-    "Code": "88909",
-    "Description": "Other social work activities without accommodation n.e.c.",
-    "MSICCategoryReference": "Q"
+    "code": "88909",
+    "description": "Other social work activities without accommodation n.e.c.",
+    "categoryReference": "Q"
   },
   {
-    "Code": "90001",
-    "Description": "Theatrical producer, singer group band and orchestra entertainment services",
-    "MSICCategoryReference": "R"
+    "code": "90001",
+    "description": "Theatrical producer, singer group band and orchestra entertainment services",
+    "categoryReference": "R"
   },
   {
-    "Code": "90002",
-    "Description": "Operation of concert and theatre halls and other arts facilities",
-    "MSICCategoryReference": "R"
+    "code": "90002",
+    "description": "Operation of concert and theatre halls and other arts facilities",
+    "categoryReference": "R"
   },
   {
-    "Code": "90003",
-    "Description": "Activities of sculptors, painters, cartoonists, engravers, etchers",
-    "MSICCategoryReference": "R"
+    "code": "90003",
+    "description": "Activities of sculptors, painters, cartoonists, engravers, etchers",
+    "categoryReference": "R"
   },
   {
-    "Code": "90004",
-    "Description": "Activities of individual writers, for all subjects",
-    "MSICCategoryReference": "R"
+    "code": "90004",
+    "description": "Activities of individual writers, for all subjects",
+    "categoryReference": "R"
   },
   {
-    "Code": "90005",
-    "Description": "Activities of independent journalists",
-    "MSICCategoryReference": "R"
+    "code": "90005",
+    "description": "Activities of independent journalists",
+    "categoryReference": "R"
   },
   {
-    "Code": "90006",
-    "Description": "Restoring of works of art such as painting",
-    "MSICCategoryReference": "R"
+    "code": "90006",
+    "description": "Restoring of works of art such as painting",
+    "categoryReference": "R"
   },
   {
-    "Code": "90007",
-    "Description": "Activities of producers or entrepreneurs of arts live events, with or without facilities",
-    "MSICCategoryReference": "R"
+    "code": "90007",
+    "description": "Activities of producers or entrepreneurs of arts live events, with or without facilities",
+    "categoryReference": "R"
   },
   {
-    "Code": "90009",
-    "Description": "Creative, arts and entertainment activities n.e.c.",
-    "MSICCategoryReference": "R"
+    "code": "90009",
+    "description": "Creative, arts and entertainment activities n.e.c.",
+    "categoryReference": "R"
   },
   {
-    "Code": "91011",
-    "Description": "Documentation and information activities of libraries of all kinds",
-    "MSICCategoryReference": "R"
+    "code": "91011",
+    "description": "Documentation and information activities of libraries of all kinds",
+    "categoryReference": "R"
   },
   {
-    "Code": "91012",
-    "Description": "Stock photo libraries and services",
-    "MSICCategoryReference": "R"
+    "code": "91012",
+    "description": "Stock photo libraries and services",
+    "categoryReference": "R"
   },
   {
-    "Code": "91021",
-    "Description": "Operation of museums of all kinds",
-    "MSICCategoryReference": "R"
+    "code": "91021",
+    "description": "Operation of museums of all kinds",
+    "categoryReference": "R"
   },
   {
-    "Code": "91022",
-    "Description": "Operation of historical sites and buildings",
-    "MSICCategoryReference": "R"
+    "code": "91022",
+    "description": "Operation of historical sites and buildings",
+    "categoryReference": "R"
   },
   {
-    "Code": "91031",
-    "Description": "Operation of botanical and zoological gardens",
-    "MSICCategoryReference": "R"
+    "code": "91031",
+    "description": "Operation of botanical and zoological gardens",
+    "categoryReference": "R"
   },
   {
-    "Code": "91032",
-    "Description": "Operation of nature reserves, including wildlife preservation",
-    "MSICCategoryReference": "R"
+    "code": "91032",
+    "description": "Operation of nature reserves, including wildlife preservation",
+    "categoryReference": "R"
   },
   {
-    "Code": "92000",
-    "Description": "GAMBLING AND BETTING ACTIVITIES",
-    "MSICCategoryReference": "R"
+    "code": "92000",
+    "description": "GAMBLING AND BETTING ACTIVITIES",
+    "categoryReference": "R"
   },
   {
-    "Code": "93111",
-    "Description": "Football, hockey, cricket, baseball, badminton, futsal, paintball",
-    "MSICCategoryReference": "R"
+    "code": "93111",
+    "description": "Football, hockey, cricket, baseball, badminton, futsal, paintball",
+    "categoryReference": "R"
   },
   {
-    "Code": "93112",
-    "Description": "Racetracks for auto",
-    "MSICCategoryReference": "R"
+    "code": "93112",
+    "description": "Racetracks for auto",
+    "categoryReference": "R"
   },
   {
-    "Code": "93113",
-    "Description": "Equestrian clubs",
-    "MSICCategoryReference": "R"
+    "code": "93113",
+    "description": "Equestrian clubs",
+    "categoryReference": "R"
   },
   {
-    "Code": "93114",
-    "Description": "Swimming pools and stadiums, ice-skating arenas",
-    "MSICCategoryReference": "R"
+    "code": "93114",
+    "description": "Swimming pools and stadiums, ice-skating arenas",
+    "categoryReference": "R"
   },
   {
-    "Code": "93115",
-    "Description": "Track and field stadium",
-    "MSICCategoryReference": "R"
+    "code": "93115",
+    "description": "Track and field stadium",
+    "categoryReference": "R"
   },
   {
-    "Code": "93116",
-    "Description": "Golf courses",
-    "MSICCategoryReference": "R"
+    "code": "93116",
+    "description": "Golf courses",
+    "categoryReference": "R"
   },
   {
-    "Code": "93117",
-    "Description": "Bowling centre",
-    "MSICCategoryReference": "R"
+    "code": "93117",
+    "description": "Bowling centre",
+    "categoryReference": "R"
   },
   {
-    "Code": "93118",
-    "Description": "Fitness centres",
-    "MSICCategoryReference": "R"
+    "code": "93118",
+    "description": "Fitness centres",
+    "categoryReference": "R"
   },
   {
-    "Code": "93119",
-    "Description": "Organization and operation of outdoor or indoor sports events for professionals or amateurs by organizations with own facilities",
-    "MSICCategoryReference": "R"
+    "code": "93119",
+    "description": "Organization and operation of outdoor or indoor sports events for professionals or amateurs by organizations with own facilities",
+    "categoryReference": "R"
   },
   {
-    "Code": "93120",
-    "Description": "The operation of sports clubs such as football club, bowling club, swimming club",
-    "MSICCategoryReference": "R"
+    "code": "93120",
+    "description": "The operation of sports clubs such as football club, bowling club, swimming club",
+    "categoryReference": "R"
   },
   {
-    "Code": "93191",
-    "Description": "Activities of producers or promoters of sports events, with or without facilities",
-    "MSICCategoryReference": "R"
+    "code": "93191",
+    "description": "Activities of producers or promoters of sports events, with or without facilities",
+    "categoryReference": "R"
   },
   {
-    "Code": "93192",
-    "Description": "Activities of sports leagues and regulating bodies",
-    "MSICCategoryReference": "R"
+    "code": "93192",
+    "description": "Activities of sports leagues and regulating bodies",
+    "categoryReference": "R"
   },
   {
-    "Code": "93193",
-    "Description": "Activities of related to promotion of sporting events",
-    "MSICCategoryReference": "R"
+    "code": "93193",
+    "description": "Activities of related to promotion of sporting events",
+    "categoryReference": "R"
   },
   {
-    "Code": "93199",
-    "Description": "Other sports activities n.e.c.",
-    "MSICCategoryReference": "R"
+    "code": "93199",
+    "description": "Other sports activities n.e.c.",
+    "categoryReference": "R"
   },
   {
-    "Code": "93210",
-    "Description": "Activities of amusement parks and theme parks",
-    "MSICCategoryReference": "R"
+    "code": "93210",
+    "description": "Activities of amusement parks and theme parks",
+    "categoryReference": "R"
   },
   {
-    "Code": "93291",
-    "Description": "Activities of recreation parks and beaches",
-    "MSICCategoryReference": "R"
+    "code": "93291",
+    "description": "Activities of recreation parks and beaches",
+    "categoryReference": "R"
   },
   {
-    "Code": "93292",
-    "Description": "Operation of recreational transport facilities",
-    "MSICCategoryReference": "R"
+    "code": "93292",
+    "description": "Operation of recreational transport facilities",
+    "categoryReference": "R"
   },
   {
-    "Code": "93293",
-    "Description": "Renting of leisure and pleasure equipment as an integral part of recreational facilities",
-    "MSICCategoryReference": "R"
+    "code": "93293",
+    "description": "Renting of leisure and pleasure equipment as an integral part of recreational facilities",
+    "categoryReference": "R"
   },
   {
-    "Code": "93294",
-    "Description": "Operation of fairs and shows of a recreational nature",
-    "MSICCategoryReference": "R"
+    "code": "93294",
+    "description": "Operation of fairs and shows of a recreational nature",
+    "categoryReference": "R"
   },
   {
-    "Code": "93295",
-    "Description": "Operation of discotheques and dance floors",
-    "MSICCategoryReference": "R"
+    "code": "93295",
+    "description": "Operation of discotheques and dance floors",
+    "categoryReference": "R"
   },
   {
-    "Code": "93296",
-    "Description": "Activities of producers or entrepreneurs of live events other than arts or sports events, with or without facilities",
-    "MSICCategoryReference": "R"
+    "code": "93296",
+    "description": "Activities of producers or entrepreneurs of live events other than arts or sports events, with or without facilities",
+    "categoryReference": "R"
   },
   {
-    "Code": "93297",
-    "Description": "Cyber Café/Internet Centre",
-    "MSICCategoryReference": "R"
+    "code": "93297",
+    "description": "Cyber Café/Internet Centre",
+    "categoryReference": "R"
   },
   {
-    "Code": "93299",
-    "Description": "Any other amusement and recreation activities n.e.c.",
-    "MSICCategoryReference": "R"
+    "code": "93299",
+    "description": "Any other amusement and recreation activities n.e.c.",
+    "categoryReference": "R"
   },
   {
-    "Code": "94110",
-    "Description": "Activities of business and employers membership organizations",
-    "MSICCategoryReference": "S"
+    "code": "94110",
+    "description": "Activities of business and employers membership organizations",
+    "categoryReference": "S"
   },
   {
-    "Code": "94120",
-    "Description": "Activities of professional membership organizations",
-    "MSICCategoryReference": "S"
+    "code": "94120",
+    "description": "Activities of professional membership organizations",
+    "categoryReference": "S"
   },
   {
-    "Code": "94200",
-    "Description": "Activities of trade unions",
-    "MSICCategoryReference": "S"
+    "code": "94200",
+    "description": "Activities of trade unions",
+    "categoryReference": "S"
   },
   {
-    "Code": "94910",
-    "Description": "Activities of religious organizations",
-    "MSICCategoryReference": "S"
+    "code": "94910",
+    "description": "Activities of religious organizations",
+    "categoryReference": "S"
   },
   {
-    "Code": "94920",
-    "Description": "Activities of political organizations",
-    "MSICCategoryReference": "S"
+    "code": "94920",
+    "description": "Activities of political organizations",
+    "categoryReference": "S"
   },
   {
-    "Code": "94990",
-    "Description": "Activities of other membership organizations n.e.c.",
-    "MSICCategoryReference": "S"
+    "code": "94990",
+    "description": "Activities of other membership organizations n.e.c.",
+    "categoryReference": "S"
   },
   {
-    "Code": "95111",
-    "Description": "Repair of electronic equipment",
-    "MSICCategoryReference": "S"
+    "code": "95111",
+    "description": "Repair of electronic equipment",
+    "categoryReference": "S"
   },
   {
-    "Code": "95112",
-    "Description": "Repair and maintenance of computer terminals",
-    "MSICCategoryReference": "S"
+    "code": "95112",
+    "description": "Repair and maintenance of computer terminals",
+    "categoryReference": "S"
   },
   {
-    "Code": "95113",
-    "Description": "Repair and maintenance of hand-held computers (PDA's)",
-    "MSICCategoryReference": "S"
+    "code": "95113",
+    "description": "Repair and maintenance of hand-held computers (PDA's)",
+    "categoryReference": "S"
   },
   {
-    "Code": "95121",
-    "Description": "Repair and maintenance of cordless telephones",
-    "MSICCategoryReference": "S"
+    "code": "95121",
+    "description": "Repair and maintenance of cordless telephones",
+    "categoryReference": "S"
   },
   {
-    "Code": "95122",
-    "Description": "Repair and maintenance of cellular phones",
-    "MSICCategoryReference": "S"
+    "code": "95122",
+    "description": "Repair and maintenance of cellular phones",
+    "categoryReference": "S"
   },
   {
-    "Code": "95123",
-    "Description": "Repair and maintenance of carrier equipment modems",
-    "MSICCategoryReference": "S"
+    "code": "95123",
+    "description": "Repair and maintenance of carrier equipment modems",
+    "categoryReference": "S"
   },
   {
-    "Code": "95124",
-    "Description": "Repair and maintenance of fax machines",
-    "MSICCategoryReference": "S"
+    "code": "95124",
+    "description": "Repair and maintenance of fax machines",
+    "categoryReference": "S"
   },
   {
-    "Code": "95125",
-    "Description": "Repair and maintenance of communications transmission equipment",
-    "MSICCategoryReference": "S"
+    "code": "95125",
+    "description": "Repair and maintenance of communications transmission equipment",
+    "categoryReference": "S"
   },
   {
-    "Code": "95126",
-    "Description": "Repair and maintenance of two-way radios",
-    "MSICCategoryReference": "S"
+    "code": "95126",
+    "description": "Repair and maintenance of two-way radios",
+    "categoryReference": "S"
   },
   {
-    "Code": "95127",
-    "Description": "Repair and maintenance of commercial TV and video cameras",
-    "MSICCategoryReference": "S"
+    "code": "95127",
+    "description": "Repair and maintenance of commercial TV and video cameras",
+    "categoryReference": "S"
   },
   {
-    "Code": "95211",
-    "Description": "Repair and maintenance of television, radio receivers",
-    "MSICCategoryReference": "S"
+    "code": "95211",
+    "description": "Repair and maintenance of television, radio receivers",
+    "categoryReference": "S"
   },
   {
-    "Code": "95212",
-    "Description": "Repair and maintenance of VCR/DVD/VCD",
-    "MSICCategoryReference": "S"
+    "code": "95212",
+    "description": "Repair and maintenance of VCR/DVD/VCD",
+    "categoryReference": "S"
   },
   {
-    "Code": "95213",
-    "Description": "Repair and maintenance of CD players",
-    "MSICCategoryReference": "S"
+    "code": "95213",
+    "description": "Repair and maintenance of CD players",
+    "categoryReference": "S"
   },
   {
-    "Code": "95214",
-    "Description": "Repair and maintenance of household-type video cameras",
-    "MSICCategoryReference": "S"
+    "code": "95214",
+    "description": "Repair and maintenance of household-type video cameras",
+    "categoryReference": "S"
   },
   {
-    "Code": "95221",
-    "Description": "Repair and servicing of household appliances",
-    "MSICCategoryReference": "S"
+    "code": "95221",
+    "description": "Repair and servicing of household appliances",
+    "categoryReference": "S"
   },
   {
-    "Code": "95222",
-    "Description": "Repair and servicing of home and garden equipment",
-    "MSICCategoryReference": "S"
+    "code": "95222",
+    "description": "Repair and servicing of home and garden equipment",
+    "categoryReference": "S"
   },
   {
-    "Code": "95230",
-    "Description": "Repair of footwear and leather goods",
-    "MSICCategoryReference": "S"
+    "code": "95230",
+    "description": "Repair of footwear and leather goods",
+    "categoryReference": "S"
   },
   {
-    "Code": "95240",
-    "Description": "Repair of furniture and home furnishings",
-    "MSICCategoryReference": "S"
+    "code": "95240",
+    "description": "Repair of furniture and home furnishings",
+    "categoryReference": "S"
   },
   {
-    "Code": "95291",
-    "Description": "Repair of bicycles",
-    "MSICCategoryReference": "S"
+    "code": "95291",
+    "description": "Repair of bicycles",
+    "categoryReference": "S"
   },
   {
-    "Code": "95292",
-    "Description": "Repair and alteration of clothing",
-    "MSICCategoryReference": "S"
+    "code": "95292",
+    "description": "Repair and alteration of clothing",
+    "categoryReference": "S"
   },
   {
-    "Code": "95293",
-    "Description": "Repair and alteration of jewellery",
-    "MSICCategoryReference": "S"
+    "code": "95293",
+    "description": "Repair and alteration of jewellery",
+    "categoryReference": "S"
   },
   {
-    "Code": "95294",
-    "Description": "Repair of watches, clocks and their parts",
-    "MSICCategoryReference": "S"
+    "code": "95294",
+    "description": "Repair of watches, clocks and their parts",
+    "categoryReference": "S"
   },
   {
-    "Code": "95295",
-    "Description": "Repair of sporting goods",
-    "MSICCategoryReference": "S"
+    "code": "95295",
+    "description": "Repair of sporting goods",
+    "categoryReference": "S"
   },
   {
-    "Code": "95296",
-    "Description": "Repair of musical instruments",
-    "MSICCategoryReference": "S"
+    "code": "95296",
+    "description": "Repair of musical instruments",
+    "categoryReference": "S"
   },
   {
-    "Code": "95299",
-    "Description": "Repair of other personal and household goods n.e.c.",
-    "MSICCategoryReference": "S"
+    "code": "95299",
+    "description": "Repair of other personal and household goods n.e.c.",
+    "categoryReference": "S"
   },
   {
-    "Code": "96011",
-    "Description": "Laundering and dry-cleaning, pressing",
-    "MSICCategoryReference": "S"
+    "code": "96011",
+    "description": "Laundering and dry-cleaning, pressing",
+    "categoryReference": "S"
   },
   {
-    "Code": "96012",
-    "Description": "Carpet and rug shampooing, and drapery and curtain cleaning, whether on clients' premises or not",
-    "MSICCategoryReference": "S"
+    "code": "96012",
+    "description": "Carpet and rug shampooing, and drapery and curtain cleaning, whether on clients' premises or not",
+    "categoryReference": "S"
   },
   {
-    "Code": "96013",
-    "Description": "Provision of linens, work uniforms and related items by laundries",
-    "MSICCategoryReference": "S"
+    "code": "96013",
+    "description": "Provision of linens, work uniforms and related items by laundries",
+    "categoryReference": "S"
   },
   {
-    "Code": "96014",
-    "Description": "Diaper supply services",
-    "MSICCategoryReference": "S"
+    "code": "96014",
+    "description": "Diaper supply services",
+    "categoryReference": "S"
   },
   {
-    "Code": "96020",
-    "Description": "Hairdressing and other beauty treatment",
-    "MSICCategoryReference": "S"
+    "code": "96020",
+    "description": "Hairdressing and other beauty treatment",
+    "categoryReference": "S"
   },
   {
-    "Code": "96031",
-    "Description": "Preparing the dead for burial or cremation and embalming and morticians' services",
-    "MSICCategoryReference": "S"
+    "code": "96031",
+    "description": "Preparing the dead for burial or cremation and embalming and morticians' services",
+    "categoryReference": "S"
   },
   {
-    "Code": "96032",
-    "Description": "Providing burial or cremation services",
-    "MSICCategoryReference": "S"
+    "code": "96032",
+    "description": "Providing burial or cremation services",
+    "categoryReference": "S"
   },
   {
-    "Code": "96033",
-    "Description": "Rental of equipped space in funeral parlours",
-    "MSICCategoryReference": "S"
+    "code": "96033",
+    "description": "Rental of equipped space in funeral parlours",
+    "categoryReference": "S"
   },
   {
-    "Code": "96034",
-    "Description": "Rental or sale of graves",
-    "MSICCategoryReference": "S"
+    "code": "96034",
+    "description": "Rental or sale of graves",
+    "categoryReference": "S"
   },
   {
-    "Code": "96035",
-    "Description": "Maintenance of graves and mausoleums",
-    "MSICCategoryReference": "S"
+    "code": "96035",
+    "description": "Maintenance of graves and mausoleums",
+    "categoryReference": "S"
   },
   {
-    "Code": "96091",
-    "Description": "Activities of sauna, steam baths, massage salons",
-    "MSICCategoryReference": "S"
+    "code": "96091",
+    "description": "Activities of sauna, steam baths, massage salons",
+    "categoryReference": "S"
   },
   {
-    "Code": "96092",
-    "Description": "Astrological and spiritualists' activities",
-    "MSICCategoryReference": "S"
+    "code": "96092",
+    "description": "Astrological and spiritualists' activities",
+    "categoryReference": "S"
   },
   {
-    "Code": "96093",
-    "Description": "Social activities such as escort services, dating services, services of marriage bureaux",
-    "MSICCategoryReference": "S"
+    "code": "96093",
+    "description": "Social activities such as escort services, dating services, services of marriage bureaux",
+    "categoryReference": "S"
   },
   {
-    "Code": "96094",
-    "Description": "Pet care services",
-    "MSICCategoryReference": "S"
+    "code": "96094",
+    "description": "Pet care services",
+    "categoryReference": "S"
   },
   {
-    "Code": "96095",
-    "Description": "Genealogical organizations",
-    "MSICCategoryReference": "S"
+    "code": "96095",
+    "description": "Genealogical organizations",
+    "categoryReference": "S"
   },
   {
-    "Code": "96096",
-    "Description": "Shoe shiners, porters, valet car parkers",
-    "MSICCategoryReference": "S"
+    "code": "96096",
+    "description": "Shoe shiners, porters, valet car parkers",
+    "categoryReference": "S"
   },
   {
-    "Code": "96097",
-    "Description": "Concession operation of coin-operated personal service machines",
-    "MSICCategoryReference": "S"
+    "code": "96097",
+    "description": "Concession operation of coin-operated personal service machines",
+    "categoryReference": "S"
   },
   {
-    "Code": "96099",
-    "Description": "Other service activities n.e.c.",
-    "MSICCategoryReference": "S"
+    "code": "96099",
+    "description": "Other service activities n.e.c.",
+    "categoryReference": "S"
   },
   {
-    "Code": "97000",
-    "Description": "Activities of households as employers of domestic personnel",
-    "MSICCategoryReference": "T"
+    "code": "97000",
+    "description": "Activities of households as employers of domestic personnel",
+    "categoryReference": "T"
   },
   {
-    "Code": "98100",
-    "Description": "Undifferentiated goods-producing activities of private households for own use",
-    "MSICCategoryReference": "T"
+    "code": "98100",
+    "description": "Undifferentiated goods-producing activities of private households for own use",
+    "categoryReference": "T"
   },
   {
-    "Code": "98200",
-    "Description": "Undifferentiated service-producing activities of private households for own use",
-    "MSICCategoryReference": "T"
+    "code": "98200",
+    "description": "Undifferentiated service-producing activities of private households for own use",
+    "categoryReference": "T"
   },
   {
-    "Code": "99000",
-    "Description": "Activities of extraterritorial organization and bodies",
-    "MSICCategoryReference": "U"
+    "code": "99000",
+    "description": "Activities of extraterritorial organization and bodies",
+    "categoryReference": "U"
   }
 ];
 

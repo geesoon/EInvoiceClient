@@ -1,719 +1,721 @@
-const CurrencyCodes: any[] = [
+import CurrencyCode from "@/models/codeTables/currencyCode";
+
+const CurrencyCodes: CurrencyCode[] = [
     {
-        "Code": "AED",
-        "Currency": "UAE Dirham"
+        "code": "AED",
+        "currency": "UAE Dirham"
     },
     {
-        "Code": "AFN",
-        "Currency": "Afghani"
+        "code": "AFN",
+        "currency": "Afghani"
     },
     {
-        "Code": "ALL",
-        "Currency": "Lek"
+        "code": "ALL",
+        "currency": "Lek"
     },
     {
-        "Code": "AMD",
-        "Currency": "Armenian Dram"
+        "code": "AMD",
+        "currency": "Armenian Dram"
     },
     {
-        "Code": "ANG",
-        "Currency": "Netherlands Antillean Guilder"
+        "code": "ANG",
+        "currency": "Netherlands Antillean Guilder"
     },
     {
-        "Code": "AOA",
-        "Currency": "Kwanza"
+        "code": "AOA",
+        "currency": "Kwanza"
     },
     {
-        "Code": "ARS",
-        "Currency": "Argentine Peso"
+        "code": "ARS",
+        "currency": "Argentine Peso"
     },
     {
-        "Code": "AUD",
-        "Currency": "Australian Dollar"
+        "code": "AUD",
+        "currency": "Australian Dollar"
     },
     {
-        "Code": "AWG",
-        "Currency": "Aruban Florin"
+        "code": "AWG",
+        "currency": "Aruban Florin"
     },
     {
-        "Code": "AZN",
-        "Currency": "Azerbaijan Manat"
+        "code": "AZN",
+        "currency": "Azerbaijan Manat"
     },
     {
-        "Code": "BAM",
-        "Currency": "Convertible Mark"
+        "code": "BAM",
+        "currency": "Convertible Mark"
     },
     {
-        "Code": "BBD",
-        "Currency": "Barbados Dollar"
+        "code": "BBD",
+        "currency": "Barbados Dollar"
     },
     {
-        "Code": "BDT",
-        "Currency": "Taka"
+        "code": "BDT",
+        "currency": "Taka"
     },
     {
-        "Code": "BGN",
-        "Currency": "Bulgarian Lev"
+        "code": "BGN",
+        "currency": "Bulgarian Lev"
     },
     {
-        "Code": "BHD",
-        "Currency": "Bahraini Dinar"
+        "code": "BHD",
+        "currency": "Bahraini Dinar"
     },
     {
-        "Code": "BIF",
-        "Currency": "Burundi Franc"
+        "code": "BIF",
+        "currency": "Burundi Franc"
     },
     {
-        "Code": "BMD",
-        "Currency": "Bermudian Dollar"
+        "code": "BMD",
+        "currency": "Bermudian Dollar"
     },
     {
-        "Code": "BND",
-        "Currency": "Brunei Dollar"
+        "code": "BND",
+        "currency": "Brunei Dollar"
     },
     {
-        "Code": "BOB",
-        "Currency": "Boliviano"
+        "code": "BOB",
+        "currency": "Boliviano"
     },
     {
-        "Code": "BOV",
-        "Currency": "Mvdol"
+        "code": "BOV",
+        "currency": "Mvdol"
     },
     {
-        "Code": "BRL",
-        "Currency": "Brazilian Real"
+        "code": "BRL",
+        "currency": "Brazilian Real"
     },
     {
-        "Code": "BSD",
-        "Currency": "Bahamian Dollar"
+        "code": "BSD",
+        "currency": "Bahamian Dollar"
     },
     {
-        "Code": "BTN",
-        "Currency": "Ngultrum"
+        "code": "BTN",
+        "currency": "Ngultrum"
     },
     {
-        "Code": "BWP",
-        "Currency": "Pula"
+        "code": "BWP",
+        "currency": "Pula"
     },
     {
-        "Code": "BYN",
-        "Currency": "Belarusian Ruble"
+        "code": "BYN",
+        "currency": "Belarusian Ruble"
     },
     {
-        "Code": "BZD",
-        "Currency": "Belize Dollar"
+        "code": "BZD",
+        "currency": "Belize Dollar"
     },
     {
-        "Code": "CAD",
-        "Currency": "Canadian Dollar"
+        "code": "CAD",
+        "currency": "Canadian Dollar"
     },
     {
-        "Code": "CDF",
-        "Currency": "Congolese Franc"
+        "code": "CDF",
+        "currency": "Congolese Franc"
     },
     {
-        "Code": "CHE",
-        "Currency": "WIR Euro"
+        "code": "CHE",
+        "currency": "WIR Euro"
     },
     {
-        "Code": "CHF",
-        "Currency": "Swiss Franc"
+        "code": "CHF",
+        "currency": "Swiss Franc"
     },
     {
-        "Code": "CHW",
-        "Currency": "WIR Franc"
+        "code": "CHW",
+        "currency": "WIR Franc"
     },
     {
-        "Code": "CLF",
-        "Currency": "Unidad de Fomento"
+        "code": "CLF",
+        "currency": "Unidad de Fomento"
     },
     {
-        "Code": "CLP",
-        "Currency": "Chilean Peso"
+        "code": "CLP",
+        "currency": "Chilean Peso"
     },
     {
-        "Code": "CNY",
-        "Currency": "Yuan Renminbi"
+        "code": "CNY",
+        "currency": "Yuan Renminbi"
     },
     {
-        "Code": "COP",
-        "Currency": "Colombian Peso"
+        "code": "COP",
+        "currency": "Colombian Peso"
     },
     {
-        "Code": "COU",
-        "Currency": "Unidad de Valor Real"
+        "code": "COU",
+        "currency": "Unidad de Valor Real"
     },
     {
-        "Code": "CRC",
-        "Currency": "Costa Rican Colon"
+        "code": "CRC",
+        "currency": "Costa Rican Colon"
     },
     {
-        "Code": "CUC",
-        "Currency": "Peso Convertible"
+        "code": "CUC",
+        "currency": "Peso Convertible"
     },
     {
-        "Code": "CUP",
-        "Currency": "Cuban Peso"
+        "code": "CUP",
+        "currency": "Cuban Peso"
     },
     {
-        "Code": "CVE",
-        "Currency": "Cabo Verde Escudo"
+        "code": "CVE",
+        "currency": "Cabo Verde Escudo"
     },
     {
-        "Code": "CZK",
-        "Currency": "Czech Koruna"
+        "code": "CZK",
+        "currency": "Czech Koruna"
     },
     {
-        "Code": "DJF",
-        "Currency": "Djibouti Franc"
+        "code": "DJF",
+        "currency": "Djibouti Franc"
     },
     {
-        "Code": "DKK",
-        "Currency": "Danish Krone"
+        "code": "DKK",
+        "currency": "Danish Krone"
     },
     {
-        "Code": "DOP",
-        "Currency": "Dominican Peso"
+        "code": "DOP",
+        "currency": "Dominican Peso"
     },
     {
-        "Code": "DZD",
-        "Currency": "Algerian Dinar"
+        "code": "DZD",
+        "currency": "Algerian Dinar"
     },
     {
-        "Code": "EGP",
-        "Currency": "Egyptian Pound"
+        "code": "EGP",
+        "currency": "Egyptian Pound"
     },
     {
-        "Code": "ERN",
-        "Currency": "Nakfa"
+        "code": "ERN",
+        "currency": "Nakfa"
     },
     {
-        "Code": "ETB",
-        "Currency": "Ethiopian Birr"
+        "code": "ETB",
+        "currency": "Ethiopian Birr"
     },
     {
-        "Code": "EUR",
-        "Currency": "Euro"
+        "code": "EUR",
+        "currency": "Euro"
     },
     {
-        "Code": "FJD",
-        "Currency": "Fiji Dollar"
+        "code": "FJD",
+        "currency": "Fiji Dollar"
     },
     {
-        "Code": "FKP",
-        "Currency": "Falkland Islands Pound"
+        "code": "FKP",
+        "currency": "Falkland Islands Pound"
     },
     {
-        "Code": "GBP",
-        "Currency": "Pound Sterling"
+        "code": "GBP",
+        "currency": "Pound Sterling"
     },
     {
-        "Code": "GEL",
-        "Currency": "Lari"
+        "code": "GEL",
+        "currency": "Lari"
     },
     {
-        "Code": "GHS",
-        "Currency": "Ghana Cedi"
+        "code": "GHS",
+        "currency": "Ghana Cedi"
     },
     {
-        "Code": "GIP",
-        "Currency": "Gibraltar Pound"
+        "code": "GIP",
+        "currency": "Gibraltar Pound"
     },
     {
-        "Code": "GMD",
-        "Currency": "Dalasi"
+        "code": "GMD",
+        "currency": "Dalasi"
     },
     {
-        "Code": "GNF",
-        "Currency": "Guinean Franc"
+        "code": "GNF",
+        "currency": "Guinean Franc"
     },
     {
-        "Code": "GTQ",
-        "Currency": "Quetzal"
+        "code": "GTQ",
+        "currency": "Quetzal"
     },
     {
-        "Code": "GYD",
-        "Currency": "Guyana Dollar"
+        "code": "GYD",
+        "currency": "Guyana Dollar"
     },
     {
-        "Code": "HKD",
-        "Currency": "Hong Kong Dollar"
+        "code": "HKD",
+        "currency": "Hong Kong Dollar"
     },
     {
-        "Code": "HNL",
-        "Currency": "Lempira"
+        "code": "HNL",
+        "currency": "Lempira"
     },
     {
-        "Code": "HTG",
-        "Currency": "Gourde"
+        "code": "HTG",
+        "currency": "Gourde"
     },
     {
-        "Code": "HUF",
-        "Currency": "Forint"
+        "code": "HUF",
+        "currency": "Forint"
     },
     {
-        "Code": "IDR",
-        "Currency": "Rupiah"
+        "code": "IDR",
+        "currency": "Rupiah"
     },
     {
-        "Code": "ILS",
-        "Currency": "New Israeli Sheqel"
+        "code": "ILS",
+        "currency": "New Israeli Sheqel"
     },
     {
-        "Code": "INR",
-        "Currency": "Indian Rupee"
+        "code": "INR",
+        "currency": "Indian Rupee"
     },
     {
-        "Code": "IQD",
-        "Currency": "Iraqi Dinar"
+        "code": "IQD",
+        "currency": "Iraqi Dinar"
     },
     {
-        "Code": "IRR",
-        "Currency": "Iranian Rial"
+        "code": "IRR",
+        "currency": "Iranian Rial"
     },
     {
-        "Code": "ISK",
-        "Currency": "Iceland Krona"
+        "code": "ISK",
+        "currency": "Iceland Krona"
     },
     {
-        "Code": "JMD",
-        "Currency": "Jamaican Dollar"
+        "code": "JMD",
+        "currency": "Jamaican Dollar"
     },
     {
-        "Code": "JOD",
-        "Currency": "Jordanian Dinar"
+        "code": "JOD",
+        "currency": "Jordanian Dinar"
     },
     {
-        "Code": "JPY",
-        "Currency": "Yen"
+        "code": "JPY",
+        "currency": "Yen"
     },
     {
-        "Code": "KES",
-        "Currency": "Kenyan Shilling"
+        "code": "KES",
+        "currency": "Kenyan Shilling"
     },
     {
-        "Code": "KGS",
-        "Currency": "Som"
+        "code": "KGS",
+        "currency": "Som"
     },
     {
-        "Code": "KHR",
-        "Currency": "Riel"
+        "code": "KHR",
+        "currency": "Riel"
     },
     {
-        "Code": "KMF",
-        "Currency": "Comorian Franc "
+        "code": "KMF",
+        "currency": "Comorian Franc "
     },
     {
-        "Code": "KPW",
-        "Currency": "North Korean Won"
+        "code": "KPW",
+        "currency": "North Korean Won"
     },
     {
-        "Code": "KRW",
-        "Currency": "Won"
+        "code": "KRW",
+        "currency": "Won"
     },
     {
-        "Code": "KWD",
-        "Currency": "Kuwaiti Dinar"
+        "code": "KWD",
+        "currency": "Kuwaiti Dinar"
     },
     {
-        "Code": "KYD",
-        "Currency": "Cayman Islands Dollar"
+        "code": "KYD",
+        "currency": "Cayman Islands Dollar"
     },
     {
-        "Code": "KZT",
-        "Currency": "Tenge"
+        "code": "KZT",
+        "currency": "Tenge"
     },
     {
-        "Code": "LAK",
-        "Currency": "Lao Kip"
+        "code": "LAK",
+        "currency": "Lao Kip"
     },
     {
-        "Code": "LBP",
-        "Currency": "Lebanese Pound"
+        "code": "LBP",
+        "currency": "Lebanese Pound"
     },
     {
-        "Code": "LKR",
-        "Currency": "Sri Lanka Rupee"
+        "code": "LKR",
+        "currency": "Sri Lanka Rupee"
     },
     {
-        "Code": "LRD",
-        "Currency": "Liberian Dollar"
+        "code": "LRD",
+        "currency": "Liberian Dollar"
     },
     {
-        "Code": "LSL",
-        "Currency": "Loti"
+        "code": "LSL",
+        "currency": "Loti"
     },
     {
-        "Code": "LYD",
-        "Currency": "Libyan Dinar"
+        "code": "LYD",
+        "currency": "Libyan Dinar"
     },
     {
-        "Code": "MAD",
-        "Currency": "Moroccan Dirham"
+        "code": "MAD",
+        "currency": "Moroccan Dirham"
     },
     {
-        "Code": "MDL",
-        "Currency": "Moldovan Leu"
+        "code": "MDL",
+        "currency": "Moldovan Leu"
     },
     {
-        "Code": "MGA",
-        "Currency": "Malagasy Ariary"
+        "code": "MGA",
+        "currency": "Malagasy Ariary"
     },
     {
-        "Code": "MKD",
-        "Currency": "Denar"
+        "code": "MKD",
+        "currency": "Denar"
     },
     {
-        "Code": "MMK",
-        "Currency": "Kyat"
+        "code": "MMK",
+        "currency": "Kyat"
     },
     {
-        "Code": "MNT",
-        "Currency": "Tugrik"
+        "code": "MNT",
+        "currency": "Tugrik"
     },
     {
-        "Code": "MOP",
-        "Currency": "Pataca"
+        "code": "MOP",
+        "currency": "Pataca"
     },
     {
-        "Code": "MRU",
-        "Currency": "Ouguiya"
+        "code": "MRU",
+        "currency": "Ouguiya"
     },
     {
-        "Code": "MUR",
-        "Currency": "Mauritius Rupee"
+        "code": "MUR",
+        "currency": "Mauritius Rupee"
     },
     {
-        "Code": "MVR",
-        "Currency": "Rufiyaa"
+        "code": "MVR",
+        "currency": "Rufiyaa"
     },
     {
-        "Code": "MWK",
-        "Currency": "Malawi Kwacha"
+        "code": "MWK",
+        "currency": "Malawi Kwacha"
     },
     {
-        "Code": "MXN",
-        "Currency": "Mexican Peso"
+        "code": "MXN",
+        "currency": "Mexican Peso"
     },
     {
-        "Code": "MXV",
-        "Currency": "Mexican Unidad de Inversion (UDI)"
+        "code": "MXV",
+        "currency": "Mexican Unidad de Inversion (UDI)"
     },
     {
-        "Code": "MYR",
-        "Currency": "Malaysian Ringgit"
+        "code": "MYR",
+        "currency": "Malaysian Ringgit"
     },
     {
-        "Code": "MZN",
-        "Currency": "Mozambique Metical"
+        "code": "MZN",
+        "currency": "Mozambique Metical"
     },
     {
-        "Code": "NAD",
-        "Currency": "Namibia Dollar"
+        "code": "NAD",
+        "currency": "Namibia Dollar"
     },
     {
-        "Code": "NGN",
-        "Currency": "Naira"
+        "code": "NGN",
+        "currency": "Naira"
     },
     {
-        "Code": "NIO",
-        "Currency": "Cordoba Oro"
+        "code": "NIO",
+        "currency": "Cordoba Oro"
     },
     {
-        "Code": "NOK",
-        "Currency": "Norwegian Krone"
+        "code": "NOK",
+        "currency": "Norwegian Krone"
     },
     {
-        "Code": "NPR",
-        "Currency": "Nepalese Rupee"
+        "code": "NPR",
+        "currency": "Nepalese Rupee"
     },
     {
-        "Code": "NZD",
-        "Currency": "New Zealand Dollar"
+        "code": "NZD",
+        "currency": "New Zealand Dollar"
     },
     {
-        "Code": "OMR",
-        "Currency": "Rial Omani"
+        "code": "OMR",
+        "currency": "Rial Omani"
     },
     {
-        "Code": "PAB",
-        "Currency": "Balboa"
+        "code": "PAB",
+        "currency": "Balboa"
     },
     {
-        "Code": "PEN",
-        "Currency": "Sol"
+        "code": "PEN",
+        "currency": "Sol"
     },
     {
-        "Code": "PGK",
-        "Currency": "Kina"
+        "code": "PGK",
+        "currency": "Kina"
     },
     {
-        "Code": "PHP",
-        "Currency": "Philippine Peso"
+        "code": "PHP",
+        "currency": "Philippine Peso"
     },
     {
-        "Code": "PKR",
-        "Currency": "Pakistan Rupee"
+        "code": "PKR",
+        "currency": "Pakistan Rupee"
     },
     {
-        "Code": "PLN",
-        "Currency": "Zloty"
+        "code": "PLN",
+        "currency": "Zloty"
     },
     {
-        "Code": "PYG",
-        "Currency": "Guarani"
+        "code": "PYG",
+        "currency": "Guarani"
     },
     {
-        "Code": "QAR",
-        "Currency": "Qatari Rial"
+        "code": "QAR",
+        "currency": "Qatari Rial"
     },
     {
-        "Code": "RON",
-        "Currency": "Romanian Leu"
+        "code": "RON",
+        "currency": "Romanian Leu"
     },
     {
-        "Code": "RSD",
-        "Currency": "Serbian Dinar"
+        "code": "RSD",
+        "currency": "Serbian Dinar"
     },
     {
-        "Code": "RUB",
-        "Currency": "Russian Ruble"
+        "code": "RUB",
+        "currency": "Russian Ruble"
     },
     {
-        "Code": "RWF",
-        "Currency": "Rwanda Franc"
+        "code": "RWF",
+        "currency": "Rwanda Franc"
     },
     {
-        "Code": "SAR",
-        "Currency": "Saudi Riyal"
+        "code": "SAR",
+        "currency": "Saudi Riyal"
     },
     {
-        "Code": "SBD",
-        "Currency": "Solomon Islands Dollar"
+        "code": "SBD",
+        "currency": "Solomon Islands Dollar"
     },
     {
-        "Code": "SCR",
-        "Currency": "Seychelles Rupee"
+        "code": "SCR",
+        "currency": "Seychelles Rupee"
     },
     {
-        "Code": "SDG",
-        "Currency": "Sudanese Pound"
+        "code": "SDG",
+        "currency": "Sudanese Pound"
     },
     {
-        "Code": "SEK",
-        "Currency": "Swedish Krona"
+        "code": "SEK",
+        "currency": "Swedish Krona"
     },
     {
-        "Code": "SGD",
-        "Currency": "Singapore Dollar"
+        "code": "SGD",
+        "currency": "Singapore Dollar"
     },
     {
-        "Code": "SHP",
-        "Currency": "Saint Helena Pound"
+        "code": "SHP",
+        "currency": "Saint Helena Pound"
     },
     {
-        "Code": "SLE",
-        "Currency": "Leone"
+        "code": "SLE",
+        "currency": "Leone"
     },
     {
-        "Code": "SLL",
-        "Currency": "Leone"
+        "code": "SLL",
+        "currency": "Leone"
     },
     {
-        "Code": "SOS",
-        "Currency": "Somali Shilling"
+        "code": "SOS",
+        "currency": "Somali Shilling"
     },
     {
-        "Code": "SRD",
-        "Currency": "Surinam Dollar"
+        "code": "SRD",
+        "currency": "Surinam Dollar"
     },
     {
-        "Code": "SSP",
-        "Currency": "South Sudanese Pound"
+        "code": "SSP",
+        "currency": "South Sudanese Pound"
     },
     {
-        "Code": "STN",
-        "Currency": "Dobra"
+        "code": "STN",
+        "currency": "Dobra"
     },
     {
-        "Code": "SVC",
-        "Currency": "El Salvador Colon"
+        "code": "SVC",
+        "currency": "El Salvador Colon"
     },
     {
-        "Code": "SYP",
-        "Currency": "Syrian Pound"
+        "code": "SYP",
+        "currency": "Syrian Pound"
     },
     {
-        "Code": "SZL",
-        "Currency": "Lilangeni"
+        "code": "SZL",
+        "currency": "Lilangeni"
     },
     {
-        "Code": "THB",
-        "Currency": "Baht"
+        "code": "THB",
+        "currency": "Baht"
     },
     {
-        "Code": "TJS",
-        "Currency": "Somoni"
+        "code": "TJS",
+        "currency": "Somoni"
     },
     {
-        "Code": "TMT",
-        "Currency": "Turkmenistan New Manat"
+        "code": "TMT",
+        "currency": "Turkmenistan New Manat"
     },
     {
-        "Code": "TND",
-        "Currency": "Tunisian Dinar"
+        "code": "TND",
+        "currency": "Tunisian Dinar"
     },
     {
-        "Code": "TOP",
-        "Currency": "Pa’anga"
+        "code": "TOP",
+        "currency": "Pa’anga"
     },
     {
-        "Code": "TRY",
-        "Currency": "Turkish Lira"
+        "code": "TRY",
+        "currency": "Turkish Lira"
     },
     {
-        "Code": "TTD",
-        "Currency": "Trinidad and Tobago Dollar"
+        "code": "TTD",
+        "currency": "Trinidad and Tobago Dollar"
     },
     {
-        "Code": "TWD",
-        "Currency": "New Taiwan Dollar"
+        "code": "TWD",
+        "currency": "New Taiwan Dollar"
     },
     {
-        "Code": "TZS",
-        "Currency": "Tanzanian Shilling"
+        "code": "TZS",
+        "currency": "Tanzanian Shilling"
     },
     {
-        "Code": "UAH",
-        "Currency": "Hryvnia"
+        "code": "UAH",
+        "currency": "Hryvnia"
     },
     {
-        "Code": "UGX",
-        "Currency": "Uganda Shilling"
+        "code": "UGX",
+        "currency": "Uganda Shilling"
     },
     {
-        "Code": "USD",
-        "Currency": "US Dollar"
+        "code": "USD",
+        "currency": "US Dollar"
     },
     {
-        "Code": "USN",
-        "Currency": "US Dollar (Next day)"
+        "code": "USN",
+        "currency": "US Dollar (Next day)"
     },
     {
-        "Code": "UYI",
-        "Currency": "Uruguay Peso en Unidades Indexadas (UI)"
+        "code": "UYI",
+        "currency": "Uruguay Peso en Unidades Indexadas (UI)"
     },
     {
-        "Code": "UYU",
-        "Currency": "Peso Uruguayo"
+        "code": "UYU",
+        "currency": "Peso Uruguayo"
     },
     {
-        "Code": "UYW",
-        "Currency": "Unidad Previsional"
+        "code": "UYW",
+        "currency": "Unidad Previsional"
     },
     {
-        "Code": "UZS",
-        "Currency": "Uzbekistan Sum"
+        "code": "UZS",
+        "currency": "Uzbekistan Sum"
     },
     {
-        "Code": "VED",
-        "Currency": "Bolívar Soberano"
+        "code": "VED",
+        "currency": "Bolívar Soberano"
     },
     {
-        "Code": "VES",
-        "Currency": "Bolívar Soberano"
+        "code": "VES",
+        "currency": "Bolívar Soberano"
     },
     {
-        "Code": "VND",
-        "Currency": "Dong"
+        "code": "VND",
+        "currency": "Dong"
     },
     {
-        "Code": "VUV",
-        "Currency": "Vatu"
+        "code": "VUV",
+        "currency": "Vatu"
     },
     {
-        "Code": "WST",
-        "Currency": "Tala"
+        "code": "WST",
+        "currency": "Tala"
     },
     {
-        "Code": "XAF",
-        "Currency": "CFA Franc BEAC"
+        "code": "XAF",
+        "currency": "CFA Franc BEAC"
     },
     {
-        "Code": "XAG",
-        "Currency": "Silver"
+        "code": "XAG",
+        "currency": "Silver"
     },
     {
-        "Code": "XAU",
-        "Currency": "Gold"
+        "code": "XAU",
+        "currency": "Gold"
     },
     {
-        "Code": "XBA",
-        "Currency": "Bond Markets Unit European Composite Unit (EURCO)"
+        "code": "XBA",
+        "currency": "Bond Markets Unit European Composite Unit (EURCO)"
     },
     {
-        "Code": "XBB",
-        "Currency": "Bond Markets Unit European Monetary Unit (E.M.U.-6)"
+        "code": "XBB",
+        "currency": "Bond Markets Unit European Monetary Unit (E.M.U.-6)"
     },
     {
-        "Code": "XBC",
-        "Currency": "Bond Markets Unit European Unit of Account 9 (E.U.A.-9)"
+        "code": "XBC",
+        "currency": "Bond Markets Unit European Unit of Account 9 (E.U.A.-9)"
     },
     {
-        "Code": "XBD",
-        "Currency": "Bond Markets Unit European Unit of Account 17 (E.U.A.-17)"
+        "code": "XBD",
+        "currency": "Bond Markets Unit European Unit of Account 17 (E.U.A.-17)"
     },
     {
-        "Code": "XCD",
-        "Currency": "East Caribbean Dollar"
+        "code": "XCD",
+        "currency": "East Caribbean Dollar"
     },
     {
-        "Code": "XDR",
-        "Currency": "SDR (Special Drawing Right)"
+        "code": "XDR",
+        "currency": "SDR (Special Drawing Right)"
     },
     {
-        "Code": "XOF",
-        "Currency": "CFA Franc BCEAO"
+        "code": "XOF",
+        "currency": "CFA Franc BCEAO"
     },
     {
-        "Code": "XPD",
-        "Currency": "Palladium"
+        "code": "XPD",
+        "currency": "Palladium"
     },
     {
-        "Code": "XPF",
-        "Currency": "CFP Franc"
+        "code": "XPF",
+        "currency": "CFP Franc"
     },
     {
-        "Code": "XPT",
-        "Currency": "Platinum"
+        "code": "XPT",
+        "currency": "Platinum"
     },
     {
-        "Code": "XSU",
-        "Currency": "Sucre"
+        "code": "XSU",
+        "currency": "Sucre"
     },
     {
-        "Code": "XUA",
-        "Currency": "ADB Unit of Account"
+        "code": "XUA",
+        "currency": "ADB Unit of Account"
     },
     {
-        "Code": "XXX",
-        "Currency": "The codes assigned for transactions where no currency is involved"
+        "code": "XXX",
+        "currency": "The codes assigned for transactions where no currency is involved"
     },
     {
-        "Code": "YER",
-        "Currency": "Yemeni Rial"
+        "code": "YER",
+        "currency": "Yemeni Rial"
     },
     {
-        "Code": "ZAR",
-        "Currency": "Rand"
+        "code": "ZAR",
+        "currency": "Rand"
     },
     {
-        "Code": "ZMW",
-        "Currency": "Zambian Kwacha"
+        "code": "ZMW",
+        "currency": "Zambian Kwacha"
     },
     {
-        "Code": "ZWL",
-        "Currency": "Zimbabwe Dollar"
+        "code": "ZWL",
+        "currency": "Zimbabwe Dollar"
     }
 ];
 

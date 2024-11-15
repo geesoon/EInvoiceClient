@@ -1,35 +1,37 @@
-const EInvoiceTypes: any[] = [
+import EInvoiceType from "@/models/codeTables/eInvoiceType";
+
+const EInvoiceTypes: EInvoiceType[] = [
     {
-        "Code": "01",
-        "Description": "Invoice"
+        "code": "01",
+        "description": "Invoice"
     },
     {
-        "Code": "02",
-        "Description": "Credit Note"
+        "code": "02",
+        "description": "Credit Note"
     },
     {
-        "Code": "03",
-        "Description": "Debit Note"
+        "code": "03",
+        "description": "Debit Note"
     },
     {
-        "Code": "04",
-        "Description": "Refund Note"
+        "code": "04",
+        "description": "Refund Note"
     },
     {
-        "Code": "11",
-        "Description": "Self-billed Invoice"
+        "code": "11",
+        "description": "Self-billed Invoice"
     },
     {
-        "Code": "12",
-        "Description": "Self-billed Credit Note"
+        "code": "12",
+        "description": "Self-billed Credit Note"
     },
     {
-        "Code": "13",
-        "Description": "Self-billed Debit Note"
+        "code": "13",
+        "description": "Self-billed Debit Note"
     },
     {
-        "Code": "14",
-        "Description": "Self-billed Refund Note"
+        "code": "14",
+        "description": "Self-billed Refund Note"
     }
 ];
 

@@ -1,31 +1,33 @@
-const TaxTypes: any[] = [
+import TaxType from "@/models/codeTables/taxType";
+
+const TaxTypes: TaxType[] = [
   {
-    "Code": "01",
-    "Description": "Sales Tax"
+    "code": "01",
+    "description": "Sales Tax"
   },
   {
-    "Code": "02",
-    "Description": "Service Tax"
+    "code": "02",
+    "description": "Service Tax"
   },
   {
-    "Code": "03",
-    "Description": "Tourism Tax"
+    "code": "03",
+    "description": "Tourism Tax"
   },
   {
-    "Code": "04",
-    "Description": "High-Value Goods Tax"
+    "code": "04",
+    "description": "High-Value Goods Tax"
   },
   {
-    "Code": "05",
-    "Description": "Sales Tax on Low Value Goods"
+    "code": "05",
+    "description": "Sales Tax on Low Value Goods"
   },
   {
-    "Code": "06",
-    "Description": "Not Applicable"
+    "code": "06",
+    "description": "Not Applicable"
   },
   {
-    "Code": "E",
-    "Description": "Tax exemption (where applicable)"
+    "code": "E",
+    "description": "Tax exemption (where applicable)"
   }
 ];
 

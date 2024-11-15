@@ -73,8 +73,7 @@ class EInvoiceClient implements EInvoiceClient {
     async loginAsync(request: LoginRequest): Promise<LoginResponse> {
         const response = await this.loginEndpoint.loginAsync(request);
         if (this.tokenStore == null) {
-            let session = new Session(response);
-            this.tokenStore = new TokenStore(session, request, this.loginEndpoint);
+            this.createTokenStore(request, response);
         }
 
         return response;
@@ -203,6 +202,11 @@ class EInvoiceClient implements EInvoiceClient {
         }
 
         return "";
+    }
+
+    private createTokenStore(request: LoginRequest, response: LoginResponse) {
+        let session = new Session(response);
+        this.tokenStore = new TokenStore(session, request, this.loginEndpoint);
     }
 }
 

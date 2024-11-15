@@ -1,5 +1,5 @@
 import { Expose } from "class-transformer";
-import EInvoiceType from "./codeTables/invoiceType";
+import EInvoiceType from "./codeTables/eInvoiceType";
 import DocumentTypeVersionStatus from "./documentTypeVersionStatus";
 
 class DocumentTypeVersionResponse {

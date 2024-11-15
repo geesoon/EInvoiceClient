@@ -1,75 +1,77 @@
-const StateCodes: any[] = [
+import StateCode from "@/models/codeTables/stateCode";
+
+const StateCodes: StateCode[] = [
     {
-        "Code": "00",
-        "State": "All States"
+        "code": "00",
+        "state": "All States"
     },
     {
-        "Code": "01",
-        "State": "Johor"
+        "code": "01",
+        "state": "Johor"
     },
     {
-        "Code": "02",
-        "State": "Kedah"
+        "code": "02",
+        "state": "Kedah"
     },
     {
-        "Code": "03",
-        "State": "Kelantan"
+        "code": "03",
+        "state": "Kelantan"
     },
     {
-        "Code": "04",
-        "State": "Melaka"
+        "code": "04",
+        "state": "Melaka"
     },
     {
-        "Code": "05",
-        "State": "Negeri Sembilan"
+        "code": "05",
+        "state": "Negeri Sembilan"
     },
     {
-        "Code": "06",
-        "State": "Pahang"
+        "code": "06",
+        "state": "Pahang"
     },
     {
-        "Code": "07",
-        "State": "Pulau Pinang"
+        "code": "07",
+        "state": "Pulau Pinang"
     },
     {
-        "Code": "08",
-        "State": "Perak"
+        "code": "08",
+        "state": "Perak"
     },
     {
-        "Code": "09",
-        "State": "Perlis"
+        "code": "09",
+        "state": "Perlis"
     },
     {
-        "Code": "10",
-        "State": "Selangor"
+        "code": "10",
+        "state": "Selangor"
     },
     {
-        "Code": "11",
-        "State": "Terengganu"
+        "code": "11",
+        "state": "Terengganu"
     },
     {
-        "Code": "12",
-        "State": "Sabah"
+        "code": "12",
+        "state": "Sabah"
     },
     {
-        "Code": "13",
-        "State": "Sarawak"
+        "code": "13",
+        "state": "Sarawak"
     },
     {
-        "Code": "14",
-        "State": "Wilayah Persekutuan Kuala Lumpur"
+        "code": "14",
+        "state": "Wilayah Persekutuan Kuala Lumpur"
     },
     {
-        "Code": "15",
-        "State": "Wilayah Persekutuan Labuan"
+        "code": "15",
+        "state": "Wilayah Persekutuan Labuan"
     },
     {
-        "Code": "16",
-        "State": "Wilayah Persekutuan Putrajaya"
+        "code": "16",
+        "state": "Wilayah Persekutuan Putrajaya"
     },
     {
-        "Code": "17",
-        "State": "Not Applicable"
+        "code": "17",
+        "state": "Not Applicable"
     }
 ];
 
