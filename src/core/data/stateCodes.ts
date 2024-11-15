@@ -1,4 +1,4 @@
-import StateCode from "core/models/codeTables/stateCode";
+import StateCode from "../models/codeTables/stateCode";
 
 const StateCodes: StateCode[] = [
     {

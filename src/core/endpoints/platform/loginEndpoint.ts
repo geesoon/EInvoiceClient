@@ -1,8 +1,8 @@
-import LoginRequest from '../../models/loginRequest';
-import IHttpClient from '../../IHttpClient';
-import Endpoint from '../endpoint';
-import LoginResponse from 'core/models/loginResponse';
-import JsonSerializer from 'core/jsonSerializer';
+import IHttpClient from "src/core/IHttpClient";
+import JsonSerializer from "src/core/jsonSerializer";
+import LoginRequest from "src/core/models/loginRequest";
+import LoginResponse from "src/core/models/loginResponse";
+import Endpoint from "../endpoint";
 
 /**
  * Represent the endpoint to authenticate user

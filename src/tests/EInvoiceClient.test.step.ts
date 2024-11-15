@@ -1,24 +1,24 @@
-import EInvoiceClient from "core/eInvoiceClient";
-import DocumentEndpoint from "core/endpoints/eInvoice/documentEndpoint";
-import DocumentSubmissionEndpoint from "core/endpoints/eInvoice/documentSubmissionEndpoint";
-import ValidateTinEndpoint from "core/endpoints/eInvoice/validateTinEndpoint";
-import DocumentTypeEndpoint from "core/endpoints/platform/documentTypeEndpoint";
-import LoginEndpoint from "core/endpoints/platform/loginEndpoint";
-import NotificationEndpoint from "core/endpoints/platform/notificationEndpoint";
-import IHttpClient from "core/IHttpClient";
-import ITokenStore from "core/ITokenStore";
-import LoginRequest from "core/models/loginRequest";
-import LoginResponse from "core/models/loginResponse";
+import EInvoiceClient from "src/core/eInvoiceClient";
+import DocumentEndpoint from "src/core/endpoints/eInvoice/documentEndpoint";
+import DocumentSubmissionEndpoint from "src/core/endpoints/eInvoice/documentSubmissionEndpoint";
+import ValidateTinEndpoint from "src/core/endpoints/eInvoice/validateTinEndpoint";
+import DocumentTypeEndpoint from "src/core/endpoints/platform/documentTypeEndpoint";
+import LoginEndpoint from "src/core/endpoints/platform/loginEndpoint";
+import NotificationEndpoint from "src/core/endpoints/platform/notificationEndpoint";
+import IHttpClient from "src/core/IHttpClient";
+import ITokenStore from "src/core/ITokenStore";
+import LoginRequest from "src/core/models/loginRequest";
+import LoginResponse from "src/core/models/loginResponse";
 
 // Mocking the external dependencies
-jest.mock('core/endpoints/platform/loginEndpoint');
-jest.mock('core/endpoints/platform/documentTypeEndpoint');
-jest.mock('core/endpoints/platform/notificationEndpoint');
-jest.mock('core/endpoints/eInvoice/validateTinEndpoint');
-jest.mock('core/endpoints/eInvoice/documentEndpoint');
-jest.mock('core/endpoints/eInvoice/documentSubmissionEndpoint');
-jest.mock('core/tokenStore');
-jest.mock("core/IHttpClient");
+jest.mock('../endpoints/platform/loginEndpoint');
+jest.mock('../endpoints/platform/documentTypeEndpoint');
+jest.mock('../endpoints/platform/notificationEndpoint');
+jest.mock('../endpoints/eInvoice/validateTinEndpoint');
+jest.mock('../endpoints/eInvoice/documentEndpoint');
+jest.mock('../endpoints/eInvoice/documentSubmissionEndpoint');
+jest.mock('../tokenStore');
+jest.mock("../IHttpClient");
 
 export class EInvoiceClientTestStep {
     client: EInvoiceClient;

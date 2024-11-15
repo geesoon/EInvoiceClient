@@ -1,5 +1,5 @@
-import LoginRequest from "core/models/loginRequest";
-import LoginResponse from "core/models/loginResponse";
+import LoginRequest from "src/core/models/loginRequest";
+import LoginResponse from "src/core/models/loginResponse";
 import { Builder } from "./builders/Builder";
 import { EInvoiceClientTestStep } from "./EInvoiceClient.test.step";
 

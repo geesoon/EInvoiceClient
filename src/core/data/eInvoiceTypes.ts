@@ -1,4 +1,4 @@
-import EInvoiceType from "core/models/codeTables/eInvoiceType";
+import EInvoiceType from "../models/codeTables/eInvoiceType";
 
 const EInvoiceTypes: EInvoiceType[] = [
     {

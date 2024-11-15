@@ -1,4 +1,4 @@
-import MSICSubCategoryCode from "core/models/codeTables/msicSubCategoryCode";
+import MSICSubCategoryCode from "../models/codeTables/msicSubCategoryCode";
 
 const MISCSubCategoryCodes: MSICSubCategoryCode[] = [
   {

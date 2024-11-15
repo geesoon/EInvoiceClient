@@ -1,7 +1,7 @@
-import ValidateTinRequest from "core/models/validateTinRequest";
-import IHttpClient from "../../IHttpClient";
-import Endpoint from "../endpoint";
 import { HttpStatusCode } from "axios";
+import IHttpClient from "src/core/IHttpClient";
+import ValidateTinRequest from "src/core/models/validateTinRequest";
+import Endpoint from "../endpoint";
 
 class ValidateTinEndpoint extends Endpoint {
     private static readonly relativePath: string = "api/v1.0/taxpayer/validate"

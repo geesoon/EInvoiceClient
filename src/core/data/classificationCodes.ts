@@ -1,4 +1,4 @@
-import ClassificationCode from "core/models/codeTables/classificationCode";
+import ClassificationCode from "../models/codeTables/classificationCode";
 
 const ClassificationCodes: ClassificationCode[] = [
     {

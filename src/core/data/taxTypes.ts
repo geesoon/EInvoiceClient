@@ -1,4 +1,4 @@
-import TaxType from "core/models/codeTables/taxType";
+import TaxType from "../models/codeTables/taxType";
 
 const TaxTypes: TaxType[] = [
   {

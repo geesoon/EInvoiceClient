@@ -1,4 +1,4 @@
-import UnitType from "core/models/codeTables/unitType";
+import UnitType from "../models/codeTables/unitType";
 
 const UnitTypes: UnitType[] = [
     {

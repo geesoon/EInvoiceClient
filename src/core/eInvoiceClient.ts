@@ -28,7 +28,7 @@ import SearchDocumentResponse from "./models/searchDocumentResponse";
 import DocumentDetails from "./models/documentDetail";
 import DocumentExtended from "./models/documentExtended";
 import GetDocumentRequest from "./models/getDocumentRequest";
-import GetDocumentDetailRequest from "core/models/getDocumentDetailRequest";
+import GetDocumentDetailRequest from "./models/getDocumentDetailRequest";
 
 /**
  * This class is the facade of all eInvoice endpoints available

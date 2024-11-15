@@ -1,7 +1,7 @@
-import GetNotificationRequest from "core/models/getNotificationRequest";
-import IHttpClient from "../../IHttpClient";
+import IHttpClient from "src/core/IHttpClient";
+import GetNotificationRequest from "src/core/models/getNotificationRequest";
+import GetNotificationResponse from "src/core/models/getNotificationResponse";
 import Endpoint from "../endpoint";
-import GetNotificationResponse from "core/models/getNotificationResponse";
 
 class NotificationEndpoint extends Endpoint {
     private static readonly relativePath: string = "/api/v1.0/notifications/taxpayer";

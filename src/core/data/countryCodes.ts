@@ -1,4 +1,4 @@
-import CountryCode from "core/models/codeTables/countryCode";
+import CountryCode from "../models/codeTables/countryCode";
 
 const CountryCodes: CountryCode[] = [
     {

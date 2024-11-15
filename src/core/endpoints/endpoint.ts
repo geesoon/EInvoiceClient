@@ -1,7 +1,7 @@
-import JsonSerializer from "core/jsonSerializer";
+import JsonSerializer from "../jsonSerializer";
 import IHttpClient from "../IHttpClient";
 import { AxiosRequestConfig, AxiosResponse, HttpStatusCode } from "axios";
-import ApiError from "core/models/apiError";
+import ApiError from "../models/apiError";
 
 abstract class Endpoint {
     protected readonly baseURL: URL;

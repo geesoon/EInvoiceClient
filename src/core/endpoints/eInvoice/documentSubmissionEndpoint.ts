@@ -1,12 +1,12 @@
-import IHttpClient from "core/IHttpClient";
-import Endpoint from "../endpoint";
-import SubmitDocumentResponse from "core/models/submitDocumentResponse";
 import { HttpStatusCode } from "axios";
-import ApiError from "core/models/apiError";
-import SubmitDocumentRequest from "core/models/submitDocumentRequest";
-import StandardErrorResponse from "core/models/standardErrorResponse";
-import GetSubmissionRequest from "core/models/getSubmissionRequest";
-import GetSubmissionResponse from "core/models/getSubmissionResponse";
+import IHttpClient from "src/core/IHttpClient";
+import ApiError from "src/core/models/apiError";
+import GetSubmissionRequest from "src/core/models/getSubmissionRequest";
+import GetSubmissionResponse from "src/core/models/getSubmissionResponse";
+import StandardErrorResponse from "src/core/models/standardErrorResponse";
+import SubmitDocumentRequest from "src/core/models/submitDocumentRequest";
+import SubmitDocumentResponse from "src/core/models/submitDocumentResponse";
+import Endpoint from "../endpoint";
 
 class DocumentSubmissionEndpoint extends Endpoint {
     private static readonly relativePath: string = "api/v1.0/documentsubmissions";

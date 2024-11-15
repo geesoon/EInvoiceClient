@@ -1,4 +1,4 @@
-import CurrencyCode from "core/models/codeTables/currencyCode";
+import CurrencyCode from "../models/codeTables/currencyCode";
 
 const CurrencyCodes: CurrencyCode[] = [
     {

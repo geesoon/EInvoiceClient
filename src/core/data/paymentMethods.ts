@@ -1,4 +1,4 @@
-import PaymentMethod from "core/models/codeTables/paymentMethod";
+import PaymentMethod from "../models/codeTables/paymentMethod";
 
 const PaymentMethods: PaymentMethod[] = [
     {
