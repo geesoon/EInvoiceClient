@@ -1,17 +1,17 @@
+import IHttpClient from "@/core/IHttpClient";
+import ApiError from "@/core/models/apiError";
+import CancelDocumentRequest from "@/core/models/cancelDocumentRequest";
+import CancelDocumentResponse from "@/core/models/cancelDocumentResponse";
+import DocumentDetails from "@/core/models/documentDetail";
+import DocumentExtended from "@/core/models/documentExtended";
+import GetDocumentDetailRequest from "@/core/models/getDocumentDetailRequest";
+import GetDocumentRequest from "@/core/models/getDocumentRequest";
+import GetRecentDocumentRequest from "@/core/models/getRecentDocumentRequest";
+import GetRecentDocumentResponse from "@/core/models/getRecentDocumentResponse";
+import SearchDocumentRequest from "@/core/models/searchDocumentRequest";
+import SearchDocumentResponse from "@/core/models/searchDocumentResponse";
+import StandardErrorResponse from "@/core/models/standardErrorResponse";
 import { HttpStatusCode } from "axios";
-import IHttpClient from "src/core/IHttpClient";
-import ApiError from "src/core/models/apiError";
-import CancelDocumentRequest from "src/core/models/cancelDocumentRequest";
-import CancelDocumentResponse from "src/core/models/cancelDocumentResponse";
-import DocumentDetails from "src/core/models/documentDetail";
-import DocumentExtended from "src/core/models/documentExtended";
-import GetDocumentDetailRequest from "src/core/models/getDocumentDetailRequest";
-import GetDocumentRequest from "src/core/models/getDocumentRequest";
-import GetRecentDocumentRequest from "src/core/models/getRecentDocumentRequest";
-import GetRecentDocumentResponse from "src/core/models/getRecentDocumentResponse";
-import SearchDocumentRequest from "src/core/models/searchDocumentRequest";
-import SearchDocumentResponse from "src/core/models/searchDocumentResponse";
-import StandardErrorResponse from "src/core/models/standardErrorResponse";
 import Endpoint from "../endpoint";
 
 class DocumentEndpoint extends Endpoint {

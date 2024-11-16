@@ -1,6 +1,6 @@
-import IHttpClient from "src/core/IHttpClient";
-import GetNotificationRequest from "src/core/models/getNotificationRequest";
-import GetNotificationResponse from "src/core/models/getNotificationResponse";
+import IHttpClient from "@/core/IHttpClient";
+import GetNotificationRequest from "@/core/models/getNotificationRequest";
+import GetNotificationResponse from "@/core/models/getNotificationResponse";
 import Endpoint from "../endpoint";
 
 class NotificationEndpoint extends Endpoint {

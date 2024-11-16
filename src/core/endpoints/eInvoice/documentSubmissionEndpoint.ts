@@ -1,11 +1,11 @@
 import { HttpStatusCode } from "axios";
-import IHttpClient from "src/core/IHttpClient";
-import ApiError from "src/core/models/apiError";
-import GetSubmissionRequest from "src/core/models/getSubmissionRequest";
-import GetSubmissionResponse from "src/core/models/getSubmissionResponse";
-import StandardErrorResponse from "src/core/models/standardErrorResponse";
-import SubmitDocumentRequest from "src/core/models/submitDocumentRequest";
-import SubmitDocumentResponse from "src/core/models/submitDocumentResponse";
+import IHttpClient from "@/core/IHttpClient";
+import ApiError from "@/core/models/apiError";
+import GetSubmissionRequest from "@/core/models/getSubmissionRequest";
+import GetSubmissionResponse from "@/core/models/getSubmissionResponse";
+import StandardErrorResponse from "@/core/models/standardErrorResponse";
+import SubmitDocumentRequest from "@/core/models/submitDocumentRequest";
+import SubmitDocumentResponse from "@/core/models/submitDocumentResponse";
 import Endpoint from "../endpoint";
 
 class DocumentSubmissionEndpoint extends Endpoint {

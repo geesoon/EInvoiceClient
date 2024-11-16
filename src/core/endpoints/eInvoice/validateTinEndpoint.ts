@@ -1,6 +1,6 @@
 import { HttpStatusCode } from "axios";
-import IHttpClient from "src/core/IHttpClient";
-import ValidateTinRequest from "src/core/models/validateTinRequest";
+import IHttpClient from "@/core/IHttpClient";
+import ValidateTinRequest from "@/core/models/validateTinRequest";
 import Endpoint from "../endpoint";
 
 class ValidateTinEndpoint extends Endpoint {

@@ -1,8 +1,8 @@
-import IHttpClient from "src/core/IHttpClient";
-import DocumentTypeResponse from "src/core/models/documentTypeResponse";
-import DocumentTypeVersion from "src/core/models/documentTypeVersion";
+import IHttpClient from "@/core/IHttpClient";
+import DocumentTypeResponse from "@/core/models/documentTypeResponse";
+import DocumentTypeVersion from "@/core/models/documentTypeVersion";
 import Endpoint from "../endpoint";
-import DocumentType from "src/core/models/documentType";
+import DocumentType from "@/core/models/documentType";
 
 class DocumentTypeEndpoint extends Endpoint {
     private static readonly relativePath: string = "api/v1.0/documenttypes"

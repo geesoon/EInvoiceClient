@@ -1,7 +1,7 @@
-import IHttpClient from "src/core/IHttpClient";
-import JsonSerializer from "src/core/jsonSerializer";
-import LoginRequest from "src/core/models/loginRequest";
-import LoginResponse from "src/core/models/loginResponse";
+import IHttpClient from "@/core/IHttpClient";
+import JsonSerializer from "@/core/jsonSerializer";
+import LoginRequest from "@/core/models/loginRequest";
+import LoginResponse from "@/core/models/loginResponse";
 import Endpoint from "../endpoint";
 
 /**
