@@ -1,6 +1,7 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+
 import qs from "qs";
 import IHttpClient from "./IHttpClient";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 /**
  * An implementation of IHttpClient
