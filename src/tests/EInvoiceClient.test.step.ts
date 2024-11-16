@@ -60,7 +60,8 @@ export class EInvoiceClientTestStep {
             this.mockNotificationEndpoint,
             this.mockValidateTinEndpoint,
             this.mockDocumentEndpoint,
-            this.mockDocumentSubmissionEndpoint
+            this.mockDocumentSubmissionEndpoint,
+            null
         );
     }
 
@@ -83,7 +84,7 @@ export class EInvoiceClientTestStep {
     }
 
     public async WhenICallLoginAsync(loginRequest: LoginRequest): Promise<this> {
-        this.loginResponse = await this.mockLoginEndpoint.loginAsync(loginRequest);
+        this.loginResponse = await this.client.loginAsync(loginRequest);
         return this;
     }
 

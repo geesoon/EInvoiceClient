@@ -34,7 +34,12 @@ class LoginEndpoint extends Endpoint {
 
     private async loginAsIntermediaryAsync(request: LoginRequest) {
         const body = JsonSerializer.serializeIntoQueryString<LoginRequest>(request);
-        const response = await this.httpClient.post(this.fullUrl, body);
+        const config = {
+            headers: {
+                "onbehalfof": request.onBehalfOf,
+            }
+        }
+        const response = await this.httpClient.post(this.fullUrl, body, config);
         return this.handleResponse<LoginResponse>(response, LoginResponse);
     }
 
