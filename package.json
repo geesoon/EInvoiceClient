@@ -1,11 +1,12 @@
 {
   "name": "@geesoon/ehasil-invoice-client",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Node.js library for interacting with the e-Hasil invoicing API.",
-  "main": "dist/src/../eInvoiceClient.js",
-  "types": "dist/src/../index.d.ts",
+  "main": "dist/core/eInvoiceClient.js",
+  "types": "dist/types/core/index.d.ts",
   "files": [
-    "/dist/src/"
+    "/dist/core/",
+    "/dist/types/core"
   ],
   "keywords": [
     "e-hasil",
@@ -23,7 +24,7 @@
     "type": "git",
     "url": "git+https://github.com/geesoon/EInvoiceClient.git"
   },
-  "author": "geesoon",
+  "author": "geesoon <hiewgs@gmail.com>",
   "license": "GPL-3.0-only",
   "devDependencies": {
     "@faker-js/faker": "^9.0.3",
