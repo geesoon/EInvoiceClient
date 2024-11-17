@@ -17,9 +17,6 @@ class TokenStore implements ITokenStore {
     public getAccessToken(): string {
         let tokenExpireDateTime = this.getTokenExpiredDateTime();
         let refreshTokenDateTime = this.getExpiredThresholdDateTime();
-        console.log(`Token Created: ${this.session.createdDateTime}`);
-        console.log(`Token Expire: ${tokenExpireDateTime}`);
-        console.log(`Renew DateTime: ${refreshTokenDateTime}`);
 
         if (tokenExpireDateTime < refreshTokenDateTime) {
             this.endpoint.loginAsync(this.request).then((result) => {
