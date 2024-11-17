@@ -1,6 +1,6 @@
 {
   "name": "@geesoon/ehasil-invoice-client",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A Node.js library for interacting with the e-Hasil invoicing API.",
   "main": "dist/core/eInvoiceClient.js",
   "types": "dist/types/core/index.d.ts",
@@ -35,14 +35,13 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "@jackfranklin/test-data-bot": "^2.1.0",
+    "dotenv": "^16.4.5"
   },
   "dependencies": {
-    "@jackfranklin/test-data-bot": "^2.1.0",
     "axios": "^1.7.7",
     "class-transformer": "^0.5.1",
-    "dotenv": "^16.4.5",
-    "qs": "^6.13.0",
-    "reflect-metadata": "^0.2.2"
+    "qs": "^6.13.0"
   }
 }
