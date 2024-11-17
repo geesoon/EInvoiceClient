@@ -1,7 +1,6 @@
 import { faker } from "@faker-js/faker/.";
 import { EInvoiceClientTestStep } from "./EInvoiceClient.test.step";
-import { documentTypeBuilder, documentTypeResponseBuilder, documentTypeVersionBuilder, getNotificationRequestBuilder, getNotificationResponseBuilder, loginRequestBuilder, loginResponseBuilder, validateTinRequestBuilder, workflowParameterBuilder } from "./builders/testDataBuilder";
-import { version } from "os";
+import { cancelDocumentRequestBuilder, cancelDocumentResponseBuilder, documentDetailsBuilder, documentExtendedBuilder, documentTypeBuilder, documentTypeResponseBuilder, getDocumentDetailRequestBuilder, getDocumentRequestBuilder, getNotificationRequestBuilder, getNotificationResponseBuilder, getRecentDocumentRequest, getRecentDocumentResponse, getSubmissionRequestBuilder, getSubmissionResponseBuilder, loginRequestBuilder, loginResponseBuilder, searchDocumentRequestBuilder, searchDocumentResponseBuilder, submissionResponseBuilder, submitDocumentRequestBuilder, validateTinRequestBuilder } from "./builders/testDataBuilder";
 
 describe('EInvoiceClient', () => {
     let step: EInvoiceClientTestStep;
@@ -134,6 +133,134 @@ describe('EInvoiceClient', () => {
             step
                 .ThenIExpectActualResponseToBe(expectedResponse)
                 .ThenIExpectEndpointToHaveBeenCalledWith(step.mockValidateTinEndpoint.validateTinAsync, request, "access-token");
+        });
+    });
+
+    describe('submitDocumentAsync', () => {
+        it('should return submitDocumentResponse', async () => {
+            const request = submitDocumentRequestBuilder.one();
+            const expectedResponse = submissionResponseBuilder.one();
+
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentSubmissionEndpoint.submitDocumentsAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.submitDocumentsAsync.bind(step.client), request);
+
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentSubmissionEndpoint.submitDocumentsAsync, request, "access-token");
+        });
+    });
+
+    describe('getSubmissionAsync', () => {
+        it('should return getSubmissionResponse', async () => {
+            const request = getSubmissionRequestBuilder.one();
+            const expectedResponse = getSubmissionResponseBuilder.one();
+
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentSubmissionEndpoint.getSubmissionAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.getSubmissionAsync.bind(step.client), request);
+
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentSubmissionEndpoint.getSubmissionAsync, request, "access-token");
+        });
+    });
+
+    describe('cancelDocumentAsync', () => {
+        it('should return cancelDocumentResponse', async () => {
+            const request = cancelDocumentRequestBuilder.one();
+            const expectedResponse = cancelDocumentResponseBuilder.one();
+
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentEndpoint.cancelDocumentAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.cancelDocumentAsync.bind(step.client), request);
+
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentEndpoint.cancelDocumentAsync, request, "access-token");
+        });
+    });
+
+    describe('rejectDocumentAsync', () => {
+        it('should return cancelDocumentResponse', async () => {
+            const request = cancelDocumentRequestBuilder.one();
+            const expectedResponse = cancelDocumentResponseBuilder.one();
+
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentEndpoint.rejectDocumentAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.rejectDocumentAsync.bind(step.client), request);
+
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentEndpoint.rejectDocumentAsync, request, "access-token");
+        });
+    });
+
+    describe('getRecentDocumentAsync', () => {
+        it('should return getRecentDocumentResponse', async () => {
+            const request = getRecentDocumentRequest.one();
+            const expectedResponse = getRecentDocumentResponse.one();
+
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentEndpoint.getRecentDocumentAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.getRecentDocumentAsync.bind(step.client), request);
+
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentEndpoint.getRecentDocumentAsync, request, "access-token");
+        });
+    });
+
+    describe('searchDocumentAsync', () => {
+        it('should return searchDocumentResponse', async () => {
+            const request = searchDocumentRequestBuilder.one();
+            const expectedResponse = searchDocumentResponseBuilder.one();
+
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentEndpoint.searchDocumentAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.searchDocumentAsync.bind(step.client), request);
+
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentEndpoint.searchDocumentAsync, request, "access-token");
+        });
+    });
+
+    describe('getDocumentAsync', () => {
+        it('should return documentExtended', async () => {
+            const request = getDocumentRequestBuilder.one();
+            const expectedResponse = documentExtendedBuilder.one();
+
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentEndpoint.getDocumentAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.getDocumentAsync.bind(step.client), request);
+
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentEndpoint.getDocumentAsync, request, "access-token");
+        });
+    });
+
+    describe('getDocumentDetailAsync', () => {
+        it('should return documentDetails', async () => {
+            const request = getDocumentDetailRequestBuilder.one();
+            const expectedResponse = documentDetailsBuilder.one();
+
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentEndpoint.getDocumentDetailAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.getDocumentDetailAsync.bind(step.client), request);
+
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentEndpoint.getDocumentDetailAsync, request, "access-token");
         });
     });
 });
