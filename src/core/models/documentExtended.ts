@@ -22,56 +22,6 @@ class DocumentExtended {
     public documentStatusReason: string; // Reason for cancellation or rejection
     public createdByUserId: string; // User ID or email who created the document
     public document?: string; // Raw document string (optional)
-
-    constructor(
-        uuid: string,
-        submissionUid: string,
-        longId: string,
-        internalId: string,
-        typeName: string,
-        typeVersionName: string,
-        issuerTin: string,
-        issuerName: string,
-        receiverId: string | undefined,
-        receiverName: string | undefined,
-        dateTimeIssued: string,
-        dateTimeReceived: string,
-        dateTimeValidated: string,
-        totalExcludingTax: number,
-        totalDiscount: number,
-        totalNetAmount: number,
-        totalPayableAmount: number,
-        status: string,
-        documentStatusReason: string,
-        createdByUserId: string,
-        document?: string, // Optional: raw document string
-        cancelDateTime?: string, // Optional: Cancel DateTime
-        rejectRequestDateTime?: string // Optional: Reject Request DateTime
-    ) {
-        this.uuid = uuid;
-        this.submissionUid = submissionUid;
-        this.longId = longId;
-        this.internalId = internalId;
-        this.typeName = typeName;
-        this.typeVersionName = typeVersionName;
-        this.issuerTin = issuerTin;
-        this.issuerName = issuerName;
-        this.receiverId = receiverId;
-        this.receiverName = receiverName;
-        this.dateTimeIssued = dateTimeIssued;
-        this.dateTimeReceived = dateTimeReceived;
-        this.dateTimeValidated = dateTimeValidated;
-        this.totalExcludingTax = totalExcludingTax;
-        this.totalDiscount = totalDiscount;
-        this.totalNetAmount = totalNetAmount;
-        this.totalPayableAmount = totalPayableAmount;
-        this.status = status;
-        this.documentStatusReason = documentStatusReason;
-        this.createdByUserId = createdByUserId;
-        this.document = document;
-        this.cancelDateTime = cancelDateTime;
-        this.rejectRequestDateTime = rejectRequestDateTime;
-    }
 }
 
 export default DocumentExtended;

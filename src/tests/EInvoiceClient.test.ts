@@ -1,14 +1,7 @@
-
-import LoginRequest from "@/core/models/loginRequest";
-import LoginResponse from "@/core/models/loginResponse";
-import Builder from "./builders/Builder";
-import { EInvoiceClientTestStep } from "./EInvoiceClient.test.step";
-import DocumentTypeResponse from "@/core/models/documentTypeResponse";
-import DocumentTypeVersion from "@/core/models/documentTypeVersion";
-import DocumentTypeVersionStatus from "@/core/models/documentTypeVersionStatus";
-import WorkFlowParameter from "@/core/models/workflowParameter";
 import { faker } from "@faker-js/faker/.";
-import DocumentType from "@/core/models/documentType";
+import { EInvoiceClientTestStep } from "./EInvoiceClient.test.step";
+import { documentTypeBuilder, documentTypeResponseBuilder, documentTypeVersionBuilder, getNotificationRequestBuilder, getNotificationResponseBuilder, loginRequestBuilder, loginResponseBuilder, validateTinRequestBuilder, workflowParameterBuilder } from "./builders/testDataBuilder";
+import { version } from "os";
 
 describe('EInvoiceClient', () => {
     let step: EInvoiceClientTestStep;
@@ -20,13 +13,24 @@ describe('EInvoiceClient', () => {
 
     describe('loginAsync as tax payer', () => {
         it('should store token on successful login', async () => {
-            const request = new Builder(LoginRequest).populateWithFaker().build();
+            let request = loginRequestBuilder().one();
 
-            // const expectedResponse = new Builder(LoginResponse)
-            //     .WithRandomData()
-            //     .Build();
+            const expectedResponse = loginResponseBuilder.one();
+            await step
+                .GivenEndpointReturns(step.mockLoginEndpoint.loginAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.loginAsync.bind(step.client), request);
 
-            const expectedResponse = {};
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockLoginEndpoint.loginAsync, request)
+                .ThenIExpectTokenStoreToNotBeNull();
+        });
+    });
+
+    describe('loginAsync as intermediary system', () => {
+        it('should store token on successful login', async () => {
+            const request = loginRequestBuilder().withOnBehalfOf();
+            const expectedResponse = loginResponseBuilder.one();
 
             await step
                 .GivenEndpointReturns(step.mockLoginEndpoint.loginAsync, expectedResponse)
@@ -39,119 +43,97 @@ describe('EInvoiceClient', () => {
         });
     });
 
-    // describe('loginAsync as intermediary system', () => {
-    //     it('should store token on successful login', async () => {
-    //         const request: LoginRequest = {
-    //             clientId: faker.string.uuid(),
-    //             clientSecret: faker.string.uuid(),
-    //             onBehalfOf: faker.string.uuid(),
-    //             grantType: faker.string.uuid(),
-    //             scope: faker.string.uuid()
-    //         };
+    describe('loginAsync with token store', () => {
+        it('should not overwrite token store if already initialized', async () => {
+            const request = loginRequestBuilder().one();
 
-    //         request.onBehalfOf = faker.string.uuid();
+            await step
+                .GivenClientWithTokenStore()
+                .WhenICallClientMethod(step.client.loginAsync.bind(step.client), request);
 
-    //         const expectedResponse = new Builder(LoginResponse)
-    //             .WithRandomData()
-    //             .Build();
+            step
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockLoginEndpoint.loginAsync, request)
+                .ThenIExpectCreateTokenStoreToNotModified();
+        });
+    });
 
-    //         await step
-    //             .GivenEndpointReturns(step.mockLoginEndpoint.loginAsync, expectedResponse)
-    //             .WhenICallClientMethod(step.client.loginAsync.bind(step.client), request);
+    describe('getDocumentTypeAsync', () => {
+        it('should return document types', async () => {
+            const expectedDocumentTypeResponse = documentTypeResponseBuilder.one();
 
-    //         step
-    //             .ThenIExpectActualResponseToBe(expectedResponse)
-    //             .ThenIExpectEndpointToHaveBeenCalledWith(step.mockLoginEndpoint.loginAsync, request)
-    //             .ThenIExpectTokenStoreToNotBeNull();
-    //     });
-    // });
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentTypeEndpoint.getAsync, expectedDocumentTypeResponse)
+                .WhenICallClientMethod(step.client.getDocumentTypeAsync.bind(step.client));
 
-    // describe('loginAsync with token store', () => {
-    //     it('should not overwrite token store if already initialized', async () => {
-    //         const request = new Builder(LoginRequest)
-    //             .WithRandomData()
-    //             .Build();
+            step
+                .ThenIExpectActualResponseToBe(expectedDocumentTypeResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentTypeEndpoint.getAsync, "access-token");
+        });
+    });
 
-    //         await step
-    //             .GivenClientWithTokenStore()
-    //             .WhenICallClientMethod(step.client.loginAsync.bind(step.client), request);
+    describe('getDocumentTypeByIdAsync', () => {
+        it('should return document types', async () => {
+            const expectedDocumentType = documentTypeBuilder.one();
+            const id = faker.number.int();
 
-    //         step
-    //             .ThenIExpectEndpointToHaveBeenCalledWith(step.mockLoginEndpoint.loginAsync, request)
-    //             .ThenIExpectCreateTokenStoreToNotModified();
-    //     });
-    // });
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentTypeEndpoint.getByIdAsync, expectedDocumentType)
+                .WhenICallClientMethod(step.client.getDocumentTypeByIdAsync.bind(step.client), id);
 
-    // describe('getDocumentTypeAsync', () => {
-    //     it('should return document types', async () => {
-    //         const mockDocumentTypeVersion: DocumentTypeVersion = {
-    //             id: faker.number.int(),
-    //             name: faker.string.uuid(),
-    //             description: faker.string.uuid(),
-    //             activeFrom: faker.date.past(),
-    //             activeTo: faker.date.future(),
-    //             versionNumber: faker.number.int(),
-    //             status: DocumentTypeVersionStatus.published
-    //         };
-    //         const mockWorkFlowParameter: WorkFlowParameter = {
-    //             id: faker.number.int(),
-    //             parameter: faker.string.uuid(),
-    //             value: faker.number.int(),
-    //             activeFrom: faker.date.past(),
-    //             activeTo: faker.date.future()
-    //         };
-    //         const mockDocumentType: DocumentType = {
-    //             id: faker.number.int(),
-    //             invoiceTypeCode: faker.number.int(),
-    //             description: faker.string.uuid(),
-    //             activeFrom: faker.date.past(),
-    //             activeTo: faker.date.future(),
-    //             documentTypeVersions: [mockDocumentTypeVersion],
-    //             workflowParameter: [mockWorkFlowParameter]
-    //         };
-    //         const expectedDocumentTypeResponse: DocumentTypeResponse = {
-    //             result: [mockDocumentType]
-    //         };
+            step
+                .ThenIExpectActualResponseToBe(expectedDocumentType)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentTypeEndpoint.getByIdAsync, id, "access-token");
+        })
+    });
 
-    //         await step
-    //             .GivenClientWithTokenStore()
-    //             .GivenEndpointReturns(step.mockDocumentTypeEndpoint.getAsync, expectedDocumentTypeResponse)
-    //             .WhenICallClientMethod(step.client.getDocumentTypeAsync.bind(step.client));
+    describe('getDocumentTypeByVersionAsync', () => {
+        it('should return document type version', async () => {
+            const expectedDocumentType = documentTypeBuilder.one();
+            const id = faker.number.int();
+            const versionId = faker.number.int();
 
-    //         step
-    //             .ThenIExpectActualResponseToBe(expectedDocumentTypeResponse)
-    //             .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentTypeEndpoint.getAsync, "access-token");
-    //     });
-    // });
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockDocumentTypeEndpoint.getByVersionAsync, expectedDocumentType)
+                .WhenICallClientMethod(step.client.getDocumentTypeByVersionAsync.bind(step.client), id, versionId)
 
-    // describe('getDocumentTypeByIdAsync', () => {
-    //     it('should return document types', async () => {
-    //         const expectedDocumentType = new Builder(DocumentType)
-    //             .WithRandomData()
-    //             .Build();
+            step
+                .ThenIExpectActualResponseToBe(expectedDocumentType)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentTypeEndpoint.getByVersionAsync, id, versionId, "access-token");
+        });
+    });
 
-    //         const id = faker.number.int();
+    describe('getNotificationAsync', () => {
+        it('should return notification response', async () => {
+            const request = getNotificationRequestBuilder.one();
+            const expectedNotificationResponse = getNotificationResponseBuilder.one();
 
-    //         await step
-    //             .GivenClientWithTokenStore()
-    //             .GivenEndpointReturns(step.mockDocumentTypeEndpoint.getByIdAsync, expectedDocumentType)
-    //             .WhenICallClientMethod(step.client.getDocumentTypeByIdAsync.bind(step.client), id);
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockNotificationEndpoint.getAsync, expectedNotificationResponse)
+                .WhenICallClientMethod(step.client.getNotificationAsync.bind(step.client), request);
 
-    //         step
-    //             .ThenIExpectActualResponseToBe<DocumentType>(expectedDocumentType)
-    //             .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentTypeEndpoint.getByIdAsync, id, "access-token");
-    //     })
-    // });
+            step
+                .ThenIExpectActualResponseToBe(expectedNotificationResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockNotificationEndpoint.getAsync, request, "access-token");
+        });
+    });
 
-    // describe('getDocumentTypeByVersionAsync', () => {
-    //     it('should return document type version', async () => {
-    //         const expectedDocumentTypeVersion = new Builder(DocumentTypeVersion).WithRandomData().Build();
+    describe('validateTinAsync', () => {
+        it('should return boolean', async () => {
+            const request = validateTinRequestBuilder.one();
+            const expectedResponse = false;
 
-    //         const id = faker.number.int();
-    //         const versionId = faker.number.int();
+            await step
+                .GivenClientWithTokenStore()
+                .GivenEndpointReturns(step.mockValidateTinEndpoint.validateTinAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.validateTinAsync.bind(step.client), request);
 
-    //         await step
-    //             .GivenClientWithTokenStore()
-    //     });
-    // })
+            step
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockValidateTinEndpoint.validateTinAsync, request, "access-token");
+        });
+    });
 });

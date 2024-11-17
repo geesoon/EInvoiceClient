@@ -27,66 +27,6 @@ class RecentDocumentResult {
     public intermediaryTin: string;
     public buyerName: string;
     public buyerTin: string;
-
-    constructor(
-        uuid: string,
-        submissionUID: string,
-        longId: string,
-        internalId: string,
-        typeName: string,
-        typeVersionName: string,
-        issuerTin: string,
-        receiverId: string | undefined,
-        receiverName: string | undefined,
-        dateTimeIssued: Date,
-        dateTimeReceived: Date,
-        dateTimeValidated: Date,
-        totalSales: number,
-        totalDiscount: number,
-        netAmount: number,
-        total: number,
-        status: string,
-        cancelDateTime: Date | undefined,
-        rejectRequestDateTime: Date | undefined,
-        documentStatusReason: string,
-        createdByUserId: string,
-        supplierTin: string,
-        supplierName: string,
-        submissionChannel: string,
-        intermediaryName: string,
-        intermediaryTin: string,
-        buyerName: string,
-        buyerTin: string
-    ) {
-        this.uuid = uuid;
-        this.submissionUID = submissionUID;
-        this.longId = longId;
-        this.internalId = internalId;
-        this.typeName = typeName;
-        this.typeVersionName = typeVersionName;
-        this.issuerTin = issuerTin;
-        this.receiverId = receiverId;
-        this.receiverName = receiverName;
-        this.dateTimeIssued = dateTimeIssued;
-        this.dateTimeReceived = dateTimeReceived;
-        this.dateTimeValidated = dateTimeValidated;
-        this.totalSales = totalSales;
-        this.totalDiscount = totalDiscount;
-        this.netAmount = netAmount;
-        this.total = total;
-        this.status = status;
-        this.cancelDateTime = cancelDateTime;
-        this.rejectRequestDateTime = rejectRequestDateTime;
-        this.documentStatusReason = documentStatusReason;
-        this.createdByUserId = createdByUserId;
-        this.supplierTin = supplierTin;
-        this.supplierName = supplierName;
-        this.submissionChannel = submissionChannel;
-        this.intermediaryName = intermediaryName;
-        this.intermediaryTin = intermediaryTin;
-        this.buyerName = buyerName;
-        this.buyerTin = buyerTin;
-    }
 }
 
 export default RecentDocumentResult;

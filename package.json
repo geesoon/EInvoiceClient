@@ -38,6 +38,7 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
+    "@jackfranklin/test-data-bot": "^2.1.0",
     "axios": "^1.7.7",
     "class-transformer": "^0.5.1",
     "dotenv": "^16.4.5",
