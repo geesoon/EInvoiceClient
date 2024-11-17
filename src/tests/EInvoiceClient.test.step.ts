@@ -7,6 +7,7 @@ import LoginEndpoint from "@/core/endpoints/platform/loginEndpoint";
 import NotificationEndpoint from "@/core/endpoints/platform/notificationEndpoint";
 import IHttpClient from "@/core/IHttpClient";
 import ITokenStore from "@/core/ITokenStore";
+import DocumentType from "@/core/models/documentType";
 import DocumentTypeResponse from "@/core/models/documentTypeResponse";
 import LoginRequest from "@/core/models/loginRequest";
 import LoginResponse from "@/core/models/loginResponse";
@@ -36,7 +37,7 @@ export class EInvoiceClientTestStep {
     createTokenStoreSpy: jest.SpyInstance | null = null;
 
     // results
-    actualResponse: any | null = null;
+    actualResponse: any = null;
 
     constructor() {
         this.mockTokenStore = {
@@ -84,33 +85,21 @@ export class EInvoiceClientTestStep {
         return this;
     }
 
-    public GivenLoginEndpointLoginAsyncReturns(response: LoginResponse): this {
-        this.mockLoginEndpoint.loginAsync.mockResolvedValue(response);
+    public GivenEndpointReturns<T>(endpointMock: jest.MockInstance<any, any[]>, response: T): this {
+        endpointMock.mockResolvedValue(response);
         return this;
     }
 
-    public GivenGetDocumentTypeEndpointGetAsyncReturns(response: DocumentTypeResponse): this {
-        this.mockDocumentTypeEndpoint.getAsync.mockResolvedValue(response);
-        return this;
-    }
-
-    public async WhenICallLoginAsync(request: LoginRequest): Promise<this> {
-        this.actualResponse = await this.client.loginAsync(request);
-        return this;
-    }
-
-    public async WhenICallGetDocumentTypeAsync(): Promise<this> {
-        this.actualResponse = await this.client.getDocumentTypeAsync();
+    public async WhenICallClientMethod(
+        method: (...args: any[]) => Promise<any>,
+        ...args: any[]
+    ): Promise<this> {
+        this.actualResponse = await method(...args);
         return this;
     }
 
     public ThenIExpectActualResponseToBe<T>(expected: T): this {
         expect(this.actualResponse).toBe(expected);
-        return this;
-    }
-
-    public ThenIExpectLoginAsyncToHaveBeCalledWith(request: LoginRequest): this {
-        expect(this.mockLoginEndpoint.loginAsync).toHaveBeenCalledWith(request);
         return this;
     }
 
@@ -124,8 +113,11 @@ export class EInvoiceClientTestStep {
         return this;
     }
 
-    public ThenIExpectDocumentTypeEndpointToHaveBeenCalledWith(accessToken: string): this {
-        expect(this.mockDocumentTypeEndpoint.getAsync).toHaveBeenCalledWith(accessToken);
+    public ThenIExpectEndpointToHaveBeenCalledWith(
+        endpointMock: jest.Mock | jest.MockInstance<any, any[]>,
+        ...expectedArgs: any[]
+    ): this {
+        expect(endpointMock).toHaveBeenCalledWith(...expectedArgs);
         return this;
     }
 }

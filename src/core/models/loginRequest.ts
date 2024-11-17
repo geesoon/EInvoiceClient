@@ -2,7 +2,7 @@ import { Expose } from "class-transformer";
 
 class LoginRequest {
     @Expose({ name: 'client_id' })
-    public clientId: string;
+    public clientId: string | undefined;
 
     @Expose({ name: 'client_secret' })
     public clientSecret: string;
@@ -14,12 +14,6 @@ class LoginRequest {
     public scope: string = "InvoicingAPI";
 
     public onBehalfOf: string | null;
-
-    constructor(clientId: string, clientSecret: string, onBehalfOf: string | null = null) {
-        this.clientId = clientId;
-        this.clientSecret = clientSecret;
-        this.onBehalfOf = onBehalfOf;
-    }
 }
 
 export default LoginRequest;

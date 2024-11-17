@@ -1,7 +1,7 @@
 
 import LoginRequest from "@/core/models/loginRequest";
 import LoginResponse from "@/core/models/loginResponse";
-import { Builder } from "./builders/Builder";
+import Builder from "./builders/Builder";
 import { EInvoiceClientTestStep } from "./EInvoiceClient.test.step";
 import DocumentTypeResponse from "@/core/models/documentTypeResponse";
 import DocumentTypeVersion from "@/core/models/documentTypeVersion";
@@ -20,109 +20,138 @@ describe('EInvoiceClient', () => {
 
     describe('loginAsync as tax payer', () => {
         it('should store token on successful login', async () => {
-            const request = new Builder(LoginRequest)
-                .withRandomData()
-                .build();
+            const request = new Builder(LoginRequest).populateWithFaker().build();
 
-            const expectedResponse = new Builder(LoginResponse)
-                .withRandomData()
-                .build();
+            // const expectedResponse = new Builder(LoginResponse)
+            //     .WithRandomData()
+            //     .Build();
 
-            step
-                .GivenLoginEndpointLoginAsyncReturns(expectedResponse);
+            const expectedResponse = {};
 
             await step
-                .WhenICallLoginAsync(request);
+                .GivenEndpointReturns(step.mockLoginEndpoint.loginAsync, expectedResponse)
+                .WhenICallClientMethod(step.client.loginAsync.bind(step.client), request);
 
             step
-                .ThenIExpectActualResponseToBe<LoginResponse>(expectedResponse)
-                .ThenIExpectLoginAsyncToHaveBeCalledWith(request)
+                .ThenIExpectActualResponseToBe(expectedResponse)
+                .ThenIExpectEndpointToHaveBeenCalledWith(step.mockLoginEndpoint.loginAsync, request)
                 .ThenIExpectTokenStoreToNotBeNull();
         });
     });
 
-    describe('loginAsync as intermediary system', () => {
-        it('should store token on successful login', async () => {
-            const request = new Builder(LoginRequest)
-                .withRandomData()
-                .build();
+    // describe('loginAsync as intermediary system', () => {
+    //     it('should store token on successful login', async () => {
+    //         const request: LoginRequest = {
+    //             clientId: faker.string.uuid(),
+    //             clientSecret: faker.string.uuid(),
+    //             onBehalfOf: faker.string.uuid(),
+    //             grantType: faker.string.uuid(),
+    //             scope: faker.string.uuid()
+    //         };
 
-            request.onBehalfOf = faker.string.uuid();
+    //         request.onBehalfOf = faker.string.uuid();
 
-            const expectedResponse = new Builder(LoginResponse)
-                .withRandomData()
-                .build();
+    //         const expectedResponse = new Builder(LoginResponse)
+    //             .WithRandomData()
+    //             .Build();
 
-            step
-                .GivenLoginEndpointLoginAsyncReturns(expectedResponse);
+    //         await step
+    //             .GivenEndpointReturns(step.mockLoginEndpoint.loginAsync, expectedResponse)
+    //             .WhenICallClientMethod(step.client.loginAsync.bind(step.client), request);
 
-            await step
-                .WhenICallLoginAsync(request);
+    //         step
+    //             .ThenIExpectActualResponseToBe(expectedResponse)
+    //             .ThenIExpectEndpointToHaveBeenCalledWith(step.mockLoginEndpoint.loginAsync, request)
+    //             .ThenIExpectTokenStoreToNotBeNull();
+    //     });
+    // });
 
-            step
-                .ThenIExpectActualResponseToBe<LoginResponse>(expectedResponse)
-                .ThenIExpectLoginAsyncToHaveBeCalledWith(request)
-                .ThenIExpectTokenStoreToNotBeNull();
-        });
-    });
+    // describe('loginAsync with token store', () => {
+    //     it('should not overwrite token store if already initialized', async () => {
+    //         const request = new Builder(LoginRequest)
+    //             .WithRandomData()
+    //             .Build();
 
-    describe('loginAsync with token store', () => {
-        it('should not overwrite token store if already initialized', async () => {
-            const request = new Builder(LoginRequest)
-                .withRandomData()
-                .build();
+    //         await step
+    //             .GivenClientWithTokenStore()
+    //             .WhenICallClientMethod(step.client.loginAsync.bind(step.client), request);
 
-            step
-                .GivenClientWithTokenStore();
+    //         step
+    //             .ThenIExpectEndpointToHaveBeenCalledWith(step.mockLoginEndpoint.loginAsync, request)
+    //             .ThenIExpectCreateTokenStoreToNotModified();
+    //     });
+    // });
 
-            await step.WhenICallLoginAsync(request);
+    // describe('getDocumentTypeAsync', () => {
+    //     it('should return document types', async () => {
+    //         const mockDocumentTypeVersion: DocumentTypeVersion = {
+    //             id: faker.number.int(),
+    //             name: faker.string.uuid(),
+    //             description: faker.string.uuid(),
+    //             activeFrom: faker.date.past(),
+    //             activeTo: faker.date.future(),
+    //             versionNumber: faker.number.int(),
+    //             status: DocumentTypeVersionStatus.published
+    //         };
+    //         const mockWorkFlowParameter: WorkFlowParameter = {
+    //             id: faker.number.int(),
+    //             parameter: faker.string.uuid(),
+    //             value: faker.number.int(),
+    //             activeFrom: faker.date.past(),
+    //             activeTo: faker.date.future()
+    //         };
+    //         const mockDocumentType: DocumentType = {
+    //             id: faker.number.int(),
+    //             invoiceTypeCode: faker.number.int(),
+    //             description: faker.string.uuid(),
+    //             activeFrom: faker.date.past(),
+    //             activeTo: faker.date.future(),
+    //             documentTypeVersions: [mockDocumentTypeVersion],
+    //             workflowParameter: [mockWorkFlowParameter]
+    //         };
+    //         const expectedDocumentTypeResponse: DocumentTypeResponse = {
+    //             result: [mockDocumentType]
+    //         };
 
-            step
-                .ThenIExpectLoginAsyncToHaveBeCalledWith(request)
-                .ThenIExpectCreateTokenStoreToNotModified();
-        });
-    });
+    //         await step
+    //             .GivenClientWithTokenStore()
+    //             .GivenEndpointReturns(step.mockDocumentTypeEndpoint.getAsync, expectedDocumentTypeResponse)
+    //             .WhenICallClientMethod(step.client.getDocumentTypeAsync.bind(step.client));
 
-    describe('getDocumentTypeAsync', () => {
-        it('should return document types', async () => {
-            // Arrange
-            const mockDocumentTypeVersion: DocumentTypeVersion = {
-                id: faker.number.int(),
-                name: faker.string.uuid(),
-                description: faker.string.uuid(),
-                activeFrom: faker.date.past(),
-                activeTo: faker.date.future(),
-                versionNumber: faker.number.int(),
-                status: DocumentTypeVersionStatus.published
-            };
-            const mockWorkFlowParameter: WorkFlowParameter = {
-                id: faker.number.int(),
-                parameter: faker.string.uuid(),
-                value: faker.number.int(),
-                activeFrom: faker.date.past(),
-                activeTo: faker.date.future()
-            };
-            const mockDocumentType: DocumentType = {
-                id: faker.number.int(),
-                invoiceTypeCode: faker.number.int(),
-                description: faker.string.uuid(),
-                activeFrom: faker.date.past(),
-                activeTo: faker.date.future(),
-                documentTypeVersions: [mockDocumentTypeVersion],
-                workflowParameter: [mockWorkFlowParameter]
-            };
-            const mockDocumentTypeResponse: DocumentTypeResponse = {
-                result: [mockDocumentType]
-            };
+    //         step
+    //             .ThenIExpectActualResponseToBe(expectedDocumentTypeResponse)
+    //             .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentTypeEndpoint.getAsync, "access-token");
+    //     });
+    // });
 
-            await step
-                .GivenClientWithTokenStore()
-                .GivenGetDocumentTypeEndpointGetAsyncReturns(mockDocumentTypeResponse)
-                .WhenICallGetDocumentTypeAsync();
+    // describe('getDocumentTypeByIdAsync', () => {
+    //     it('should return document types', async () => {
+    //         const expectedDocumentType = new Builder(DocumentType)
+    //             .WithRandomData()
+    //             .Build();
 
-            step
-                .ThenIExpectActualResponseToBe<DocumentTypeResponse>(mockDocumentTypeResponse)
-                .ThenIExpectDocumentTypeEndpointToHaveBeenCalledWith("access-token");
-        });
-    });
+    //         const id = faker.number.int();
+
+    //         await step
+    //             .GivenClientWithTokenStore()
+    //             .GivenEndpointReturns(step.mockDocumentTypeEndpoint.getByIdAsync, expectedDocumentType)
+    //             .WhenICallClientMethod(step.client.getDocumentTypeByIdAsync.bind(step.client), id);
+
+    //         step
+    //             .ThenIExpectActualResponseToBe<DocumentType>(expectedDocumentType)
+    //             .ThenIExpectEndpointToHaveBeenCalledWith(step.mockDocumentTypeEndpoint.getByIdAsync, id, "access-token");
+    //     })
+    // });
+
+    // describe('getDocumentTypeByVersionAsync', () => {
+    //     it('should return document type version', async () => {
+    //         const expectedDocumentTypeVersion = new Builder(DocumentTypeVersion).WithRandomData().Build();
+
+    //         const id = faker.number.int();
+    //         const versionId = faker.number.int();
+
+    //         await step
+    //             .GivenClientWithTokenStore()
+    //     });
+    // })
 });

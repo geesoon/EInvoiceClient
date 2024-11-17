@@ -1,45 +1,38 @@
 import { faker } from '@faker-js/faker';
 
-type Constructor<T> = new (...args: any[]) => T;
+class Builder<T> {
+    private instance: T;
 
-export class Builder<T> {
-    private instance: Partial<T> = {};
-
-    constructor(private readonly ctor: Constructor<T>) { }
-
-    with(properties: Partial<T>): this {
-        Object.assign(this.instance, properties);
-        return this;
+    constructor(typeConstructor: new () => T) {
+        this.instance = new typeConstructor();
     }
 
-    withRandomData(): this {
-        const keys = Object.keys(this.instance) as Array<keyof T>;
-        keys.forEach((key) => {
-            this.instance[key] = this.generateRandomValue(this.instance[key]);
-        });
-        return this;
+    public build(): T {
+        return this.instance;
     }
 
-    private generateRandomValue(value: any): any {
-        const type = typeof value;
+    // Method to populate public properties with Faker.js data
+    public populateWithFaker(): this {
+        for (const key of Object.keys(this.instance)) {
+            const propKey = key as keyof T;
 
-        switch (type) {
-            case 'number':
-                return faker.number.int;
-            case 'string':
-                if (value instanceof Date) {
-                    return faker.date.past(); // Example for date types
-                }
-                return faker.lorem.word(); // Default string value
-            case 'boolean':
-                return faker.datatype.boolean();
-            // Add more cases as necessary for other types
-            default:
-                return null; // Handle unknown types appropriately
+            // Populate based on the property type
+            if (typeof this.instance[propKey] === 'string') {
+                this.instance[propKey] = faker.lorem.sentence();
+            } else if (typeof this.instance[propKey] === 'number') {
+                this.instance[propKey] = faker.datatype.number();
+            } else if (this.instance[propKey] instanceof Date) {
+                this.instance[propKey] = faker.date.past();
+            }
         }
+        return this;
     }
 
-    build(): T {
-        return new this.ctor(...Object.values(this.instance));
+    // Method to populate a specific property with a custom value
+    public withProperty<K extends keyof T>(key: K, value: T[K]): this {
+        this.instance[key] = value;
+        return this;
     }
 }
+
+export default Builder;
