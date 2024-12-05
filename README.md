@@ -34,3 +34,6 @@ Api call error from LHDN is wrapped within [ApiError](https://github.com/geesoon
 
 # Todo 
 Create integration tests to ensure all endpoints are functioning as expected.
+
+# Roadmap
+The ultimate goal is to create an easy to use mobile app, free for all malaysian lowest bracket small businesses to use. The plan is not to create a full fledge accounting or ERP system.
